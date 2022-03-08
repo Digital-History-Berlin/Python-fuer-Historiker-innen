@@ -1,0 +1,38 @@
+{
+    "label": "My Library",
+    "books available": true,
+    "owner": null,
+    "books": [
+        {
+            "title": "Der Prozess",
+            "author": "Franz Kafka",
+            "year": 1935,
+            "editions": [
+                1935,
+                1946,
+                1963,
+                1990,
+                2011,
+                2012
+            ]
+        },
+        {
+            "title": "Half of a Yellow Sun",
+            "author": "Chimanda Ngozi Adichie",
+            "year": 2006,
+            "editions": [
+                2006,
+                2007,
+                2017
+            ]
+        },
+        {
+            "title": "Network Effect",
+            "author": "Martha Wells",
+            "year": 2020,
+            "editions": [
+                2020
+            ]
+        }
+    ]
+}
