@@ -3,9 +3,9 @@
 
 # # Numerische Datentypen
 # 
-# Sie haben sich bereits eingehend mit dem Datentyp *string* auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von [numerischen Datentypen](https://docs.python.org/3/library/stdtypes.html#typesnumeric), die wir auch als überwiegend mit dem Text arbeitende Geisteswissenschaftler*innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion type() können wir die Information einfach in Python erfragen.
+# Sie haben sich bereits eingehend mit dem Datentyp *string* auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von [numerischen Datentypen](https://docs.python.org/3/library/stdtypes.html#typesnumeric), die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion type() können wir die Information einfach in Python erfragen.
 
-# In[1]:
+# In[ ]:
 
 
 # identify the datatype
@@ -17,7 +17,7 @@ type(text)
 # 
 # Bei *integers* handelt es sich um ganze Zahlen.
 
-# In[2]:
+# In[ ]:
 
 
 # identify the datatype
@@ -29,7 +29,7 @@ type(x)
 # 
 # Bei *float* handelt es sich um Gleitkomma- beziehungsweise Dezimalzahlen. 
 
-# In[3]:
+# In[ ]:
 
 
 # identify the datatype
@@ -43,25 +43,35 @@ type(y)
 # 
 # **Zwei Beispiele:**
 
-# In[4]:
+# In[ ]:
 
 
 # example 1: round decimal
 round(5.7823432, 2)
 
 
-# In[5]:
+# In[ ]:
 
 
 # example 2: round decimal
 round(5.7823432)
 
 
-# **Was ist beim zweiten Beispiel passiert? Prüfen Sie ggf. den Datentyp.** *Ihre Antwort*
+# **Was ist beim zweiten Beispiel passiert? Prüfen Sie ggf. den Datentyp.** 
+# 
+# *Ihre Antwort*
+
+# In[ ]:
+
+
+
+
 
 # ## Komplexe Zahlen
+# 
+# Ein besonderer numerischer Datentyp sind die [komplexen Zahlen](https://en.wikipedia.org/wiki/Complex_number). Da dieser Datentyp in Szenarien, mit denen Historiker:innen programmatisch arbeiten, selten vorkommt, soll er an dieser Stelle nicht weiter erläutert werden - dennoch sollter dieser zumindest kurz erwähnt werden.
 
-# In[6]:
+# In[ ]:
 
 
 # identify the datatype
@@ -71,16 +81,16 @@ type(z)
 
 # ## Datentyp ändern
 # 
-# Wir hatten eingangs darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der Input-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer*inneneingaben arbeiten, dann können wir den String explizit umwandeln.
+# Wir hatten darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der Input-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer*inneneingaben arbeiten, dann können wir den String explizit umwandeln.
 # 
 # **Zum Beispiel:**
 
-# In[7]:
+# In[ ]:
 
 
 # normal input
 age = input("How old are you? ")
-print("Die Eingabe ist vom Typ {}.".format(type(age)))
+print(f"Die Eingabe ist vom Typ {type(age)}.")
 
 
 # In[ ]:
@@ -88,7 +98,7 @@ print("Die Eingabe ist vom Typ {}.".format(type(age)))
 
 # convert input
 age_int = int(input("How old are you? "))
-print("Die Eingabe ist vom Typ {}.".format(type(age_int)))
+print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 
 # Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen ([complex()](https://docs.python.org/3/library/functions.html#complex)), Strings ([str()](https://docs.python.org/3/library/functions.html#func-str)), Integers ([int()](https://docs.python.org/3/library/functions.html#int)) und Gleitkommazahlen ([float()](https://docs.python.org/3/library/functions.html#float)).
@@ -116,10 +126,15 @@ print("Die Eingabe ist vom Typ {}.".format(type(age_int)))
 2 - 3
 
 
-# **Wofür stehen die Operatoren + und - in diesen Beispielen?** *Ihre Antwort*
+# **Wofür stehen die Operatoren + und - in diesen Beispielen?** 
 # 
-# 
-# 
+# *Ihre Antwort*
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
@@ -145,7 +160,15 @@ print("Die Eingabe ist vom Typ {}.".format(type(age_int)))
 24 ** 45
 
 
-# **Wofür stehen die Operatoren * und \*\* in diesen Beispielen?** *Ihre Antwort*
+# **Wofür stehen die Operatoren * und \*\* in diesen Beispielen?** 
+# 
+# *Ihre Antwort*
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
@@ -171,7 +194,15 @@ print("Die Eingabe ist vom Typ {}.".format(type(age_int)))
 10 // 3
 
 
-# **Wodurch unterscheiden sich die Berechnungen mit / und //?** *Ihre Antwort*
+# **Wodurch unterscheiden sich die Berechnungen mit / und //?** 
+# 
+# *Ihre Antwort*
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
@@ -191,7 +222,15 @@ print("Die Eingabe ist vom Typ {}.".format(type(age_int)))
 10 % 4
 
 
-# **Erklären Sie die Funktionsweise des sog. Modulo-Operators:** *Ihre Antwort*
+# **Erklären Sie die Funktionsweise des sog. Modulo-Operators:** 
+# 
+# *Ihre Antwort*
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
@@ -223,17 +262,19 @@ float("5") * 13
 str(30) * 2
 
 
-# **Erklären Sie, was in den einzelnen Codezeilen passiert ist:** *Ihre Antwort*
+# **Erklären Sie, was in den einzelnen Codezeilen passiert ist:** 
+# 
+# *Ihre Antwort*
 
-# 
-# 
-# ---
-# 
-# 
+# In[ ]:
 
-# ## Aufgabe zur Lektion "Atomare Datentypen": Der Computer als Taschenrechner
+
+
+
+
+# ## Aufgabe: Der Computer als Taschenrechner
 # 
-# Zum Abschluss dieser Lektion sollen Sie ein kleines Programm schreiben, das eine einfache mathematische Rechnung enthält. In welcher Form Sie diese integrieren bleibt Ihnen überlassen. Ihr Programmcode sollte zudem mindestens eine Eingabe-Funktion sowie eine formatierte Ausgabe enthalten. Beziehen Sie außerdem nach eigenem Ermessen aus allen Lektionsinhalten Komponenten in Ihr Programm ein.
+# Zum Abschluss dieser Lektion sollen Sie ein kleines Skript schreiben, das eine einfache mathematische Rechnung enthält. In welcher Form Sie diese integrieren bleibt Ihnen überlassen. Ihr Programmcode sollte zudem mindestens eine Eingabe-Funktion sowie eine formatierte Ausgabe enthalten. Beziehen Sie außerdem nach eigenem Ermessen aus allen Lektionsinhalten Komponenten in Ihr Skript ein.
 # 
 # **Ihre Lösung könnte zum Beispiel aussehen wie dieser einfache Prozentrechner:**
 
@@ -241,7 +282,7 @@ str(30) * 2
 
 
 # percentage calculator
-print("Mit diesem Rechner erfahren Sie kinderleicht, wie viel Sie sparen können und wie hoch der Kaufbetrag ist.")
+print("Mit diesem Rechner erfahren Sie, wie viel Sie sparen können und wie hoch der Kaufbetrag ist.")
 
 # input
 base = float(input("Geben Sie den Grundwert ein (Euro): "))
@@ -252,10 +293,10 @@ value = (base/100) * percentage
 netto = base - value
 
 # output
-print("Sie sparen {0} Euro und müssen noch {1} Euro bezahlen.".format(value, netto))
+print(f"Sie sparen {value} Euro und müssen noch {netto} Euro bezahlen.")
 
 
-# **Ihre Aufgabe für die Lektion "Atomare Datentypen":**
+# **Ihr Skript-Beispiel für die Lektion "Atomare Datentypen":**
 
 # In[ ]:
 

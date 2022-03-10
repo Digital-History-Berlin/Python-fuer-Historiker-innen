@@ -3,7 +3,7 @@
 
 # # Dateien verarbeiten
 # 
-# Nachdem Sie sich in den letzten Abschnitten mit komplexen Datenstrukturen auseinandergesetzt haben, beschäftigen wir uns in dieser Einheit mit ein paar Möglichkeiten, strukturierte und unstrukturierte Daten dauerhaft vorhalten zu können. Hierfür müssen wir verstehen, wie Python mit Dateien arbeitet. Die Inhalte dieses Notebooks bauen in großen Teilen auf dem auf, was Sie in der letzten Einheit gelernt haben und dienen vor allem der Vertiefung und konkreten Anwendung dieser Inhalte.
+# Nachdem Sie sich in den letzten Abschnitten mit komplexen Datenstrukturen auseinandergesetzt haben, beschäftigen wir uns in diesem Kapitel mit ein paar Möglichkeiten, strukturierte und unstrukturierte Daten dauerhaft vorhalten zu können. Hierfür müssen wir verstehen, wie Python mit Dateien arbeitet. Die folgenden Inhalte bauen in großen Teilen auf dem auf, was Sie in den letzten Abschnitten gelernt haben und dienen vor allem der Vertiefung und konkreten Anwendung dieser Inhalte.
 
 # ## Lernziele
 # 
@@ -23,9 +23,3 @@
 # 
 # * [Real Python: Working with Files in Python](https://realpython.com/working-with-files-in-python/)
 # * [Real Python: Reading and Writing CSV Files in Python](https://realpython.com/python-csv/)
-
-# In[ ]:
-
-
-
-

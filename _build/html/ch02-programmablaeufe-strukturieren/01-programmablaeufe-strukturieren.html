@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -387,8 +390,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># percentage calculator</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Mit diesem Rechner erfahren Sie kinderleicht, </span>
-<span class="s1">         wie viel Sie sparen können und wie hoch der Kaufbetrag ist.&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Mit diesem Rechner erfahren Sie, </span>
+<span class="s1">wie viel Sie sparen können und wie hoch der Kaufbetrag ist.&#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># input</span>
 <span class="n">base</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie den Grundwert ein (Euro): &quot;</span><span class="p">))</span>
@@ -403,35 +406,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mit diesem Rechner erfahren Sie kinderleicht, 
-         wie viel Sie sparen können und wie hoch der Kaufbetrag ist.
-</pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_20120</span><span class="o">/</span><span class="mf">1273869717.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># input</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">base</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie den Grundwert ein (Euro): &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">percentage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie den Rabatt ein (%): &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-
-<span class="nn">C:\JupyterLab\resources\jlab_server\envs\base2exp\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Den obigen Codeblock kennen Sie ja bereits aus der Abschlussaufgabe des ersten Notebooks.</p>
+<p>Den obigen Codeblock kennen Sie ja bereits aus einer der Aufgabe aus der ersten Lektion.</p>
 <p>In dieser Einheit lernen Sie nun einige grundlegende Befehle kennen, mit denen Sie den Ablauf Ihrer Programme strukturieren können: Bedingte Anweisungen, Schleifen und Funktionen.</p>
-<p>Hintergrund: Oft wollen Sie Teile Ihres Programms nur dann ausführen lassen, wenn bestimmte Rahmenbedingungen herrschen – bspw. wenn eine Variable einen bestimmten Wert hat. So könnten Sie die Berechnung im obigen Beispiel etwa von einem bestimmten Grundwert abhängig machen (das ist natürlich nur ein fiktives Szenario). An anderer Stelle sollen Teile Ihres Codes wiederholt ausgeführt werden, allerdings ohne, dass Sie die Anweisungen immer wieder mühevoll ausschreiben müssen. Das ist zum Beispiel relevant, wenn wir mehrere Dateien wie Textquellen verarbeiten wollen. Aber dazu später im Semester mehr.</p>
+<p>Hintergrund: Oft wollen Sie Teile Ihres Programms nur dann ausführen lassen, wenn bestimmte Rahmenbedingungen herrschen – bspw. wenn eine Variable einen bestimmten Wert hat. So könnten Sie die Berechnung im obigen Beispiel etwa von einem bestimmten Grundwert abhängig machen (das ist natürlich nur ein fiktives Szenario). An anderer Stelle sollen Teile Ihres Codes wiederholt ausgeführt werden, allerdings ohne, dass Sie die Anweisungen immer wieder mühevoll ausschreiben müssen. Das ist zum Beispiel relevant, wenn wir mehrere Dateien wie Textquellen verarbeiten wollen. Aber dazu erfahren Sie in späteren Kapiteln mehr.</p>
 <p>In diesem Notebook lernen wir erst einmal die Konzepte der bedingten Anweisungen, Schleifen und Funktionen kennen.</p>
 <div class="section" id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
@@ -462,7 +440,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -499,8 +477,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># percentage calculator</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Mit diesem Rechner erfahren Sie kinderleicht, </span>
-<span class="s1">         wie viel Sie sparen können und wie hoch der Kaufbetrag ist.&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Mit diesem Rechner erfahren Sie, </span>
+<span class="s1">wie viel Sie sparen können und wie hoch der Kaufbetrag ist.&#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># input</span>
 <span class="n">base</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie den Grundwert ein (Euro): &quot;</span><span class="p">))</span>
@@ -515,35 +493,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mit diesem Rechner erfahren Sie kinderleicht, 
-         wie viel Sie sparen können und wie hoch der Kaufbetrag ist.
-</pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_20120</span><span class="o">/</span><span class="mf">1273869717.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># input</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">base</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie den Grundwert ein (Euro): &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">percentage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie den Rabatt ein (%): &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-
-<span class="nn">C:\JupyterLab\resources\jlab_server\envs\base2exp\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Den obigen Codeblock kennen Sie ja bereits aus der Abschlussaufgabe des ersten Notebooks.</p>
+<p>Den obigen Codeblock kennen Sie ja bereits aus einer der Aufgabe aus der ersten Lektion.</p>
 <p>In dieser Einheit lernen Sie nun einige grundlegende Befehle kennen, mit denen Sie den Ablauf Ihrer Programme strukturieren können: Bedingte Anweisungen, Schleifen und Funktionen.</p>
-<p>Hintergrund: Oft wollen Sie Teile Ihres Programms nur dann ausführen lassen, wenn bestimmte Rahmenbedingungen herrschen – bspw. wenn eine Variable einen bestimmten Wert hat. So könnten Sie die Berechnung im obigen Beispiel etwa von einem bestimmten Grundwert abhängig machen (das ist natürlich nur ein fiktives Szenario). An anderer Stelle sollen Teile Ihres Codes wiederholt ausgeführt werden, allerdings ohne, dass Sie die Anweisungen immer wieder mühevoll ausschreiben müssen. Das ist zum Beispiel relevant, wenn wir mehrere Dateien wie Textquellen verarbeiten wollen. Aber dazu später im Semester mehr.</p>
+<p>Hintergrund: Oft wollen Sie Teile Ihres Programms nur dann ausführen lassen, wenn bestimmte Rahmenbedingungen herrschen – bspw. wenn eine Variable einen bestimmten Wert hat. So könnten Sie die Berechnung im obigen Beispiel etwa von einem bestimmten Grundwert abhängig machen (das ist natürlich nur ein fiktives Szenario). An anderer Stelle sollen Teile Ihres Codes wiederholt ausgeführt werden, allerdings ohne, dass Sie die Anweisungen immer wieder mühevoll ausschreiben müssen. Das ist zum Beispiel relevant, wenn wir mehrere Dateien wie Textquellen verarbeiten wollen. Aber dazu erfahren Sie in späteren Kapiteln mehr.</p>
 <p>In diesem Notebook lernen wir erst einmal die Konzepte der bedingten Anweisungen, Schleifen und Funktionen kennen.</p>
 <div class="section" id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
@@ -574,7 +527,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

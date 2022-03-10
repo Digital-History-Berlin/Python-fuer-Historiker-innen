@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -388,7 +391,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dateien-verarbeiten">
 <h1>Dateien verarbeiten<a class="headerlink" href="#dateien-verarbeiten" title="Permalink to this headline">¶</a></h1>
-<p>Nachdem Sie sich in den letzten Abschnitten mit komplexen Datenstrukturen auseinandergesetzt haben, beschäftigen wir uns in dieser Einheit mit ein paar Möglichkeiten, strukturierte und unstrukturierte Daten dauerhaft vorhalten zu können. Hierfür müssen wir verstehen, wie Python mit Dateien arbeitet. Die Inhalte dieses Notebooks bauen in großen Teilen auf dem auf, was Sie in der letzten Einheit gelernt haben und dienen vor allem der Vertiefung und konkreten Anwendung dieser Inhalte.</p>
+<p>Nachdem Sie sich in den letzten Abschnitten mit komplexen Datenstrukturen auseinandergesetzt haben, beschäftigen wir uns in diesem Kapitel mit ein paar Möglichkeiten, strukturierte und unstrukturierte Daten dauerhaft vorhalten zu können. Hierfür müssen wir verstehen, wie Python mit Dateien arbeitet. Die folgenden Inhalte bauen in großen Teilen auf dem auf, was Sie in den letzten Abschnitten gelernt haben und dienen vor allem der Vertiefung und konkreten Anwendung dieser Inhalte.</p>
 <div class="section" id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
 <p>Was Sie am Ende der Lektion beantworten können sollen:</p>
@@ -422,7 +425,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -450,7 +453,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dateien-verarbeiten">
 <h1>Dateien verarbeiten<a class="headerlink" href="#dateien-verarbeiten" title="Permalink to this headline">¶</a></h1>
-<p>Nachdem Sie sich in den letzten Abschnitten mit komplexen Datenstrukturen auseinandergesetzt haben, beschäftigen wir uns in dieser Einheit mit ein paar Möglichkeiten, strukturierte und unstrukturierte Daten dauerhaft vorhalten zu können. Hierfür müssen wir verstehen, wie Python mit Dateien arbeitet. Die Inhalte dieses Notebooks bauen in großen Teilen auf dem auf, was Sie in der letzten Einheit gelernt haben und dienen vor allem der Vertiefung und konkreten Anwendung dieser Inhalte.</p>
+<p>Nachdem Sie sich in den letzten Abschnitten mit komplexen Datenstrukturen auseinandergesetzt haben, beschäftigen wir uns in diesem Kapitel mit ein paar Möglichkeiten, strukturierte und unstrukturierte Daten dauerhaft vorhalten zu können. Hierfür müssen wir verstehen, wie Python mit Dateien arbeitet. Die folgenden Inhalte bauen in großen Teilen auf dem auf, was Sie in den letzten Abschnitten gelernt haben und dienen vor allem der Vertiefung und konkreten Anwendung dieser Inhalte.</p>
 <div class="section" id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
 <p>Was Sie am Ende der Lektion beantworten können sollen:</p>
@@ -484,7 +487,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -378,7 +381,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="komplexe-datenstrukturen">
 <h1>Komplexe Datenstrukturen<a class="headerlink" href="#komplexe-datenstrukturen" title="Permalink to this headline">¶</a></h1>
-<p>Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch eine Schippe drauf legen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellt Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten.</p>
+<p>Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch ein paar Schritte weitergehen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellt Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten.</p>
 <p>Was sind Datenstrukturen? Grundsätzlich nichts anderes als eine bestimmte Anordnung und Organisation von miteinander in Beziehung stehenden Daten. In Python gibt es vier eingebaute Datenstrukturen: <em>list</em>, <em>tuple</em>, <em>set</em> und <em>dictionary</em>. Sie bieten Ihnen einige grundlegende Funktionalitäten zur Modellierung von Daten.</p>
 <div class="section" id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
@@ -389,8 +392,8 @@
 <li><p>Was sind Sets?</p></li>
 <li><p>Was sind Dictionaries?</p></li>
 </ul>
-<p>und schließlich sollten Sie am Ende der Übungseinheit dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten.</p>
-<p>In dieser Übungseinheit erwarten Sie statt einer intensiveren Abschlussaufgabe kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Übungseinheiten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren. Die Übung zu Tupeln dient der Auflockerung und Wiederholung des Stoffs.</p>
+<p>und schließlich sollten Sie am Ende des Kapitels dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten.</p>
+<p>In den folgenden Abschnitten erwarten Sie statt einer größeren Aufgabe mehrere kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Abschnitten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren.</p>
 </div>
 <div class="section" id="ressourcen">
 <h2>Ressourcen<a class="headerlink" href="#ressourcen" title="Permalink to this headline">¶</a></h2>
@@ -409,7 +412,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -437,7 +440,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="komplexe-datenstrukturen">
 <h1>Komplexe Datenstrukturen<a class="headerlink" href="#komplexe-datenstrukturen" title="Permalink to this headline">¶</a></h1>
-<p>Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch eine Schippe drauf legen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellt Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten.</p>
+<p>Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch ein paar Schritte weitergehen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellt Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten.</p>
 <p>Was sind Datenstrukturen? Grundsätzlich nichts anderes als eine bestimmte Anordnung und Organisation von miteinander in Beziehung stehenden Daten. In Python gibt es vier eingebaute Datenstrukturen: <em>list</em>, <em>tuple</em>, <em>set</em> und <em>dictionary</em>. Sie bieten Ihnen einige grundlegende Funktionalitäten zur Modellierung von Daten.</p>
 <div class="section" id="lernziele">
 <h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
@@ -448,8 +451,8 @@
 <li><p>Was sind Sets?</p></li>
 <li><p>Was sind Dictionaries?</p></li>
 </ul>
-<p>und schließlich sollten Sie am Ende der Übungseinheit dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten.</p>
-<p>In dieser Übungseinheit erwarten Sie statt einer intensiveren Abschlussaufgabe kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Übungseinheiten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren. Die Übung zu Tupeln dient der Auflockerung und Wiederholung des Stoffs.</p>
+<p>und schließlich sollten Sie am Ende des Kapitels dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten.</p>
+<p>In den folgenden Abschnitten erwarten Sie statt einer größeren Aufgabe mehrere kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Abschnitten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren.</p>
 </div>
 <div class="section" id="ressourcen">
 <h2>Ressourcen<a class="headerlink" href="#ressourcen" title="Permalink to this headline">¶</a></h2>
@@ -468,7 +471,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

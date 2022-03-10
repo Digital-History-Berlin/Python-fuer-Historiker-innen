@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -330,6 +333,11 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tupel-erstellen">
+   Tupel erstellen
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aufgabe-interaktives-programm-gestalten">
    Aufgabe: Interaktives Programm gestalten
@@ -355,6 +363,11 @@
                 <nav aria-label="Page">
                     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tupel-erstellen">
+   Tupel erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aufgabe-interaktives-programm-gestalten">
    Aufgabe: Interaktives Programm gestalten
   </a>
@@ -366,9 +379,11 @@
             
               <div>
                 
-  <div class="section" id="tupel">
+  <div class="tex2jax_ignore mathjax_ignore section" id="tupel">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#tuples-and-sequences">Tupel</a><a class="headerlink" href="#tupel" title="Permalink to this headline">¶</a></h1>
 <p>Tupel sind enge Verwandte von Listen. Aber während Sie Listen im Zuge eines Programmdurchlaufs beliebig manipulieren können, ist dies bei Tupeln nicht der Fall. Bei beiden Datenstrukturen haben Sie lesenden Zugriff, aber nur bei Listen auch einen schreibenden. Abgesehen davon können Sie mit Tupeln die meisten Operationen ausführen, die auch mit Strings und Listen funktionieren. Die Nutzung von Tupeln ist dann vorteilhaft, wenn Sie mit Daten arbeiten, die nicht veränderbar sein sollen. Sie können unveränderbare Daten sowohl in Listen einbauen als auch umgekehrt bearbeitbare Listen in Tupel.</p>
+<div class="section" id="tupel-erstellen">
+<h2>Tupel erstellen<a class="headerlink" href="#tupel-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Zugreifen können Sie auf die einzelnen Elemente wie gewohnt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -382,15 +397,8 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Apfel&#39;, &#39;Banane&#39;)
-Käse
-Milch
-</pre></div>
 </div>
-</div>
-</div>
-<p>Dass es sich um ein Tupel handelt wird vom Interpreter anhand der runden Klammern erkannt.</p>
+<p>Dass es sich um ein Tupel handelt, wird vom Interpreter anhand der runden Klammern erkannt.</p>
 <p>Folgendes gilt es zu beachten:
 Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
 <div class="cell docutils container">
@@ -427,20 +435,13 @@ Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
-&lt;class &#39;tuple&#39;&gt;
-&lt;class &#39;str&#39;&gt;
-&lt;class &#39;tuple&#39;&gt;
-</pre></div>
 </div>
-</div>
-</div>
-<p><strong>Erklären Sie für <code class="docutils literal notranslate"><span class="pre">c</span></code> und <code class="docutils literal notranslate"><span class="pre">d</span></code> den Unterschied. Warum ist das angehängte Komma notwendig?</strong> <em>Ihre Antwort</em></p>
+<p><strong>Erklären Sie für die Variablen <code class="docutils literal notranslate"><span class="pre">c</span></code> und <code class="docutils literal notranslate"><span class="pre">d</span></code> den Unterschied. Warum ist das angehängte Komma notwendig?</strong> <em>Ihre Antwort</em></p>
 <p>Auch wenn die runden Klammern für Tupel also optional sind, empfiehlt es sich, mit ihnen zu arbeiten, um Ihren Code explizit und leicht verständlich zu halten.</p>
+</div>
 <div class="section" id="aufgabe-interaktives-programm-gestalten">
 <h2>Aufgabe: Interaktives Programm gestalten<a class="headerlink" href="#aufgabe-interaktives-programm-gestalten" title="Permalink to this headline">¶</a></h2>
-<p>Schreiben Sie ein kleines interaktives Programm, das eine Liste von Namen erstellt, solange der*die Nutzer*in einen Eintrag hinzufügen möchte. Die Namen sollen als Tupel strukturiert sein und jeweils Vor- und Nachnamen enthalten. Zum Abschluss des Programms soll dem*der Nutzer*in die Liste bestehend aus Tupeln ausgegeben werden.</p>
+<p>Schreiben Sie ein kleines interaktives Programm, das eine Liste von Namen erstellt, solange der:die Nutzer:in einen Eintrag hinzufügen möchte. Die Namen sollen als Tupel strukturiert sein und jeweils Vor- und Nachnamen enthalten. Zum Abschluss des Programms soll dem:der Nutzer:in die Liste bestehend aus Tupeln ausgegeben werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -455,7 +456,7 @@ Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -481,9 +482,11 @@ Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
         
               <div>
                 
-  <div class="section" id="tupel">
+  <div class="tex2jax_ignore mathjax_ignore section" id="tupel">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#tuples-and-sequences">Tupel</a><a class="headerlink" href="#tupel" title="Permalink to this headline">¶</a></h1>
 <p>Tupel sind enge Verwandte von Listen. Aber während Sie Listen im Zuge eines Programmdurchlaufs beliebig manipulieren können, ist dies bei Tupeln nicht der Fall. Bei beiden Datenstrukturen haben Sie lesenden Zugriff, aber nur bei Listen auch einen schreibenden. Abgesehen davon können Sie mit Tupeln die meisten Operationen ausführen, die auch mit Strings und Listen funktionieren. Die Nutzung von Tupeln ist dann vorteilhaft, wenn Sie mit Daten arbeiten, die nicht veränderbar sein sollen. Sie können unveränderbare Daten sowohl in Listen einbauen als auch umgekehrt bearbeitbare Listen in Tupel.</p>
+<div class="section" id="tupel-erstellen">
+<h2>Tupel erstellen<a class="headerlink" href="#tupel-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Zugreifen können Sie auf die einzelnen Elemente wie gewohnt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -497,15 +500,8 @@ Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Apfel&#39;, &#39;Banane&#39;)
-Käse
-Milch
-</pre></div>
 </div>
-</div>
-</div>
-<p>Dass es sich um ein Tupel handelt wird vom Interpreter anhand der runden Klammern erkannt.</p>
+<p>Dass es sich um ein Tupel handelt, wird vom Interpreter anhand der runden Klammern erkannt.</p>
 <p>Folgendes gilt es zu beachten:
 Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
 <div class="cell docutils container">
@@ -542,20 +538,13 @@ Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
-&lt;class &#39;tuple&#39;&gt;
-&lt;class &#39;str&#39;&gt;
-&lt;class &#39;tuple&#39;&gt;
-</pre></div>
 </div>
-</div>
-</div>
-<p><strong>Erklären Sie für <code class="docutils literal notranslate"><span class="pre">c</span></code> und <code class="docutils literal notranslate"><span class="pre">d</span></code> den Unterschied. Warum ist das angehängte Komma notwendig?</strong> <em>Ihre Antwort</em></p>
+<p><strong>Erklären Sie für die Variablen <code class="docutils literal notranslate"><span class="pre">c</span></code> und <code class="docutils literal notranslate"><span class="pre">d</span></code> den Unterschied. Warum ist das angehängte Komma notwendig?</strong> <em>Ihre Antwort</em></p>
 <p>Auch wenn die runden Klammern für Tupel also optional sind, empfiehlt es sich, mit ihnen zu arbeiten, um Ihren Code explizit und leicht verständlich zu halten.</p>
+</div>
 <div class="section" id="aufgabe-interaktives-programm-gestalten">
 <h2>Aufgabe: Interaktives Programm gestalten<a class="headerlink" href="#aufgabe-interaktives-programm-gestalten" title="Permalink to this headline">¶</a></h2>
-<p>Schreiben Sie ein kleines interaktives Programm, das eine Liste von Namen erstellt, solange der*die Nutzer*in einen Eintrag hinzufügen möchte. Die Namen sollen als Tupel strukturiert sein und jeweils Vor- und Nachnamen enthalten. Zum Abschluss des Programms soll dem*der Nutzer*in die Liste bestehend aus Tupeln ausgegeben werden.</p>
+<p>Schreiben Sie ein kleines interaktives Programm, das eine Liste von Namen erstellt, solange der:die Nutzer:in einen Eintrag hinzufügen möchte. Die Namen sollen als Tupel strukturiert sein und jeweils Vor- und Nachnamen enthalten. Zum Abschluss des Programms soll dem:der Nutzer:in die Liste bestehend aus Tupeln ausgegeben werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -570,7 +559,7 @@ Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

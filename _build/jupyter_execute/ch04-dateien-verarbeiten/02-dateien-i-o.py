@@ -1,66 +1,41 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Dateien öffnen, lesen und bearbeiten
+# # Dateien öffnen, lesen und bearbeiten
 # 
 # Bislang haben wir Daten in Variablen gespeichert und Ergebnisse mit `print()` ausgegeben. In der Praxis wollen wir Daten natürlich dauerhaft (persistent) speichern, später wieder bearbeiten können, oder die Daten von Dritten weiterverarbeiten lassen.
 
-# ### Grundlagen
+# ## Grundlagen
 # Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.
 # 
 # Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Order gespeichert, der zugleich ein Unterordner eines anderen ist).
 # 
-# Name, Dateityp und Speicherdatei lassen sich als *Pfad* angeben. (Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen.) Ein Beispiel: Der Dateipfad für dieses Notebook sieht auf meinem Rechner so aus:
-# ```
-# /Users/pschneider/Documents/Lehre/Programmieren für Historiker*innen_WS_2020_21/Programmieraufgaben/4_Programmieren_f_Hist_Dateien_verarbeiten.ipynb.ipynb
-# ```
-# Dies ist der *absolute* Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von `4_Programmieren_f_Hist_Dateien_verarbeiten.ipynb.ipynb` an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (/) getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (\\) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).
+# Name, Dateityp und Speicherdatei lassen sich als *Pfad* angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:
 # 
-# Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als bei mir aussehen. Daher ist es wichtig so oft wie möglich mit *relativen* Pfaden zu arbeiten. Relative Pfade bezeichen den Dateipfad ausgehend von meiner Position (bzw. der Position Ihres Python-Skripts) in der Verzeichnisstruktur. Angenommen, ich hätte ein Python-Skript im Ordner "Lehre" auf meinem Rechner liegen. Der (relative) Dateipfad des Notebooks wäre dann:
+# für Linux und Mac:
 # ```
-# Programmieren für Historiker*innen_SS_2020/Programmieraufgaben/4_Programmieren_fuer_Historiker_innen_Dateien_verarbeiten.ipynb
-# ```
-# Durch Angabe von ".." ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf meinem Rechner gibt es im Ordner "Documents" z.B. neben "Lehre" auch einen Ordner "Publikationen". Angenommen ich hätte ein Python-Skript im Ordner "Publikationen" gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad dann:
-# ```
-# ../Lehre/Programmieren für Historiker*innen_SS_2020/Programmieraufgaben/4_Programmieren_fuer_Historiker_innen_Dateien_verarbeiten.ipynb
+# /Users/username/Documents/Lehre/Python/dateien_verarbeiten.ipynb
 # ```
 # 
-# ### Wichtige Hinweise zur Verwendung von Google Colab
-# Für den Fall, dass Sie Google Colab verwenden, können Sie sich einen Überblick über die Verzeichnisstruktur verschaffen, indem Sie links, in der Seitenleiste, auf das kleine Ordnersymbol klicken. Wenn Sie Python auf Ihrem Rechner ausführen, berücksichtigen Sie für diese Übung bitte Ihre lokale Ordnerstruktur. Die Angabe eigener Dateipfade hängt dann davon ab, wie Sie Ihre Festplatte organisiert haben. Damit alle Codeblöcke in diesem Notebook funktionieren, speichern Sie bitte alle Dateien im selben Verzeichnis, in dem sich auch das Notebook befindet. Um Dateien in Google Colab hochzuladen können Sie entweder auf der linken Seite auf *Upload* klicken ODER folgenden Code ausführen:
-
-# In[1]:
-
-
-# Option 1, wenn Sie Google Colab nutzen
-from google.colab import files
-
-uploaded = files.upload()
-
-for filename in uploaded.keys():
-    print('User uploaded file "{name}" with length {length} bytes'.format(name=filename, length=len(uploaded[filename])))
-
-
-# Alternativ können Sie Ihren Google Drive einbinden. Passen Sie in diesem Fall bitte alle Dateilinks in diesem Notebook entprechend an.
-
-# In[ ]:
-
-
-# Option 2, wenn Sie Google Colab nutzen
-from google.colab import drive
-drive.mount('/content/drive')
-
-
-# Vergessen Sie nicht die Dateien für diese Übung zu entpacken (üblicherweise über das sich per Rechtsklick auf die Zip-Datei öffnende Kontextmenü) und an einer geeigneten Stelle in Ihrem Dateisystem abzulegen (zum Beispiel dort, wo Sie Ihre Notebooks bearbeiten, dann können Sie ganz einfach auf den Ordner mit den Beispieldateien für dieses Notebook zugreifen). 
+# für Windows:
+# ```
+# C:\Users\username\Documents\Lehre\Python\dateien_verarbeiten.ipynb
+# ```
 # 
-# In Google Colab geht das Entpacken mit diesem Befehl - natürlich nachdem Sie die Beispieldaten auf Ihrem Drive abgelegt haben und mittels der vorangegangenen Codeblocks Zugriff auf Ihr Drive erteilt haben (wenn Sie Anaconda nutzen, müssen Sie das nicht ausführen):
+# Dies ist der *absolute* Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von `dateien_verarbeiten.ipynb` an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (/) getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (\\) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).
+# 
+# Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit *relativen* Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt im Ordner "Lehre" auf einem Rechner. Der (relative) Dateipfad zum Notebook wäre dann:
+# ```
+# Python/dateien_verarbeiten.ipynb
+# ```
+# Durch Angabe von ".." ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner "Documents" z.B. neben "Lehre" auch einen Ordner "Publikationen". Angenommen ich hätte ein Python-Skript im Ordner "Publikationen" gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad zum Notebook dann:
+# ```
+# ../Lehre/Python/dateien_verarbeiten.ipynb
+# ```
 
-# In[ ]:
+# Beachten Sie, dass Sie Dateien, mit denen Sie in einem Notebook arbeiten wollen, an einer geeigneten Stelle in Ihrem Dateisystem abzulegen, zum Beispiel dort, wo Sie Ihre Notebooks bearbeiten, dann können Sie ganz einfach darauf zugreifen. 
 
-
-get_ipython().system('unzip 4_Beispieldateien.zip')
-
-
-# ### Dateien öffnen, lesen und schreiben
+# ## Dateien öffnen, lesen und schreiben
 # In dieser Einführung arbeiten wir ausschließlich mit textbasierten Dateiformaten (also z.B. txt, csv, json, html, tsv, md, tex, py, ...). Diese Dateien lassen sich einfach als String auslesen, der zugleich den Inhalt der Datei repräsentiert. Komplexe Formate, wie Bilder (jpgs, png, tiff, ...), PDFs, Worddokumente, Exceldateien oder Video- und Audioformate bestehen zwar letztlich auch nur aus Zeichenketten, sind aber auf eine bestimmte Weise *codiert*. Auch solche Dateien können Sie mit Python bearbeiten; hierfür werden aber bestimmte Programmbibliotheken benötigt. Falls Sie in einem eigenen Projekt mit einem dieser Formate arbeiten wollen, finden Sie die entsprechenden Bibliotheken meist nach einer kurzen Suche im Internet.
 # 
 # Das Bearbeiten einer Datei beginnt immer mit der Funktion `open()`. Im folgenden Codeblock erstellen wir eine Testdatei, in der wir den ersten Satz aus Kafkas *Prozess* speichern.
@@ -68,9 +43,11 @@ get_ipython().system('unzip 4_Beispieldateien.zip')
 # In[ ]:
 
 
-first_sentence_prozess = "Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet."
+first_sentence_prozess = '''Jemand musste Josef K. verleumdet haben, 
+denn ohne dass er etwas Böses getan hätte, 
+wurde er eines Morgens verhaftet. '''
 
-prozess_file = open("4_Beispieldateien/Der Prozess.txt", "w")
+prozess_file = open("../data/der_prozess.txt", "w")
 prozess_file.write(first_sentence_prozess)
 prozess_file.close()
 
@@ -80,22 +57,28 @@ prozess_file.close()
 # In[ ]:
 
 
-first_sentence_prozess = "Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. "
+first_sentence_prozess = '''Jemand musste Josef K. verleumdet haben, 
+denn ohne dass er etwas Böses getan hätte, 
+wurde er eines Morgens verhaftet. '''
 
-with open("4_Beispieldateien/Der Prozess.txt", "w") as prozess_file:
+with open("../data/der_prozess.txt", "w") as prozess_file:
     prozess_file.write(first_sentence_prozess)
 
 
-# Wenn Sie "w" als zweiten Parameter für `open()` verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Schauen Sie doch mal im Ordner "4_Beispieldateien" nach, ob Sie darin die Datei "Der Prozess" finden. 
+# Wenn Sie "w" als zweiten Parameter für `open()` verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner "data" sollte sich nun die Datei "der_prozess" finden. 
 # 
 # Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter "a" (append).
 
 # In[ ]:
 
 
-second_sentence_prozess = "Die Köchin der Frau Grubach, seiner Zimmervermieterin, die ihm jeden Tag gegen acht Uhr früh das Frühstück brachte, kam diesmal nicht."
+second_sentence_prozess = '''
+Die Köchin der Frau Grubach, 
+seiner Zimmervermieterin, 
+die ihm jeden Tag gegen acht Uhr früh das Frühstück brachte, 
+kam diesmal nicht.'''
 
-with open("4_Beispieldateien/Der Prozess.txt", "a") as prozess_file:
+with open("../data/der_prozess.txt", "a") as prozess_file:
     prozess_file.write(second_sentence_prozess)
 
 
@@ -104,7 +87,7 @@ with open("4_Beispieldateien/Der Prozess.txt", "a") as prozess_file:
 # In[ ]:
 
 
-with open("4_Beispieldateien/Der Prozess.txt", "r") as prozess_file:
+with open("../data/der_prozess.txt", "r") as prozess_file:
     prozess_content = prozess_file.read()
 
 print(prozess_content)
@@ -115,29 +98,30 @@ print(prozess_content)
 # In[ ]:
 
 
-file_name = "4_Beispieldateien/Adliger Vergleich.txt"
+file_name = "../data/adliger_vergleich.txt"
 
 with open(file_name, "r") as arbitration_file:
     arbitration_content = arbitration_file.readlines()
 
 for line in arbitration_content:
-    print("Textzeile", line)
-    print("Die Zeile ist {} Zeichen lang.".format(len(line)))
+    print("Textzeile: ", line)
+    print(f"Die Zeile ist {len(line)} Zeichen lang.")
+    print('*' * 20)
 
 
 # In[ ]:
 
 
-file_name = "4_Beispieldateien/Adliger Vergleich.txt"
+file_name = "../data/adliger_vergleich.txt"
 
 with open(file_name, "r") as arbitration_file:
     arbitration_content = arbitration_file.read()
 
 print("Dateiinhalt:\n" + arbitration_content + "\n")
-print("Der Dateiinhalt umfasst {} Zeichen.".format(len(arbitration_content)))
+print(f"Der Dateiinhalt umfasst {len(arbitration_content)} Zeichen.")
 
 
-# ### Zeichenkodierung
+# ## Zeichenkodierung
 # 
 # Möglicherweise haben Sie bei der Durchsicht der Ausgabeergebnisse festgestellt, dass manche Wörter etwas seltsam aufgelöst werden. Statt "gräflich" finden wir im Output bspw. die Zeichenfolge "grÃ¤flich". Hierbei handelt es sich um einen Konflikt bezüglich der Kodierung des Textbestandes. Die Daten sind anders kodiert als es unser Interpreter standardmäßig vermutet. 
 # 
@@ -149,17 +133,18 @@ print("Der Dateiinhalt umfasst {} Zeichen.".format(len(arbitration_content)))
 # In[ ]:
 
 
-file_name = "4_Beispieldateien/Adliger Vergleich.txt"
+file_name = "../data/adliger_vergleich.txt"
 
-with open(file_name, "r", encoding="UTF-8") as arbitration_file:
+with open(file_name, "r", encoding="utf8") as arbitration_file:
     arbitration_content = arbitration_file.read()
 
 print("Dateiinhalt:\n" + arbitration_content + "\n")
-print("Der Dateiinhalt umfasst {} Zeichen.".format(len(arbitration_content)))
+print(f"Der Dateiinhalt umfasst {len(arbitration_content)} Zeichen.")
 
 
-# #### **Zwischenaufgabe: Textdaten speichern**
-# Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der Aufgabe zur Berechnung der Primzahlen aus dem zweiten Notebook so an, dass die Ergebnisse nicht mehr mit `print()` ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. (Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der in Moodle zur Verfügung gestellten Musterlösung.)
+# ## Aufgabe: Textdaten speichern
+# 
+# Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der [Aufgabe zur Berechnung](aufgabe-primzahlen-ausgeben) der Primzahlen so an, dass die Ergebnisse nicht mehr mit `print()` ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der zur Verfügung gestellten Musterlösung.
 
 # In[ ]:
 

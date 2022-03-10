@@ -9,7 +9,7 @@ logo: Logo_DigitalHistoryBerlin.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: "off"
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -31,6 +31,9 @@ latex:
 # html:
 #   use_issues_button: false
 #   use_repository_button: true
+
+launch_buttons:
+  thebe: true
 
 # launch_buttons:
 #   notebook_interface: "jupyterlab"

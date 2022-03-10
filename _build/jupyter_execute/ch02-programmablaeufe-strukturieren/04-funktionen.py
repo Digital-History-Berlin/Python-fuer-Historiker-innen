@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## [Funktionen](https://www.python-kurs.eu/python3_funktionen.php)
+# # [Funktionen](https://www.python-kurs.eu/python3_funktionen.php)
 # 
-# ### Definition von Funktionen
-# Funktionen dienen dazu Codeblöcke wiederverwendbar zu machen. Oft ist es erforderlich, bestimmte Aufgaben innerhalb eines Programms auch unabhängig von bestimmten Vorbedingungen (wie bei Schleifen) mehrfach auszuführen[1]. Nehmen wir an, Sie möchten herausfinden, welche von zwei Zahlen größer ist als die andere:
+# ## Definition von Funktionen
+# Funktionen dienen dazu Codeblöcke wiederverwendbar zu machen. Oft ist es erforderlich, bestimmte Aufgaben innerhalb eines Programms auch unabhängig von bestimmten Vorbedingungen (wie bei Schleifen) mehrfach auszuführen[^fn1]. Nehmen wir an, Sie möchten herausfinden, welche von zwei Zahlen größer ist als die andere:
 
-# In[1]:
+# In[ ]:
 
 
 number_a = 42
@@ -22,7 +22,7 @@ else:
 
 # Wenn Sie nun an einer anderen Stelle in Ihrem Programm wieder zwei Zahlen miteinander vergleichen möchten, könnten Sie natürlich den obigen Code kopieren und an anderer Stelle wieder einfügen. Das macht ihr Programm jedoch nicht nur umfangreicher und damit schlechter lesbar, sondern auch anfälliger für Fehler und schwieriger zu warten, wenn Sie zu einem späteren Zeitpunkt Änderungen vornehmen wollen. Sie können obigen Code daher in einer *Funktion* kapseln:
 
-# In[2]:
+# In[ ]:
 
 
 def compare_numbers():
@@ -40,16 +40,15 @@ compare_numbers()
 compare_numbers()
 
 
-# Wie Sie sehen können werden Funktionen mit dem Schlüsselwort `def` definiert. Hinter dem durch Sie vergebenen Namen der Funktion müssen außerdem immer zwei Runde Klammern folgen. Das Einrücken von Codeblöcken kennen Sie bereits von `if` und `while`.
+# Wie Sie sehen können, werden Funktionen mit dem Schlüsselwort `def` definiert. Hinter dem durch Sie vergebenen Namen der Funktion müssen außerdem immer zwei Runde Klammern folgen. Das Einrücken von Codeblöcken kennen Sie bereits von `if` und `while`.
 # 
 # In den Zeilen 12 und 13 sehen Sie, wie die Funktion jeweils einmal ausgeführt wird. Auch hier müssen auf den Namen der Funktion die runden Klammern folgen.
 
-# [1] Für das Konzept der *Funktion* gibt es in unterschiedlichen Programmiersprachen unterschiedliche Bezeichnungen. Oft ist auch von *Methoden* oder *(Sub-)Routinen* die Rede. Allgemein bedeuten diese Begriffe aber das Gleiche.
-
-# ### Parameter
+# ## Parameter
+# 
 # So wie wir unsere Funktion konzipiert haben vergleicht sie immer nur die Zahlen 42 und 23 miteinander -- das ist natürlich sehr unflexibel und wenig hilfreich. Wie gehen wir also vor, wenn Sie zwei *beliebige* Zahlen miteinander vergleichen wollen? Schauen Sie sich den nächsten Codeblock an. Fällt Ihnen etwas auf?
 
-# In[3]:
+# In[ ]:
 
 
 def compare_numbers(number_a, number_b):
@@ -63,7 +62,7 @@ def compare_numbers(number_a, number_b):
 
 # Hier haben wir die Zuweisungen der Variablen `number_a` und `number_b` entfernt und diese Variablen stattdessen in den Klammern hinter dem Funktionsnamen erstmals genannt. Damit werden diese Variablen zu den *Parametern* der Funktion. Das sind Argumente, die der Funktion bei ihrem Aufruf übergeben werden. Mit diesen Argumenten arbeitet die Funktion dann auf eine bestimmte Art und Weise. Bei den konkreten Variablen-Bezeichnungen handelt es sich zunächst einmal um Platzhalter, die dann beim Aufruf der Funktion durch konkrete Werte ersetzt werden. Wie die Funktion die konkreten Argumente erhält, sehen Sie nachfolgend:
 
-# In[4]:
+# In[ ]:
 
 
 compare_numbers(12, 15)
@@ -71,9 +70,9 @@ compare_numbers(16, 16)
 compare_numbers(15, 12)
 
 
-# Sowohl die Anzahl, als auch die Reihenfolge der Werte, die der Funktion als Paramter übergeben werden sind relevant. Beides ist bei der Definition der Funktion festgelegt. Folgende Aufrufe führen zu Fehlern:
+# Sowohl die Anzahl, als auch die Reihenfolge der Werte, die der Funktion als Parameter übergeben werden sind relevant. Beides ist bei der Definition der Funktion festgelegt. Folgende Aufrufe führen zu Fehlern:
 
-# In[5]:
+# In[ ]:
 
 
 compare_numbers(12)
@@ -87,8 +86,9 @@ compare_numbers(12, 15, 23)
 
 # Grundsätzlich kennen Sie die Syntax von Funktionen bereits aus dem letzten Notebook. `print()`, `format()` oder `type()` ruft jeweils anderswo definierten Programmcode auf und nimmt bei diesem Aufruf eine bestimmte Anzahl von Paramtern an (wie bei `print("Hallo")`; hier ist der String `"Hallo"` der übergebene Parameter).
 
-# ### Namensräume
-# Bei der Arbeit mit Funktionen ist ein Konzept sehr wichtig: der sog. *Namensraum*. Namensräume bezeichnen Bereiche innerhalb Ihres Programms, in denen Variablen gültig sind. Das kennen Sie gewissermaßen auch aus alltäglichen Konzepten, wie Ihrem Familien- und Freundeskreis. Wenn Sie mit einer Ihnen nahestehenden Person über eine andere Person sprechen, reicht es oft, wenn Sie einfach einen Vornamen verwenden. Sie können Informationen reduzieren, weil Vieles bereits als bekannt vorausgesetzt werden kann. Flüchtigen Bekanntschaften gegenüber sind diese Informationen aber u.U. nicht bekannt und sie können mit einem einfachen Vornamen nichts anfangen. Ein anderes Beispiel sind Telefon- bzw. Handynummern, die innerhalb eines bestimmten Vorwahlbereichs Gültigkeit besitzen oder Matrikelnummern, die in Abhängigkeit von der jeweiligen Universität zu konkreten Personen verweisen, davon unabhängig aber keine Bedeutung haben.
+# ## Namensräume
+# 
+# Bei der Arbeit mit Funktionen ist ein Konzept sehr wichtig: der sog. *Namensraum*. Namensräume bezeichnen Bereiche innerhalb Ihres Programms, in denen Variablen gültig sind. Das kennen Sie gewissermaßen auch aus alltäglichen Konzepten, wie Ihrem Familien- und Freundeskreis. Wenn Sie mit einer Ihnen nahestehenden Person über eine andere Person sprechen, reicht es oft, wenn Sie einfach einen Vornamen verwenden. Sie können Informationen reduzieren, weil Vieles bereits als bekannt vorausgesetzt werden kann. Flüchtigen Bekanntschaften gegenüber sind diese Informationen aber unter Umständen nicht bekannt und sie können mit einem einfachen Vornamen nichts anfangen. Ein anderes Beispiel sind Telefon- bzw. Handynummern, die innerhalb eines bestimmten Vorwahlbereichs Gültigkeit besitzen oder Matrikelnummern, die in Abhängigkeit von der jeweiligen Universität zu konkreten Personen verweisen, davon unabhängig aber keine Bedeutung haben.
 # 
 # Wie gestaltet sich das nun in unseren Programmcodes? Sehen Sie sich den nachfolgenden Code an. Welches Ergebnis erwarten Sie? Führen Sie den Code anschließend aus.
 
@@ -117,7 +117,7 @@ my_function()
 print(my_number)
 
 
-# Hoppla! Da ist ein Fehler aufgetreten. Was ist passiert?
+# Ein Fehler ist aufgetreten: Was ist passiert?
 # 
 # In Zeile 2 ist dem Python-Interpreter die Variable `my_number` noch gar nicht bekannt. Zwar wurde schon vor dem Aufruf der Funktion (also bevor der Fehler auftritt) eine Variable `my_number` definiert, das jedoch in einem anderen Namensraum, nicht innerhalb der Funktion. Wenn Sie die in Zeile 5 deklarierte `my_number` innerhalb der Funktion verwenden möchten, müssen Sie ihr die Variable wie oben beschrieben als Parameter übergeben.
 # 
@@ -142,7 +142,8 @@ print(my_number)
 
 # Konnten Sie nachvollziehen, was hier passiert?
 
-# ### Ergebnisse weiterverarbeiten
+# ## Ergebnisse weiterverarbeiten
+# 
 # Kehren wir nochmal zu unserem Ausgangsbeispiel zurück, bei dem zwei Zahlen miteinander verglichen werden:
 
 # In[ ]:
@@ -207,4 +208,6 @@ print(is_greater(42, 21))
 print(is_greater(23, 50))
 
 
-# Damit kennen Sie nun einige Grundlagen zur Konzeption von Funktionen. Es gibt noch einige weitere Gestaltungsmöglichkeiten, die für diesen Kurs aber nicht zwingend relevant sind (z.B. die Angabe von Default-Werten, mit denen die Funktion arbeiten soll, wenn keine konkreten Parameter übergeben werden). Wenn Sie das Thema gerne vertiefen möchten, empfehle ich die folgende Website: https://www.python-kurs.eu/python3_funktionen.php.
+# Damit kennen Sie nun einige Grundlagen zur Konzeption von Funktionen. Es gibt noch einige weitere Gestaltungsmöglichkeiten, z.B. die Angabe von Default-Werten, mit denen die Funktion arbeiten soll, wenn keine konkreten Parameter übergeben werden. Wenn Sie das Thema gerne vertiefen möchten, ist die  Website [Python3 - Tutorial: Funktionen](https://www.python-kurs.eu/python3_funktionen.php) zu empfehlen.
+
+# [^fn1]: Für das Konzept der *Funktion* gibt es in unterschiedlichen Programmiersprachen unterschiedliche Bezeichnungen. Oft ist auch von *Methoden* oder *(Sub-)Routinen* die Rede. Allgemein bedeuten diese Begriffe aber das Gleiche.

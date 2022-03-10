@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Bedingte Anweisungen
+# # Bedingte Anweisungen
 # 
-# ### [Boolesche Werte](https://www.w3schools.com/python/python_booleans.asp)
+# ## [Boolesche Werte](https://www.w3schools.com/python/python_booleans.asp)
 # Nachdem Sie in der letzten Einheit schon einige Datentypen kennengelernt haben (*int*, *float*, *string* usw.), fügen wir nun dieser Liste noch einen Weiteren hinzu: den Datentyp *Boolean*. Er kann lediglich zwei Werte annehmen: `True` oder `False`. Sie können damit also sog. Wahrheitswerte abbilden. Benannt wurde dieser Datentyp übrigens nach [George Boole](https://de.wikipedia.org/wiki/George_Boole), der mit der [Booleschen Algebra](https://de.wikipedia.org/wiki/Boolesche_Algebra) einen für die Computertechnik grundlegenden Zweig der Mathematik begründete.
 # 
-# In Python können wir boolsche Variablen durch die bekannte Form der Zuweisung deklarieren:
+# In Python können wir boolesche Variablen durch die bekannte Form der Zuweisung deklarieren:
 
-# In[1]:
+# In[ ]:
 
 
 is_spam = True
@@ -20,12 +20,12 @@ print(is_spam)
 
 # In den meisten Fällen werden wir uns diesen Datentyp aber zu Nutze machen, um zu prüfen, ob logische Aussagen richtig oder falsch sind ... und das werden wir sehr häufig prüfen wollen. Oft möchten wir z.B. wissen, ob eine bestimmte Zeichenkette in einem Text auftaucht, dazu können wir das Schlüsselwort `in` nutzen:
 
-# In[2]:
+# In[ ]:
 
 
 example_text = '''Die Editionswissenschaft erlebt nicht zuletzt wegen einer 
-                  erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden 
-                  der Digital Humanities einen regelrechten Hype.'''
+erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden 
+der Digital Humanities einen regelrechten Hype.'''
 
 print("Editionswissenschaft" in example_text)
 print("Text Mining" in example_text)
@@ -33,17 +33,18 @@ print("Text Mining" in example_text)
 
 # Durch Ergänzung des Schlüsselworts `not` können Sie eine Abfrage auch negieren:
 
-# In[3]:
+# In[ ]:
 
 
 print("Editionswissenschaft" not in example_text)
 print("Text Mining" not in example_text)
 
 
-# ### Vergleichsoperatoren
-# Neben den Schlüsselwörtern `in` oder `not in` können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Übungsnotebook kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie `True` oder `False` sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:
+# ## Vergleichsoperatoren
+# 
+# Neben den Schlüsselwörtern `in` oder `not in` können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie `True` oder `False` sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:
 
-# In[4]:
+# In[ ]:
 
 
 # kleiner als; Notieren Sie sich vor der Ausführung des Codeblocks, 
@@ -74,19 +75,18 @@ print(5 == 5)
 print("42" == 42)
 
 
-# Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (`==`) verwendet werden, da, wie Sie im vergangenen Notebook gelernt haben, das einfache Gleichheitszeichen (`=`) bereits für die Zuweisung von Werten zu Variablen reserviert ist.
+# Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (`==`) verwendet werden, da, wie Sie im ersten Kapitel gelernt haben, das einfache Gleichheitszeichen (`=`) bereits für die Zuweisung von Werten zu Variablen reserviert ist.
 # 
 # Der Operator zur Prüfung der Ungleichheit hingegen besteht aus einem Ausrufezeichen gefolgt von einem einzelnen Gleichheitszeichen:
 
-# In[5]:
+# In[ ]:
 
 
 print(5 != 5)
 
 
-# Das müssen wir uns einfach merken.
-
-# ### [Bedingte Abfragen mit if, elif und else](https://www.python-kurs.eu/python3_bedingte_anweisungen.php)
+# ## [Bedingte Abfragen mit if, elif und else](https://www.python-kurs.eu/python3_bedingte_anweisungen.php)
+# 
 # Was können wir nun alles mit den Operatoren und den Datentypen, die wir bisher kennengelernt und in diesem Notebook noch kennenlernen werden, anstellen? 
 # 
 # Bisher haben wir unsere Programme vor allem als eine Abfolge von Instruktionen geschrieben: 
@@ -99,29 +99,31 @@ print(5 != 5)
 # 
 # Wirklich interessant wird es, wenn wir unsere Programme so gestalten, dass bestimmte Schritte nur dann ausgeführt werden, wenn etwaige Vorbedingungen erfüllt sind. Solche logischen Verzweigungen können wir mithilfe der eben kennengelernten Operatoren und Wahrheitswerte und den sogenannten `if`-Abfragen definieren:
 
-# In[6]:
+# In[ ]:
 
 
-sub_string = input("Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: ")
+sub_string = input('''Geben Sie ein Wort ein, für das Sie prüfen wollen, 
+ob es in unserem Beispieltext vorkommt: ''')
 
 if sub_string in example_text:
-    print("Die Zeichenkette '{}' ist Teil von example_text.".format(sub_string))
+    print(f"Die Zeichenkette '{sub_string}' ist Teil von example_text.")
 
 else:
-    print("Tut mir leid, die Zeichenkette '{}' ist nicht Teil von example_text.".format(sub_string))
+    print(f"Tut mir leid, die Zeichenkette '{sub_string}' ist nicht Teil von example_text.")
 
 print("Das Programm ist beendet.")
 
 
-# Wie Sie sehen, müssen Sie einfach nur die Abfrage, die Sie stellen wollen, hinter das Schlüsselwort `if` einfügen. Nach einem Doppelpunkt folgt der Teil des Programmcodes, der nur dann ausgeführt wird, wenn die Abfrage den Wert `True` ergibt, andernfalls wird ausgeführt, was wir unter `else` definiert haben. Die Angabe einer `else`-Anweisung ist optional. Wir könnten sie auch weglassen, dann würde das Programm, wenn die `if`-Abfrage nicht den Wert `True` ergibt, einfach zum abschließenden `print`-Statement springen:
+# Wie Sie sehen, müssen Sie einfach nur die Abfrage, die Sie stellen wollen, hinter das Schlüsselwort `if` einfügen. Nach einem Doppelpunkt folgt der Teil des Programmcodes, der nur dann ausgeführt wird, wenn die Abfrage den Wert `True` ergibt, andernfalls wird ausgeführt, was wir unter `else` definiert haben. Die Angabe einer `else`-Anweisung ist optional. Wir könnten sie im konkreten Fall auch weglassen, dann würde das Programm, wenn die `if`-Abfrage nicht den Wert `True` ergibt, einfach zum abschließenden `print`-Statement springen:
 
 # In[ ]:
 
 
-sub_string = input("Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: ")
+sub_string = input('''Geben Sie ein Wort ein, für das Sie prüfen wollen, 
+ob es in unserem Beispieltext vorkommt: ''')
 
 if sub_string in example_text:
-    print("Die Zeichenkette '{}' ist Teil von example_text.".format(sub_string))
+    print(f"Die Zeichenkette '{sub_string}' ist Teil von example_text.")
 
 print("Das Programm ist beendet.")
 
@@ -137,12 +139,13 @@ print("Das Programm ist beendet.")
 # In[ ]:
 
 
-sub_string = input("Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: ")
+sub_string = input('''Geben Sie ein Wort ein, für das Sie prüfen wollen, 
+ob es in unserem Beispieltext vorkommt: ''')
 
 if sub_string in example_text:
-print("Die Zeichenkette '{}' ist Teil von example_text.".format(sub_string))
+print(f"Die Zeichenkette '{sub_string}' ist Teil von example_text.")
 else:
-    print("Tut mir leid, die Zeichenkette '{}' ist nicht Teil von example_text.".format(sub_string))
+    print(f"Tut mir leid, die Zeichenkette '{sub_string}' ist nicht Teil von example_text.")
 
 print("Das Programm ist beendet.")
 
@@ -154,22 +157,28 @@ print("Das Programm ist beendet.")
 
 """Die oberste Ebene ist immer die Ebene ohne Einrückung. 
 Wir könnten Sie das EG unseres Codes nennen oder Ebene 0."""
-sub_string = input("Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: ")
+
+sub_string = input('''Geben Sie ein Wort ein, für das Sie prüfen wollen, 
+ob es in unserem Beispieltext vorkommt: ''')
 
 # immer noch Ebene 0
 if sub_string in example_text:
+
     # Ebene 1
-    print("Die Zeichenkette '{}' ist Teil von example_text.".format(sub_string))
-    print("Wir könnten hier jetzt noch komplexe Berechnungen anstellen oder eine weitere Bedingung prüfen.")
+    print(f"Die Zeichenkette '{sub_string}' ist Teil von example_text.")
+    print("Wir könnten hier jetzt komplexe Berechnungen anstellen oder eine weitere Bedingung prüfen.")
+
     if len(sub_string) < len(example_text):
         # Ebene 2
-        print("Zum Beispiel, ob die Zeichenkette '{}' kürzer ist als example_text ... ist sie.".format(sub_string))
+        print(f"Zum Beispiel, ob die Zeichenkette '{sub_string}' kürzer ist als example_text - ist sie.")
+
     else:
         # Ebene 2
-        print("Zum Beispiel, ob die Zeichenkette '{}' kürzer ist als example_text ... ist sie nicht.".format(sub_string))
+        print(f"Zum Beispiel, ob die Zeichenkette '{sub_string}' kürzer ist als example_text - ist sie nicht.")
+        
 else:
     # Ebene 1
-    print("Tut mir leid, die Zeichenkette '{}' ist nicht Teil von example_text.".format(sub_string))
+    print(f"Tut mir leid, die Zeichenkette '{sub_string}' ist nicht Teil von example_text.")
 
 # wieder Ebene 0
 print("Das Programm ist beendet.")
@@ -179,7 +188,7 @@ print("Das Programm ist beendet.")
 # 
 # Der Code in Zeile 21 gehört nicht mehr zur `if`-`else`-Abfrage und wird immer ausgeführt (solange kein Fehler im Code auftritt) -- unabhängig davon, ob die Auswertung der Bedingungen wahr oder falsch ist. 
 # 
-# #### elif
+# ## Else-if: elif
 # Außerdem haben Sie die Möglichkeit, mehrere `if`-Abfragen in einem Block zusammenzufassen. So können wir zum Beispiel eine dritte Option zu unserer Abfrage hinzufügen, die den Fall behandelt, in dem beide Zeichenketten identisch sind. Verwenden Sie hierfür das Schlüsselwort `elif` (kurz für "else if"). Die Syntax von `elif` ist identisch zu der von `if`.
 
 # In[ ]:
@@ -188,11 +197,11 @@ print("Das Programm ist beendet.")
 sub_string = example_text
 
 if sub_string in example_text:
-    print("Die Zeichenkette '{}' ist Teil von example_text.".format(sub_string))
+    print(f"Die Zeichenkette '{sub_string}' ist Teil von example_text.")
 elif sub_string == example_text:
-    print("Die Zeichenkette '{}' ist mit example_text identisch.".format(sub_string))
+    print(f"Die Zeichenkette '{sub_string}' ist mit example_text identisch.")
 else:
-    print("Tut mir leid, die Zeichenkette '{}' ist nicht Teil von example_text.".format(sub_string))
+    print(f"Tut mir leid, die Zeichenkette '{sub_string}' ist nicht Teil von example_text.")
 
 
 # Das ist aber offensichtlich nicht das Ergebnis, das wir eigentlich erreichen wollten. Im Fall des obigen Codeblocks ist `sub_string` ja nicht nur ein Teil von `example_text`; die beiden Zeichenketten sind identisch. Trotzdem wird nur Zeile 4, nicht Zeile 6 ausgeführt. Das liegt daran, dass der Python-Interpreter den Code von oben nach unten durchgeht und ausführt. Zeile 3, die erste `if`-Abfrage, gibt bereits `True` als Ergebnis zurück; daher wird der entsprechende Block direkt ausgeführt und nicht mehr geprüft, ob andere Alternativen besser passen. Wir müssen daher `if`-Blöcke mit mehreren `elif`s so konstruieren, dass *spezifische* Aussagen abgefragt werden, bevor *allgemeine* Aussagen geprüft werden ("ist gleich" ist spezifischer als "ist ein Teil von"). Die Lösung ist daher relativ simpel; wir müssen nur Zeile 3 und 5 miteinander vertauschen:
@@ -203,31 +212,35 @@ else:
 sub_string = example_text
 
 if sub_string == example_text:
-    print("Die Zeichenkette '{}' ist mit example_text identisch.".format(sub_string))
+    print(f"Die Zeichenkette '{sub_string}' ist mit example_text identisch.")
 elif sub_string in example_text:
-    print("Die Zeichenkette '{}' ist Teil von example_text.".format(sub_string))
+    print(f"Die Zeichenkette '{sub_string}' ist Teil von example_text.")
 else:
-    print("Die Zeichenkette '{}' ist nicht Teil von example_text.".format(sub_string))
+    print(f"Die Zeichenkette '{sub_string}' ist nicht Teil von example_text.")
 
 
 # Sie können beliebig viele `elif`-Abfragen hinzufügen, dabei ist aber grundsätzlich die Reihenfolge "if ..., elif ..., elif ..., elif ..., [...], else" zu berücksichtigen. 
 
-# ### Bedingungen verknüpfen
+# ## Bedingungen verknüpfen
 # Sie können in Ihren `if`-Blöcken auch mehrere Bedingungen gleichzeitig abfragen. Diese müssen Sie mit den Schlüsselwörtern `and` oder `or` miteinander verknüpfen. Diese entsprechen dem logischen UND bzw. ODER. Wie sich die Kombination von *wahren* (w) und *falschen* (f) Aussagen mit UND bzw. ODER auf den Wahrheitswert der Gesamtaussage auswirkt, zeigt folgende Tabelle:
 # 
-# | Aussage_1 | Aussage_2 || and | or |
-# |---|---||-----|----|
-# | w | w || w   | w  |
-# | w | f ||f   | w  |
-# | f | w || f   | w  |
-# | f | f || f   | f  |
+# | Aussage_1 | Aussage_2 | and | or |
+# |:----------|-----------|-----|---:|
+# | w | w | w | w  |
+# | w | f | f | w  |
+# | f | w | f | w  |
+# | f | f | f | f  |
 # 
 # Hier zwei Beispiele: Überlegen Sie bevor Sie den Code ausführen, ob die Bedingungen erfüllt sind oder nicht. Stimmt die Ausgabe mit Ihrer Vermutung überein?
 
 # In[ ]:
 
 
-dh_definition = "Das interdisziplinär ausgerichtete Fach Digital Humanities (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung."
+dh_definition = '''Das interdisziplinär ausgerichtete Fach Digital Humanities 
+                   (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung 
+                   computergestützter Verfahren und digitaler Ressourcen in den 
+                   Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.'''
+                   
 sub_string = "Editionswissenschaft"
 
 if sub_string in example_text and sub_string in dh_definition:
@@ -239,7 +252,7 @@ else:
 # In[ ]:
 
 
-dh_definition = "Das interdisziplinär ausgerichtete Fach Digital Humanities (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung."
+
 sub_string = "Editionswissenschaft"
 
 if sub_string in example_text or sub_string in dh_definition:
@@ -279,10 +292,11 @@ print("Das Programm ist beendet.")
 # *Was fällt Ihnen auf? Tragen Sie es hier ein:*
 
 # Wir können also mit Python Programme schreiben, die auf Basis der Auswertung von Aussagen entscheiden, ob eine Anweisung ausgeführt oder übersprungen wird oder Programme, die eine von mehreren Anweisungen zur Ausführung auswählen, je nachdem, welche Bedingungen erfüllt wurden.
+
+# ## Aufgabe: Bedingte Anweisungen
 # 
-# **Versuchen Sie einmal, das Gelernte anzuwenden:**
-# Schreiben Sie ein kleines Programm, das eine\*n Nutzer\*in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene `print`-Kommandos ausgeführt werden: "Die Magna Carta stammt aus einem späteren Jahr.", "Die Vereinbarungen stammen aus einem früheren Jahr.", "Die Eingabe ist korrekt!". 
-# Denken Sie dabei daran, dass Sie den Wert der `input`-Funktion in ein `integer` umwandeln müssen. Wie das geht, können Sie im ersten Übungsnotebook ggf. noch mal nachlesen.
+# Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene `print`-Kommandos ausgeführt werden: "Die Magna Carta stammt aus einem späteren Jahr.", "Die Vereinbarungen stammen aus einem früheren Jahr.", "Die Eingabe ist korrekt!". 
+# Denken Sie dabei daran, dass Sie den Wert der `input`-Funktion in ein `integer` umwandeln müssen. Wie das geht, können Sie im ersten Kapitel noch mal nachlesen.
 
 # In[ ]:
 

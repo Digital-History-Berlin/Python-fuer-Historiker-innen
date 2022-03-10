@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -364,23 +367,21 @@
   <a class="reference internal nav-link" href="#strings-formatieren-ein-einstieg">
    Strings formatieren - ein Einstieg
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
-     Groß- und Kleinschreibung ändern
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ausgabe-formatieren">
-     Ausgabe formatieren
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aufgabe">
-     Aufgabe:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
+   Groß- und Kleinschreibung ändern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ausgabe-formatieren">
+   Ausgabe formatieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-skript-uberarbeiten">
+   Aufgabe: Skript überarbeiten
+  </a>
  </li>
 </ul>
 
@@ -435,23 +436,21 @@
   <a class="reference internal nav-link" href="#strings-formatieren-ein-einstieg">
    Strings formatieren - ein Einstieg
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
-     Groß- und Kleinschreibung ändern
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ausgabe-formatieren">
-     Ausgabe formatieren
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aufgabe">
-     Aufgabe:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
+   Groß- und Kleinschreibung ändern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ausgabe-formatieren">
+   Ausgabe formatieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-skript-uberarbeiten">
+   Aufgabe: Skript überarbeiten
+  </a>
  </li>
 </ul>
 
@@ -462,19 +461,17 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="vertiefung-der-arbeit-mit-strings">
 <h1>Vertiefung der Arbeit mit Strings<a class="headerlink" href="#vertiefung-der-arbeit-mit-strings" title="Permalink to this headline">¶</a></h1>
-<p>Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt, mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Unterkapitels in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.</p>
+<p>Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt,um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.</p>
+<p>Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.</p>
 <div class="section" id="lange-von-strings-bestimmen">
 <h2>Länge von Strings bestimmen<a class="headerlink" href="#lange-von-strings-bestimmen" title="Permalink to this headline">¶</a></h2>
 <p>Mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#len">len()</a> kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s2">&quot;Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
+<span class="s1">                  denn ohne dass er etwas Böses getan hätte, </span>
+<span class="s1">                  wurde er eines Morgens verhaftet.&#39;&#39;&#39;</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>117
 </pre></div>
 </div>
 </div>
@@ -489,20 +486,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
 </pre></div>
 </div>
 </div>
@@ -518,23 +505,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-8
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-1
 </pre></div>
 </div>
 </div>
@@ -546,38 +521,19 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
-</pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_9064</span><span class="o">/</span><span class="mf">3881403478.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ß&quot;</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;ß&quot;</span><span class="p">))</span>
-
-<span class="ne">ValueError</span>: substring not found
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Was fällt Ihnen einschränkend bei diesen Funktionen auf?</strong> <em>Ihre Antwort</em></p>
+<p><strong>Was fällt Ihnen einschränkend bei diesen Funktionen auf?</strong></p>
+<p><em>Ihre Antwort</em></p>
 </div>
 <div class="section" id="strings-ersetzen">
 <h2>Strings ersetzen<a class="headerlink" href="#strings-ersetzen" title="Permalink to this headline">¶</a></h2>
-<p>Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace">replace()</a> kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen Parameter verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen zugewiesen werden. Optional kann noch ein dritter Parameter, <em>count</em>, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll.</p>
+<p>Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace">replace()</a> kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen Parameter verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen Variablen zugewiesen werden. Optional kann noch ein dritter Parameter, <em>count</em>, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace old substring with new input</span>
 <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name? (press ENTER when finished)&quot;</span><span class="p">)</span>
 <span class="n">new_text</span> <span class="o">=</span> <span class="n">example_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Jemand&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>What&#39;s your name? (press ENTER when finished)Martin
-Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.
 </pre></div>
 </div>
 </div>
@@ -590,16 +546,11 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin mussta Josaf K. varlaumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="wiederholungen">
 <h2>Wiederholungen<a class="headerlink" href="#wiederholungen" title="Permalink to this headline">¶</a></h2>
-<p>Analog zur Verkettung können Strings auch multipliziert werden, also gewissermaßen mit sich selbst konkateniert. Dazu wird das Multiplikations-Symbol genutzt.</p>
+<p>Analog zur Verkettung können Strings auch multipliziert, also gewissermaßen mit sich selbst konkateniert werden. Dazu wird das Multiplikations-Symbol genutzt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_text</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
@@ -610,7 +561,7 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </div>
 <div class="section" id="konkatenierung">
 <h2>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h2>
-<p>Die Zusammenfügung von Strings durch die “Addition” und “Multiplikation” haben wir nun schon kennengelernt. Es gibt noch eine weitere Variante, mit der Sie Zeichenketten auf eine sehr spezifische Weise verknüpfen können: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.join">join()</a>. Die Funktion wird auf ein Stringobjekt angewendet und gibt eine Zeichenkette zurück, die um die Elemente eines sequenziellen Objekts angereichert wurde.</p>
+<p>Die Zusammenfügung von Strings durch die “Addition” und “Multiplikation” haben wir nun schon kennengelernt. Es gibt noch eine weitere Variante, mit der Sie Zeichenketten auf eine sehr spezifische Weise verknüpfen können: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.join">join()</a>. Die Funktion wird auf ein String-Objekt angewendet und gibt eine Zeichenkette zurück, die um die Elemente eines sequenziellen Objekts angereichert wurde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate join-function</span>
@@ -626,14 +577,27 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate join-function with empty string</span>
-<span class="n">first_sentence</span> <span class="o">=</span> <span class="s2">&quot;Es war die beste und die schlimmste Zeit, ein Jahrhundert der Weisheit und des Unsinns, eine Epoche des Glaubens und des Unglaubens, eine Periode des Lichts und der Finsternis: es war der Frühling der Hoffnung und der Winter der Verzweiflung; wir hatten alles , wir hatten nichts vor uns; wir steuerten alle dem Himmel zu und auch alle unmittelbar in die entgegengesetzte Richtung – mit einem Wort, diese Zeit war der unsrigen so ähnlich, dass ihre geräuschvollsten Vertreter im guten wie im bösen nur den Superlativ auf sie angewendet haben wollten.&quot;</span>
-<span class="n">concat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Der erste Satz in Franz Kafkas &#39;Der Prozeß&#39;: &quot;</span> <span class="o">+</span> <span class="n">example_text</span> <span class="o">+</span> <span class="s2">&quot; Der erste Satz in Charles Dickens&#39; &#39;Eine Geschichte aus zwei Städten&#39;: &quot;</span> <span class="o">+</span> <span class="n">first_sentence</span><span class="p">)</span>
+<span class="n">first_sentence</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Es war die beste und die schlimmste Zeit, </span>
+<span class="s1">                    ein Jahrhundert der Weisheit und des Unsinns, </span>
+<span class="s1">                    eine Epoche des Glaubens und des Unglaubens, </span>
+<span class="s1">                    eine Periode des Lichts und der Finsternis: </span>
+<span class="s1">                    es war der Frühling der Hoffnung und der Winter der Verzweiflung; </span>
+<span class="s1">                    wir hatten alles, wir hatten nichts vor uns; </span>
+<span class="s1">                    wir steuerten alle dem Himmel zu und auch alle unmittelbar in die </span>
+<span class="s1">                    entgegengesetzte Richtung – mit einem Wort, </span>
+<span class="s1">                    diese Zeit war der unsrigen so ähnlich, </span>
+<span class="s1">                    dass ihre geräuschvollsten Vertreter im guten wie im bösen nur </span>
+<span class="s1">                    den Superlativ auf sie angewendet haben wollten.&#39;&#39;&#39;</span>
+<span class="n">concat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Der erste Satz in Franz Kafkas &#39;Der Prozeß&#39;: &quot;</span> \
+                    <span class="o">+</span> <span class="n">example_text</span> <span class="o">+</span> \
+                    <span class="s2">&quot; Der erste Satz in Charles Dickens&#39; &#39;Eine Geschichte aus zwei Städten&#39;: &quot;</span> \
+                    <span class="o">+</span> <span class="n">first_sentence</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">concat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Nützlich: Die nun ausgegebene Zeichenkette ist sehr lang. Sie zu lesen ist umständlich. Sie können durch das Einfügen von “\n” Zeilenumbrüche in Ihre Strings einbauen. Wandeln Sie das vorherige Beispiel so ab, dass nach dem ersten Satz von Kafkas “Der Prozeß” ein Zeilenumbruch erfolgt.</p>
+<p>Die nun ausgegebene Zeichenkette ist sehr lang. Sie zu lesen ist umständlich. Sie können durch das Einfügen von “\n” Zeilenumbrüche in Ihre Strings einbauen. Wandeln Sie das vorherige Beispiel so ab, dass zwischen dem ersten Satz von Kafkas “Der Prozeß” und dem ersten Satz von Dickens zwei Zeilenumbrüche erfolgen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -644,8 +608,9 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </div>
 <div class="section" id="strings-formatieren-ein-einstieg">
 <h2>Strings formatieren - ein Einstieg<a class="headerlink" href="#strings-formatieren-ein-einstieg" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="grosz-und-kleinschreibung-andern">
-<h3>Groß- und Kleinschreibung ändern<a class="headerlink" href="#grosz-und-kleinschreibung-andern" title="Permalink to this headline">¶</a></h3>
+<h2>Groß- und Kleinschreibung ändern<a class="headerlink" href="#grosz-und-kleinschreibung-andern" title="Permalink to this headline">¶</a></h2>
 <p>Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im Codeblock die Funktionsweise der jeweiligen Funktionen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,8 +640,8 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </div>
 </div>
 <div class="section" id="ausgabe-formatieren">
-<h3>Ausgabe formatieren<a class="headerlink" href="#ausgabe-formatieren" title="Permalink to this headline">¶</a></h3>
-<p>Bislang sah die Ausgabe unserer Ergebnisse mit der Print-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diese Lektion soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (“{}”) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
+<h2>Ausgabe formatieren<a class="headerlink" href="#ausgabe-formatieren" title="Permalink to this headline">¶</a></h2>
+<p>Bislang sah die Ausgabe unserer Ergebnisse mit der Print-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diesen Abschnitt soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (“{}”) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
 <p><strong>Ein Beispiel:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -684,37 +649,29 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Beispieltext &#39;Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.&#39;
-ist 117 Zeichen lang.
-</pre></div>
 </div>
-</div>
-</div>
-<p>Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein f vorangestellt und in den geschweiften Klammern können die Variablen einfügt werden.</p>
+<p><strong>f-strings</strong></p>
+<p>Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein ‘f’ vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Beispieltext &#39;</span><span class="si">{</span><span class="n">example_text</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">ist </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">)</span><span class="si">}</span><span class="s2"> Zeichen lang.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Beispieltext &#39;Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.&#39;
-ist 117 Zeichen lang.
-</pre></div>
 </div>
-</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In diesem Jupyter Book werden f-strings für die Formatierung von Strings genutzt.</p>
 </div>
 <p>Ausführliche Informationen zu den Möglichkeiten der Formatierung von Strings finden Sie in der <a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">Python-Dokumentation</a>.</p>
 </div>
-<div class="section" id="aufgabe">
-<h3>Aufgabe:<a class="headerlink" href="#aufgabe" title="Permalink to this headline">¶</a></h3>
-<p>Überarbeiten Sie das von Ihnen am Ende von Kapitel 1.2.2 konzipierte Programm und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
+<div class="section" id="aufgabe-skript-uberarbeiten">
+<h2>Aufgabe: Skript überarbeiten<a class="headerlink" href="#aufgabe-skript-uberarbeiten" title="Permalink to this headline">¶</a></h2>
+<p>Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts <a class="reference internal" href="02-hallo-welt.html#aufgabe-skript-schreiben"><span class="std std-ref">konzipierte Skript</span></a> und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -725,7 +682,7 @@ ist 117 Zeichen lang.
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -753,19 +710,17 @@ ist 117 Zeichen lang.
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="vertiefung-der-arbeit-mit-strings">
 <h1>Vertiefung der Arbeit mit Strings<a class="headerlink" href="#vertiefung-der-arbeit-mit-strings" title="Permalink to this headline">¶</a></h1>
-<p>Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt, mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Unterkapitels in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.</p>
+<p>Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt,um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.</p>
+<p>Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.</p>
 <div class="section" id="lange-von-strings-bestimmen">
 <h2>Länge von Strings bestimmen<a class="headerlink" href="#lange-von-strings-bestimmen" title="Permalink to this headline">¶</a></h2>
 <p>Mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#len">len()</a> kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s2">&quot;Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
+<span class="s1">                  denn ohne dass er etwas Böses getan hätte, </span>
+<span class="s1">                  wurde er eines Morgens verhaftet.&#39;&#39;&#39;</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>117
 </pre></div>
 </div>
 </div>
@@ -780,20 +735,10 @@ ist 117 Zeichen lang.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
 </pre></div>
 </div>
 </div>
@@ -809,23 +754,11 @@ ist 117 Zeichen lang.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-8
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-1
 </pre></div>
 </div>
 </div>
@@ -837,38 +770,19 @@ ist 117 Zeichen lang.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
-</pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_9064</span><span class="o">/</span><span class="mf">3881403478.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ß&quot;</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;ß&quot;</span><span class="p">))</span>
-
-<span class="ne">ValueError</span>: substring not found
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Was fällt Ihnen einschränkend bei diesen Funktionen auf?</strong> <em>Ihre Antwort</em></p>
+<p><strong>Was fällt Ihnen einschränkend bei diesen Funktionen auf?</strong></p>
+<p><em>Ihre Antwort</em></p>
 </div>
 <div class="section" id="strings-ersetzen">
 <h2>Strings ersetzen<a class="headerlink" href="#strings-ersetzen" title="Permalink to this headline">¶</a></h2>
-<p>Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace">replace()</a> kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen Parameter verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen zugewiesen werden. Optional kann noch ein dritter Parameter, <em>count</em>, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll.</p>
+<p>Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace">replace()</a> kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen Parameter verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen Variablen zugewiesen werden. Optional kann noch ein dritter Parameter, <em>count</em>, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace old substring with new input</span>
 <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name? (press ENTER when finished)&quot;</span><span class="p">)</span>
 <span class="n">new_text</span> <span class="o">=</span> <span class="n">example_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Jemand&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>What&#39;s your name? (press ENTER when finished)Martin
-Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.
 </pre></div>
 </div>
 </div>
@@ -881,16 +795,11 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin mussta Josaf K. varlaumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="wiederholungen">
 <h2>Wiederholungen<a class="headerlink" href="#wiederholungen" title="Permalink to this headline">¶</a></h2>
-<p>Analog zur Verkettung können Strings auch multipliziert werden, also gewissermaßen mit sich selbst konkateniert. Dazu wird das Multiplikations-Symbol genutzt.</p>
+<p>Analog zur Verkettung können Strings auch multipliziert, also gewissermaßen mit sich selbst konkateniert werden. Dazu wird das Multiplikations-Symbol genutzt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_text</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
@@ -901,7 +810,7 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </div>
 <div class="section" id="konkatenierung">
 <h2>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h2>
-<p>Die Zusammenfügung von Strings durch die “Addition” und “Multiplikation” haben wir nun schon kennengelernt. Es gibt noch eine weitere Variante, mit der Sie Zeichenketten auf eine sehr spezifische Weise verknüpfen können: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.join">join()</a>. Die Funktion wird auf ein Stringobjekt angewendet und gibt eine Zeichenkette zurück, die um die Elemente eines sequenziellen Objekts angereichert wurde.</p>
+<p>Die Zusammenfügung von Strings durch die “Addition” und “Multiplikation” haben wir nun schon kennengelernt. Es gibt noch eine weitere Variante, mit der Sie Zeichenketten auf eine sehr spezifische Weise verknüpfen können: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.join">join()</a>. Die Funktion wird auf ein String-Objekt angewendet und gibt eine Zeichenkette zurück, die um die Elemente eines sequenziellen Objekts angereichert wurde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate join-function</span>
@@ -917,14 +826,27 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate join-function with empty string</span>
-<span class="n">first_sentence</span> <span class="o">=</span> <span class="s2">&quot;Es war die beste und die schlimmste Zeit, ein Jahrhundert der Weisheit und des Unsinns, eine Epoche des Glaubens und des Unglaubens, eine Periode des Lichts und der Finsternis: es war der Frühling der Hoffnung und der Winter der Verzweiflung; wir hatten alles , wir hatten nichts vor uns; wir steuerten alle dem Himmel zu und auch alle unmittelbar in die entgegengesetzte Richtung – mit einem Wort, diese Zeit war der unsrigen so ähnlich, dass ihre geräuschvollsten Vertreter im guten wie im bösen nur den Superlativ auf sie angewendet haben wollten.&quot;</span>
-<span class="n">concat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Der erste Satz in Franz Kafkas &#39;Der Prozeß&#39;: &quot;</span> <span class="o">+</span> <span class="n">example_text</span> <span class="o">+</span> <span class="s2">&quot; Der erste Satz in Charles Dickens&#39; &#39;Eine Geschichte aus zwei Städten&#39;: &quot;</span> <span class="o">+</span> <span class="n">first_sentence</span><span class="p">)</span>
+<span class="n">first_sentence</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Es war die beste und die schlimmste Zeit, </span>
+<span class="s1">                    ein Jahrhundert der Weisheit und des Unsinns, </span>
+<span class="s1">                    eine Epoche des Glaubens und des Unglaubens, </span>
+<span class="s1">                    eine Periode des Lichts und der Finsternis: </span>
+<span class="s1">                    es war der Frühling der Hoffnung und der Winter der Verzweiflung; </span>
+<span class="s1">                    wir hatten alles, wir hatten nichts vor uns; </span>
+<span class="s1">                    wir steuerten alle dem Himmel zu und auch alle unmittelbar in die </span>
+<span class="s1">                    entgegengesetzte Richtung – mit einem Wort, </span>
+<span class="s1">                    diese Zeit war der unsrigen so ähnlich, </span>
+<span class="s1">                    dass ihre geräuschvollsten Vertreter im guten wie im bösen nur </span>
+<span class="s1">                    den Superlativ auf sie angewendet haben wollten.&#39;&#39;&#39;</span>
+<span class="n">concat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Der erste Satz in Franz Kafkas &#39;Der Prozeß&#39;: &quot;</span> \
+                    <span class="o">+</span> <span class="n">example_text</span> <span class="o">+</span> \
+                    <span class="s2">&quot; Der erste Satz in Charles Dickens&#39; &#39;Eine Geschichte aus zwei Städten&#39;: &quot;</span> \
+                    <span class="o">+</span> <span class="n">first_sentence</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">concat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Nützlich: Die nun ausgegebene Zeichenkette ist sehr lang. Sie zu lesen ist umständlich. Sie können durch das Einfügen von “\n” Zeilenumbrüche in Ihre Strings einbauen. Wandeln Sie das vorherige Beispiel so ab, dass nach dem ersten Satz von Kafkas “Der Prozeß” ein Zeilenumbruch erfolgt.</p>
+<p>Die nun ausgegebene Zeichenkette ist sehr lang. Sie zu lesen ist umständlich. Sie können durch das Einfügen von “\n” Zeilenumbrüche in Ihre Strings einbauen. Wandeln Sie das vorherige Beispiel so ab, dass zwischen dem ersten Satz von Kafkas “Der Prozeß” und dem ersten Satz von Dickens zwei Zeilenumbrüche erfolgen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -935,8 +857,9 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </div>
 <div class="section" id="strings-formatieren-ein-einstieg">
 <h2>Strings formatieren - ein Einstieg<a class="headerlink" href="#strings-formatieren-ein-einstieg" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="grosz-und-kleinschreibung-andern">
-<h3>Groß- und Kleinschreibung ändern<a class="headerlink" href="#grosz-und-kleinschreibung-andern" title="Permalink to this headline">¶</a></h3>
+<h2>Groß- und Kleinschreibung ändern<a class="headerlink" href="#grosz-und-kleinschreibung-andern" title="Permalink to this headline">¶</a></h2>
 <p>Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im Codeblock die Funktionsweise der jeweiligen Funktionen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -966,8 +889,8 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </div>
 </div>
 <div class="section" id="ausgabe-formatieren">
-<h3>Ausgabe formatieren<a class="headerlink" href="#ausgabe-formatieren" title="Permalink to this headline">¶</a></h3>
-<p>Bislang sah die Ausgabe unserer Ergebnisse mit der Print-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diese Lektion soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (“{}”) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
+<h2>Ausgabe formatieren<a class="headerlink" href="#ausgabe-formatieren" title="Permalink to this headline">¶</a></h2>
+<p>Bislang sah die Ausgabe unserer Ergebnisse mit der Print-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diesen Abschnitt soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (“{}”) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
 <p><strong>Ein Beispiel:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -975,37 +898,29 @@ Martin musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan h�
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Beispieltext &#39;Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.&#39;
-ist 117 Zeichen lang.
-</pre></div>
 </div>
-</div>
-</div>
-<p>Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein f vorangestellt und in den geschweiften Klammern können die Variablen einfügt werden.</p>
+<p><strong>f-strings</strong></p>
+<p>Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein ‘f’ vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Beispieltext &#39;</span><span class="si">{</span><span class="n">example_text</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">ist </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">)</span><span class="si">}</span><span class="s2"> Zeichen lang.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Beispieltext &#39;Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.&#39;
-ist 117 Zeichen lang.
-</pre></div>
 </div>
-</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In diesem Jupyter Book werden f-strings für die Formatierung von Strings genutzt.</p>
 </div>
 <p>Ausführliche Informationen zu den Möglichkeiten der Formatierung von Strings finden Sie in der <a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">Python-Dokumentation</a>.</p>
 </div>
-<div class="section" id="aufgabe">
-<h3>Aufgabe:<a class="headerlink" href="#aufgabe" title="Permalink to this headline">¶</a></h3>
-<p>Überarbeiten Sie das von Ihnen am Ende von Kapitel 1.2.2 konzipierte Programm und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
+<div class="section" id="aufgabe-skript-uberarbeiten">
+<h2>Aufgabe: Skript überarbeiten<a class="headerlink" href="#aufgabe-skript-uberarbeiten" title="Permalink to this headline">¶</a></h2>
+<p>Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts <a class="reference internal" href="02-hallo-welt.html#aufgabe-skript-schreiben"><span class="std std-ref">konzipierte Skript</span></a> und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1016,7 +931,7 @@ ist 117 Zeichen lang.
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

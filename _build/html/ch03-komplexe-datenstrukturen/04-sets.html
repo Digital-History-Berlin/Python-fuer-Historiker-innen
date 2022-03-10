@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -331,8 +334,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets-erstellen">
+   Sets erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aufgaben">
-   Aufgaben:
+   Aufgaben
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -367,8 +375,13 @@
                 <nav aria-label="Page">
                     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets-erstellen">
+   Sets erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aufgaben">
-   Aufgaben:
+   Aufgaben
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -390,40 +403,90 @@
             
               <div>
                 
-  <div class="section" id="sets">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sets">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#sets">Sets</a><a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h1>
-<p>Auch für Mengen gibt es in Python einen Datentyp: das <code class="docutils literal notranslate"><span class="pre">set</span></code>. Mengen sind ungeordnete Sammlungen von Objekten ohne doppelte Einträge. Sie sind dann relevant, wenn nicht die Position oder Anzahl eines Elements von Relevanz ist, sondern sein bloßes Vorkommen. Ein Anwendungsbeispiel: Wenn Sie zum Beispiel wissen möchten, wie viele einzigartige Wörter in Ihrem unter 3.2.7 bearbeiteten Text enthalten sind, dann können Sie ihn in ein Set umwandeln. Im nachfolgenden Codeblock demonstrieren wir das einmal anhand unseres Beispieltextes:</p>
+<p>Auch für Mengen gibt es in Python einen Datentyp: das <code class="docutils literal notranslate"><span class="pre">set</span></code>. Mengen sind ungeordnete Sammlungen von Objekten ohne doppelte Einträge. Sie sind dann relevant, wenn nicht die Position oder Anzahl eines Elements von Relevanz ist, sondern sein bloßes Vorkommen. Ein Anwendungsbeispiel: Wenn Sie zum Beispiel wissen möchten, wie viele einzigartige Wörter in einem Text enthalten sind, dann können Sie ihn in ein Set umwandeln. Im nachfolgenden Codeblock demonstrieren wir das einmal anhand unseres Beispieltextes.</p>
+<div class="section" id="sets-erstellen">
+<h2>Sets erstellen<a class="headerlink" href="#sets-erstellen" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">report</span> <span class="o">=</span> <span class="s2">&quot;Die Editionswissenschaft erlebt nicht zuletzt wegen einer erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden der Digital Humanities einen regelrechten Hype. Digitale Methoden drängen sich besonders an den Stellen auf, wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle strukturelle Änderungen ergeben: so können analoge Editionen angereichert werden oder Editionen können als Hybrid durch eine gleichwertige digitale und analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, die die Produkte der Editionswissenschaft publizieren und langfristig verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für die Editionswissenschaft gibt.&quot;</span>
-
-<span class="c1"># split text into list of words</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
+<span class="s1">            erfolgreichen Kombination von traditionellen Arbeitsweisen </span>
+<span class="s1">            mit Methoden der Digital Humanities einen regelrechten Hype. </span>
+<span class="s1">            Digitale Methoden drängen sich besonders an den Stellen auf, </span>
+<span class="s1">            wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. </span>
+<span class="s1">            Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen </span>
+<span class="s1">            nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle </span>
+<span class="s1">            strukturelle Änderungen ergeben: so können analoge Editionen angereichert </span>
+<span class="s1">            werden oder Editionen können als Hybrid durch eine gleichwertige digitale und </span>
+<span class="s1">            analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen</span>
+<span class="s1">            Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, </span>
+<span class="s1">            die die Produkte der Editionswissenschaft publizieren und langfristig </span>
+<span class="s1">            verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung </span>
+<span class="s1">            und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution </span>
+<span class="s1">            müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt </span>
+<span class="s1">            und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel </span>
+<span class="s1">            veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” </span>
+<span class="s1">            betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, </span>
+<span class="s1">            welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für </span>
+<span class="s1">            die Editionswissenschaft gibt.&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split text into list of words</span>
 <span class="n">tokenized_report</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
 <span class="c1"># compute and print length of report</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der Tagungsbericht zur Veranstaltung </span><span class="se">\&quot;</span><span class="s2">Digitale Metamorphose. Digital Humanities und Editionswissenschaft</span><span class="se">\&quot;</span><span class="s2"> enthält insgesamt </span><span class="si">{}</span><span class="s2"> Wörter.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Der Tagungsbericht &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; </span>
+<span class="s1">enthält insgesamt </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)</span><span class="si">}</span><span class="s1"> Wörter.&#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># transform list into set</span>
 <span class="n">unique_words_report</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)</span>
 
 <span class="c1"># compute and print length of set</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der Tagungsbericht zur Veranstaltung </span><span class="se">\&quot;</span><span class="s2">Digitale Metamorphose. Digital Humanities und Editionswissenschaft</span><span class="se">\&quot;</span><span class="s2"> enthält </span><span class="si">{}</span><span class="s2"> verschiedene Wörter.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_words_report</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Der Tagungsbericht &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; </span>
+<span class="s1">enthält </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_words_report</span><span class="p">)</span><span class="si">}</span><span class="s1"> verschiedene Wörter.&#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># print set</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">unique_words_report</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Tagungsbericht zur Veranstaltung &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; enthält insgesamt 170 Wörter.
-Der Tagungsbericht zur Veranstaltung &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; enthält 131 verschiedene Wörter.
-{&#39;Humanities&#39;, &#39;bzw.&#39;, &#39;Gefahren&#39;, &#39;gibt.&#39;, &#39;Grundlegende&#39;, &#39;Möglichkeiten&#39;, &#39;Tagung&#39;, &#39;mit&#39;, &#39;vor&#39;, &#39;Die&#39;, &#39;sich&#39;, &#39;digitalen&#39;, &#39;Vernetzung&#39;, &#39;zeichnet&#39;, &#39;können&#39;, &#39;ab,&#39;, &#39;werden&#39;, &#39;der&#39;, &#39;anders&#39;, &#39;welche&#39;, &#39;ergeben:&#39;, &#39;es&#39;, &#39;neuen&#39;, &#39;vom&#39;, &#39;Wechsel&#39;, &#39;repräsentiert&#39;, &#39;Infrastrukturen,&#39;, &#39;drängen&#39;, &#39;dieser&#39;, &#39;digitale&#39;, &#39;wegen&#39;, &#39;Hybrid&#39;, &#39;genutzt&#39;, &#39;“Digitale&#39;, &#39;dass&#39;, &#39;-bewertung,&#39;, &#39;durch&#39;, &#39;Distribution&#39;, &#39;Stellen&#39;, &#39;Gleiches&#39;, &#39;gestellt&#39;, &#39;erlebt&#39;, &#39;zu&#39;, &#39;besonders&#39;, &#39;Herausforderungen&#39;, &#39;Werkzeuge&#39;, &#39;Arbeitsweisen&#39;, &#39;Editionsformen&#39;, &#39;die&#39;, &#39;Editionswissenschaft&#39;, &#39;publizieren&#39;, &#39;oder&#39;, &#39;Metamorphose:&#39;, &#39;nur&#39;, &#39;veranstaltete&#39;, &#39;Methoden&#39;, &#39;auf,&#39;, &#39;strukturelle&#39;, &#39;analoge&#39;, &#39;Weimar&#39;, &#39;kritisch&#39;, &#39;erfolgreichen&#39;, &#39;und&#39;, &#39;Version&#39;, &#39;jenseits&#39;, &#39;nicht&#39;, &#39;offensichtlichen&#39;, &#39;neue&#39;, &#39;ging&#39;, &#39;als&#39;, &#39;verfügbar&#39;, &#39;versprechen.&#39;, &#39;Forschungsverbund&#39;, &#39;Editionen&#39;, &#39;angereichert&#39;, &#39;für&#39;, &#39;neu&#39;, &#39;Grenzen&#39;, &#39;so&#39;, &#39;Editoren&#39;, &#39;werden,&#39;, &#39;wo&#39;, &#39;Marbach&#39;, &#39;des&#39;, &#39;einen&#39;, &#39;prinzipielle&#39;, &#39;gleichwertige&#39;, &#39;Zugleich&#39;, &#39;dabei&#39;, &#39;nach,&#39;, &#39;müssen&#39;, &#39;Arbeitsorganisation,&#39;, &#39;werden.&#39;, &#39;Drucks&#39;, &#39;Editionswissenschaft”&#39;, &#39;Kombination&#39;, &#39;analogen&#39;, &#39;sollen.&#39;, &#39;traditionellen&#39;, &#39;Produkte&#39;, &#39;einer&#39;, &#39;eine&#39;, &#39;langfristig&#39;, &#39;zuletzt&#39;, &#39;betrachtete&#39;, &#39;sie&#39;, &#39;Frage&#39;, &#39;von&#39;, &#39;machen&#39;, &#39;einem&#39;, &#39;Vorteile&#39;, &#39;sondern&#39;, &#39;Fragen&#39;, &#39;bei&#39;, &#39;angesichts&#39;, &#39;gilt&#39;, &#39;Überwindung&#39;, &#39;Hype.&#39;, &#39;Digitale&#39;, &#39;an&#39;, &#39;bewertet&#39;, &#39;den&#39;, &#39;Digital&#39;, &#39;gestellt.&#39;, &#39;auch&#39;, &#39;regelrechten&#39;, &#39;Beschränkungen&#39;, &#39;diese&#39;, &#39;Qualitätsmessung&#39;, &#39;Änderungen&#39;, &#39;Wolfenbüttel&#39;}
+</div>
+<p>Ganz exakt ist die Liste der Wörter nicht. Dies liegt daran, dass wir eine ganz einfache Tokenisierung auf Basis der Whitespaces durchgeführt und einige vorverarbeitende Schritte noch nicht implementiert haben. So tauchen ‘digitale’, ‘“Digitale’ und ‘Digitale’ als eigenständige Worteinheiten auf, gleiches gilt beispielsweise auch für ‘Editionswissenschaft’ (ohne Anführungszeichen) und ‘Editionswissenschaft”’ (mit Anführungszeichen).</p>
+<p>Nachfolgend finden Sie daher ein kurzes Skript, dass mit den bisher bekannten Möglichkeiten auf Wortebene prüft, ob ein Token Zeichensetzung enthält und diese ggf. entfernt. Zugleich werden die Wörter in Kleinschreibung konvertiert und die Liste als Set umgewandelt, um dessen Länge dann genauer zu bestimmen. Für das Vorgehen, das hier mit Hilfe von zwei Schleifen und if-Abfragen gelöst ist, existieren in bestimmten Python-Libraries bereits vorgefertigte Funktionen, die Sie in späteren Kapiteln noch kennenlernen werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create empty list</span>
+<span class="n">cleaned_tokenized_report</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># check for every word if any character in word is punctuation</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_report</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">character</span> <span class="o">==</span> <span class="s1">&#39;”&#39;</span> <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;“&#39;</span> <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;:&#39;</span> \
+        <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;.&#39;</span> <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;,&#39;</span><span class="p">:</span>
+            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">character</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># replace punctuation with empty string</span>
+    <span class="n">cleaned_tokenized_report</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="c1"># append lowercased word to list</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wie Sie sehen werden Sets durch geschweifte Klammern eingeleitet und abgeschlossen. Sie können mit der Funktion <code class="docutils literal notranslate"><span class="pre">set()</span></code> erstellt werden. Übergeben Sie der Methode keine Werte, wird eine leere Menge erstellt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute and print length of set</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Der gesäuberte Tagungsbericht &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; </span>
+<span class="s1">enthält </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cleaned_tokenized_report</span><span class="p">))</span><span class="si">}</span><span class="s1"> verschiedene Wörter.&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># print set</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cleaned_tokenized_report</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wie Sie jedoch sehen, werden Sets durch geschweifte Klammern eingeleitet und abgeschlossen. Sie können mit der Funktion <code class="docutils literal notranslate"><span class="pre">set()</span></code> erstellt werden. Übergeben Sie der Methode keine Werte, wird eine leere Menge erstellt.</p>
 <p><strong>Wichtig:</strong> Leere Sets können nicht einfach mit <code class="docutils literal notranslate"><span class="pre">{}</span></code> erstellt werden. Diese Art und Weise ist für Dictionaries vorgesehen, eine Datenstruktur, die wir im nächsten Abschnitt kennenlernen werden.</p>
 <p>Sets eignen sich auch zur effizienten Prüfung, ob Elemente in einer Menge vorhanden sind. Dazu können wir wieder auf Operatoren wie <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> zurückgreifen:</p>
 <div class="cell docutils container">
@@ -433,19 +496,14 @@ Der Tagungsbericht zur Veranstaltung &quot;Digitale Metamorphose. Digital Humani
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-True
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="aufgaben">
-<h2>Aufgaben:<a class="headerlink" href="#aufgaben" title="Permalink to this headline">¶</a></h2>
-<p>Zum Abschluss wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Notebook gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte <em>Vocabulary Density</em> berechnen.</p>
+<span id="aufgaben-sets"></span><h2>Aufgaben<a class="headerlink" href="#aufgaben" title="Permalink to this headline">¶</a></h2>
+<p>Abschliessend wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Abschnitt gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte <em>Vocabulary Density</em> berechnen.</p>
 <div class="section" id="a-anzahl-der-worter-in-einem-text-ermitteln">
 <h3>a) Anzahl der Wörter in einem Text ermitteln<a class="headerlink" href="#a-anzahl-der-worter-in-einem-text-ermitteln" title="Permalink to this headline">¶</a></h3>
-<p>Für diese Aufgabe benötigen wir Ihren in der Zwischenaufgabe 3.2.7 tokenisierten Text. Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte <code class="docutils literal notranslate"><span class="pre">print</span></code>-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.</p>
+<p>Für diese Aufgabe benötigen wir Ihren in der <a class="reference internal" href="02-listen.html#aufgabe-text-preprocessing"><span class="std std-ref">vorherigen Zwischenaufgabe tokenisierten Text</span></a>. Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte <code class="docutils literal notranslate"><span class="pre">print</span></code>-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.</p>
 <p>Für die Bearbeitung dieser Aufgabe benötigen Sie <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen, <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingungen und die Lerninhalte zu Listen und Tupeln.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -457,9 +515,9 @@ True
 </div>
 <div class="section" id="b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
 <h3>b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten<a class="headerlink" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten" title="Permalink to this headline">¶</a></h3>
-<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.[1] Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
-<p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher zu lesen ist der Text.</p>
-<p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren in 3.2.7 eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
+<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
+<p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher ist der Text zu lesen.</p>
+<p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren im vorherigen Abschnitt eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -467,8 +525,12 @@ True
 </div>
 </div>
 </div>
-<p><strong>Anmerkung:</strong></p>
-<p>[1] Die Berechnung dieses Verhältnisses wird aussagekräftiger, wenn man die eingespeisten Inputdaten einer <a class="reference external" href="https://de.wikipedia.org/wiki/Lemma_(Lexikographie)"><em>Lemmatisierung</em></a> unterzieht, das heißt, dass alle in dem Text enthaltenen Wörter auf ihre Grundform reduziert werden. Ein Beispiel: i) aus “war”, “werden” und “ist” wird “sein”, ii) aus “historischer”, “historisches”, “historischem” oder “historische” wird “historisch”. Für solche sprachverarbeitenden Aufgaben gibt es zusätzliche Python-Bibliotheken (bspw. <code class="docutils literal notranslate"><span class="pre">spaCy</span></code> oder <code class="docutils literal notranslate"><span class="pre">nltk</span></code>), die eine Reihe von Funktionen enthalten, die Sie einfach in Ihren Code einbauen können. Wie externe Bibliotheken in den Code integriert werden, werden wir in den kommenden Übungseinheiten lernen.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Die Berechnung dieses Verhältnisses wird aussagekräftiger, wenn man die eingespeisten Inputdaten einer <a class="reference external" href="https://de.wikipedia.org/wiki/Lemma_(Lexikographie)"><em>Lemmatisierung</em></a> unterzieht, das heißt, dass alle in dem Text enthaltenen Wörter auf ihre Grundform reduziert werden. Dazu zwei Beispiele zur Veranschaulichung: 1) aus “war”, “werden” und “ist” wird “sein”, 2) aus “historischer”, “historisches”, “historischem” oder “historische” wird “historisch”. Für solche sprachverarbeitenden Aufgaben gibt es zusätzliche Python-Bibliotheken (bspw. <code class="docutils literal notranslate"><span class="pre">spaCy</span></code> oder <code class="docutils literal notranslate"><span class="pre">nltk</span></code>), die eine Reihe von Funktionen enthalten, die Sie einfach in Ihren Code einbauen können. Wie externe Bibliotheken in den Code integriert werden, werden wir in den kommenden Kapiteln lernen.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -477,7 +539,7 @@ True
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -503,40 +565,90 @@ True
         
               <div>
                 
-  <div class="section" id="sets">
+  <div class="tex2jax_ignore mathjax_ignore section" id="sets">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#sets">Sets</a><a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h1>
-<p>Auch für Mengen gibt es in Python einen Datentyp: das <code class="docutils literal notranslate"><span class="pre">set</span></code>. Mengen sind ungeordnete Sammlungen von Objekten ohne doppelte Einträge. Sie sind dann relevant, wenn nicht die Position oder Anzahl eines Elements von Relevanz ist, sondern sein bloßes Vorkommen. Ein Anwendungsbeispiel: Wenn Sie zum Beispiel wissen möchten, wie viele einzigartige Wörter in Ihrem unter 3.2.7 bearbeiteten Text enthalten sind, dann können Sie ihn in ein Set umwandeln. Im nachfolgenden Codeblock demonstrieren wir das einmal anhand unseres Beispieltextes:</p>
+<p>Auch für Mengen gibt es in Python einen Datentyp: das <code class="docutils literal notranslate"><span class="pre">set</span></code>. Mengen sind ungeordnete Sammlungen von Objekten ohne doppelte Einträge. Sie sind dann relevant, wenn nicht die Position oder Anzahl eines Elements von Relevanz ist, sondern sein bloßes Vorkommen. Ein Anwendungsbeispiel: Wenn Sie zum Beispiel wissen möchten, wie viele einzigartige Wörter in einem Text enthalten sind, dann können Sie ihn in ein Set umwandeln. Im nachfolgenden Codeblock demonstrieren wir das einmal anhand unseres Beispieltextes.</p>
+<div class="section" id="sets-erstellen">
+<h2>Sets erstellen<a class="headerlink" href="#sets-erstellen" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">report</span> <span class="o">=</span> <span class="s2">&quot;Die Editionswissenschaft erlebt nicht zuletzt wegen einer erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden der Digital Humanities einen regelrechten Hype. Digitale Methoden drängen sich besonders an den Stellen auf, wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle strukturelle Änderungen ergeben: so können analoge Editionen angereichert werden oder Editionen können als Hybrid durch eine gleichwertige digitale und analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, die die Produkte der Editionswissenschaft publizieren und langfristig verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für die Editionswissenschaft gibt.&quot;</span>
-
-<span class="c1"># split text into list of words</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
+<span class="s1">            erfolgreichen Kombination von traditionellen Arbeitsweisen </span>
+<span class="s1">            mit Methoden der Digital Humanities einen regelrechten Hype. </span>
+<span class="s1">            Digitale Methoden drängen sich besonders an den Stellen auf, </span>
+<span class="s1">            wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. </span>
+<span class="s1">            Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen </span>
+<span class="s1">            nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle </span>
+<span class="s1">            strukturelle Änderungen ergeben: so können analoge Editionen angereichert </span>
+<span class="s1">            werden oder Editionen können als Hybrid durch eine gleichwertige digitale und </span>
+<span class="s1">            analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen</span>
+<span class="s1">            Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, </span>
+<span class="s1">            die die Produkte der Editionswissenschaft publizieren und langfristig </span>
+<span class="s1">            verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung </span>
+<span class="s1">            und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution </span>
+<span class="s1">            müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt </span>
+<span class="s1">            und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel </span>
+<span class="s1">            veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” </span>
+<span class="s1">            betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, </span>
+<span class="s1">            welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für </span>
+<span class="s1">            die Editionswissenschaft gibt.&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split text into list of words</span>
 <span class="n">tokenized_report</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
 <span class="c1"># compute and print length of report</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der Tagungsbericht zur Veranstaltung </span><span class="se">\&quot;</span><span class="s2">Digitale Metamorphose. Digital Humanities und Editionswissenschaft</span><span class="se">\&quot;</span><span class="s2"> enthält insgesamt </span><span class="si">{}</span><span class="s2"> Wörter.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Der Tagungsbericht &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; </span>
+<span class="s1">enthält insgesamt </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)</span><span class="si">}</span><span class="s1"> Wörter.&#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># transform list into set</span>
 <span class="n">unique_words_report</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)</span>
 
 <span class="c1"># compute and print length of set</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der Tagungsbericht zur Veranstaltung </span><span class="se">\&quot;</span><span class="s2">Digitale Metamorphose. Digital Humanities und Editionswissenschaft</span><span class="se">\&quot;</span><span class="s2"> enthält </span><span class="si">{}</span><span class="s2"> verschiedene Wörter.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_words_report</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Der Tagungsbericht &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; </span>
+<span class="s1">enthält </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_words_report</span><span class="p">)</span><span class="si">}</span><span class="s1"> verschiedene Wörter.&#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># print set</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">unique_words_report</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der Tagungsbericht zur Veranstaltung &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; enthält insgesamt 170 Wörter.
-Der Tagungsbericht zur Veranstaltung &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; enthält 131 verschiedene Wörter.
-{&#39;Humanities&#39;, &#39;bzw.&#39;, &#39;Gefahren&#39;, &#39;gibt.&#39;, &#39;Grundlegende&#39;, &#39;Möglichkeiten&#39;, &#39;Tagung&#39;, &#39;mit&#39;, &#39;vor&#39;, &#39;Die&#39;, &#39;sich&#39;, &#39;digitalen&#39;, &#39;Vernetzung&#39;, &#39;zeichnet&#39;, &#39;können&#39;, &#39;ab,&#39;, &#39;werden&#39;, &#39;der&#39;, &#39;anders&#39;, &#39;welche&#39;, &#39;ergeben:&#39;, &#39;es&#39;, &#39;neuen&#39;, &#39;vom&#39;, &#39;Wechsel&#39;, &#39;repräsentiert&#39;, &#39;Infrastrukturen,&#39;, &#39;drängen&#39;, &#39;dieser&#39;, &#39;digitale&#39;, &#39;wegen&#39;, &#39;Hybrid&#39;, &#39;genutzt&#39;, &#39;“Digitale&#39;, &#39;dass&#39;, &#39;-bewertung,&#39;, &#39;durch&#39;, &#39;Distribution&#39;, &#39;Stellen&#39;, &#39;Gleiches&#39;, &#39;gestellt&#39;, &#39;erlebt&#39;, &#39;zu&#39;, &#39;besonders&#39;, &#39;Herausforderungen&#39;, &#39;Werkzeuge&#39;, &#39;Arbeitsweisen&#39;, &#39;Editionsformen&#39;, &#39;die&#39;, &#39;Editionswissenschaft&#39;, &#39;publizieren&#39;, &#39;oder&#39;, &#39;Metamorphose:&#39;, &#39;nur&#39;, &#39;veranstaltete&#39;, &#39;Methoden&#39;, &#39;auf,&#39;, &#39;strukturelle&#39;, &#39;analoge&#39;, &#39;Weimar&#39;, &#39;kritisch&#39;, &#39;erfolgreichen&#39;, &#39;und&#39;, &#39;Version&#39;, &#39;jenseits&#39;, &#39;nicht&#39;, &#39;offensichtlichen&#39;, &#39;neue&#39;, &#39;ging&#39;, &#39;als&#39;, &#39;verfügbar&#39;, &#39;versprechen.&#39;, &#39;Forschungsverbund&#39;, &#39;Editionen&#39;, &#39;angereichert&#39;, &#39;für&#39;, &#39;neu&#39;, &#39;Grenzen&#39;, &#39;so&#39;, &#39;Editoren&#39;, &#39;werden,&#39;, &#39;wo&#39;, &#39;Marbach&#39;, &#39;des&#39;, &#39;einen&#39;, &#39;prinzipielle&#39;, &#39;gleichwertige&#39;, &#39;Zugleich&#39;, &#39;dabei&#39;, &#39;nach,&#39;, &#39;müssen&#39;, &#39;Arbeitsorganisation,&#39;, &#39;werden.&#39;, &#39;Drucks&#39;, &#39;Editionswissenschaft”&#39;, &#39;Kombination&#39;, &#39;analogen&#39;, &#39;sollen.&#39;, &#39;traditionellen&#39;, &#39;Produkte&#39;, &#39;einer&#39;, &#39;eine&#39;, &#39;langfristig&#39;, &#39;zuletzt&#39;, &#39;betrachtete&#39;, &#39;sie&#39;, &#39;Frage&#39;, &#39;von&#39;, &#39;machen&#39;, &#39;einem&#39;, &#39;Vorteile&#39;, &#39;sondern&#39;, &#39;Fragen&#39;, &#39;bei&#39;, &#39;angesichts&#39;, &#39;gilt&#39;, &#39;Überwindung&#39;, &#39;Hype.&#39;, &#39;Digitale&#39;, &#39;an&#39;, &#39;bewertet&#39;, &#39;den&#39;, &#39;Digital&#39;, &#39;gestellt.&#39;, &#39;auch&#39;, &#39;regelrechten&#39;, &#39;Beschränkungen&#39;, &#39;diese&#39;, &#39;Qualitätsmessung&#39;, &#39;Änderungen&#39;, &#39;Wolfenbüttel&#39;}
+</div>
+<p>Ganz exakt ist die Liste der Wörter nicht. Dies liegt daran, dass wir eine ganz einfache Tokenisierung auf Basis der Whitespaces durchgeführt und einige vorverarbeitende Schritte noch nicht implementiert haben. So tauchen ‘digitale’, ‘“Digitale’ und ‘Digitale’ als eigenständige Worteinheiten auf, gleiches gilt beispielsweise auch für ‘Editionswissenschaft’ (ohne Anführungszeichen) und ‘Editionswissenschaft”’ (mit Anführungszeichen).</p>
+<p>Nachfolgend finden Sie daher ein kurzes Skript, dass mit den bisher bekannten Möglichkeiten auf Wortebene prüft, ob ein Token Zeichensetzung enthält und diese ggf. entfernt. Zugleich werden die Wörter in Kleinschreibung konvertiert und die Liste als Set umgewandelt, um dessen Länge dann genauer zu bestimmen. Für das Vorgehen, das hier mit Hilfe von zwei Schleifen und if-Abfragen gelöst ist, existieren in bestimmten Python-Libraries bereits vorgefertigte Funktionen, die Sie in späteren Kapiteln noch kennenlernen werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create empty list</span>
+<span class="n">cleaned_tokenized_report</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># check for every word if any character in word is punctuation</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokenized_report</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">character</span> <span class="o">==</span> <span class="s1">&#39;”&#39;</span> <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;“&#39;</span> <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;:&#39;</span> \
+        <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;.&#39;</span> <span class="ow">or</span> <span class="n">character</span> <span class="o">==</span><span class="s1">&#39;,&#39;</span><span class="p">:</span>
+            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">character</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># replace punctuation with empty string</span>
+    <span class="n">cleaned_tokenized_report</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="c1"># append lowercased word to list</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wie Sie sehen werden Sets durch geschweifte Klammern eingeleitet und abgeschlossen. Sie können mit der Funktion <code class="docutils literal notranslate"><span class="pre">set()</span></code> erstellt werden. Übergeben Sie der Methode keine Werte, wird eine leere Menge erstellt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute and print length of set</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Der gesäuberte Tagungsbericht &quot;Digitale Metamorphose. Digital Humanities und Editionswissenschaft&quot; </span>
+<span class="s1">enthält </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cleaned_tokenized_report</span><span class="p">))</span><span class="si">}</span><span class="s1"> verschiedene Wörter.&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># print set</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cleaned_tokenized_report</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wie Sie jedoch sehen, werden Sets durch geschweifte Klammern eingeleitet und abgeschlossen. Sie können mit der Funktion <code class="docutils literal notranslate"><span class="pre">set()</span></code> erstellt werden. Übergeben Sie der Methode keine Werte, wird eine leere Menge erstellt.</p>
 <p><strong>Wichtig:</strong> Leere Sets können nicht einfach mit <code class="docutils literal notranslate"><span class="pre">{}</span></code> erstellt werden. Diese Art und Weise ist für Dictionaries vorgesehen, eine Datenstruktur, die wir im nächsten Abschnitt kennenlernen werden.</p>
 <p>Sets eignen sich auch zur effizienten Prüfung, ob Elemente in einer Menge vorhanden sind. Dazu können wir wieder auf Operatoren wie <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> zurückgreifen:</p>
 <div class="cell docutils container">
@@ -546,19 +658,14 @@ Der Tagungsbericht zur Veranstaltung &quot;Digitale Metamorphose. Digital Humani
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-True
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="aufgaben">
-<h2>Aufgaben:<a class="headerlink" href="#aufgaben" title="Permalink to this headline">¶</a></h2>
-<p>Zum Abschluss wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Notebook gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte <em>Vocabulary Density</em> berechnen.</p>
+<span id="aufgaben-sets"></span><h2>Aufgaben<a class="headerlink" href="#aufgaben" title="Permalink to this headline">¶</a></h2>
+<p>Abschliessend wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Abschnitt gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte <em>Vocabulary Density</em> berechnen.</p>
 <div class="section" id="a-anzahl-der-worter-in-einem-text-ermitteln">
 <h3>a) Anzahl der Wörter in einem Text ermitteln<a class="headerlink" href="#a-anzahl-der-worter-in-einem-text-ermitteln" title="Permalink to this headline">¶</a></h3>
-<p>Für diese Aufgabe benötigen wir Ihren in der Zwischenaufgabe 3.2.7 tokenisierten Text. Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte <code class="docutils literal notranslate"><span class="pre">print</span></code>-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.</p>
+<p>Für diese Aufgabe benötigen wir Ihren in der <a class="reference internal" href="02-listen.html#aufgabe-text-preprocessing"><span class="std std-ref">vorherigen Zwischenaufgabe tokenisierten Text</span></a>. Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte <code class="docutils literal notranslate"><span class="pre">print</span></code>-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.</p>
 <p>Für die Bearbeitung dieser Aufgabe benötigen Sie <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen, <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingungen und die Lerninhalte zu Listen und Tupeln.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,9 +677,9 @@ True
 </div>
 <div class="section" id="b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
 <h3>b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten<a class="headerlink" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten" title="Permalink to this headline">¶</a></h3>
-<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.[1] Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
-<p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher zu lesen ist der Text.</p>
-<p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren in 3.2.7 eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
+<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
+<p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher ist der Text zu lesen.</p>
+<p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren im vorherigen Abschnitt eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -580,8 +687,12 @@ True
 </div>
 </div>
 </div>
-<p><strong>Anmerkung:</strong></p>
-<p>[1] Die Berechnung dieses Verhältnisses wird aussagekräftiger, wenn man die eingespeisten Inputdaten einer <a class="reference external" href="https://de.wikipedia.org/wiki/Lemma_(Lexikographie)"><em>Lemmatisierung</em></a> unterzieht, das heißt, dass alle in dem Text enthaltenen Wörter auf ihre Grundform reduziert werden. Ein Beispiel: i) aus “war”, “werden” und “ist” wird “sein”, ii) aus “historischer”, “historisches”, “historischem” oder “historische” wird “historisch”. Für solche sprachverarbeitenden Aufgaben gibt es zusätzliche Python-Bibliotheken (bspw. <code class="docutils literal notranslate"><span class="pre">spaCy</span></code> oder <code class="docutils literal notranslate"><span class="pre">nltk</span></code>), die eine Reihe von Funktionen enthalten, die Sie einfach in Ihren Code einbauen können. Wie externe Bibliotheken in den Code integriert werden, werden wir in den kommenden Übungseinheiten lernen.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Die Berechnung dieses Verhältnisses wird aussagekräftiger, wenn man die eingespeisten Inputdaten einer <a class="reference external" href="https://de.wikipedia.org/wiki/Lemma_(Lexikographie)"><em>Lemmatisierung</em></a> unterzieht, das heißt, dass alle in dem Text enthaltenen Wörter auf ihre Grundform reduziert werden. Dazu zwei Beispiele zur Veranschaulichung: 1) aus “war”, “werden” und “ist” wird “sein”, 2) aus “historischer”, “historisches”, “historischem” oder “historische” wird “historisch”. Für solche sprachverarbeitenden Aufgaben gibt es zusätzliche Python-Bibliotheken (bspw. <code class="docutils literal notranslate"><span class="pre">spaCy</span></code> oder <code class="docutils literal notranslate"><span class="pre">nltk</span></code>), die eine Reihe von Funktionen enthalten, die Sie einfach in Ihren Code einbauen können. Wie externe Bibliotheken in den Code integriert werden, werden wir in den kommenden Kapiteln lernen.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -590,7 +701,7 @@ True
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

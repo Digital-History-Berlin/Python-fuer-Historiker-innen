@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arbeiten mit atomaren Daten &#8212; Python Basics Jupyter Testversion</title>
+    <title>Arbeiten mit atomaren Datentypen &#8212; Python Basics Jupyter Testversion</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -331,18 +334,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grundlegendes">
-   Grundlegendes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-versionen">
-   Python-Versionen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zentrale-ressourcen">
-   Zentrale Ressourcen
+  <a class="reference internal nav-link" href="#ressourcen">
+   Ressourcen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -357,7 +350,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#let-s-code">
-   Let’s code
+   Let´s code
   </a>
  </li>
 </ul>
@@ -368,7 +361,7 @@
 </div>
     <!-- Table of contents that is only displayed when printing the page -->
     <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Arbeiten mit atomaren Daten</h1>
+        <h1>Arbeiten mit atomaren Datentypen</h1>
         <!-- Table of contents -->
         <div id="print-main-content" class="row">
             <div class="col-12 col-md-12 pl-md-5 pr-md-5">
@@ -380,18 +373,8 @@
                 <nav aria-label="Page">
                     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grundlegendes">
-   Grundlegendes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-versionen">
-   Python-Versionen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zentrale-ressourcen">
-   Zentrale Ressourcen
+  <a class="reference internal nav-link" href="#ressourcen">
+   Ressourcen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -406,7 +389,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#let-s-code">
-   Let’s code
+   Let´s code
   </a>
  </li>
 </ul>
@@ -416,31 +399,24 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="arbeiten-mit-atomaren-daten">
-<h1>Arbeiten mit atomaren Daten<a class="headerlink" href="#arbeiten-mit-atomaren-daten" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="grundlegendes">
-<h2>Grundlegendes<a class="headerlink" href="#grundlegendes" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> ist eine plattformunabhängige, sogenannte “general purpose” Programmiersprache, d.h. sie ist für sehr viele unterschiedliche Anwendungsfälle einsetzbar. Sie wurde von dem Niederländer <a class="reference external" href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a> entwickelt und erstmals 1991 veröffentlicht. Die Sprache ist nicht etwa benannt nach einer Schlange, sondern nach einer Fernsehserie der britischen Komikergruppe <a class="reference external" href="https://en.wikipedia.org/wiki/Monty_Python">Monty Python</a>, von der van Rossum ein großer Fan ist. Sie können in der Dokumentation und in Beispielcode häufig Anspielungen finden.</p>
-</div>
-<div class="section" id="python-versionen">
-<h2>Python-Versionen<a class="headerlink" href="#python-versionen" title="Permalink to this headline">¶</a></h2>
-<p>Vor etwa einem Jahrzehnt fand ein Wechsel von Python 2.x zu 3.x statt. Es kann sein, dass man auf seiner Suche nach Verständnis dieses neuen Feldes auf Einführungen stößt, die sich auf 2.x oder die Unterschiede zwischen 2.x und 3.x fokussieren. Unsere Empfehlung: Vernachlässigen Sie 2.x! Guido van Rossum, der Entwickler von Python, machte deutlich, dass es von 2.x keine weiteren Versionen mehr geben wird.[1] Wir wollen uns in dieser Übung also allein auf Python 3.x konzentrieren!</p>
-</div>
-<div class="section" id="zentrale-ressourcen">
-<h2>Zentrale Ressourcen<a class="headerlink" href="#zentrale-ressourcen" title="Permalink to this headline">¶</a></h2>
-<p>Die <a class="reference external" href="https://docs.python.org/3/">umfangreiche Dokumentation</a> bietet neben Anspielungen auf Monty Python hilfreiche Tutorials, ein Glossar und vor allem die Spezifikationen der einzelnen Bibliotheken beziehungsweise <em>libraries</em>.[2] Sie werden immer wieder auf sie zurückgreifen.</p>
-<p>Eine weitere wichtige Ressource, die Sie immer wieder aufsuchen werden, gleich ob Sie gerade anfangen, zu programmieren oder schon länger dabei sind, ist: <a class="reference external" href="https://stackoverflow.com/">Stackoverflow</a>. Sie werden gerade in den ersten Wochen und Monaten auf kaum ein Problem stoßen, auf das nicht zu irgendeinem Zeitpunkt in der Vergangenheit jemand vor Ihnen gestoßen ist. Lernen Sie voneinander! Wir Historiker*innen sitzen zwar gerne alleine am Schreibtisch, aber wenn es ums Coden geht, dann dürfen, ja <em>sollten</em> wir miteinander arbeiten. <strong>Aber wichtig:</strong> Auch beim Schreiben von Programmcode sollte man Zitierregeln beachten und angeben, wenn man einige Zeilen Code von jemand anderem übernommen hat.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="arbeiten-mit-atomaren-datentypen">
+<h1>Arbeiten mit atomaren Datentypen<a class="headerlink" href="#arbeiten-mit-atomaren-datentypen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ressourcen">
+<h2>Ressourcen<a class="headerlink" href="#ressourcen" title="Permalink to this headline">¶</a></h2>
+<p>Die <a class="reference external" href="https://docs.python.org/3/">umfangreiche Dokumentation</a> zu Python bietet hilfreiche Tutorials, ein Glossar und vor allem die Spezifikationen der einzelnen Bibliotheken beziehungsweise <em>libraries</em>.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Sie werden immer wieder auf sie zurückgreifen.</p>
+<p>Eine weitere wichtige Ressource, die Sie immer wieder aufsuchen werden, gleich ob Sie gerade anfangen, zu programmieren oder schon länger dabei sind, ist: <a class="reference external" href="https://stackoverflow.com/">Stackoverflow</a>. Sie werden gerade in den ersten Wochen und Monaten auf kaum ein Problem stoßen, auf das nicht zu irgendeinem Zeitpunkt in der Vergangenheit jemand vor Ihnen gestoßen ist. Lernen Sie voneinander! Wir Historiker:innen sitzen zwar gerne alleine am Schreibtisch, aber wenn es ums Coden geht, dann dürfen, ja <em>sollten</em> wir miteinander arbeiten. <strong>Aber wichtig:</strong> Auch beim Schreiben von Programmcode sollte man Zitierregeln beachten und angeben, wenn man einige Zeilen Code von jemand anderem übernommen hat.</p>
 </div>
 <div class="section" id="tutorials">
 <h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
 <p>Das <em>World Wide Web</em> ist voll mit vielen nützlichen Tutorials. Auch auf YouTube finden Sie viele empfehlenswerte Kanäle mit gut nachvollziehbaren Erklärungen, die Ihnen den Einstieg erleichtern und auch spezielle Programmbibliotheken praxisorientiert erläutern. Der Großteil der verfügbaren Angebote ist aber nicht unbedingt auf geisteswissenschaftliche Bedürfnisse zugeschnitten. Wir haben hier daher einige Empfehlungen für Sie zusammengetragen, die Ihnen im weiteren Verlauf nützlich sein können:</p>
 <ul class="simple">
 <li><p>Ein freies Lehrbuch ist zum Beispiel <a class="reference external" href="https://python.swaroopch.com/index.html">“A Byte of Python”</a>. Hier werden keine Vorkenntnisse benötigt. Es stellt sicherlich auch eine gute Ergänzung für diesen Kurs dar.</p></li>
-<li><p>Sehr gut geeignet für Einsteiger*innen mit geisteswissenschaftlichen Forschungsinteressen ist <a class="reference external" href="https://automatetheboringstuff.com/">“Automate the Boring Stuff with Python”</a> von Al Sweigart.</p></li>
-<li><p>Folgert Karsdorp hat eine <a class="reference external" href="https://www.karsdorp.io/python-course/">interaktive Einführung</a> speziell für Geisteswissenschaftler*innen erstellt, die ebenfalls sehr einsteigerfreundlich ist. Hier finden Sie weitere Jupyter-Notebooks, die Sie begleitend zu dieser Übung bearbeiten können, wenn Sie noch mehr coden wollen. Zudem finden Sie einige Themenblöcke, die wir im Rahmen dieser Übung nicht anschneiden können.</p></li>
+<li><p>Sehr gut geeignet für Einsteiger:innen mit geisteswissenschaftlichen Forschungsinteressen ist <a class="reference external" href="https://automatetheboringstuff.com/">“Automate the Boring Stuff with Python”</a> von Al Sweigart.</p></li>
+<li><p>Folgert Karsdorp hat eine <a class="reference external" href="https://www.karsdorp.io/python-course/">interaktive Einführung</a> speziell für Geisteswissenschaftler:innen erstellt, die ebenfalls sehr einsteigerfreundlich ist. Hier finden Sie weitere Jupyter-Notebooks, die Sie begleitend zu dieser Übung bearbeiten können, wenn Sie noch mehr coden wollen. Zudem finden Sie einige Themenblöcke, die wir im Rahmen dieser Übung nicht anschneiden können.</p></li>
 <li><p>Paul Vierthaler hat auf seinem YouTube-Kanal Tutorials für seinen <a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Kurs zur Textanalyse</a> zur Verfügung gestellt.</p></li>
 <li><p>Auch auf <a class="reference external" href="https://programminghistorian.org/en/lessons/?topic=python">The Programming Historian</a> finden Sie zahlreiche Python-Lektionen für spezifische geisteswissenschaftliche Anwendungsszenarien.</p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/user/schafer5/videos">Corey Schafer</a> bietet auf seinem YouTube-Kanal etliche Tutorials rundum Pythongrundlagen, Softwareentwicklung, aber auch Data Science. Dieser Kanal könnte für Sie vor allem im Anschluss an diesen Kurs interessant sein.</p></li>
+<li><p>Auf der Seite <a class="reference external" href="https://pythonhumanities.com/">PythonHumanities.com</a> stellt William Mattingly ebenfalls zahlreiche Videos mit Bezug Python und Digital Humanities frei zur Verfügung.</p></li>
 </ul>
 </div>
 <div class="section" id="lernziele">
@@ -459,6 +435,7 @@
 <li><p>Wie können Informationen ein- und ausgegeben werden?</p></li>
 <li><p>Wie können wir Strings manipulieren?</p></li>
 <li><p>Wie kann der Computer als Taschenrechner verwendet werden?</p></li>
+<li><p>Wie lese ich Fehlermeldungen?</p></li>
 </ul>
 <p>Speziell für diese Übungseinheit empfehlen wir Ihnen die folgenden Ressourcen:</p>
 <ul class="simple">
@@ -470,13 +447,19 @@
 <li><p>Grundlagen Python:</p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Hacking the Humanities</a> Episoden 1-5</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Führen Sie Beispiel-Codeblöcke bitte stets aus. Wenn Sie das Notebook über Binder nutzen, führen Sie bitte die Beispiel-Codeblöcke stets aus. Sie können jederzeit weitere Text- oder Codeblöcke einfügen, um Informationen zu ergänzen oder frei zu coden.</p>
+</div>
 </div>
 <div class="section" id="let-s-code">
-<h2>Let’s code<a class="headerlink" href="#let-s-code" title="Permalink to this headline">¶</a></h2>
-<p>Hinweis: Führen Sie Beispiel-Codeblöcke bitte stets aus. Sie können jederzeit weitere Text- oder Codeblöcke in dieses Notebook einfügen, um Informationen zu ergänzen oder frei zu coden.</p>
-<p><strong>Anmerkungen:</strong></p>
-<p>[1] Guido van Rossum, Why you should switch to Python 3, YouTube-Video: <a class="reference external" href="https://www.youtube.com/watch?v=bp3mCgrdMxU&amp;feature=youtu.be&amp;t=4m38s">https://www.youtube.com/watch?v=bp3mCgrdMxU&amp;feature=youtu.be&amp;t=4m38s</a></p>
-<p>[2] Eine <em>library</em> ist eine modulare Sammlung von Funktionen und Methoden, die Ihnen den Programmier-Alltag erleichtert, da sie Ihnen viele Zeilen Code erspart. Sie werden im Laufe des Semesters feststellen, dass es durchaus sinnvoll ist, sich genau anzuschauen, was Ihnen da konkret für Arbeit abgenommen wird.</p>
+<h2>Let´s code<a class="headerlink" href="#let-s-code" title="Permalink to this headline">¶</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Eine <em>library</em> ist eine modulare Sammlung von Funktionen und Methoden, die Ihnen den Programmier-Alltag erleichtert, da sie Ihnen viele Zeilen Code erspart. Sie werden feststellen, dass es durchaus sinnvoll ist, sich genau anzuschauen, was Ihnen da konkret für Arbeit abgenommen wird.</p>
+</dd>
+</dl>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -486,7 +469,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -512,31 +495,24 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="arbeiten-mit-atomaren-daten">
-<h1>Arbeiten mit atomaren Daten<a class="headerlink" href="#arbeiten-mit-atomaren-daten" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="grundlegendes">
-<h2>Grundlegendes<a class="headerlink" href="#grundlegendes" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> ist eine plattformunabhängige, sogenannte “general purpose” Programmiersprache, d.h. sie ist für sehr viele unterschiedliche Anwendungsfälle einsetzbar. Sie wurde von dem Niederländer <a class="reference external" href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a> entwickelt und erstmals 1991 veröffentlicht. Die Sprache ist nicht etwa benannt nach einer Schlange, sondern nach einer Fernsehserie der britischen Komikergruppe <a class="reference external" href="https://en.wikipedia.org/wiki/Monty_Python">Monty Python</a>, von der van Rossum ein großer Fan ist. Sie können in der Dokumentation und in Beispielcode häufig Anspielungen finden.</p>
-</div>
-<div class="section" id="python-versionen">
-<h2>Python-Versionen<a class="headerlink" href="#python-versionen" title="Permalink to this headline">¶</a></h2>
-<p>Vor etwa einem Jahrzehnt fand ein Wechsel von Python 2.x zu 3.x statt. Es kann sein, dass man auf seiner Suche nach Verständnis dieses neuen Feldes auf Einführungen stößt, die sich auf 2.x oder die Unterschiede zwischen 2.x und 3.x fokussieren. Unsere Empfehlung: Vernachlässigen Sie 2.x! Guido van Rossum, der Entwickler von Python, machte deutlich, dass es von 2.x keine weiteren Versionen mehr geben wird.[1] Wir wollen uns in dieser Übung also allein auf Python 3.x konzentrieren!</p>
-</div>
-<div class="section" id="zentrale-ressourcen">
-<h2>Zentrale Ressourcen<a class="headerlink" href="#zentrale-ressourcen" title="Permalink to this headline">¶</a></h2>
-<p>Die <a class="reference external" href="https://docs.python.org/3/">umfangreiche Dokumentation</a> bietet neben Anspielungen auf Monty Python hilfreiche Tutorials, ein Glossar und vor allem die Spezifikationen der einzelnen Bibliotheken beziehungsweise <em>libraries</em>.[2] Sie werden immer wieder auf sie zurückgreifen.</p>
-<p>Eine weitere wichtige Ressource, die Sie immer wieder aufsuchen werden, gleich ob Sie gerade anfangen, zu programmieren oder schon länger dabei sind, ist: <a class="reference external" href="https://stackoverflow.com/">Stackoverflow</a>. Sie werden gerade in den ersten Wochen und Monaten auf kaum ein Problem stoßen, auf das nicht zu irgendeinem Zeitpunkt in der Vergangenheit jemand vor Ihnen gestoßen ist. Lernen Sie voneinander! Wir Historiker*innen sitzen zwar gerne alleine am Schreibtisch, aber wenn es ums Coden geht, dann dürfen, ja <em>sollten</em> wir miteinander arbeiten. <strong>Aber wichtig:</strong> Auch beim Schreiben von Programmcode sollte man Zitierregeln beachten und angeben, wenn man einige Zeilen Code von jemand anderem übernommen hat.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="arbeiten-mit-atomaren-datentypen">
+<h1>Arbeiten mit atomaren Datentypen<a class="headerlink" href="#arbeiten-mit-atomaren-datentypen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ressourcen">
+<h2>Ressourcen<a class="headerlink" href="#ressourcen" title="Permalink to this headline">¶</a></h2>
+<p>Die <a class="reference external" href="https://docs.python.org/3/">umfangreiche Dokumentation</a> zu Python bietet hilfreiche Tutorials, ein Glossar und vor allem die Spezifikationen der einzelnen Bibliotheken beziehungsweise <em>libraries</em>.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Sie werden immer wieder auf sie zurückgreifen.</p>
+<p>Eine weitere wichtige Ressource, die Sie immer wieder aufsuchen werden, gleich ob Sie gerade anfangen, zu programmieren oder schon länger dabei sind, ist: <a class="reference external" href="https://stackoverflow.com/">Stackoverflow</a>. Sie werden gerade in den ersten Wochen und Monaten auf kaum ein Problem stoßen, auf das nicht zu irgendeinem Zeitpunkt in der Vergangenheit jemand vor Ihnen gestoßen ist. Lernen Sie voneinander! Wir Historiker:innen sitzen zwar gerne alleine am Schreibtisch, aber wenn es ums Coden geht, dann dürfen, ja <em>sollten</em> wir miteinander arbeiten. <strong>Aber wichtig:</strong> Auch beim Schreiben von Programmcode sollte man Zitierregeln beachten und angeben, wenn man einige Zeilen Code von jemand anderem übernommen hat.</p>
 </div>
 <div class="section" id="tutorials">
 <h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
 <p>Das <em>World Wide Web</em> ist voll mit vielen nützlichen Tutorials. Auch auf YouTube finden Sie viele empfehlenswerte Kanäle mit gut nachvollziehbaren Erklärungen, die Ihnen den Einstieg erleichtern und auch spezielle Programmbibliotheken praxisorientiert erläutern. Der Großteil der verfügbaren Angebote ist aber nicht unbedingt auf geisteswissenschaftliche Bedürfnisse zugeschnitten. Wir haben hier daher einige Empfehlungen für Sie zusammengetragen, die Ihnen im weiteren Verlauf nützlich sein können:</p>
 <ul class="simple">
 <li><p>Ein freies Lehrbuch ist zum Beispiel <a class="reference external" href="https://python.swaroopch.com/index.html">“A Byte of Python”</a>. Hier werden keine Vorkenntnisse benötigt. Es stellt sicherlich auch eine gute Ergänzung für diesen Kurs dar.</p></li>
-<li><p>Sehr gut geeignet für Einsteiger*innen mit geisteswissenschaftlichen Forschungsinteressen ist <a class="reference external" href="https://automatetheboringstuff.com/">“Automate the Boring Stuff with Python”</a> von Al Sweigart.</p></li>
-<li><p>Folgert Karsdorp hat eine <a class="reference external" href="https://www.karsdorp.io/python-course/">interaktive Einführung</a> speziell für Geisteswissenschaftler*innen erstellt, die ebenfalls sehr einsteigerfreundlich ist. Hier finden Sie weitere Jupyter-Notebooks, die Sie begleitend zu dieser Übung bearbeiten können, wenn Sie noch mehr coden wollen. Zudem finden Sie einige Themenblöcke, die wir im Rahmen dieser Übung nicht anschneiden können.</p></li>
+<li><p>Sehr gut geeignet für Einsteiger:innen mit geisteswissenschaftlichen Forschungsinteressen ist <a class="reference external" href="https://automatetheboringstuff.com/">“Automate the Boring Stuff with Python”</a> von Al Sweigart.</p></li>
+<li><p>Folgert Karsdorp hat eine <a class="reference external" href="https://www.karsdorp.io/python-course/">interaktive Einführung</a> speziell für Geisteswissenschaftler:innen erstellt, die ebenfalls sehr einsteigerfreundlich ist. Hier finden Sie weitere Jupyter-Notebooks, die Sie begleitend zu dieser Übung bearbeiten können, wenn Sie noch mehr coden wollen. Zudem finden Sie einige Themenblöcke, die wir im Rahmen dieser Übung nicht anschneiden können.</p></li>
 <li><p>Paul Vierthaler hat auf seinem YouTube-Kanal Tutorials für seinen <a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Kurs zur Textanalyse</a> zur Verfügung gestellt.</p></li>
 <li><p>Auch auf <a class="reference external" href="https://programminghistorian.org/en/lessons/?topic=python">The Programming Historian</a> finden Sie zahlreiche Python-Lektionen für spezifische geisteswissenschaftliche Anwendungsszenarien.</p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/user/schafer5/videos">Corey Schafer</a> bietet auf seinem YouTube-Kanal etliche Tutorials rundum Pythongrundlagen, Softwareentwicklung, aber auch Data Science. Dieser Kanal könnte für Sie vor allem im Anschluss an diesen Kurs interessant sein.</p></li>
+<li><p>Auf der Seite <a class="reference external" href="https://pythonhumanities.com/">PythonHumanities.com</a> stellt William Mattingly ebenfalls zahlreiche Videos mit Bezug Python und Digital Humanities frei zur Verfügung.</p></li>
 </ul>
 </div>
 <div class="section" id="lernziele">
@@ -555,6 +531,7 @@
 <li><p>Wie können Informationen ein- und ausgegeben werden?</p></li>
 <li><p>Wie können wir Strings manipulieren?</p></li>
 <li><p>Wie kann der Computer als Taschenrechner verwendet werden?</p></li>
+<li><p>Wie lese ich Fehlermeldungen?</p></li>
 </ul>
 <p>Speziell für diese Übungseinheit empfehlen wir Ihnen die folgenden Ressourcen:</p>
 <ul class="simple">
@@ -566,13 +543,19 @@
 <li><p>Grundlagen Python:</p></li>
 <li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Hacking the Humanities</a> Episoden 1-5</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Führen Sie Beispiel-Codeblöcke bitte stets aus. Wenn Sie das Notebook über Binder nutzen, führen Sie bitte die Beispiel-Codeblöcke stets aus. Sie können jederzeit weitere Text- oder Codeblöcke einfügen, um Informationen zu ergänzen oder frei zu coden.</p>
+</div>
 </div>
 <div class="section" id="let-s-code">
-<h2>Let’s code<a class="headerlink" href="#let-s-code" title="Permalink to this headline">¶</a></h2>
-<p>Hinweis: Führen Sie Beispiel-Codeblöcke bitte stets aus. Sie können jederzeit weitere Text- oder Codeblöcke in dieses Notebook einfügen, um Informationen zu ergänzen oder frei zu coden.</p>
-<p><strong>Anmerkungen:</strong></p>
-<p>[1] Guido van Rossum, Why you should switch to Python 3, YouTube-Video: <a class="reference external" href="https://www.youtube.com/watch?v=bp3mCgrdMxU&amp;feature=youtu.be&amp;t=4m38s">https://www.youtube.com/watch?v=bp3mCgrdMxU&amp;feature=youtu.be&amp;t=4m38s</a></p>
-<p>[2] Eine <em>library</em> ist eine modulare Sammlung von Funktionen und Methoden, die Ihnen den Programmier-Alltag erleichtert, da sie Ihnen viele Zeilen Code erspart. Sie werden im Laufe des Semesters feststellen, dass es durchaus sinnvoll ist, sich genau anzuschauen, was Ihnen da konkret für Arbeit abgenommen wird.</p>
+<h2>Let´s code<a class="headerlink" href="#let-s-code" title="Permalink to this headline">¶</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Eine <em>library</em> ist eine modulare Sammlung von Funktionen und Methoden, die Ihnen den Programmier-Alltag erleichtert, da sie Ihnen viele Zeilen Code erspart. Sie werden feststellen, dass es durchaus sinnvoll ist, sich genau anzuschauen, was Ihnen da konkret für Arbeit abgenommen wird.</p>
+</dd>
+</dl>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -582,7 +565,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

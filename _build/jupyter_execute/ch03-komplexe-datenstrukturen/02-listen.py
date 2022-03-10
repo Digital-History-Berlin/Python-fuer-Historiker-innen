@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## [Listen](https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists)
+# # [Listen](https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists)
 # 
 # Im Alltag greifen wir häufig auf Sie zurück: ob zur Planung des Wocheneinkaufs, zur Erstellung von Gästelisten oder zur Organisation anstehender Aufgaben. Listen sind allgegenwärtig. 
 # 
-# Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. In den ersten beiden Übungseinheiten haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch *items* oder *Instanzen* genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Insofern eine Liste nun einer Variablen zugewiesen wird spricht man auch von *list value*. Ein solcher *list value* sieht wie folgt aus:
+# Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. Im ersten Kapitel haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch *items* oder *Instanzen* genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Wenn eine Liste einer Variablen zugewiesen wird spricht man auch von *list value*. Ein solcher *list value* sieht wie folgt aus:
 # 
 # `[1, 2, 3, 4]`
 # 
+# ## Listen erstellen
+# 
 # Analog zu Strings, die Sie an einfachen oder doppelten Anführungszeichen erkennen können, werden Anfang und Ende von Listen durch eckige Klammern angezeigt. Die einzelnen in der Liste enthaltenen Elemente bzw. *items* werden voneinander durch Kommata getrennt. Als Werte können beliebige Datentypen in den Listen gespeichert werden. Hier einige Beispiele:
 
-# In[1]:
+# In[ ]:
 
 
 # list containing integers 
@@ -24,7 +26,14 @@
 ["string", 2, True, 2.76]
 
 # assigning list of book titles
-book_titles = ["Die Verwandlung", "Die Pest", "Eine Geschichte aus zwei Städten", "Digital Humanities. Eine Einführung", ["Harry Potter und der Stein der Weisen", "Harry Potter und die Kammer des Schreckens", "Harry Potter und der Gefangene von Askaban", "..."]]
+book_titles = ["Die Verwandlung", 
+               "Die Pest", 
+               "Eine Geschichte aus zwei Städten", 
+               "Digital Humanities. Eine Einführung", 
+               ["Harry Potter und der Stein der Weisen", 
+                "Harry Potter und die Kammer des Schreckens", 
+                "Harry Potter und der Gefangene von Askaban", 
+                "..."]]
 print(book_titles)
 
 
@@ -32,7 +41,7 @@ print(book_titles)
 # 
 # Ebenso ist es möglich, ähnlich wie bei der Arbeit mit Strings, mit leeren Listen zu arbeiten. Dazu weisen Sie einer Variablen schlicht die beiden Indikatoren `[` und `]` für Listenobjekte zu:
 
-# In[2]:
+# In[ ]:
 
 
 # assign empty list
@@ -40,7 +49,7 @@ some_list = []
 print(some_list)
 
 
-# ### Listen bearbeiten
+# ## Listen bearbeiten
 # 
 # Die Variable `some_list` enthält nun einen *list value*, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:
 # - Konkatenierung mittels "+"-Operator
@@ -50,11 +59,11 @@ print(some_list)
 # 
 # 
 
-# #### Konkatenierung
+# ## Konkatenierung
 # 
 # Verschiedene Listen können durch sehr einfache Weise mittels des "+"-Operators zusammengefügt werden. 
 
-# In[3]:
+# In[ ]:
 
 
 # assign values to new list
@@ -67,10 +76,10 @@ print(book_titles)
 
 # Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die Instanzen aus `another_list` an die Instanzen in `book_titles` angehängt und die Variable `book_titles` wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.
 
-# #### `append()` und `extend()`
+# ## `append()` und `extend()`
 # Die Methoden `append()` und `extend()` funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.
 
-# In[4]:
+# In[ ]:
 
 
 # append list by user input
@@ -89,7 +98,7 @@ print(some_list)
 
 # Mit `extend()` können Sie also direkt mehrere Elemente hinzufügen. Der Effekt ist dabei ähnlich dem der einfachen "Addition".
 
-# #### `insert()`
+# ## `insert()`
 # Dagegen fügt die `insert()`-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste: 
 
 # In[ ]:
@@ -101,11 +110,11 @@ print(book_titles)
 
 
 # 
-# Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer*inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.
+# Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer:inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.
 # 
-# ### Indizieren
+# ## Indizieren
 # 
-# Um nun auf die einzelnen Elemente zuzugreifen, können Sie folgerichtig ganz ähnliche Mechanismen wie bei der Arbeit mit Zeichenketten nutzen:
+# Um nun auf die einzelnen Elemente zuzugreifen, können Sie folgerichtig ganz ähnliche Mechanismen wie bei der Arbeit mit Strings nutzen:
 # 
 # 
 
@@ -118,7 +127,7 @@ print(book_titles[3])
 
 print("In der Coronakrise war \"" + book_titles[1] + "\" wieder auf der Bestsellerliste.")
 
-print("{} und {} kann ich wirklich empfehlen.".format(book_titles[-3], book_titles[3]))
+print(f"{book_titles[-3]} und {book_titles[3]} kann ich wirklich empfehlen.")
 
 
 # Auf die einzelnen Werte an den verschiedenen Positionen in der Liste greifen Sie also vermittels eckiger Klammern zu, die an die entsprechende Variable gehängt wird. Das kennen Sie schon von Strings. `book_titles[0]` repräsentiert in diesem Beispiel die Zeichenkette `"Die Verwandlung"`. Das ermöglicht es Ihnen, mit einzelnen Elementen weiterzuarbeiten, beispielsweise um sie gezielt in andere Zeichenketten einzusetzen. Wie bei Strings können Listen dabei sowohl von links nach rechts, als auch von rechts nach links gelesen werden.
@@ -130,7 +139,7 @@ print("{} und {} kann ich wirklich empfehlen.".format(book_titles[-3], book_titl
 # In[ ]:
 
 
-print("{} ist von J.K. Rowling.".format(book_titles[-4][2]))
+print(f"{book_titles[-4][2]} ist von J.K. Rowling.")
 
 
 # Die Angabe einer genauen Listenposition kann auch genutzt werden, um vorhandene Einträge zu überschreiben. So könnten wir etwa den nichtssagenden String `"..."` durch die Angabe des Titels zum vierten Harry-Potter-Band ersetzen:
@@ -163,7 +172,7 @@ book_titles[-4][4] = "test"
 len(book_titles)
 
 
-# ### Listen nach Vorkommen von Elementen prüfen
+# ## Listen nach Vorkommen von Elementen prüfen
 # 
 # Wenn Sie prüfen möchten, ob ein *item* in einer Liste enthalten ist, dann können Sie die Operatoren `in` und `not in` nutzen. Sie erhalten als Rückgabewert Boolesche Wahrheitswerte:
 
@@ -199,7 +208,7 @@ book_titles.index("Die Pest")
 # 
 # Optional kann der Funktion eine Start- und Endposition wie beim Slicing übergeben werden, um ggf. einen bestimmten Bereich zu definieren, in dem der Wert gefunden werden soll.
 # 
-# Mit der Methode `count()` kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein *integer*. Wir demonstrieren das hier anhand der früher im Notebook definierten Liste `some_list`:
+# Mit der Methode `count()` kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein *integer*. Wir demonstrieren das hier anhand der weiter oben im Notebook definierten Liste `some_list`:
 
 # In[ ]:
 
@@ -210,9 +219,9 @@ some_list.count("d")
 
 # Das Zeichen "d" kommt als *item* also insgesamt viermal in der Liste `some_list` vor.
 
-# ### Ausschneiden (Slicing)
+# ## Ausschneiden (Slicing)
 # 
-# Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.
+# Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bei Strings bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.
 # 
 # Probieren Sie es einmal anhand von `book_titles` aus:
 
@@ -234,7 +243,7 @@ some_list.count("d")
 # Ersetzen Sie die Titel zwei bis vier in book_titles durch neue Titel
 
 
-# ### Elemente entfernen: `remove()`, `pop()`, `clear()` und `del`
+# ## Elemente entfernen: `remove()`, `pop()`, `clear()` und `del`
 # 
 # Freilich gibt es auch verschiedene Möglichkeiten um Instanzen aus Listen zu entfernen. 
 # 
@@ -263,7 +272,7 @@ print(some_list)
 some_list.pop(2)
 print(some_list)
 
-# re-move first item
+# remove first item
 first_item = some_list.pop(0)
 print(first_item)
 
@@ -318,50 +327,66 @@ del numbers
 print(numbers)
 
 
+# (aufgabe-text-preprocessing)=
+# ## Aufgabe: Text Preprocessing
 # 
+# In unserer ersten Zwischenaufgabe werden wir versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen-, sondern auf Wortebene.
 # 
-# ---
-# 
-# 
-
-# ### Aufgabe: Text Preprocessing
-# 
-# In unserer ersten Zwischenaufgabe werden wir nun versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen- sondern auf Wortebene.
-# 
-# Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die `split()`-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine -folge sein. Per default werden Strings anhand der *whitespaces*, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll. 
+# Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die `split()`-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine Zeichenfolge sein. Per default werden Strings anhand der *whitespaces*, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll. 
 
 # In[ ]:
 
 
-report = "Die Editionswissenschaft erlebt nicht zuletzt wegen einer erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden der Digital Humanities einen regelrechten Hype. Digitale Methoden drängen sich besonders an den Stellen auf, wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle strukturelle Änderungen ergeben: so können analoge Editionen angereichert werden oder Editionen können als Hybrid durch eine gleichwertige digitale und analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, die die Produkte der Editionswissenschaft publizieren und langfristig verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für die Editionswissenschaft gibt."
+report = '''Die Editionswissenschaft erlebt nicht zuletzt wegen einer 
+            erfolgreichen Kombination von traditionellen Arbeitsweisen 
+            mit Methoden der Digital Humanities einen regelrechten Hype. 
+            Digitale Methoden drängen sich besonders an den Stellen auf, 
+            wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. 
+            Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen 
+            nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle 
+            strukturelle Änderungen ergeben: so können analoge Editionen angereichert 
+            werden oder Editionen können als Hybrid durch eine gleichwertige digitale und 
+            analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen
+            Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, 
+            die die Produkte der Editionswissenschaft publizieren und langfristig 
+            verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung 
+            und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution 
+            müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt 
+            und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel 
+            veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” 
+            betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, 
+            welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für 
+            die Editionswissenschaft gibt.'''
+
+
+# In[ ]:
+
 
 # split text into list of words
 tokenized_report = report.split()
 print(tokenized_report)
 
 
-# Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise *tokenisiert* werden. Das sogenannte [*tokenizing*](https://de.wikipedia.org/wiki/Tokenisierung) von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner des [*Natural Language Processing*](https://en.wikipedia.org/wiki/Natural_language_processing), das ist ein Forschungsfeld, in dem sich intensiv mit der Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird. 
-# Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten *Tokens* zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für uns genügt aber zunächst die Zerlegung anhand von Leerzeichen.
-# 
-# 
+# Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise *tokenisiert* werden. Das sogenannte [*tokenizing*](https://de.wikipedia.org/wiki/Tokenisierung) von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld [*Natural Language Processing*](https://en.wikipedia.org/wiki/Natural_language_processing). NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird. 
+# Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten *Tokens* zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.
 
 # **Aufgabenstellung:**
 # 
-# 1. Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie ihn einer Variablen zu.
+# 1. Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie diesen einer Variablen zu.
 # 
 # 2. Definieren Sie zwei Funktionen:
 # - `tokenize_text()` soll folgende Operationen beinhalten: 
-#  - Entfernung von Interpunktionszeichen
-#  - Lowercasing aller Großbuchstaben
-#  - Tokenisierung der Textdaten anhand von Whitespaces
+#   - Entfernung von Interpunktionszeichen
+#   - Lowercasing aller Großbuchstaben
+#   - Tokenisierung der Textdaten anhand von Whitespaces
 # - `segment_text()` soll die tokenisierten Textdaten zu Segmenten in folgender Art weiterverarbeiten:
-#  - Segmente sollten nicht länger als 10 Wörter sein
-#  - Der Text soll am Ende zeilenweise (`\n`) als zusammenhängende Zeichenkette ausgegeben werden.
+#   - Segmente sollten nicht länger als 10 Wörter sein
+#   - Der Text soll am Ende zeilenweise (`\n`) als zusammenhängende Zeichenkette ausgegeben werden.
 # 
 # **Hinweise:**
 # - Ihre Funktionen sollten auf beliebige Texte anwendbar sein
-# - nutzen Sie bedingte Anweisungen und Schleifen
-# - machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch von Formatierungsmöglichkeiten bei Zeichenketten
+# - Nutzen Sie bedingte Anweisungen und Schleifen
+# - Machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch von Formatierungsmöglichkeiten bei Zeichenketten
 
 # In[ ]:
 

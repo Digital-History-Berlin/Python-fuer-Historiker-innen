@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -344,17 +347,20 @@
   <a class="reference internal nav-link" href="#bedingte-abfragen-mit-if-elif-und-else">
    Bedingte Abfragen mit if, elif und else
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elif">
-     elif
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#else-if-elif">
+   Else-if: elif
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bedingungen-verknupfen">
    Bedingungen verknüpfen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-bedingte-anweisungen">
+   Aufgabe: Bedingte Anweisungen
   </a>
  </li>
 </ul>
@@ -390,17 +396,20 @@
   <a class="reference internal nav-link" href="#bedingte-abfragen-mit-if-elif-und-else">
    Bedingte Abfragen mit if, elif und else
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elif">
-     elif
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#else-if-elif">
+   Else-if: elif
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bedingungen-verknupfen">
    Bedingungen verknüpfen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-bedingte-anweisungen">
+   Aufgabe: Bedingte Anweisungen
   </a>
  </li>
 </ul>
@@ -410,12 +419,12 @@
             
               <div>
                 
-  <div class="section" id="bedingte-anweisungen">
+  <div class="tex2jax_ignore mathjax_ignore section" id="bedingte-anweisungen">
 <h1>Bedingte Anweisungen<a class="headerlink" href="#bedingte-anweisungen" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="boolesche-werte">
 <h2><a class="reference external" href="https://www.w3schools.com/python/python_booleans.asp">Boolesche Werte</a><a class="headerlink" href="#boolesche-werte" title="Permalink to this headline">¶</a></h2>
 <p>Nachdem Sie in der letzten Einheit schon einige Datentypen kennengelernt haben (<em>int</em>, <em>float</em>, <em>string</em> usw.), fügen wir nun dieser Liste noch einen Weiteren hinzu: den Datentyp <em>Boolean</em>. Er kann lediglich zwei Werte annehmen: <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code>. Sie können damit also sog. Wahrheitswerte abbilden. Benannt wurde dieser Datentyp übrigens nach <a class="reference external" href="https://de.wikipedia.org/wiki/George_Boole">George Boole</a>, der mit der <a class="reference external" href="https://de.wikipedia.org/wiki/Boolesche_Algebra">Booleschen Algebra</a> einen für die Computertechnik grundlegenden Zweig der Mathematik begründete.</p>
-<p>In Python können wir boolsche Variablen durch die bekannte Form der Zuweisung deklarieren:</p>
+<p>In Python können wir boolesche Variablen durch die bekannte Form der Zuweisung deklarieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_spam</span> <span class="o">=</span> <span class="kc">True</span>
@@ -426,28 +435,16 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-</pre></div>
-</div>
-</div>
 </div>
 <p>In den meisten Fällen werden wir uns diesen Datentyp aber zu Nutze machen, um zu prüfen, ob logische Aussagen richtig oder falsch sind … und das werden wir sehr häufig prüfen wollen. Oft möchten wir z.B. wissen, ob eine bestimmte Zeichenkette in einem Text auftaucht, dazu können wir das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">in</span></code> nutzen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
-<span class="s1">                  erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden </span>
-<span class="s1">                  der Digital Humanities einen regelrechten Hype.&#39;&#39;&#39;</span>
+<span class="s1">erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden </span>
+<span class="s1">der Digital Humanities einen regelrechten Hype.&#39;&#39;&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Editionswissenschaft&quot;</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Text Mining&quot;</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
 </pre></div>
 </div>
 </div>
@@ -460,17 +457,11 @@ False
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-True
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="vergleichsoperatoren">
 <h2>Vergleichsoperatoren<a class="headerlink" href="#vergleichsoperatoren" title="Permalink to this headline">¶</a></h2>
-<p>Neben den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Übungsnotebook kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:</p>
+<p>Neben den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># kleiner als; Notieren Sie sich vor der Ausführung des Codeblocks, </span>
@@ -502,19 +493,8 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
-False
-False
-True
-True
-False
-</pre></div>
 </div>
-</div>
-</div>
-<p>Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">==</span></code>) verwendet werden, da, wie Sie im vergangenen Notebook gelernt haben, das einfache Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">=</span></code>) bereits für die Zuweisung von Werten zu Variablen reserviert ist.</p>
+<p>Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">==</span></code>) verwendet werden, da, wie Sie im ersten Kapitel gelernt haben, das einfache Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">=</span></code>) bereits für die Zuweisung von Werten zu Variablen reserviert ist.</p>
 <p>Der Operator zur Prüfung der Ungleichheit hingegen besteht aus einem Ausrufezeichen gefolgt von einem einzelnen Gleichheitszeichen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,13 +502,7 @@ False
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
 </div>
-</div>
-</div>
-<p>Das müssen wir uns einfach merken.</p>
 </div>
 <div class="section" id="bedingte-abfragen-mit-if-elif-und-else">
 <h2><a class="reference external" href="https://www.python-kurs.eu/python3_bedingte_anweisungen.php">Bedingte Abfragen mit if, elif und else</a><a class="headerlink" href="#bedingte-abfragen-mit-if-elif-und-else" title="Permalink to this headline">¶</a></h2>
@@ -540,47 +514,28 @@ False
 <p>Wirklich interessant wird es, wenn wir unsere Programme so gestalten, dass bestimmte Schritte nur dann ausgeführt werden, wenn etwaige Vorbedingungen erfüllt sind. Solche logischen Verzweigungen können wir mithilfe der eben kennengelernten Operatoren und Wahrheitswerte und den sogenannten <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfragen definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21196</span><span class="o">/</span><span class="mf">613984899.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="nn">C:\JupyterLab\resources\jlab_server\envs\base2exp\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
 </div>
-</div>
-</div>
-<p>Wie Sie sehen, müssen Sie einfach nur die Abfrage, die Sie stellen wollen, hinter das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">if</span></code> einfügen. Nach einem Doppelpunkt folgt der Teil des Programmcodes, der nur dann ausgeführt wird, wenn die Abfrage den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, andernfalls wird ausgeführt, was wir unter <code class="docutils literal notranslate"><span class="pre">else</span></code> definiert haben. Die Angabe einer <code class="docutils literal notranslate"><span class="pre">else</span></code>-Anweisung ist optional. Wir könnten sie auch weglassen, dann würde das Programm, wenn die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage nicht den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, einfach zum abschließenden <code class="docutils literal notranslate"><span class="pre">print</span></code>-Statement springen:</p>
+<p>Wie Sie sehen, müssen Sie einfach nur die Abfrage, die Sie stellen wollen, hinter das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">if</span></code> einfügen. Nach einem Doppelpunkt folgt der Teil des Programmcodes, der nur dann ausgeführt wird, wenn die Abfrage den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, andernfalls wird ausgeführt, was wir unter <code class="docutils literal notranslate"><span class="pre">else</span></code> definiert haben. Die Angabe einer <code class="docutils literal notranslate"><span class="pre">else</span></code>-Anweisung ist optional. Wir könnten sie im konkreten Fall auch weglassen, dann würde das Programm, wenn die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage nicht den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, einfach zum abschließenden <code class="docutils literal notranslate"><span class="pre">print</span></code>-Statement springen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -593,12 +548,13 @@ False
 <p>Wenn Sie die Einrückung entfernen würden, ruft das den Indentation-Fehler hervor und Ihr Programm wird nicht ausgeführt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -610,22 +566,28 @@ False
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Die oberste Ebene ist immer die Ebene ohne Einrückung. </span>
 <span class="sd">Wir könnten Sie das EG unseres Codes nennen oder Ebene 0.&quot;&quot;&quot;</span>
-<span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+
+<span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># immer noch Ebene 0</span>
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
+
     <span class="c1"># Ebene 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wir könnten hier jetzt noch komplexe Berechnungen anstellen oder eine weitere Bedingung prüfen.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wir könnten hier jetzt komplexe Berechnungen anstellen oder eine weitere Bedingung prüfen.&quot;</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sub_string</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">):</span>
         <span class="c1"># Ebene 2</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; kürzer ist als example_text ... ist sie.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; kürzer ist als example_text - ist sie.&quot;</span><span class="p">)</span>
+
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Ebene 2</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; kürzer ist als example_text ... ist sie nicht.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; kürzer ist als example_text - ist sie nicht.&quot;</span><span class="p">)</span>
+        
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Ebene 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="c1"># wieder Ebene 0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
@@ -635,19 +597,20 @@ False
 </div>
 <p>Der Code auf einer Ebene wird solange als zusammengehörig erkannt bis wieder auf die nächsthöhere Ebene oder Ebene 0 gesprungen wird. Die Zeilen 8 bis 15 sind ein zusammenhängender Codeblock, der nur ausgeführt wird, wenn die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingung in Zeile 6 erfüllt ist. Zeile 18 befindet sich zwar auf derselben Ebene, ist aber gebunden an Zeile 16 und stellt daher einen separaten Codeteil dar.</p>
 <p>Der Code in Zeile 21 gehört nicht mehr zur <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-Abfrage und wird immer ausgeführt (solange kein Fehler im Code auftritt) – unabhängig davon, ob die Auswertung der Bedingungen wahr oder falsch ist.</p>
-<div class="section" id="elif">
-<h3>elif<a class="headerlink" href="#elif" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="else-if-elif">
+<h2>Else-if: elif<a class="headerlink" href="#else-if-elif" title="Permalink to this headline">¶</a></h2>
 <p>Außerdem haben Sie die Möglichkeit, mehrere <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfragen in einem Block zusammenzufassen. So können wir zum Beispiel eine dritte Option zu unserer Abfrage hinzufügen, die den Fall behandelt, in dem beide Zeichenketten identisch sind. Verwenden Sie hierfür das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">elif</span></code> (kurz für “else if”). Die Syntax von <code class="docutils literal notranslate"><span class="pre">elif</span></code> ist identisch zu der von <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="n">example_text</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">sub_string</span> <span class="o">==</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -658,31 +621,59 @@ False
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="n">example_text</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="o">==</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Sie können beliebig viele <code class="docutils literal notranslate"><span class="pre">elif</span></code>-Abfragen hinzufügen, dabei ist aber grundsätzlich die Reihenfolge “if …, elif …, elif …, elif …, […], else” zu berücksichtigen.</p>
 </div>
-</div>
 <div class="section" id="bedingungen-verknupfen">
 <h2>Bedingungen verknüpfen<a class="headerlink" href="#bedingungen-verknupfen" title="Permalink to this headline">¶</a></h2>
 <p>Sie können in Ihren <code class="docutils literal notranslate"><span class="pre">if</span></code>-Blöcken auch mehrere Bedingungen gleichzeitig abfragen. Diese müssen Sie mit den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">and</span></code> oder <code class="docutils literal notranslate"><span class="pre">or</span></code> miteinander verknüpfen. Diese entsprechen dem logischen UND bzw. ODER. Wie sich die Kombination von <em>wahren</em> (w) und <em>falschen</em> (f) Aussagen mit UND bzw. ODER auf den Wahrheitswert der Gesamtaussage auswirkt, zeigt folgende Tabelle:</p>
-<p>| Aussage_1 | Aussage_2 || and | or |
-|—|—||—–|—-|
-| w | w || w   | w  |
-| w | f ||f   | w  |
-| f | w || f   | w  |
-| f | f || f   | f  |</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Aussage_1</p></th>
+<th class="head"><p>Aussage_2</p></th>
+<th class="head"><p>and</p></th>
+<th class="text-align:right head"><p>or</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>w</p></td>
+<td><p>w</p></td>
+<td><p>w</p></td>
+<td class="text-align:right"><p>w</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>w</p></td>
+<td><p>f</p></td>
+<td><p>f</p></td>
+<td class="text-align:right"><p>w</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>f</p></td>
+<td><p>w</p></td>
+<td><p>f</p></td>
+<td class="text-align:right"><p>w</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>f</p></td>
+<td><p>f</p></td>
+<td><p>f</p></td>
+<td class="text-align:right"><p>f</p></td>
+</tr>
+</tbody>
+</table>
 <p>Hier zwei Beispiele: Überlegen Sie bevor Sie den Code ausführen, ob die Bedingungen erfüllt sind oder nicht. Stimmt die Ausgabe mit Ihrer Vermutung überein?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dh_definition</span> <span class="o">=</span> <span class="s2">&quot;Das interdisziplinär ausgerichtete Fach Digital Humanities (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dh_definition</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Das interdisziplinär ausgerichtete Fach Digital Humanities </span>
+<span class="s1">                   (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung </span>
+<span class="s1">                   computergestützter Verfahren und digitaler Ressourcen in den </span>
+<span class="s1">                   Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.&#39;&#39;&#39;</span>
+                   
 <span class="n">sub_string</span> <span class="o">=</span> <span class="s2">&quot;Editionswissenschaft&quot;</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span> <span class="ow">and</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">dh_definition</span><span class="p">:</span>
@@ -695,7 +686,7 @@ False
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dh_definition</span> <span class="o">=</span> <span class="s2">&quot;Das interdisziplinär ausgerichtete Fach Digital Humanities (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>                 
 <span class="n">sub_string</span> <span class="o">=</span> <span class="s2">&quot;Editionswissenschaft&quot;</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span> <span class="ow">or</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">dh_definition</span><span class="p">:</span>
@@ -737,9 +728,11 @@ False
 </div>
 <p><em>Was fällt Ihnen auf? Tragen Sie es hier ein:</em></p>
 <p>Wir können also mit Python Programme schreiben, die auf Basis der Auswertung von Aussagen entscheiden, ob eine Anweisung ausgeführt oder übersprungen wird oder Programme, die eine von mehreren Anweisungen zur Ausführung auswählen, je nachdem, welche Bedingungen erfüllt wurden.</p>
-<p><strong>Versuchen Sie einmal, das Gelernte anzuwenden:</strong>
-Schreiben Sie ein kleines Programm, das eine*n Nutzer*in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene <code class="docutils literal notranslate"><span class="pre">print</span></code>-Kommandos ausgeführt werden: “Die Magna Carta stammt aus einem späteren Jahr.”, “Die Vereinbarungen stammen aus einem früheren Jahr.”, “Die Eingabe ist korrekt!”.
-Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notranslate"><span class="pre">input</span></code>-Funktion in ein <code class="docutils literal notranslate"><span class="pre">integer</span></code> umwandeln müssen. Wie das geht, können Sie im ersten Übungsnotebook ggf. noch mal nachlesen.</p>
+</div>
+<div class="section" id="aufgabe-bedingte-anweisungen">
+<h2>Aufgabe: Bedingte Anweisungen<a class="headerlink" href="#aufgabe-bedingte-anweisungen" title="Permalink to this headline">¶</a></h2>
+<p>Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene <code class="docutils literal notranslate"><span class="pre">print</span></code>-Kommandos ausgeführt werden: “Die Magna Carta stammt aus einem späteren Jahr.”, “Die Vereinbarungen stammen aus einem früheren Jahr.”, “Die Eingabe ist korrekt!”.
+Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notranslate"><span class="pre">input</span></code>-Funktion in ein <code class="docutils literal notranslate"><span class="pre">integer</span></code> umwandeln müssen. Wie das geht, können Sie im ersten Kapitel noch mal nachlesen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -754,7 +747,7 @@ Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notr
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -780,12 +773,12 @@ Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notr
         
               <div>
                 
-  <div class="section" id="bedingte-anweisungen">
+  <div class="tex2jax_ignore mathjax_ignore section" id="bedingte-anweisungen">
 <h1>Bedingte Anweisungen<a class="headerlink" href="#bedingte-anweisungen" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="boolesche-werte">
 <h2><a class="reference external" href="https://www.w3schools.com/python/python_booleans.asp">Boolesche Werte</a><a class="headerlink" href="#boolesche-werte" title="Permalink to this headline">¶</a></h2>
 <p>Nachdem Sie in der letzten Einheit schon einige Datentypen kennengelernt haben (<em>int</em>, <em>float</em>, <em>string</em> usw.), fügen wir nun dieser Liste noch einen Weiteren hinzu: den Datentyp <em>Boolean</em>. Er kann lediglich zwei Werte annehmen: <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code>. Sie können damit also sog. Wahrheitswerte abbilden. Benannt wurde dieser Datentyp übrigens nach <a class="reference external" href="https://de.wikipedia.org/wiki/George_Boole">George Boole</a>, der mit der <a class="reference external" href="https://de.wikipedia.org/wiki/Boolesche_Algebra">Booleschen Algebra</a> einen für die Computertechnik grundlegenden Zweig der Mathematik begründete.</p>
-<p>In Python können wir boolsche Variablen durch die bekannte Form der Zuweisung deklarieren:</p>
+<p>In Python können wir boolesche Variablen durch die bekannte Form der Zuweisung deklarieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_spam</span> <span class="o">=</span> <span class="kc">True</span>
@@ -796,28 +789,16 @@ Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-</pre></div>
-</div>
-</div>
 </div>
 <p>In den meisten Fällen werden wir uns diesen Datentyp aber zu Nutze machen, um zu prüfen, ob logische Aussagen richtig oder falsch sind … und das werden wir sehr häufig prüfen wollen. Oft möchten wir z.B. wissen, ob eine bestimmte Zeichenkette in einem Text auftaucht, dazu können wir das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">in</span></code> nutzen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
-<span class="s1">                  erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden </span>
-<span class="s1">                  der Digital Humanities einen regelrechten Hype.&#39;&#39;&#39;</span>
+<span class="s1">erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden </span>
+<span class="s1">der Digital Humanities einen regelrechten Hype.&#39;&#39;&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Editionswissenschaft&quot;</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Text Mining&quot;</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
 </pre></div>
 </div>
 </div>
@@ -830,17 +811,11 @@ False
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-True
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="vergleichsoperatoren">
 <h2>Vergleichsoperatoren<a class="headerlink" href="#vergleichsoperatoren" title="Permalink to this headline">¶</a></h2>
-<p>Neben den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Übungsnotebook kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:</p>
+<p>Neben den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># kleiner als; Notieren Sie sich vor der Ausführung des Codeblocks, </span>
@@ -872,19 +847,8 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
-False
-False
-True
-True
-False
-</pre></div>
 </div>
-</div>
-</div>
-<p>Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">==</span></code>) verwendet werden, da, wie Sie im vergangenen Notebook gelernt haben, das einfache Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">=</span></code>) bereits für die Zuweisung von Werten zu Variablen reserviert ist.</p>
+<p>Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">==</span></code>) verwendet werden, da, wie Sie im ersten Kapitel gelernt haben, das einfache Gleichheitszeichen (<code class="docutils literal notranslate"><span class="pre">=</span></code>) bereits für die Zuweisung von Werten zu Variablen reserviert ist.</p>
 <p>Der Operator zur Prüfung der Ungleichheit hingegen besteht aus einem Ausrufezeichen gefolgt von einem einzelnen Gleichheitszeichen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,13 +856,7 @@ False
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
 </div>
-</div>
-</div>
-<p>Das müssen wir uns einfach merken.</p>
 </div>
 <div class="section" id="bedingte-abfragen-mit-if-elif-und-else">
 <h2><a class="reference external" href="https://www.python-kurs.eu/python3_bedingte_anweisungen.php">Bedingte Abfragen mit if, elif und else</a><a class="headerlink" href="#bedingte-abfragen-mit-if-elif-und-else" title="Permalink to this headline">¶</a></h2>
@@ -910,47 +868,28 @@ False
 <p>Wirklich interessant wird es, wenn wir unsere Programme so gestalten, dass bestimmte Schritte nur dann ausgeführt werden, wenn etwaige Vorbedingungen erfüllt sind. Solche logischen Verzweigungen können wir mithilfe der eben kennengelernten Operatoren und Wahrheitswerte und den sogenannten <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfragen definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21196</span><span class="o">/</span><span class="mf">613984899.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="nn">C:\JupyterLab\resources\jlab_server\envs\base2exp\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
 </div>
-</div>
-</div>
-<p>Wie Sie sehen, müssen Sie einfach nur die Abfrage, die Sie stellen wollen, hinter das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">if</span></code> einfügen. Nach einem Doppelpunkt folgt der Teil des Programmcodes, der nur dann ausgeführt wird, wenn die Abfrage den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, andernfalls wird ausgeführt, was wir unter <code class="docutils literal notranslate"><span class="pre">else</span></code> definiert haben. Die Angabe einer <code class="docutils literal notranslate"><span class="pre">else</span></code>-Anweisung ist optional. Wir könnten sie auch weglassen, dann würde das Programm, wenn die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage nicht den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, einfach zum abschließenden <code class="docutils literal notranslate"><span class="pre">print</span></code>-Statement springen:</p>
+<p>Wie Sie sehen, müssen Sie einfach nur die Abfrage, die Sie stellen wollen, hinter das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">if</span></code> einfügen. Nach einem Doppelpunkt folgt der Teil des Programmcodes, der nur dann ausgeführt wird, wenn die Abfrage den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, andernfalls wird ausgeführt, was wir unter <code class="docutils literal notranslate"><span class="pre">else</span></code> definiert haben. Die Angabe einer <code class="docutils literal notranslate"><span class="pre">else</span></code>-Anweisung ist optional. Wir könnten sie im konkreten Fall auch weglassen, dann würde das Programm, wenn die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage nicht den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt, einfach zum abschließenden <code class="docutils literal notranslate"><span class="pre">print</span></code>-Statement springen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -963,12 +902,13 @@ False
 <p>Wenn Sie die Einrückung entfernen würden, ruft das den Indentation-Fehler hervor und Ihr Programm wird nicht ausgeführt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
 </pre></div>
@@ -980,22 +920,28 @@ False
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Die oberste Ebene ist immer die Ebene ohne Einrückung. </span>
 <span class="sd">Wir könnten Sie das EG unseres Codes nennen oder Ebene 0.&quot;&quot;&quot;</span>
-<span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Wort ein, für das Sie prüfen wollen, ob es in unserem Beispieltext vorkommt: &quot;</span><span class="p">)</span>
+
+<span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
+<span class="s1">ob es in unserem Beispieltext vorkommt: &#39;&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># immer noch Ebene 0</span>
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
+
     <span class="c1"># Ebene 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wir könnten hier jetzt noch komplexe Berechnungen anstellen oder eine weitere Bedingung prüfen.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wir könnten hier jetzt komplexe Berechnungen anstellen oder eine weitere Bedingung prüfen.&quot;</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sub_string</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">):</span>
         <span class="c1"># Ebene 2</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; kürzer ist als example_text ... ist sie.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; kürzer ist als example_text - ist sie.&quot;</span><span class="p">)</span>
+
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Ebene 2</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; kürzer ist als example_text ... ist sie nicht.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zum Beispiel, ob die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; kürzer ist als example_text - ist sie nicht.&quot;</span><span class="p">)</span>
+        
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Ebene 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 
 <span class="c1"># wieder Ebene 0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist beendet.&quot;</span><span class="p">)</span>
@@ -1005,19 +951,20 @@ False
 </div>
 <p>Der Code auf einer Ebene wird solange als zusammengehörig erkannt bis wieder auf die nächsthöhere Ebene oder Ebene 0 gesprungen wird. Die Zeilen 8 bis 15 sind ein zusammenhängender Codeblock, der nur ausgeführt wird, wenn die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingung in Zeile 6 erfüllt ist. Zeile 18 befindet sich zwar auf derselben Ebene, ist aber gebunden an Zeile 16 und stellt daher einen separaten Codeteil dar.</p>
 <p>Der Code in Zeile 21 gehört nicht mehr zur <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-Abfrage und wird immer ausgeführt (solange kein Fehler im Code auftritt) – unabhängig davon, ob die Auswertung der Bedingungen wahr oder falsch ist.</p>
-<div class="section" id="elif">
-<h3>elif<a class="headerlink" href="#elif" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="else-if-elif">
+<h2>Else-if: elif<a class="headerlink" href="#else-if-elif" title="Permalink to this headline">¶</a></h2>
 <p>Außerdem haben Sie die Möglichkeit, mehrere <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfragen in einem Block zusammenzufassen. So können wir zum Beispiel eine dritte Option zu unserer Abfrage hinzufügen, die den Fall behandelt, in dem beide Zeichenketten identisch sind. Verwenden Sie hierfür das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">elif</span></code> (kurz für “else if”). Die Syntax von <code class="docutils literal notranslate"><span class="pre">elif</span></code> ist identisch zu der von <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="n">example_text</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">sub_string</span> <span class="o">==</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tut mir leid, die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1028,31 +975,59 @@ False
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="n">example_text</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="o">==</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist mit example_text identisch.&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist Teil von example_text.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sub_string</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeichenkette &#39;</span><span class="si">{</span><span class="n">sub_string</span><span class="si">}</span><span class="s2">&#39; ist nicht Teil von example_text.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Sie können beliebig viele <code class="docutils literal notranslate"><span class="pre">elif</span></code>-Abfragen hinzufügen, dabei ist aber grundsätzlich die Reihenfolge “if …, elif …, elif …, elif …, […], else” zu berücksichtigen.</p>
 </div>
-</div>
 <div class="section" id="bedingungen-verknupfen">
 <h2>Bedingungen verknüpfen<a class="headerlink" href="#bedingungen-verknupfen" title="Permalink to this headline">¶</a></h2>
 <p>Sie können in Ihren <code class="docutils literal notranslate"><span class="pre">if</span></code>-Blöcken auch mehrere Bedingungen gleichzeitig abfragen. Diese müssen Sie mit den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">and</span></code> oder <code class="docutils literal notranslate"><span class="pre">or</span></code> miteinander verknüpfen. Diese entsprechen dem logischen UND bzw. ODER. Wie sich die Kombination von <em>wahren</em> (w) und <em>falschen</em> (f) Aussagen mit UND bzw. ODER auf den Wahrheitswert der Gesamtaussage auswirkt, zeigt folgende Tabelle:</p>
-<p>| Aussage_1 | Aussage_2 || and | or |
-|—|—||—–|—-|
-| w | w || w   | w  |
-| w | f ||f   | w  |
-| f | w || f   | w  |
-| f | f || f   | f  |</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Aussage_1</p></th>
+<th class="head"><p>Aussage_2</p></th>
+<th class="head"><p>and</p></th>
+<th class="text-align:right head"><p>or</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>w</p></td>
+<td><p>w</p></td>
+<td><p>w</p></td>
+<td class="text-align:right"><p>w</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>w</p></td>
+<td><p>f</p></td>
+<td><p>f</p></td>
+<td class="text-align:right"><p>w</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>f</p></td>
+<td><p>w</p></td>
+<td><p>f</p></td>
+<td class="text-align:right"><p>w</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>f</p></td>
+<td><p>f</p></td>
+<td><p>f</p></td>
+<td class="text-align:right"><p>f</p></td>
+</tr>
+</tbody>
+</table>
 <p>Hier zwei Beispiele: Überlegen Sie bevor Sie den Code ausführen, ob die Bedingungen erfüllt sind oder nicht. Stimmt die Ausgabe mit Ihrer Vermutung überein?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dh_definition</span> <span class="o">=</span> <span class="s2">&quot;Das interdisziplinär ausgerichtete Fach Digital Humanities (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dh_definition</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Das interdisziplinär ausgerichtete Fach Digital Humanities </span>
+<span class="s1">                   (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung </span>
+<span class="s1">                   computergestützter Verfahren und digitaler Ressourcen in den </span>
+<span class="s1">                   Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.&#39;&#39;&#39;</span>
+                   
 <span class="n">sub_string</span> <span class="o">=</span> <span class="s2">&quot;Editionswissenschaft&quot;</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span> <span class="ow">and</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">dh_definition</span><span class="p">:</span>
@@ -1065,7 +1040,7 @@ False
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dh_definition</span> <span class="o">=</span> <span class="s2">&quot;Das interdisziplinär ausgerichtete Fach Digital Humanities (‚digitale Geisteswissenschaften‘) umfasst die systematische Nutzung computergestützter Verfahren und digitaler Ressourcen in den Geistes- und Kulturwissenschaften sowie die Reflexion über deren Anwendung.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>                 
 <span class="n">sub_string</span> <span class="o">=</span> <span class="s2">&quot;Editionswissenschaft&quot;</span>
 
 <span class="k">if</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">example_text</span> <span class="ow">or</span> <span class="n">sub_string</span> <span class="ow">in</span> <span class="n">dh_definition</span><span class="p">:</span>
@@ -1107,9 +1082,11 @@ False
 </div>
 <p><em>Was fällt Ihnen auf? Tragen Sie es hier ein:</em></p>
 <p>Wir können also mit Python Programme schreiben, die auf Basis der Auswertung von Aussagen entscheiden, ob eine Anweisung ausgeführt oder übersprungen wird oder Programme, die eine von mehreren Anweisungen zur Ausführung auswählen, je nachdem, welche Bedingungen erfüllt wurden.</p>
-<p><strong>Versuchen Sie einmal, das Gelernte anzuwenden:</strong>
-Schreiben Sie ein kleines Programm, das eine*n Nutzer*in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene <code class="docutils literal notranslate"><span class="pre">print</span></code>-Kommandos ausgeführt werden: “Die Magna Carta stammt aus einem späteren Jahr.”, “Die Vereinbarungen stammen aus einem früheren Jahr.”, “Die Eingabe ist korrekt!”.
-Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notranslate"><span class="pre">input</span></code>-Funktion in ein <code class="docutils literal notranslate"><span class="pre">integer</span></code> umwandeln müssen. Wie das geht, können Sie im ersten Übungsnotebook ggf. noch mal nachlesen.</p>
+</div>
+<div class="section" id="aufgabe-bedingte-anweisungen">
+<h2>Aufgabe: Bedingte Anweisungen<a class="headerlink" href="#aufgabe-bedingte-anweisungen" title="Permalink to this headline">¶</a></h2>
+<p>Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene <code class="docutils literal notranslate"><span class="pre">print</span></code>-Kommandos ausgeführt werden: “Die Magna Carta stammt aus einem späteren Jahr.”, “Die Vereinbarungen stammen aus einem früheren Jahr.”, “Die Eingabe ist korrekt!”.
+Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notranslate"><span class="pre">input</span></code>-Funktion in ein <code class="docutils literal notranslate"><span class="pre">integer</span></code> umwandeln müssen. Wie das geht, können Sie im ersten Kapitel noch mal nachlesen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -1124,7 +1101,7 @@ Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notr
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

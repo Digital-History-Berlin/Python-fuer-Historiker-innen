@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -316,6 +316,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -331,50 +334,55 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-erstellen">
+   Listen erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listen-bearbeiten">
    Listen bearbeiten
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#konkatenierung">
-     Konkatenierung
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#append-und-extend">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       append()
-      </span>
-     </code>
-     und
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       extend()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#insert">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       insert()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#konkatenierung">
+   Konkatenierung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#append-und-extend">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     append()
+    </span>
+   </code>
+   und
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     extend()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insert">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     insert()
+    </span>
+   </code>
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indizieren">
    Indizieren
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lange-bestimmen">
-   Länge bestimmen
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lange-bestimmen">
+     Länge bestimmen
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listen-nach-vorkommen-von-elementen-prufen">
@@ -439,50 +447,55 @@
                 <nav aria-label="Page">
                     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listen-erstellen">
+   Listen erstellen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listen-bearbeiten">
    Listen bearbeiten
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#konkatenierung">
-     Konkatenierung
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#append-und-extend">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       append()
-      </span>
-     </code>
-     und
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       extend()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#insert">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       insert()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#konkatenierung">
+   Konkatenierung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#append-und-extend">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     append()
+    </span>
+   </code>
+   und
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     extend()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insert">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     insert()
+    </span>
+   </code>
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indizieren">
    Indizieren
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lange-bestimmen">
-   Länge bestimmen
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lange-bestimmen">
+     Länge bestimmen
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#listen-nach-vorkommen-von-elementen-prufen">
@@ -534,11 +547,13 @@
             
               <div>
                 
-  <div class="section" id="listen">
+  <div class="tex2jax_ignore mathjax_ignore section" id="listen">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists">Listen</a><a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h1>
 <p>Im Alltag greifen wir häufig auf Sie zurück: ob zur Planung des Wocheneinkaufs, zur Erstellung von Gästelisten oder zur Organisation anstehender Aufgaben. Listen sind allgegenwärtig.</p>
-<p>Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. In den ersten beiden Übungseinheiten haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch <em>items</em> oder <em>Instanzen</em> genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Insofern eine Liste nun einer Variablen zugewiesen wird spricht man auch von <em>list value</em>. Ein solcher <em>list value</em> sieht wie folgt aus:</p>
+<p>Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. Im ersten Kapitel haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch <em>items</em> oder <em>Instanzen</em> genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Wenn eine Liste einer Variablen zugewiesen wird spricht man auch von <em>list value</em>. Ein solcher <em>list value</em> sieht wie folgt aus:</p>
 <p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code></p>
+<div class="section" id="listen-erstellen">
+<h2>Listen erstellen<a class="headerlink" href="#listen-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Analog zu Strings, die Sie an einfachen oder doppelten Anführungszeichen erkennen können, werden Anfang und Ende von Listen durch eckige Klammern angezeigt. Die einzelnen in der Liste enthaltenen Elemente bzw. <em>items</em> werden voneinander durch Kommata getrennt. Als Werte können beliebige Datentypen in den Listen gespeichert werden. Hier einige Beispiele:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -552,13 +567,15 @@
 <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">2.76</span><span class="p">]</span>
 
 <span class="c1"># assigning list of book titles</span>
-<span class="n">book_titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Die Verwandlung&quot;</span><span class="p">,</span> <span class="s2">&quot;Die Pest&quot;</span><span class="p">,</span> <span class="s2">&quot;Eine Geschichte aus zwei Städten&quot;</span><span class="p">,</span> <span class="s2">&quot;Digital Humanities. Eine Einführung&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Harry Potter und der Stein der Weisen&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry Potter und die Kammer des Schreckens&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry Potter und der Gefangene von Askaban&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">]]</span>
+<span class="n">book_titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Die Verwandlung&quot;</span><span class="p">,</span> 
+               <span class="s2">&quot;Die Pest&quot;</span><span class="p">,</span> 
+               <span class="s2">&quot;Eine Geschichte aus zwei Städten&quot;</span><span class="p">,</span> 
+               <span class="s2">&quot;Digital Humanities. Eine Einführung&quot;</span><span class="p">,</span> 
+               <span class="p">[</span><span class="s2">&quot;Harry Potter und der Stein der Weisen&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;Harry Potter und die Kammer des Schreckens&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;Harry Potter und der Gefangene von Askaban&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;...&quot;</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Die Verwandlung&#39;, &#39;Die Pest&#39;, &#39;Eine Geschichte aus zwei Städten&#39;, &#39;Digital Humanities. Eine Einführung&#39;, [&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;]]
 </pre></div>
 </div>
 </div>
@@ -573,10 +590,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="listen-bearbeiten">
@@ -588,8 +601,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">extend()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">insert()</span></code></p></li>
 </ul>
+</div>
 <div class="section" id="konkatenierung">
-<h3>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h3>
+<h2>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h2>
 <p>Verschiedene Listen können durch sehr einfache Weise mittels des “+”-Operators zusammengefügt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -602,41 +616,17 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Die Verwandlung&#39;, &#39;Die Pest&#39;, &#39;Eine Geschichte aus zwei Städten&#39;, &#39;Digital Humanities. Eine Einführung&#39;, [&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;], &#39;Stolz und Vorurteil&#39;, &#39;Woyzeck&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die Instanzen aus <code class="docutils literal notranslate"><span class="pre">another_list</span></code> an die Instanzen in <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> angehängt und die Variable <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.</p>
 </div>
 <div class="section" id="append-und-extend">
-<h3><code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#append-und-extend" title="Permalink to this headline">¶</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#append-und-extend" title="Permalink to this headline">¶</a></h2>
 <p>Die Methoden <code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code> funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># append list by user input</span>
 <span class="n">book_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: &quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_3848</span><span class="o">/</span><span class="mf">3473817475.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># append list by user input</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">book_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-
-<span class="nn">C:\JupyterLab\resources\jlab_server\envs\base2exp\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -650,16 +640,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3, 4]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">extend()</span></code> können Sie also direkt mehrere Elemente hinzufügen. Der Effekt ist dabei ähnlich dem der einfachen “Addition”.</p>
 </div>
 <div class="section" id="insert">
-<h3><code class="docutils literal notranslate"><span class="pre">insert()</span></code><a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">insert()</span></code><a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h2>
 <p>Dagegen fügt die <code class="docutils literal notranslate"><span class="pre">insert()</span></code>-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,19 +654,12 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: Harry Potter
-[&#39;Die Verwandlung&#39;, &#39;Die Pest&#39;, &#39;Harry Potter&#39;, &#39;Eine Geschichte aus zwei Städten&#39;, &#39;Digital Humanities. Eine Einführung&#39;, [&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;], &#39;Stolz und Vorurteil&#39;, &#39;Woyzeck&#39;]
-</pre></div>
 </div>
-</div>
-</div>
-<p>Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer*inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.</p>
-</div>
+<p>Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer:inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.</p>
 </div>
 <div class="section" id="indizieren">
 <h2>Indizieren<a class="headerlink" href="#indizieren" title="Permalink to this headline">¶</a></h2>
-<p>Um nun auf die einzelnen Elemente zuzugreifen, können Sie folgerichtig ganz ähnliche Mechanismen wie bei der Arbeit mit Zeichenketten nutzen:</p>
+<p>Um nun auf die einzelnen Elemente zuzugreifen, können Sie folgerichtig ganz ähnliche Mechanismen wie bei der Arbeit mit Strings nutzen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -690,15 +668,7 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In der Coronakrise war </span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">book_titles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> wieder auf der Bestsellerliste.&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> und </span><span class="si">{}</span><span class="s2"> kann ich wirklich empfehlen.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="n">book_titles</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Verwandlung
-Eine Geschichte aus zwei Städten
-In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
-[&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;] und Eine Geschichte aus zwei Städten kann ich wirklich empfehlen.
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2"> und </span><span class="si">{</span><span class="n">book_titles</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2"> kann ich wirklich empfehlen.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -707,12 +677,7 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 <p>Wie eingangs festgelegt enthält unsere Liste von Buchtiteln selbst wiederum eine Liste. Um auf die Werte in verschachtelten Instanzen zuzugreifen, können mehrere Indizes nacheinander genutzt werden. Der erste bezieht sich dann auf die Instanz in der “Mutterliste” und der zweite auf den Wert innerhalb dieses Listenelements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> ist von J.K. Rowling.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g ist von J.K. Rowling.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> ist von J.K. Rowling.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -725,17 +690,6 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-8-5199b98112fb&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Harry Potter und der Feuerkelch&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
 </div>
 <p>Wenn Sie eine Indexposition adressieren die hingegen größer als die Länge der Liste ist, dann erhalten Sie einen <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>, der Ihnen signalisiert, dass Sie über das Ziel hinaus geschossen sind.</p>
 <div class="cell docutils container">
@@ -744,21 +698,10 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-9-13f69eae1b03&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
-
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
 </div>
 <p>Das weist bereits auf eine Schwierigkeit hin. Häufig kann es vorkommen, dass Sie mit unbekannten oder so umfangreichen Datensammlungen arbeiten, dass Sie gar nicht so genau ihre Ausmaße kennen.</p>
-</div>
 <div class="section" id="lange-bestimmen">
-<h2>Länge bestimmen<a class="headerlink" href="#lange-bestimmen" title="Permalink to this headline">¶</a></h2>
+<h3>Länge bestimmen<a class="headerlink" href="#lange-bestimmen" title="Permalink to this headline">¶</a></h3>
 <p>Das Ausmaß beziehungsweise die Länge einer Liste können Sie ganz einfach mit der Ihnen schon bekannten Methode <code class="docutils literal notranslate"><span class="pre">len()</span></code> ermitteln lassen. Probieren Sie es einmal mit der Ihnen bekannten Syntax aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,10 +709,6 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 <span class="nb">len</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-</pre></div>
 </div>
 </div>
 </div>
@@ -783,20 +722,10 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Kulturgeschichte&quot;</span> <span class="ow">in</span> <span class="n">book_titles</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -816,24 +745,14 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
 </div>
 <p>Da die Indizierung stets bei <code class="docutils literal notranslate"><span class="pre">0</span></code> beginnt, signalisiert Ihnen der Rückgabewert <code class="docutils literal notranslate"><span class="pre">1</span></code>, dass der Titel “Die Pest” sich an der zweiten Position in der Liste befindet.</p>
 <p>Optional kann der Funktion eine Start- und Endposition wie beim Slicing übergeben werden, um ggf. einen bestimmten Bereich zu definieren, in dem der Wert gefunden werden soll.</p>
-<p>Mit der Methode <code class="docutils literal notranslate"><span class="pre">count()</span></code> kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein <em>integer</em>. Wir demonstrieren das hier anhand der früher im Notebook definierten Liste <code class="docutils literal notranslate"><span class="pre">some_list</span></code>:</p>
+<p>Mit der Methode <code class="docutils literal notranslate"><span class="pre">count()</span></code> kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein <em>integer</em>. Wir demonstrieren das hier anhand der weiter oben im Notebook definierten Liste <code class="docutils literal notranslate"><span class="pre">some_list</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count occurence of item &quot;d&quot; in some_list</span>
 <span class="n">some_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -842,7 +761,7 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </div>
 <div class="section" id="ausschneiden-slicing">
 <h2>Ausschneiden (Slicing)<a class="headerlink" href="#ausschneiden-slicing" title="Permalink to this headline">¶</a></h2>
-<p>Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.</p>
+<p>Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bei Strings bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.</p>
 <p>Probieren Sie es einmal anhand von <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -875,11 +794,6 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
 </div>
 <p>Per <em>default</em> entfernt <code class="docutils literal notranslate"><span class="pre">pop()</span></code> das letzte <em>item</em> einer Liste. Durch Angabe einer Indexposition können aber auch gezielt Elemente aus der Liste herausgelöst werden.</p>
 <div class="cell docutils container">
@@ -894,17 +808,9 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 <span class="n">some_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span>
 
-<span class="c1"># re-move first item</span>
+<span class="c1"># remove first item</span>
 <span class="n">first_item</span> <span class="o">=</span> <span class="n">some_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">first_item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3, 4]
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3]
-[&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3]
-a
 </pre></div>
 </div>
 </div>
@@ -915,11 +821,6 @@ a
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -937,22 +838,12 @@ a
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 5, 6, 7, 8]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="k">del</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 7, 8]
 </pre></div>
 </div>
 </div>
@@ -965,11 +856,6 @@ a
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -979,62 +865,74 @@ a
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-21-77064592625e&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">del</span> <span class="n">numbers</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;numbers&#39; is not defined
+</div>
+</div>
+<div class="section" id="aufgabe-text-preprocessing">
+<span id="id1"></span><h2>Aufgabe: Text Preprocessing<a class="headerlink" href="#aufgabe-text-preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>In unserer ersten Zwischenaufgabe werden wir versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen-, sondern auf Wortebene.</p>
+<p>Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine Zeichenfolge sein. Per default werden Strings anhand der <em>whitespaces</em>, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
+<span class="s1">            erfolgreichen Kombination von traditionellen Arbeitsweisen </span>
+<span class="s1">            mit Methoden der Digital Humanities einen regelrechten Hype. </span>
+<span class="s1">            Digitale Methoden drängen sich besonders an den Stellen auf, </span>
+<span class="s1">            wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. </span>
+<span class="s1">            Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen </span>
+<span class="s1">            nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle </span>
+<span class="s1">            strukturelle Änderungen ergeben: so können analoge Editionen angereichert </span>
+<span class="s1">            werden oder Editionen können als Hybrid durch eine gleichwertige digitale und </span>
+<span class="s1">            analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen</span>
+<span class="s1">            Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, </span>
+<span class="s1">            die die Produkte der Editionswissenschaft publizieren und langfristig </span>
+<span class="s1">            verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung </span>
+<span class="s1">            und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution </span>
+<span class="s1">            müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt </span>
+<span class="s1">            und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel </span>
+<span class="s1">            veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” </span>
+<span class="s1">            betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, </span>
+<span class="s1">            welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für </span>
+<span class="s1">            die Editionswissenschaft gibt.&#39;&#39;&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<hr class="docutils" />
-<div class="section" id="aufgabe-text-preprocessing">
-<h2>Aufgabe: Text Preprocessing<a class="headerlink" href="#aufgabe-text-preprocessing" title="Permalink to this headline">¶</a></h2>
-<p>In unserer ersten Zwischenaufgabe werden wir nun versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen- sondern auf Wortebene.</p>
-<p>Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine -folge sein. Per default werden Strings anhand der <em>whitespaces</em>, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s2">&quot;Die Editionswissenschaft erlebt nicht zuletzt wegen einer erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden der Digital Humanities einen regelrechten Hype. Digitale Methoden drängen sich besonders an den Stellen auf, wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle strukturelle Änderungen ergeben: so können analoge Editionen angereichert werden oder Editionen können als Hybrid durch eine gleichwertige digitale und analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, die die Produkte der Editionswissenschaft publizieren und langfristig verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für die Editionswissenschaft gibt.&quot;</span>
-
-<span class="c1"># split text into list of words</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split text into list of words</span>
 <span class="n">tokenized_report</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Die&#39;, &#39;Editionswissenschaft&#39;, &#39;erlebt&#39;, &#39;nicht&#39;, &#39;zuletzt&#39;, &#39;wegen&#39;, &#39;einer&#39;, &#39;erfolgreichen&#39;, &#39;Kombination&#39;, &#39;von&#39;, &#39;traditionellen&#39;, &#39;Arbeitsweisen&#39;, &#39;mit&#39;, &#39;Methoden&#39;, &#39;der&#39;, &#39;Digital&#39;, &#39;Humanities&#39;, &#39;einen&#39;, &#39;regelrechten&#39;, &#39;Hype.&#39;, &#39;Digitale&#39;, &#39;Methoden&#39;, &#39;drängen&#39;, &#39;sich&#39;, &#39;besonders&#39;, &#39;an&#39;, &#39;den&#39;, &#39;Stellen&#39;, &#39;auf,&#39;, &#39;wo&#39;, &#39;sie&#39;, &#39;eine&#39;, &#39;Überwindung&#39;, &#39;der&#39;, &#39;Beschränkungen&#39;, &#39;des&#39;, &#39;analogen&#39;, &#39;Drucks&#39;, &#39;versprechen.&#39;, &#39;Zugleich&#39;, &#39;zeichnet&#39;, &#39;sich&#39;, &#39;ab,&#39;, &#39;dass&#39;, &#39;mit&#39;, &#39;einem&#39;, &#39;Wechsel&#39;, &#39;zu&#39;, &#39;digitalen&#39;, &#39;Editionsformen&#39;, &#39;nicht&#39;, &#39;nur&#39;, &#39;neue&#39;, &#39;Werkzeuge&#39;, &#39;genutzt&#39;, &#39;werden,&#39;, &#39;sondern&#39;, &#39;dass&#39;, &#39;sich&#39;, &#39;prinzipielle&#39;, &#39;strukturelle&#39;, &#39;Änderungen&#39;, &#39;ergeben:&#39;, &#39;so&#39;, &#39;können&#39;, &#39;analoge&#39;, &#39;Editionen&#39;, &#39;angereichert&#39;, &#39;werden&#39;, &#39;oder&#39;, &#39;Editionen&#39;, &#39;können&#39;, &#39;als&#39;, &#39;Hybrid&#39;, &#39;durch&#39;, &#39;eine&#39;, &#39;gleichwertige&#39;, &#39;digitale&#39;, &#39;und&#39;, &#39;analoge&#39;, &#39;Version&#39;, &#39;repräsentiert&#39;, &#39;werden.&#39;, &#39;Editoren&#39;, &#39;werden&#39;, &#39;angesichts&#39;, &#39;dieser&#39;, &#39;neuen&#39;, &#39;Möglichkeiten&#39;, &#39;vor&#39;, &#39;neue&#39;, &#39;Herausforderungen&#39;, &#39;gestellt.&#39;, &#39;Gleiches&#39;, &#39;gilt&#39;, &#39;für&#39;, &#39;Infrastrukturen,&#39;, &#39;die&#39;, &#39;die&#39;, &#39;Produkte&#39;, &#39;der&#39;, &#39;Editionswissenschaft&#39;, &#39;publizieren&#39;, &#39;und&#39;, &#39;langfristig&#39;, &#39;verfügbar&#39;, &#39;machen&#39;, &#39;sollen.&#39;, &#39;Grundlegende&#39;, &#39;Fragen&#39;, &#39;der&#39;, &#39;Qualitätsmessung&#39;, &#39;und&#39;, &#39;-bewertung,&#39;, &#39;der&#39;, &#39;Arbeitsorganisation,&#39;, &#39;Vernetzung&#39;, &#39;und&#39;, &#39;Distribution&#39;, &#39;müssen&#39;, &#39;bei&#39;, &#39;der&#39;, &#39;digitalen&#39;, &#39;Editionswissenschaft&#39;, &#39;anders&#39;, &#39;bzw.&#39;, &#39;neu&#39;, &#39;gestellt&#39;, &#39;und&#39;, &#39;bewertet&#39;, &#39;werden.&#39;, &#39;Die&#39;, &#39;vom&#39;, &#39;Forschungsverbund&#39;, &#39;Marbach&#39;, &#39;Weimar&#39;, &#39;Wolfenbüttel&#39;, &#39;veranstaltete&#39;, &#39;Tagung&#39;, &#39;“Digitale&#39;, &#39;Metamorphose:&#39;, &#39;Digital&#39;, &#39;Humanities&#39;, &#39;und&#39;, &#39;Editionswissenschaft”&#39;, &#39;betrachtete&#39;, &#39;diese&#39;, &#39;neuen&#39;, &#39;Möglichkeiten&#39;, &#39;kritisch&#39;, &#39;und&#39;, &#39;ging&#39;, &#39;dabei&#39;, &#39;auch&#39;, &#39;der&#39;, &#39;Frage&#39;, &#39;nach,&#39;, &#39;welche&#39;, &#39;Grenzen&#39;, &#39;und&#39;, &#39;Gefahren&#39;, &#39;es&#39;, &#39;jenseits&#39;, &#39;der&#39;, &#39;offensichtlichen&#39;, &#39;Vorteile&#39;, &#39;für&#39;, &#39;die&#39;, &#39;Editionswissenschaft&#39;, &#39;gibt.&#39;]
-</pre></div>
 </div>
-</div>
-</div>
-<p>Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner des <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>, das ist ein Forschungsfeld, in dem sich intensiv mit der Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
-Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</em> zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für uns genügt aber zunächst die Zerlegung anhand von Leerzeichen.</p>
+<p>Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>. NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
+Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</em> zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.</p>
 <p><strong>Aufgabenstellung:</strong></p>
 <ol class="simple">
-<li><p>Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie ihn einer Variablen zu.</p></li>
+<li><p>Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie diesen einer Variablen zu.</p></li>
 <li><p>Definieren Sie zwei Funktionen:</p></li>
 </ol>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tokenize_text()</span></code> soll folgende Operationen beinhalten:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tokenize_text()</span></code> soll folgende Operationen beinhalten:</p>
+<ul>
 <li><p>Entfernung von Interpunktionszeichen</p></li>
 <li><p>Lowercasing aller Großbuchstaben</p></li>
 <li><p>Tokenisierung der Textdaten anhand von Whitespaces</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">segment_text()</span></code> soll die tokenisierten Textdaten zu Segmenten in folgender Art weiterverarbeiten:</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">segment_text()</span></code> soll die tokenisierten Textdaten zu Segmenten in folgender Art weiterverarbeiten:</p>
+<ul>
 <li><p>Segmente sollten nicht länger als 10 Wörter sein</p></li>
 <li><p>Der Text soll am Ende zeilenweise (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) als zusammenhängende Zeichenkette ausgegeben werden.</p></li>
+</ul>
+</li>
 </ul>
 <p><strong>Hinweise:</strong></p>
 <ul class="simple">
 <li><p>Ihre Funktionen sollten auf beliebige Texte anwendbar sein</p></li>
-<li><p>nutzen Sie bedingte Anweisungen und Schleifen</p></li>
-<li><p>machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch von Formatierungsmöglichkeiten bei Zeichenketten</p></li>
+<li><p>Nutzen Sie bedingte Anweisungen und Schleifen</p></li>
+<li><p>Machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch von Formatierungsmöglichkeiten bei Zeichenketten</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1050,7 +948,7 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -1076,11 +974,13 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
         
               <div>
                 
-  <div class="section" id="listen">
+  <div class="tex2jax_ignore mathjax_ignore section" id="listen">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists">Listen</a><a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h1>
 <p>Im Alltag greifen wir häufig auf Sie zurück: ob zur Planung des Wocheneinkaufs, zur Erstellung von Gästelisten oder zur Organisation anstehender Aufgaben. Listen sind allgegenwärtig.</p>
-<p>Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. In den ersten beiden Übungseinheiten haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch <em>items</em> oder <em>Instanzen</em> genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Insofern eine Liste nun einer Variablen zugewiesen wird spricht man auch von <em>list value</em>. Ein solcher <em>list value</em> sieht wie folgt aus:</p>
+<p>Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. Im ersten Kapitel haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch <em>items</em> oder <em>Instanzen</em> genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Wenn eine Liste einer Variablen zugewiesen wird spricht man auch von <em>list value</em>. Ein solcher <em>list value</em> sieht wie folgt aus:</p>
 <p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code></p>
+<div class="section" id="listen-erstellen">
+<h2>Listen erstellen<a class="headerlink" href="#listen-erstellen" title="Permalink to this headline">¶</a></h2>
 <p>Analog zu Strings, die Sie an einfachen oder doppelten Anführungszeichen erkennen können, werden Anfang und Ende von Listen durch eckige Klammern angezeigt. Die einzelnen in der Liste enthaltenen Elemente bzw. <em>items</em> werden voneinander durch Kommata getrennt. Als Werte können beliebige Datentypen in den Listen gespeichert werden. Hier einige Beispiele:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1094,13 +994,15 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
 <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">2.76</span><span class="p">]</span>
 
 <span class="c1"># assigning list of book titles</span>
-<span class="n">book_titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Die Verwandlung&quot;</span><span class="p">,</span> <span class="s2">&quot;Die Pest&quot;</span><span class="p">,</span> <span class="s2">&quot;Eine Geschichte aus zwei Städten&quot;</span><span class="p">,</span> <span class="s2">&quot;Digital Humanities. Eine Einführung&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Harry Potter und der Stein der Weisen&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry Potter und die Kammer des Schreckens&quot;</span><span class="p">,</span> <span class="s2">&quot;Harry Potter und der Gefangene von Askaban&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">]]</span>
+<span class="n">book_titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Die Verwandlung&quot;</span><span class="p">,</span> 
+               <span class="s2">&quot;Die Pest&quot;</span><span class="p">,</span> 
+               <span class="s2">&quot;Eine Geschichte aus zwei Städten&quot;</span><span class="p">,</span> 
+               <span class="s2">&quot;Digital Humanities. Eine Einführung&quot;</span><span class="p">,</span> 
+               <span class="p">[</span><span class="s2">&quot;Harry Potter und der Stein der Weisen&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;Harry Potter und die Kammer des Schreckens&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;Harry Potter und der Gefangene von Askaban&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;...&quot;</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Die Verwandlung&#39;, &#39;Die Pest&#39;, &#39;Eine Geschichte aus zwei Städten&#39;, &#39;Digital Humanities. Eine Einführung&#39;, [&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;]]
 </pre></div>
 </div>
 </div>
@@ -1115,10 +1017,6 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="listen-bearbeiten">
@@ -1130,8 +1028,9 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
 <li><p><code class="docutils literal notranslate"><span class="pre">extend()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">insert()</span></code></p></li>
 </ul>
+</div>
 <div class="section" id="konkatenierung">
-<h3>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h3>
+<h2>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h2>
 <p>Verschiedene Listen können durch sehr einfache Weise mittels des “+”-Operators zusammengefügt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1144,41 +1043,17 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Die Verwandlung&#39;, &#39;Die Pest&#39;, &#39;Eine Geschichte aus zwei Städten&#39;, &#39;Digital Humanities. Eine Einführung&#39;, [&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;], &#39;Stolz und Vorurteil&#39;, &#39;Woyzeck&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die Instanzen aus <code class="docutils literal notranslate"><span class="pre">another_list</span></code> an die Instanzen in <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> angehängt und die Variable <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.</p>
 </div>
 <div class="section" id="append-und-extend">
-<h3><code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#append-und-extend" title="Permalink to this headline">¶</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#append-und-extend" title="Permalink to this headline">¶</a></h2>
 <p>Die Methoden <code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code> funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># append list by user input</span>
 <span class="n">book_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: &quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_3848</span><span class="o">/</span><span class="mf">3473817475.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># append list by user input</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">book_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-
-<span class="nn">C:\JupyterLab\resources\jlab_server\envs\base2exp\lib\site-packages\ipykernel\kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">-&gt; </span><span class="mi">1003</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1004</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1005</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -1192,16 +1067,11 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3, 4]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">extend()</span></code> können Sie also direkt mehrere Elemente hinzufügen. Der Effekt ist dabei ähnlich dem der einfachen “Addition”.</p>
 </div>
 <div class="section" id="insert">
-<h3><code class="docutils literal notranslate"><span class="pre">insert()</span></code><a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">insert()</span></code><a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h2>
 <p>Dagegen fügt die <code class="docutils literal notranslate"><span class="pre">insert()</span></code>-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1211,19 +1081,12 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: Harry Potter
-[&#39;Die Verwandlung&#39;, &#39;Die Pest&#39;, &#39;Harry Potter&#39;, &#39;Eine Geschichte aus zwei Städten&#39;, &#39;Digital Humanities. Eine Einführung&#39;, [&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;], &#39;Stolz und Vorurteil&#39;, &#39;Woyzeck&#39;]
-</pre></div>
 </div>
-</div>
-</div>
-<p>Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer*inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.</p>
-</div>
+<p>Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer:inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.</p>
 </div>
 <div class="section" id="indizieren">
 <h2>Indizieren<a class="headerlink" href="#indizieren" title="Permalink to this headline">¶</a></h2>
-<p>Um nun auf die einzelnen Elemente zuzugreifen, können Sie folgerichtig ganz ähnliche Mechanismen wie bei der Arbeit mit Zeichenketten nutzen:</p>
+<p>Um nun auf die einzelnen Elemente zuzugreifen, können Sie folgerichtig ganz ähnliche Mechanismen wie bei der Arbeit mit Strings nutzen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -1232,15 +1095,7 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In der Coronakrise war </span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">book_titles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> wieder auf der Bestsellerliste.&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> und </span><span class="si">{}</span><span class="s2"> kann ich wirklich empfehlen.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="n">book_titles</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Die Verwandlung
-Eine Geschichte aus zwei Städten
-In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
-[&#39;Harry Potter und der Stein der Weisen&#39;, &#39;Harry Potter und die Kammer des Schreckens&#39;, &#39;Harry Potter und der Gefangene von Askaban&#39;, &#39;...&#39;] und Eine Geschichte aus zwei Städten kann ich wirklich empfehlen.
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2"> und </span><span class="si">{</span><span class="n">book_titles</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2"> kann ich wirklich empfehlen.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1249,12 +1104,7 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 <p>Wie eingangs festgelegt enthält unsere Liste von Buchtiteln selbst wiederum eine Liste. Um auf die Werte in verschachtelten Instanzen zuzugreifen, können mehrere Indizes nacheinander genutzt werden. Der erste bezieht sich dann auf die Instanz in der “Mutterliste” und der zweite auf den Wert innerhalb dieses Listenelements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> ist von J.K. Rowling.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>g ist von J.K. Rowling.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> ist von J.K. Rowling.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1267,17 +1117,6 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-8-5199b98112fb&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Harry Potter und der Feuerkelch&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
 </div>
 <p>Wenn Sie eine Indexposition adressieren die hingegen größer als die Länge der Liste ist, dann erhalten Sie einen <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>, der Ihnen signalisiert, dass Sie über das Ziel hinaus geschossen sind.</p>
 <div class="cell docutils container">
@@ -1286,21 +1125,10 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-9-13f69eae1b03&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
-
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
 </div>
 <p>Das weist bereits auf eine Schwierigkeit hin. Häufig kann es vorkommen, dass Sie mit unbekannten oder so umfangreichen Datensammlungen arbeiten, dass Sie gar nicht so genau ihre Ausmaße kennen.</p>
-</div>
 <div class="section" id="lange-bestimmen">
-<h2>Länge bestimmen<a class="headerlink" href="#lange-bestimmen" title="Permalink to this headline">¶</a></h2>
+<h3>Länge bestimmen<a class="headerlink" href="#lange-bestimmen" title="Permalink to this headline">¶</a></h3>
 <p>Das Ausmaß beziehungsweise die Länge einer Liste können Sie ganz einfach mit der Ihnen schon bekannten Methode <code class="docutils literal notranslate"><span class="pre">len()</span></code> ermitteln lassen. Probieren Sie es einmal mit der Ihnen bekannten Syntax aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1308,10 +1136,6 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 <span class="nb">len</span><span class="p">(</span><span class="n">book_titles</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-</pre></div>
 </div>
 </div>
 </div>
@@ -1325,20 +1149,10 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Kulturgeschichte&quot;</span> <span class="ow">in</span> <span class="n">book_titles</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -1358,24 +1172,14 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
 </div>
 <p>Da die Indizierung stets bei <code class="docutils literal notranslate"><span class="pre">0</span></code> beginnt, signalisiert Ihnen der Rückgabewert <code class="docutils literal notranslate"><span class="pre">1</span></code>, dass der Titel “Die Pest” sich an der zweiten Position in der Liste befindet.</p>
 <p>Optional kann der Funktion eine Start- und Endposition wie beim Slicing übergeben werden, um ggf. einen bestimmten Bereich zu definieren, in dem der Wert gefunden werden soll.</p>
-<p>Mit der Methode <code class="docutils literal notranslate"><span class="pre">count()</span></code> kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein <em>integer</em>. Wir demonstrieren das hier anhand der früher im Notebook definierten Liste <code class="docutils literal notranslate"><span class="pre">some_list</span></code>:</p>
+<p>Mit der Methode <code class="docutils literal notranslate"><span class="pre">count()</span></code> kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein <em>integer</em>. Wir demonstrieren das hier anhand der weiter oben im Notebook definierten Liste <code class="docutils literal notranslate"><span class="pre">some_list</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count occurence of item &quot;d&quot; in some_list</span>
 <span class="n">some_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -1384,7 +1188,7 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </div>
 <div class="section" id="ausschneiden-slicing">
 <h2>Ausschneiden (Slicing)<a class="headerlink" href="#ausschneiden-slicing" title="Permalink to this headline">¶</a></h2>
-<p>Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.</p>
+<p>Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bei Strings bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.</p>
 <p>Probieren Sie es einmal anhand von <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1417,11 +1221,6 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
 </div>
 <p>Per <em>default</em> entfernt <code class="docutils literal notranslate"><span class="pre">pop()</span></code> das letzte <em>item</em> einer Liste. Durch Angabe einer Indexposition können aber auch gezielt Elemente aus der Liste herausgelöst werden.</p>
 <div class="cell docutils container">
@@ -1436,17 +1235,9 @@ In der Coronakrise war &quot;Die Pest&quot; wieder auf der Bestsellerliste.
 <span class="n">some_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span>
 
-<span class="c1"># re-move first item</span>
+<span class="c1"># remove first item</span>
 <span class="n">first_item</span> <span class="o">=</span> <span class="n">some_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">first_item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3, 4]
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3]
-[&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;f&#39;, &#39;h&#39;, &#39;j&#39;, &#39;d&#39;, &#39;x&#39;, &#39;k&#39;, &#39;d&#39;, 1, 2, 3]
-a
 </pre></div>
 </div>
 </div>
@@ -1457,11 +1248,6 @@ a
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -1479,22 +1265,12 @@ a
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 5, 6, 7, 8]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="k">del</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 7, 8]
 </pre></div>
 </div>
 </div>
@@ -1507,11 +1283,6 @@ a
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1521,62 +1292,74 @@ a
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-21-77064592625e&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">del</span> <span class="n">numbers</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;numbers&#39; is not defined
+</div>
+</div>
+<div class="section" id="aufgabe-text-preprocessing">
+<span id="id1"></span><h2>Aufgabe: Text Preprocessing<a class="headerlink" href="#aufgabe-text-preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>In unserer ersten Zwischenaufgabe werden wir versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen-, sondern auf Wortebene.</p>
+<p>Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine Zeichenfolge sein. Per default werden Strings anhand der <em>whitespaces</em>, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
+<span class="s1">            erfolgreichen Kombination von traditionellen Arbeitsweisen </span>
+<span class="s1">            mit Methoden der Digital Humanities einen regelrechten Hype. </span>
+<span class="s1">            Digitale Methoden drängen sich besonders an den Stellen auf, </span>
+<span class="s1">            wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. </span>
+<span class="s1">            Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen </span>
+<span class="s1">            nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle </span>
+<span class="s1">            strukturelle Änderungen ergeben: so können analoge Editionen angereichert </span>
+<span class="s1">            werden oder Editionen können als Hybrid durch eine gleichwertige digitale und </span>
+<span class="s1">            analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen</span>
+<span class="s1">            Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, </span>
+<span class="s1">            die die Produkte der Editionswissenschaft publizieren und langfristig </span>
+<span class="s1">            verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung </span>
+<span class="s1">            und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution </span>
+<span class="s1">            müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt </span>
+<span class="s1">            und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel </span>
+<span class="s1">            veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” </span>
+<span class="s1">            betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, </span>
+<span class="s1">            welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für </span>
+<span class="s1">            die Editionswissenschaft gibt.&#39;&#39;&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<hr class="docutils" />
-<div class="section" id="aufgabe-text-preprocessing">
-<h2>Aufgabe: Text Preprocessing<a class="headerlink" href="#aufgabe-text-preprocessing" title="Permalink to this headline">¶</a></h2>
-<p>In unserer ersten Zwischenaufgabe werden wir nun versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen- sondern auf Wortebene.</p>
-<p>Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine -folge sein. Per default werden Strings anhand der <em>whitespaces</em>, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s2">&quot;Die Editionswissenschaft erlebt nicht zuletzt wegen einer erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden der Digital Humanities einen regelrechten Hype. Digitale Methoden drängen sich besonders an den Stellen auf, wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle strukturelle Änderungen ergeben: so können analoge Editionen angereichert werden oder Editionen können als Hybrid durch eine gleichwertige digitale und analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, die die Produkte der Editionswissenschaft publizieren und langfristig verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für die Editionswissenschaft gibt.&quot;</span>
-
-<span class="c1"># split text into list of words</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split text into list of words</span>
 <span class="n">tokenized_report</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tokenized_report</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Die&#39;, &#39;Editionswissenschaft&#39;, &#39;erlebt&#39;, &#39;nicht&#39;, &#39;zuletzt&#39;, &#39;wegen&#39;, &#39;einer&#39;, &#39;erfolgreichen&#39;, &#39;Kombination&#39;, &#39;von&#39;, &#39;traditionellen&#39;, &#39;Arbeitsweisen&#39;, &#39;mit&#39;, &#39;Methoden&#39;, &#39;der&#39;, &#39;Digital&#39;, &#39;Humanities&#39;, &#39;einen&#39;, &#39;regelrechten&#39;, &#39;Hype.&#39;, &#39;Digitale&#39;, &#39;Methoden&#39;, &#39;drängen&#39;, &#39;sich&#39;, &#39;besonders&#39;, &#39;an&#39;, &#39;den&#39;, &#39;Stellen&#39;, &#39;auf,&#39;, &#39;wo&#39;, &#39;sie&#39;, &#39;eine&#39;, &#39;Überwindung&#39;, &#39;der&#39;, &#39;Beschränkungen&#39;, &#39;des&#39;, &#39;analogen&#39;, &#39;Drucks&#39;, &#39;versprechen.&#39;, &#39;Zugleich&#39;, &#39;zeichnet&#39;, &#39;sich&#39;, &#39;ab,&#39;, &#39;dass&#39;, &#39;mit&#39;, &#39;einem&#39;, &#39;Wechsel&#39;, &#39;zu&#39;, &#39;digitalen&#39;, &#39;Editionsformen&#39;, &#39;nicht&#39;, &#39;nur&#39;, &#39;neue&#39;, &#39;Werkzeuge&#39;, &#39;genutzt&#39;, &#39;werden,&#39;, &#39;sondern&#39;, &#39;dass&#39;, &#39;sich&#39;, &#39;prinzipielle&#39;, &#39;strukturelle&#39;, &#39;Änderungen&#39;, &#39;ergeben:&#39;, &#39;so&#39;, &#39;können&#39;, &#39;analoge&#39;, &#39;Editionen&#39;, &#39;angereichert&#39;, &#39;werden&#39;, &#39;oder&#39;, &#39;Editionen&#39;, &#39;können&#39;, &#39;als&#39;, &#39;Hybrid&#39;, &#39;durch&#39;, &#39;eine&#39;, &#39;gleichwertige&#39;, &#39;digitale&#39;, &#39;und&#39;, &#39;analoge&#39;, &#39;Version&#39;, &#39;repräsentiert&#39;, &#39;werden.&#39;, &#39;Editoren&#39;, &#39;werden&#39;, &#39;angesichts&#39;, &#39;dieser&#39;, &#39;neuen&#39;, &#39;Möglichkeiten&#39;, &#39;vor&#39;, &#39;neue&#39;, &#39;Herausforderungen&#39;, &#39;gestellt.&#39;, &#39;Gleiches&#39;, &#39;gilt&#39;, &#39;für&#39;, &#39;Infrastrukturen,&#39;, &#39;die&#39;, &#39;die&#39;, &#39;Produkte&#39;, &#39;der&#39;, &#39;Editionswissenschaft&#39;, &#39;publizieren&#39;, &#39;und&#39;, &#39;langfristig&#39;, &#39;verfügbar&#39;, &#39;machen&#39;, &#39;sollen.&#39;, &#39;Grundlegende&#39;, &#39;Fragen&#39;, &#39;der&#39;, &#39;Qualitätsmessung&#39;, &#39;und&#39;, &#39;-bewertung,&#39;, &#39;der&#39;, &#39;Arbeitsorganisation,&#39;, &#39;Vernetzung&#39;, &#39;und&#39;, &#39;Distribution&#39;, &#39;müssen&#39;, &#39;bei&#39;, &#39;der&#39;, &#39;digitalen&#39;, &#39;Editionswissenschaft&#39;, &#39;anders&#39;, &#39;bzw.&#39;, &#39;neu&#39;, &#39;gestellt&#39;, &#39;und&#39;, &#39;bewertet&#39;, &#39;werden.&#39;, &#39;Die&#39;, &#39;vom&#39;, &#39;Forschungsverbund&#39;, &#39;Marbach&#39;, &#39;Weimar&#39;, &#39;Wolfenbüttel&#39;, &#39;veranstaltete&#39;, &#39;Tagung&#39;, &#39;“Digitale&#39;, &#39;Metamorphose:&#39;, &#39;Digital&#39;, &#39;Humanities&#39;, &#39;und&#39;, &#39;Editionswissenschaft”&#39;, &#39;betrachtete&#39;, &#39;diese&#39;, &#39;neuen&#39;, &#39;Möglichkeiten&#39;, &#39;kritisch&#39;, &#39;und&#39;, &#39;ging&#39;, &#39;dabei&#39;, &#39;auch&#39;, &#39;der&#39;, &#39;Frage&#39;, &#39;nach,&#39;, &#39;welche&#39;, &#39;Grenzen&#39;, &#39;und&#39;, &#39;Gefahren&#39;, &#39;es&#39;, &#39;jenseits&#39;, &#39;der&#39;, &#39;offensichtlichen&#39;, &#39;Vorteile&#39;, &#39;für&#39;, &#39;die&#39;, &#39;Editionswissenschaft&#39;, &#39;gibt.&#39;]
-</pre></div>
 </div>
-</div>
-</div>
-<p>Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner des <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>, das ist ein Forschungsfeld, in dem sich intensiv mit der Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
-Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</em> zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für uns genügt aber zunächst die Zerlegung anhand von Leerzeichen.</p>
+<p>Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>. NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
+Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</em> zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.</p>
 <p><strong>Aufgabenstellung:</strong></p>
 <ol class="simple">
-<li><p>Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie ihn einer Variablen zu.</p></li>
+<li><p>Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie diesen einer Variablen zu.</p></li>
 <li><p>Definieren Sie zwei Funktionen:</p></li>
 </ol>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tokenize_text()</span></code> soll folgende Operationen beinhalten:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tokenize_text()</span></code> soll folgende Operationen beinhalten:</p>
+<ul>
 <li><p>Entfernung von Interpunktionszeichen</p></li>
 <li><p>Lowercasing aller Großbuchstaben</p></li>
 <li><p>Tokenisierung der Textdaten anhand von Whitespaces</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">segment_text()</span></code> soll die tokenisierten Textdaten zu Segmenten in folgender Art weiterverarbeiten:</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">segment_text()</span></code> soll die tokenisierten Textdaten zu Segmenten in folgender Art weiterverarbeiten:</p>
+<ul>
 <li><p>Segmente sollten nicht länger als 10 Wörter sein</p></li>
 <li><p>Der Text soll am Ende zeilenweise (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) als zusammenhängende Zeichenkette ausgegeben werden.</p></li>
+</ul>
+</li>
 </ul>
 <p><strong>Hinweise:</strong></p>
 <ul class="simple">
 <li><p>Ihre Funktionen sollten auf beliebige Texte anwendbar sein</p></li>
-<li><p>nutzen Sie bedingte Anweisungen und Schleifen</p></li>
-<li><p>machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch von Formatierungsmöglichkeiten bei Zeichenketten</p></li>
+<li><p>Nutzen Sie bedingte Anweisungen und Schleifen</p></li>
+<li><p>Machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch von Formatierungsmöglichkeiten bei Zeichenketten</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1592,7 +1375,7 @@ Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
