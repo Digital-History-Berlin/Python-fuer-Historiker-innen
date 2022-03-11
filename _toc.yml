@@ -51,3 +51,18 @@ parts:
       title: JSON
     - file: ch04-dateien-verarbeiten/04-csv.ipynb
       title: CSV
+- caption: Daten
+  chapters:
+  - file: ch-daten/part01-python-basics-daten.ipynb
+    title: Daten Python Basics
+- caption: Lösungen zu den Aufgaben
+  chapters:
+  - file: ch-loesungen/part01-python-basics-loesungen.ipynb
+    title: Lösungen Python Basics
+    sections: 
+    - file: ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.ipynb
+      title: Kapitel Programmabläufe strukturieren
+    - file: ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.ipynb
+      title: Kapitel Komplexe Datenstrukturen
+    - file: ch-loesungen/ch04-dateien-verarbeiten-loesungen.ipynb
+      title: Kapitel Dateienverarbeiten
