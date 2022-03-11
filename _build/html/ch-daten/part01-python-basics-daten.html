@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Komplexe Datenstrukturen &#8212; Python Basics Jupyter Testversion</title>
+    <title>Informationen zu den Daten aus Part Python Basics &#8212; Python Basics Jupyter Testversion</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Listen" href="02-listen.html" />
-    <link rel="prev" title="Pseudocode" href="../ch02-programmablaeufe-strukturieren/05-pseudocode.html" />
+    <link rel="next" title="Lösungen zu den Aufgaben aus Part Python Basics" href="../ch-loesungen/part01-python-basics-loesungen.html" />
+    <link rel="prev" title="CSV" href="../ch04-dateien-verarbeiten/04-csv.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,7 +118,7 @@
   Python Basics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ch01-atomare-datentypen/01-atomare-datentypen.html">
    Atomare Datentypen
@@ -183,33 +183,33 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch03-komplexe-datenstrukturen/01-komplexe-datenstrukturen.html">
    Komplexe Datenstrukturen
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="02-listen.html">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/02-listen.html">
      Listen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03-tupel.html">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/03-tupel.html">
      Tupel
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04-sets.html">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/04-sets.html">
      Sets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05-dictionaries.html">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html">
      Dictionaries
     </a>
    </li>
@@ -248,9 +248,9 @@
   Daten
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Daten Python Basics
   </a>
  </li>
@@ -329,7 +329,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ch03-komplexe-datenstrukturen/01-komplexe-datenstrukturen.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/ch-daten/part01-python-basics-daten.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -349,109 +349,31 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/ch03-komplexe-datenstrukturen/01-komplexe-datenstrukturen.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ressourcen">
-   Ressourcen
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
     <!-- Table of contents that is only displayed when printing the page -->
     <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Komplexe Datenstrukturen</h1>
+        <h1>Informationen zu den Daten aus Part Python Basics</h1>
         <!-- Table of contents -->
         <div id="print-main-content" class="row">
             <div class="col-12 col-md-12 pl-md-5 pr-md-5">
             <div id="jb-print-toc">
                 
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lernziele">
-   Lernziele
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ressourcen">
-   Ressourcen
-  </a>
- </li>
-</ul>
-
-                </nav>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="komplexe-datenstrukturen">
-<h1>Komplexe Datenstrukturen<a class="headerlink" href="#komplexe-datenstrukturen" title="Permalink to this headline">¶</a></h1>
-<p>Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch ein paar Schritte weitergehen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellt Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten.</p>
-<p>Was sind Datenstrukturen? Grundsätzlich nichts anderes als eine bestimmte Anordnung und Organisation von miteinander in Beziehung stehenden Daten. In Python gibt es vier eingebaute Datenstrukturen: <em>list</em>, <em>tuple</em>, <em>set</em> und <em>dictionary</em>. Sie bieten Ihnen einige grundlegende Funktionalitäten zur Modellierung von Daten.</p>
-<div class="section" id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
-<p>Was Sie am Ende der Lektion beantworten können sollen:</p>
-<ul class="simple">
-<li><p>Was sind Listen?</p></li>
-<li><p>Was sind Tupel?</p></li>
-<li><p>Was sind Sets?</p></li>
-<li><p>Was sind Dictionaries?</p></li>
-</ul>
-<p>und schließlich sollten Sie am Ende des Kapitels dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten.</p>
-<p>In den folgenden Abschnitten erwarten Sie statt einer größeren Aufgabe mehrere kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Abschnitten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren.</p>
-</div>
-<div class="section" id="ressourcen">
-<h2>Ressourcen<a class="headerlink" href="#ressourcen" title="Permalink to this headline">¶</a></h2>
-<p>Für diese Übungseinheit werden die folgenden Ressourcen zusätzlich empfohlen:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Hacking the Humanities</a>: Episoden 6 und 9</p></li>
-<li><p><a class="reference external" href="https://automatetheboringstuff.com/2e/chapter4/">Automate the Boring Stuff: Lists</a></p></li>
-<li><p><a class="reference external" href="https://automatetheboringstuff.com/2e/chapter5/">Automate the Boring Stuff: Dictionaries and Structuring Data</a></p></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="informationen-zu-den-daten-aus-part-python-basics">
+<h1>Informationen zu den Daten aus Part Python Basics<a class="headerlink" href="#informationen-zu-den-daten-aus-part-python-basics" title="Permalink to this headline">¶</a></h1>
+<p>Die Dateien <code class="docutils literal notranslate"><span class="pre">books.csv</span></code> und <code class="docutils literal notranslate"><span class="pre">library.json</span></code> sind selbst erstellt.</p>
+<p>Die Datei <code class="docutils literal notranslate"><span class="pre">adliger_vergleich.txt</span></code> ist entnommen aus: ####</p>
+<p>Die iiif-Manifeste sind aus den Beständen der <a class="reference external" href="https://www.bnf.fr">Französischen Nationalbibliothek</a> entnommen: ####</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -467,7 +389,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./ch03-komplexe-datenstrukturen"
+            path: "./ch-daten"
         },
         predefinedOutput: true
     }
@@ -484,33 +406,11 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="komplexe-datenstrukturen">
-<h1>Komplexe Datenstrukturen<a class="headerlink" href="#komplexe-datenstrukturen" title="Permalink to this headline">¶</a></h1>
-<p>Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch ein paar Schritte weitergehen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellt Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten.</p>
-<p>Was sind Datenstrukturen? Grundsätzlich nichts anderes als eine bestimmte Anordnung und Organisation von miteinander in Beziehung stehenden Daten. In Python gibt es vier eingebaute Datenstrukturen: <em>list</em>, <em>tuple</em>, <em>set</em> und <em>dictionary</em>. Sie bieten Ihnen einige grundlegende Funktionalitäten zur Modellierung von Daten.</p>
-<div class="section" id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
-<p>Was Sie am Ende der Lektion beantworten können sollen:</p>
-<ul class="simple">
-<li><p>Was sind Listen?</p></li>
-<li><p>Was sind Tupel?</p></li>
-<li><p>Was sind Sets?</p></li>
-<li><p>Was sind Dictionaries?</p></li>
-</ul>
-<p>und schließlich sollten Sie am Ende des Kapitels dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten.</p>
-<p>In den folgenden Abschnitten erwarten Sie statt einer größeren Aufgabe mehrere kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Abschnitten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren.</p>
-</div>
-<div class="section" id="ressourcen">
-<h2>Ressourcen<a class="headerlink" href="#ressourcen" title="Permalink to this headline">¶</a></h2>
-<p>Für diese Übungseinheit werden die folgenden Ressourcen zusätzlich empfohlen:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Hacking the Humanities</a>: Episoden 6 und 9</p></li>
-<li><p><a class="reference external" href="https://automatetheboringstuff.com/2e/chapter4/">Automate the Boring Stuff: Lists</a></p></li>
-<li><p><a class="reference external" href="https://automatetheboringstuff.com/2e/chapter5/">Automate the Boring Stuff: Dictionaries and Structuring Data</a></p></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="informationen-zu-den-daten-aus-part-python-basics">
+<h1>Informationen zu den Daten aus Part Python Basics<a class="headerlink" href="#informationen-zu-den-daten-aus-part-python-basics" title="Permalink to this headline">¶</a></h1>
+<p>Die Dateien <code class="docutils literal notranslate"><span class="pre">books.csv</span></code> und <code class="docutils literal notranslate"><span class="pre">library.json</span></code> sind selbst erstellt.</p>
+<p>Die Datei <code class="docutils literal notranslate"><span class="pre">adliger_vergleich.txt</span></code> ist entnommen aus: ####</p>
+<p>Die iiif-Manifeste sind aus den Beständen der <a class="reference external" href="https://www.bnf.fr">Französischen Nationalbibliothek</a> entnommen: ####</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -526,7 +426,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./ch03-komplexe-datenstrukturen"
+            path: "./ch-daten"
         },
         predefinedOutput: true
     }
@@ -538,17 +438,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../ch02-programmablaeufe-strukturieren/05-pseudocode.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../ch04-dateien-verarbeiten/04-csv.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Pseudocode</p>
+            <p class="prev-next-title">CSV</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02-listen.html" title="next page">
+    <a class='right-next' id="next-link" href="../ch-loesungen/part01-python-basics-loesungen.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Listen</p>
+        <p class="prev-next-title">Lösungen zu den Aufgaben aus Part Python Basics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

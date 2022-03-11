@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lösungen zu den Aufgaben aus dem Abschnitt Dateien verarbeiten &#8212; Python Basics Jupyter Testversion</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Lösungen zu den Aufgaben aus dem Abschnitt Komplexe Datenstrukturen" href="ch03-komplexe-datenstrukturen-loesungen.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Basics Jupyter Testversion</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Testversion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preface
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch00-preface/01-vorwort.html">
+   Vorwort
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch00-preface/02-einfuehrung.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch01-atomare-datentypen/01-atomare-datentypen.html">
+   Atomare Datentypen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/02-hallo-welt.html">
+     Hallo Welt!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/03-datentyp-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/04-datentyp-numerisch.html">
+     Numerische Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/05-fehlermeldungen.html">
+     Fehlermeldungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.html">
+   Programmabläufe strukturieren
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/02-bedingte-anweisungen.html">
+     Bedingte Anweisungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/03-schleifen.html">
+     Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/04-funktionen.html">
+     Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/05-pseudocode.html">
+     Pseudocode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch03-komplexe-datenstrukturen/01-komplexe-datenstrukturen.html">
+   Komplexe Datenstrukturen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/02-listen.html">
+     Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/03-tupel.html">
+     Tupel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/04-sets.html">
+     Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html">
+     Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch04-dateien-verarbeiten/01-dateien-verarbeiten.html">
+   Dateien verarbeiten
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch04-dateien-verarbeiten/02-dateien-i-o.html">
+     Dateien öffnen, lesen, bearbeiten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch04-dateien-verarbeiten/03-json.html">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch04-dateien-verarbeiten/04-csv.html">
+     CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch-loesungen/ch04-dateien-verarbeiten-loesungen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/ch-loesungen/ch04-dateien-verarbeiten-loesungen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-textdaten-speichern">
+   Lösung: Aufgabe Textdaten speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-json-daten-verarbeiten">
+   Lösung: Aufgabe JSON-Daten verarbeiten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-daten-strukturiert-speichern">
+   Lösung: Aufgabe Daten strukturiert speichern
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Lösungen zu den Aufgaben aus dem Abschnitt Dateien verarbeiten</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> Contents </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-textdaten-speichern">
+   Lösung: Aufgabe Textdaten speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-json-daten-verarbeiten">
+   Lösung: Aufgabe JSON-Daten verarbeiten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-daten-strukturiert-speichern">
+   Lösung: Aufgabe Daten strukturiert speichern
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="losungen-zu-den-aufgaben-aus-dem-abschnitt-dateien-verarbeiten">
+<h1>Lösungen zu den Aufgaben aus dem Abschnitt Dateien verarbeiten<a class="headerlink" href="#losungen-zu-den-aufgaben-aus-dem-abschnitt-dateien-verarbeiten" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="losung-aufgabe-textdaten-speichern">
+<h2>Lösung: Aufgabe Textdaten speichern<a class="headerlink" href="#losung-aufgabe-textdaten-speichern" title="Permalink to this headline">¶</a></h2>
+<p>Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/03-schleifen.html#aufgabe-primzahlen-ausgeben"><span class="std std-ref">Aufgabe zur Berechnung</span></a> der Primzahlen so an, dass die Ergebnisse nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der zur Verfügung gestellten Musterlösung</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+
+<span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;prime_numbers.txt&#39;</span>
+<span class="c1"># Dieser String ersetzt unsere print-Ausgabe in der alten Lösung. </span>
+<span class="c1"># Er wird später nur noch in eine Datei geschrieben.</span>
+<span class="n">prime_numbers</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="c1"># Musterlösung Aufgabe Primzahlen</span>
+<span class="n">is_prime</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">201</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">divisor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">:</span>  
+        <span class="n">prime_numbers</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># das \n sorgt für einen Zeilenumbruch</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prime_file</span><span class="p">:</span>
+    <span class="n">prime_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">prime_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="losung-aufgabe-json-daten-verarbeiten">
+<h2>Lösung: Aufgabe JSON-Daten verarbeiten<a class="headerlink" href="#losung-aufgabe-json-daten-verarbeiten" title="Permalink to this headline">¶</a></h2>
+<p>Schreiben Sie ein Programm zur Vorbereitung eines automatischen Downloads aller Bilddateien der Scans einer Reihe von vorgegebenen mittelalterlichen Handschriften. Die IIIF-Manifeste der einzelnen Handschriften finden Sie in im Ordner data/iiif-manifests. Ihr Programm sollte die folgenden Aufgaben durchführen:</p>
+<ul class="simple">
+<li><p>Die Links zu den Bilddateien der Scans sollten in einer Textdatei (.txt) gespeichert werden. Nach jedem Link soll ein Zeilenumbruch erfolgen. Die Links werden also zeilenweise in der Datei aufgelistet.</p></li>
+<li><p>Es soll für jede Handschrift jeweils eine eigene Textdatei erstellt werden, die die Links zu ihren Scans enthält.</p></li>
+<li><p>Der Name jeder Textdatei soll der Titel der jeweiligen Handschrift sein (also z.B. “Grandes Chroniques de France.txt”).</p></li>
+<li><p><em>Optional: Extrahieren Sie nur die Links aus den IIIF-Manifesten, deren Handschriften irgendwann zwischen den Jahren 1300 und 1400 datiert sind.</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pprint</span> 
+<span class="c1"># Das ist nur eine Möglichkeit den print-Befehl zu ersetzen -- </span>
+<span class="c1"># hiermit werden z.B. JSONs strukturierter dargestellt (pprint steht für &quot;pretty print&quot;)</span>
+
+<span class="n">folder_path</span> <span class="o">=</span> <span class="s1">&#39;../ch04-dateien-verarbeiten/example_data/iiif-manifests/&#39;</span>
+<span class="n">manifests</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2170.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2187.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 1950.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2196.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2228.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2608.json&#39;</span>       
+<span class="p">]</span>
+
+<span class="c1"># Ihr Code</span>
+
+<span class="c1"># Wir gehen die einzelnen IIIF-Manifestdateien der Reihe nach durch, </span>
+<span class="k">for</span> <span class="n">manifest_name</span> <span class="ow">in</span> <span class="n">manifests</span><span class="p">:</span>
+    
+    <span class="c1"># öffnen der Datein</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}{</span><span class="n">manifest_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+        
+        <span class="c1"># einlesen JSON-Datei als JSON-Objekt mit der JSON-Bibliothek </span>
+        <span class="n">manifest_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+
+        <span class="c1"># Extraktion des Titels für den Namen der Textdatei aus dem Schlüssel-Element &quot;description&quot;</span>
+        <span class="n">manuscript_title</span> <span class="o">=</span> <span class="n">manifest_content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Dateipfad und -name der Textdatei</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}{</span><span class="n">manuscript_title</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span><span class="si">}</span><span class="s1">.txt&#39;</span> 
+        <span class="c1"># in der Musterlösung musste die Titel abgekürzt werden, </span>
+        <span class="c1"># da sie in einem Fall nicht korrekt als Dateiname ausgelesen werden konnten</span>
+
+        <span class="c1"># Extraktion des Elements, in dem die Links zu den Bildern enthalten sind</span>
+        <span class="n">canvas_list</span> <span class="o">=</span> <span class="n">manifest_content</span><span class="p">[</span><span class="s1">&#39;sequences&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;canvases&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Leerer String, in dem die Links für das Speichern abgelegt werden sollen</span>
+        <span class="n">image_link_collection</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="c1"># Wir gehen nun nach und nach die Dictionaries der Liste, </span>
+        <span class="c1"># die im Schlüssel-Element &quot;canvases&quot; enthalten ist durch</span>
+        <span class="k">for</span> <span class="n">canvas</span> <span class="ow">in</span> <span class="n">canvas_list</span><span class="p">:</span>
+            
+            <span class="c1"># In den Dictionaries interessieren uns die Werte, </span>
+            <span class="c1"># die dem Schlüssel &quot;images&quot; zugeordnet sind, </span>
+            <span class="c1"># hierbei handelt es sich wiederum um eine Liste von Dictionaries</span>
+            <span class="n">single_image_element</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+            <span class="c1"># Beachten Sie die eckige Klammer in den JSON-Dateien der Manifeste hinter &#39;images&#39;. </span>
+            <span class="c1"># Das verweist ja darauf, dass &#39;images&#39; eine Liste ist; </span>
+            <span class="c1"># mit [0] in dieser Codezeile greifen Sie dann auf das erste Element dieser Liste zu</span>
+            
+            <span class="c1"># Der Link zur Bilddatei befindet sich im Wert zum Schlüssel &quot;resource&quot;, </span>
+            <span class="c1"># der wiederum einem Dictionarie entspricht</span>
+            <span class="c1"># Genau verbirgt sich der Link hinter dem Wert &quot;@id&quot;,</span>
+            <span class="c1"># das erkennen Sie an der Dateiendung .jpg</span>
+            <span class="n">single_image_link</span> <span class="o">=</span> <span class="n">single_image_element</span><span class="p">[</span><span class="s1">&#39;resource&#39;</span><span class="p">][</span><span class="s1">&#39;@id&#39;</span><span class="p">]</span>
+            
+            <span class="c1"># Will man die oberen beiden Zeilen in einer zusammenfassen wäre das:</span>
+            <span class="c1"># single_image_link = image_link[&#39;images&#39;][0][&#39;resource&#39;][&#39;@id&#39;]</span>
+            <span class="c1"># #pprint.pprint(single_image_link)</span>
+                  
+            <span class="c1"># #####################</span>
+            <span class="c1"># # Eine Alternative zum obgien Code ist dieser hier. Denken Sie daran, </span>
+            <span class="c1"># die Auskommentierungen des Codes umzustellen, wenn Sie die Alternative ausführen möchten.</span>
+            <span class="c1"># # (Damit berücksichtigen Sie den Sonderfall, dass die Liste &#39;images&#39; (siehe oben) </span>
+            <span class="c1"># auch mehrere Elemente haben könnte)</span>
+
+            <span class="c1">#for single_image_element in canvas[&#39;images&#39;]:</span>
+            <span class="c1">#    single_image_link = single_image_element[&#39;resource&#39;][&#39;@id&#39;]</span>
+            <span class="c1">#    pprint.pprint(single_image_link)</span>
+
+            <span class="c1"># Alternative Ende</span>
+            <span class="c1"># #####################</span>
+
+            <span class="c1"># Abschließend fügen wir den Link mit einem Zeilenumbruch zu unserem Output-String hinzu</span>
+            <span class="n">image_link_collection</span> <span class="o">+=</span> <span class="n">single_image_link</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="c1"># Hier wird der Output-String, wenn die For-Schleife beendet ist, </span>
+        <span class="c1"># mit der Linkliste in eine Textdatei geschrieben</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+            <span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image_link_collection</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="losung-aufgabe-daten-strukturiert-speichern">
+<h2>Lösung: Aufgabe Daten strukturiert speichern<a class="headerlink" href="#losung-aufgabe-daten-strukturiert-speichern" title="Permalink to this headline">¶</a></h2>
+<p>Nun haben Sie gelernt Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html#aufgabe-einfache-frequenzanalyse-mit-python"><span class="std std-ref">vorherigen Kapitel</span></a> nachnutzen nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:</p>
+<ul class="simple">
+<li><p>Der zu verarbeitende Text soll dem Programm nun nicht mehr als Variable übergeben werden, sondern aus einer Textdatei extrahiert werden.</p></li>
+<li><p>Die Ausgabe soll nun nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code>, sondern als CSV-Datei erfolgen. Anstatt eines Zeilenumbruchs, soll jede Zeile nun in einer eigenen Tabellenzeile gespeichert werden. Jede Tabellenzeile soll dabei auf folgende Weise strukturiert sein:</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>id</p></th>
+<th class="head"><p>text</p></th>
+<th class="text-align:right head"><p>anzahl_zeichen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td><p></p></td>
+<td class="text-align:right"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">id</span></code> entspricht dabei der Nummerierung der einzelnen Zeilen des von Ihnen in der Aufgabe verwendeten Textes. Die Zeilennummerierung müssen Sie hier noch ergänzen. <code class="docutils literal notranslate"><span class="pre">text</span></code> enthält die aus maximal zehn Wörtern bestehende tokenisierte Zeile. <code class="docutils literal notranslate"><span class="pre">anzahl_zeichen</span></code> soll die Anzahl der Buchstaben in der jeweiligen Zeile enthalten.</p>
+<p>Führen Sie das Programm für mindestens einen Text Ihrer Wahl aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Ihr Code</span>
+
+<span class="c1"># Zur Vorbereitung müssen Sie sicher stellen, </span>
+<span class="c1"># dass die zu verarbeitenden Texte in Textdateien gespeichert sind. </span>
+<span class="c1"># In dieser Lösung wird davon ausgegangen, dass der Text in einem  </span>
+<span class="c1">#  relative zum Notebook liegenden Ordner &#39;example_data&#39; gespeichert ist.</span>
+
+<span class="c1"># Definiton der Funktionen</span>
+
+<span class="c1"># Hilfsfunktion zum Lesen der Dateien:</span>
+<span class="k">def</span> <span class="nf">get_file_content</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_to_open</span><span class="p">:</span>
+        <span class="n">file_content</span> <span class="o">=</span> <span class="n">file_to_open</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="n">file_content</span>
+
+<span class="c1"># Diese Funktion wird aus segment_text() heraus aufgerufen </span>
+<span class="c1"># und speichert die segmentierte Liste als CSV. </span>
+<span class="c1"># In jedem Segment werden außerdem die Zeichen gezählt.</span>
+<span class="k">def</span> <span class="nf">store_list_to_csv</span><span class="p">(</span><span class="n">segmented_text</span><span class="p">,</span> <span class="n">csv_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;anzahl_zeichen&quot;</span><span class="p">]</span>
+
+        <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+        <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+
+        <span class="c1"># Zusammenführen der Sublistensegmente zu vollständigen Strings </span>
+        <span class="c1"># und Hinzufügen zum CSV-Writer</span>
+        <span class="n">current_id</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">segmented_text</span><span class="p">:</span>
+            <span class="n">current_segment_text</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">each</span><span class="p">[:])</span>
+            <span class="n">current_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_segment_text</span><span class="p">)</span>
+
+            <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">current_id</span><span class="p">),</span> <span class="n">current_segment_text</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current_length</span><span class="p">)])</span>
+
+            <span class="n">current_id</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">tokenize_text</span><span class="p">(</span><span class="n">source_text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parameter: string</span>
+<span class="sd">    The function tokenizes a string using whitespaces and returns a list object.</span>
+<span class="sd">    Lowercasing is included.&quot;&quot;&quot;</span>
+
+    <span class="c1"># replace punctuation based on list</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;]&quot;</span><span class="p">]:</span>
+        <span class="n">source_text</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">each</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># lower text</span>
+    <span class="n">lowered_text</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># tokenize by whitespace</span>
+    <span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">lowered_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">tokenized_text</span>
+
+<span class="k">def</span> <span class="nf">segment_text</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">,</span> <span class="n">segments</span><span class="p">,</span> <span class="n">output_path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parameters: list of strings and segment size (integer)</span>
+<span class="sd">    A tokenized text is preprocessed by segmentation.</span>
+<span class="sd">    The function returns a string object.&quot;&quot;&quot;</span>
+
+    <span class="c1"># segmentation</span>
+    <span class="n">segmented_text</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">),</span> <span class="n">segments</span><span class="p">):</span>
+        <span class="n">segmented_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">segments</span><span class="p">])</span> <span class="c1"># i=0, 10, ...</span>
+
+    <span class="n">store_list_to_csv</span><span class="p">(</span><span class="n">segmented_text</span><span class="p">,</span> <span class="n">output_path</span><span class="p">)</span>
+
+<span class="c1"># Aufruf der Funktionen</span>
+
+<span class="c1"># String aus Textdateien auslesen</span>
+<span class="n">source_exampletxt</span> <span class="o">=</span> <span class="n">get_file_content</span><span class="p">(</span><span class="s2">&quot;example_data/beispieltext.txt&quot;</span><span class="p">)</span>
+
+<span class="c1"># tokenize input data</span>
+<span class="n">tokenized_exampletxt</span> <span class="o">=</span> <span class="n">tokenize_text</span><span class="p">(</span><span class="n">source_exampletxt</span><span class="p">)</span>
+
+<span class="c1"># segment input data</span>
+<span class="n">segment_text</span><span class="p">(</span><span class="n">tokenized_exampletxt</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;example_data/beispieltext.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch-loesungen"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="losungen-zu-den-aufgaben-aus-dem-abschnitt-dateien-verarbeiten">
+<h1>Lösungen zu den Aufgaben aus dem Abschnitt Dateien verarbeiten<a class="headerlink" href="#losungen-zu-den-aufgaben-aus-dem-abschnitt-dateien-verarbeiten" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="losung-aufgabe-textdaten-speichern">
+<h2>Lösung: Aufgabe Textdaten speichern<a class="headerlink" href="#losung-aufgabe-textdaten-speichern" title="Permalink to this headline">¶</a></h2>
+<p>Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/03-schleifen.html#aufgabe-primzahlen-ausgeben"><span class="std std-ref">Aufgabe zur Berechnung</span></a> der Primzahlen so an, dass die Ergebnisse nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der zur Verfügung gestellten Musterlösung</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+
+<span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;prime_numbers.txt&#39;</span>
+<span class="c1"># Dieser String ersetzt unsere print-Ausgabe in der alten Lösung. </span>
+<span class="c1"># Er wird später nur noch in eine Datei geschrieben.</span>
+<span class="n">prime_numbers</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="c1"># Musterlösung Aufgabe Primzahlen</span>
+<span class="n">is_prime</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">201</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">divisor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">:</span>  
+        <span class="n">prime_numbers</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># das \n sorgt für einen Zeilenumbruch</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prime_file</span><span class="p">:</span>
+    <span class="n">prime_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">prime_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="losung-aufgabe-json-daten-verarbeiten">
+<h2>Lösung: Aufgabe JSON-Daten verarbeiten<a class="headerlink" href="#losung-aufgabe-json-daten-verarbeiten" title="Permalink to this headline">¶</a></h2>
+<p>Schreiben Sie ein Programm zur Vorbereitung eines automatischen Downloads aller Bilddateien der Scans einer Reihe von vorgegebenen mittelalterlichen Handschriften. Die IIIF-Manifeste der einzelnen Handschriften finden Sie in im Ordner data/iiif-manifests. Ihr Programm sollte die folgenden Aufgaben durchführen:</p>
+<ul class="simple">
+<li><p>Die Links zu den Bilddateien der Scans sollten in einer Textdatei (.txt) gespeichert werden. Nach jedem Link soll ein Zeilenumbruch erfolgen. Die Links werden also zeilenweise in der Datei aufgelistet.</p></li>
+<li><p>Es soll für jede Handschrift jeweils eine eigene Textdatei erstellt werden, die die Links zu ihren Scans enthält.</p></li>
+<li><p>Der Name jeder Textdatei soll der Titel der jeweiligen Handschrift sein (also z.B. “Grandes Chroniques de France.txt”).</p></li>
+<li><p><em>Optional: Extrahieren Sie nur die Links aus den IIIF-Manifesten, deren Handschriften irgendwann zwischen den Jahren 1300 und 1400 datiert sind.</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pprint</span> 
+<span class="c1"># Das ist nur eine Möglichkeit den print-Befehl zu ersetzen -- </span>
+<span class="c1"># hiermit werden z.B. JSONs strukturierter dargestellt (pprint steht für &quot;pretty print&quot;)</span>
+
+<span class="n">folder_path</span> <span class="o">=</span> <span class="s1">&#39;../ch04-dateien-verarbeiten/example_data/iiif-manifests/&#39;</span>
+<span class="n">manifests</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2170.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2187.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 1950.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2196.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2228.json&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;BnF. Departement des Manuscrits. Francais 2608.json&#39;</span>       
+<span class="p">]</span>
+
+<span class="c1"># Ihr Code</span>
+
+<span class="c1"># Wir gehen die einzelnen IIIF-Manifestdateien der Reihe nach durch, </span>
+<span class="k">for</span> <span class="n">manifest_name</span> <span class="ow">in</span> <span class="n">manifests</span><span class="p">:</span>
+    
+    <span class="c1"># öffnen der Datein</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}{</span><span class="n">manifest_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+        
+        <span class="c1"># einlesen JSON-Datei als JSON-Objekt mit der JSON-Bibliothek </span>
+        <span class="n">manifest_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+
+        <span class="c1"># Extraktion des Titels für den Namen der Textdatei aus dem Schlüssel-Element &quot;description&quot;</span>
+        <span class="n">manuscript_title</span> <span class="o">=</span> <span class="n">manifest_content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Dateipfad und -name der Textdatei</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}{</span><span class="n">manuscript_title</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span><span class="si">}</span><span class="s1">.txt&#39;</span> 
+        <span class="c1"># in der Musterlösung musste die Titel abgekürzt werden, </span>
+        <span class="c1"># da sie in einem Fall nicht korrekt als Dateiname ausgelesen werden konnten</span>
+
+        <span class="c1"># Extraktion des Elements, in dem die Links zu den Bildern enthalten sind</span>
+        <span class="n">canvas_list</span> <span class="o">=</span> <span class="n">manifest_content</span><span class="p">[</span><span class="s1">&#39;sequences&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;canvases&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Leerer String, in dem die Links für das Speichern abgelegt werden sollen</span>
+        <span class="n">image_link_collection</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="c1"># Wir gehen nun nach und nach die Dictionaries der Liste, </span>
+        <span class="c1"># die im Schlüssel-Element &quot;canvases&quot; enthalten ist durch</span>
+        <span class="k">for</span> <span class="n">canvas</span> <span class="ow">in</span> <span class="n">canvas_list</span><span class="p">:</span>
+            
+            <span class="c1"># In den Dictionaries interessieren uns die Werte, </span>
+            <span class="c1"># die dem Schlüssel &quot;images&quot; zugeordnet sind, </span>
+            <span class="c1"># hierbei handelt es sich wiederum um eine Liste von Dictionaries</span>
+            <span class="n">single_image_element</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">[</span><span class="s1">&#39;images&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
+            <span class="c1"># Beachten Sie die eckige Klammer in den JSON-Dateien der Manifeste hinter &#39;images&#39;. </span>
+            <span class="c1"># Das verweist ja darauf, dass &#39;images&#39; eine Liste ist; </span>
+            <span class="c1"># mit [0] in dieser Codezeile greifen Sie dann auf das erste Element dieser Liste zu</span>
+            
+            <span class="c1"># Der Link zur Bilddatei befindet sich im Wert zum Schlüssel &quot;resource&quot;, </span>
+            <span class="c1"># der wiederum einem Dictionarie entspricht</span>
+            <span class="c1"># Genau verbirgt sich der Link hinter dem Wert &quot;@id&quot;,</span>
+            <span class="c1"># das erkennen Sie an der Dateiendung .jpg</span>
+            <span class="n">single_image_link</span> <span class="o">=</span> <span class="n">single_image_element</span><span class="p">[</span><span class="s1">&#39;resource&#39;</span><span class="p">][</span><span class="s1">&#39;@id&#39;</span><span class="p">]</span>
+            
+            <span class="c1"># Will man die oberen beiden Zeilen in einer zusammenfassen wäre das:</span>
+            <span class="c1"># single_image_link = image_link[&#39;images&#39;][0][&#39;resource&#39;][&#39;@id&#39;]</span>
+            <span class="c1"># #pprint.pprint(single_image_link)</span>
+                  
+            <span class="c1"># #####################</span>
+            <span class="c1"># # Eine Alternative zum obgien Code ist dieser hier. Denken Sie daran, </span>
+            <span class="c1"># die Auskommentierungen des Codes umzustellen, wenn Sie die Alternative ausführen möchten.</span>
+            <span class="c1"># # (Damit berücksichtigen Sie den Sonderfall, dass die Liste &#39;images&#39; (siehe oben) </span>
+            <span class="c1"># auch mehrere Elemente haben könnte)</span>
+
+            <span class="c1">#for single_image_element in canvas[&#39;images&#39;]:</span>
+            <span class="c1">#    single_image_link = single_image_element[&#39;resource&#39;][&#39;@id&#39;]</span>
+            <span class="c1">#    pprint.pprint(single_image_link)</span>
+
+            <span class="c1"># Alternative Ende</span>
+            <span class="c1"># #####################</span>
+
+            <span class="c1"># Abschließend fügen wir den Link mit einem Zeilenumbruch zu unserem Output-String hinzu</span>
+            <span class="n">image_link_collection</span> <span class="o">+=</span> <span class="n">single_image_link</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="c1"># Hier wird der Output-String, wenn die For-Schleife beendet ist, </span>
+        <span class="c1"># mit der Linkliste in eine Textdatei geschrieben</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+            <span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image_link_collection</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="losung-aufgabe-daten-strukturiert-speichern">
+<h2>Lösung: Aufgabe Daten strukturiert speichern<a class="headerlink" href="#losung-aufgabe-daten-strukturiert-speichern" title="Permalink to this headline">¶</a></h2>
+<p>Nun haben Sie gelernt Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html#aufgabe-einfache-frequenzanalyse-mit-python"><span class="std std-ref">vorherigen Kapitel</span></a> nachnutzen nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:</p>
+<ul class="simple">
+<li><p>Der zu verarbeitende Text soll dem Programm nun nicht mehr als Variable übergeben werden, sondern aus einer Textdatei extrahiert werden.</p></li>
+<li><p>Die Ausgabe soll nun nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code>, sondern als CSV-Datei erfolgen. Anstatt eines Zeilenumbruchs, soll jede Zeile nun in einer eigenen Tabellenzeile gespeichert werden. Jede Tabellenzeile soll dabei auf folgende Weise strukturiert sein:</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>id</p></th>
+<th class="head"><p>text</p></th>
+<th class="text-align:right head"><p>anzahl_zeichen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td><p></p></td>
+<td class="text-align:right"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">id</span></code> entspricht dabei der Nummerierung der einzelnen Zeilen des von Ihnen in der Aufgabe verwendeten Textes. Die Zeilennummerierung müssen Sie hier noch ergänzen. <code class="docutils literal notranslate"><span class="pre">text</span></code> enthält die aus maximal zehn Wörtern bestehende tokenisierte Zeile. <code class="docutils literal notranslate"><span class="pre">anzahl_zeichen</span></code> soll die Anzahl der Buchstaben in der jeweiligen Zeile enthalten.</p>
+<p>Führen Sie das Programm für mindestens einen Text Ihrer Wahl aus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Ihr Code</span>
+
+<span class="c1"># Zur Vorbereitung müssen Sie sicher stellen, </span>
+<span class="c1"># dass die zu verarbeitenden Texte in Textdateien gespeichert sind. </span>
+<span class="c1"># In dieser Lösung wird davon ausgegangen, dass der Text in einem  </span>
+<span class="c1">#  relative zum Notebook liegenden Ordner &#39;example_data&#39; gespeichert ist.</span>
+
+<span class="c1"># Definiton der Funktionen</span>
+
+<span class="c1"># Hilfsfunktion zum Lesen der Dateien:</span>
+<span class="k">def</span> <span class="nf">get_file_content</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_to_open</span><span class="p">:</span>
+        <span class="n">file_content</span> <span class="o">=</span> <span class="n">file_to_open</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="n">file_content</span>
+
+<span class="c1"># Diese Funktion wird aus segment_text() heraus aufgerufen </span>
+<span class="c1"># und speichert die segmentierte Liste als CSV. </span>
+<span class="c1"># In jedem Segment werden außerdem die Zeichen gezählt.</span>
+<span class="k">def</span> <span class="nf">store_list_to_csv</span><span class="p">(</span><span class="n">segmented_text</span><span class="p">,</span> <span class="n">csv_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;anzahl_zeichen&quot;</span><span class="p">]</span>
+
+        <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+        <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+
+        <span class="c1"># Zusammenführen der Sublistensegmente zu vollständigen Strings </span>
+        <span class="c1"># und Hinzufügen zum CSV-Writer</span>
+        <span class="n">current_id</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">segmented_text</span><span class="p">:</span>
+            <span class="n">current_segment_text</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">each</span><span class="p">[:])</span>
+            <span class="n">current_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_segment_text</span><span class="p">)</span>
+
+            <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">current_id</span><span class="p">),</span> <span class="n">current_segment_text</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">current_length</span><span class="p">)])</span>
+
+            <span class="n">current_id</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">tokenize_text</span><span class="p">(</span><span class="n">source_text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parameter: string</span>
+<span class="sd">    The function tokenizes a string using whitespaces and returns a list object.</span>
+<span class="sd">    Lowercasing is included.&quot;&quot;&quot;</span>
+
+    <span class="c1"># replace punctuation based on list</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;]&quot;</span><span class="p">]:</span>
+        <span class="n">source_text</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">each</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># lower text</span>
+    <span class="n">lowered_text</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># tokenize by whitespace</span>
+    <span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">lowered_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">tokenized_text</span>
+
+<span class="k">def</span> <span class="nf">segment_text</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">,</span> <span class="n">segments</span><span class="p">,</span> <span class="n">output_path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parameters: list of strings and segment size (integer)</span>
+<span class="sd">    A tokenized text is preprocessed by segmentation.</span>
+<span class="sd">    The function returns a string object.&quot;&quot;&quot;</span>
+
+    <span class="c1"># segmentation</span>
+    <span class="n">segmented_text</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">),</span> <span class="n">segments</span><span class="p">):</span>
+        <span class="n">segmented_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">segments</span><span class="p">])</span> <span class="c1"># i=0, 10, ...</span>
+
+    <span class="n">store_list_to_csv</span><span class="p">(</span><span class="n">segmented_text</span><span class="p">,</span> <span class="n">output_path</span><span class="p">)</span>
+
+<span class="c1"># Aufruf der Funktionen</span>
+
+<span class="c1"># String aus Textdateien auslesen</span>
+<span class="n">source_exampletxt</span> <span class="o">=</span> <span class="n">get_file_content</span><span class="p">(</span><span class="s2">&quot;example_data/beispieltext.txt&quot;</span><span class="p">)</span>
+
+<span class="c1"># tokenize input data</span>
+<span class="n">tokenized_exampletxt</span> <span class="o">=</span> <span class="n">tokenize_text</span><span class="p">(</span><span class="n">source_exampletxt</span><span class="p">)</span>
+
+<span class="c1"># segment input data</span>
+<span class="n">segment_text</span><span class="p">(</span><span class="n">tokenized_exampletxt</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;example_data/beispieltext.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch-loesungen"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch03-komplexe-datenstrukturen-loesungen.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lösungen zu den Aufgaben aus dem Abschnitt Komplexe Datenstrukturen</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

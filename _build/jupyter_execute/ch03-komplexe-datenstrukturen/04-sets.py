@@ -99,7 +99,7 @@ print("text" not in unique_words_report)
 
 
 # (aufgaben-sets)=
-# ## Aufgaben
+# ## Aufgaben Sets
 # 
 # Abschliessend wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Abschnitt gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte *Vocabulary Density* berechnen.
 # 

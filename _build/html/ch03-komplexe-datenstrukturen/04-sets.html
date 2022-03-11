@@ -243,6 +243,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -339,8 +385,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgaben">
-   Aufgaben
+  <a class="reference internal nav-link" href="#aufgaben-sets">
+   Aufgaben Sets
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -380,8 +426,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgaben">
-   Aufgaben
+  <a class="reference internal nav-link" href="#aufgaben-sets">
+   Aufgaben Sets
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -498,8 +544,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="aufgaben">
-<span id="aufgaben-sets"></span><h2>Aufgaben<a class="headerlink" href="#aufgaben" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aufgaben-sets">
+<span id="id1"></span><h2>Aufgaben Sets<a class="headerlink" href="#aufgaben-sets" title="Permalink to this headline">¶</a></h2>
 <p>Abschliessend wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Abschnitt gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte <em>Vocabulary Density</em> berechnen.</p>
 <div class="section" id="a-anzahl-der-worter-in-einem-text-ermitteln">
 <h3>a) Anzahl der Wörter in einem Text ermitteln<a class="headerlink" href="#a-anzahl-der-worter-in-einem-text-ermitteln" title="Permalink to this headline">¶</a></h3>
@@ -515,7 +561,7 @@
 </div>
 <div class="section" id="b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
 <h3>b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten<a class="headerlink" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten" title="Permalink to this headline">¶</a></h3>
-<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
+<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id2">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
 <p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher ist der Text zu lesen.</p>
 <p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren im vorherigen Abschnitt eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
 <div class="cell docutils container">
@@ -527,7 +573,7 @@
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>Die Berechnung dieses Verhältnisses wird aussagekräftiger, wenn man die eingespeisten Inputdaten einer <a class="reference external" href="https://de.wikipedia.org/wiki/Lemma_(Lexikographie)"><em>Lemmatisierung</em></a> unterzieht, das heißt, dass alle in dem Text enthaltenen Wörter auf ihre Grundform reduziert werden. Dazu zwei Beispiele zur Veranschaulichung: 1) aus “war”, “werden” und “ist” wird “sein”, 2) aus “historischer”, “historisches”, “historischem” oder “historische” wird “historisch”. Für solche sprachverarbeitenden Aufgaben gibt es zusätzliche Python-Bibliotheken (bspw. <code class="docutils literal notranslate"><span class="pre">spaCy</span></code> oder <code class="docutils literal notranslate"><span class="pre">nltk</span></code>), die eine Reihe von Funktionen enthalten, die Sie einfach in Ihren Code einbauen können. Wie externe Bibliotheken in den Code integriert werden, werden wir in den kommenden Kapiteln lernen.</p>
 </dd>
 </dl>
@@ -660,8 +706,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="aufgaben">
-<span id="aufgaben-sets"></span><h2>Aufgaben<a class="headerlink" href="#aufgaben" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aufgaben-sets">
+<span id="id1"></span><h2>Aufgaben Sets<a class="headerlink" href="#aufgaben-sets" title="Permalink to this headline">¶</a></h2>
 <p>Abschliessend wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Abschnitt gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte <em>Vocabulary Density</em> berechnen.</p>
 <div class="section" id="a-anzahl-der-worter-in-einem-text-ermitteln">
 <h3>a) Anzahl der Wörter in einem Text ermitteln<a class="headerlink" href="#a-anzahl-der-worter-in-einem-text-ermitteln" title="Permalink to this headline">¶</a></h3>
@@ -677,7 +723,7 @@
 </div>
 <div class="section" id="b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
 <h3>b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten<a class="headerlink" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten" title="Permalink to this headline">¶</a></h3>
-<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
+<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id2">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
 <p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher ist der Text zu lesen.</p>
 <p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren im vorherigen Abschnitt eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
 <div class="cell docutils container">
@@ -689,7 +735,7 @@
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>Die Berechnung dieses Verhältnisses wird aussagekräftiger, wenn man die eingespeisten Inputdaten einer <a class="reference external" href="https://de.wikipedia.org/wiki/Lemma_(Lexikographie)"><em>Lemmatisierung</em></a> unterzieht, das heißt, dass alle in dem Text enthaltenen Wörter auf ihre Grundform reduziert werden. Dazu zwei Beispiele zur Veranschaulichung: 1) aus “war”, “werden” und “ist” wird “sein”, 2) aus “historischer”, “historisches”, “historischem” oder “historische” wird “historisch”. Für solche sprachverarbeitenden Aufgaben gibt es zusätzliche Python-Bibliotheken (bspw. <code class="docutils literal notranslate"><span class="pre">spaCy</span></code> oder <code class="docutils literal notranslate"><span class="pre">nltk</span></code>), die eine Reihe von Funktionen enthalten, die Sie einfach in Ihren Code einbauen können. Wie externe Bibliotheken in den Code integriert werden, werden wir in den kommenden Kapiteln lernen.</p>
 </dd>
 </dl>
