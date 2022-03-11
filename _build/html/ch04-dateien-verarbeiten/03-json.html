@@ -416,7 +416,7 @@
 </div>
 <div class="section" id="aufbau-einer-json-datei">
 <h1>Aufbau einer JSON-Datei<a class="headerlink" href="#aufbau-einer-json-datei" title="Permalink to this headline">¶</a></h1>
-<p>Betrachten wir einmal den Inhalt der Datei “library.json” in unserem Ordner “data”. Es handelt sich hier nicht um einen ausführbaren Code:</p>
+<p>Betrachten wir einmal den Inhalt der Datei “library.json” in unserem Ordner “example_data”. Es handelt sich hier nicht um einen ausführbaren Code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;My Library&quot;</span><span class="p">,</span>
     <span class="s2">&quot;books available&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
@@ -474,7 +474,7 @@
 <p>Anschließend können wir den Inhalt der Datei mit der Funktion <code class="docutils literal notranslate"><span class="pre">load()</span></code> auslesen und als Dictionary in einer Variable speichern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/library.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
     <span class="n">library_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">library_content</span><span class="p">))</span>
@@ -500,18 +500,18 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Max Mustermann&quot;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">library_content</span><span class="p">,</span> <span class="n">json_file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wenn Sie die JSON-Datei aus dem Ordner “data” heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen.Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch “\n” bzw. “\t” repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> einen weiteren Parameter (<code class="docutils literal notranslate"><span class="pre">indent</span></code>) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:</p>
+<p>Wenn Sie die JSON-Datei aus dem Ordner “example_data” heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen.Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch “\n” bzw. “\t” repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> einen weiteren Parameter (<code class="docutils literal notranslate"><span class="pre">indent</span></code>) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Maxine Musterfrau&quot;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/library_version_2&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">library_content</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -523,7 +523,7 @@
 <h1>JSON in den Digitalen Geschichtswissenschaften: IIIF<a class="headerlink" href="#json-in-den-digitalen-geschichtswissenschaften-iiif" title="Permalink to this headline">¶</a></h1>
 <p>Ein zunehmend wichtig werdender Datenstandard im Cultural-Heritage-Bereich ist das <a class="reference external" href="https://iiif.io/"><em>International Image Interoperability Framework (IIIF)</em></a> (Aussprache: Triple-I-F). Es wurde ursprünglich von verschiedenen GLAM-Einrichtung (Galleries, Libraries, Archives, Museums) entwickelt. Ziel war es, ein standardisiertes Framework für ein Datenmodell zu schaffen, um bildbasiertes Kulturgut interoperabel, also unabhängig von den sich unterscheidenden Standards unterschiedlicher Kultureinrichtungen, online präsentieren und austauschen zu können. Dabei sollten nicht nur Metadaten zur Beschreibung des Kontextes der einzelnen Kulturgutobjekte gespeichert werden können, sondern insbesondere bei Werken, die aus mehreren Bilddateien bestehen, logische Zusammenhänge zwischen den Einzelbildern für das Gesamtwerk erhalten werden. Die Anwendungsmöglichkeiten von IIIF sind sehr vielfältig; <a class="reference external" href="https://github.com/IIIF/awesome-iiif">zahlreiche Einrichtungen und Projekte</a> greifen mittlerweile darauf zurück.</p>
 <p>Sie müssen sich für diese Einführung nicht intensiv in IIIF einarbeiten. In der folgenden Übungsaufgabe werden wir uns ausschließlich auf die <a class="reference external" href="http://ronallo.com/iiif-workshop/presentation/">Presentation API</a> konzentrieren. In aller Kürze beschrieben definiert die <em>Presentation API</em> einen Standard zur Strukturierung einer JSON-Datei um die Zusammenhänge eines bildbasierten Werkes beschreiben zu können (<a class="reference external" href="https://iiif.io/api/presentation/3.0/">Vollständige Dokumentation der <em>Presentation API</em></a>). Eine solche Datei wird <em>Manifest</em> genannt.</p>
-<p>In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht – nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript “Grandes Chroniques de France”; Sie finden es im Ordner im Pfad “data/iiif-manifests” unter “BnF. Departement des Manuscrits. Français 2608.json”. Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste “metadata” gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste “canvases” gespeichert (die ein Dictionary in der Liste “sequences” ist). Jede Seite der Handschrift wird dabei durch ein “canvas”-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste “images” nach dem Schlüssel “&#64;id”.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Der Link zur Bilddatei der ersten Seite der “Grandes Chroniques de France” ist z.B. <a class="reference external" href="https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg">https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg</a>. Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.</p>
+<p>In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht – nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript “Grandes Chroniques de France”; Sie finden es im Ordner im Pfad “example_data/iiif-manifests” unter “BnF. Departement des Manuscrits. Français 2608.json”. Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste “metadata” gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste “canvases” gespeichert (die ein Dictionary in der Liste “sequences” ist). Jede Seite der Handschrift wird dabei durch ein “canvas”-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste “images” nach dem Schlüssel “&#64;id”.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Der Link zur Bilddatei der ersten Seite der “Grandes Chroniques de France” ist z.B. <a class="reference external" href="https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg">https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg</a>. Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.</p>
 <p>Angenommen, Sie wollen nun die Scans aller Seiten der Handschrift herunterladen. In diesem Fall können Sie natürlich auch die Handschrift im <a class="reference external" href="https://gallica.bnf.fr/ark:/12148/btv1b8451604g">Viewer der französischen Nationalbibliothek</a> aufrufen und die Digitalisate dort herunterladen. Wollen Sie das jedoch für mehrere Dutzend oder gar Hundert Handschriften tun, bieten Ihnen die IIIF-Manifeste eine Möglichkeit den Download automatisiert durchzuführen.</p>
 </div>
 <div class="section" id="aufgabe-json-daten-verarbeiten">
@@ -537,17 +537,62 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder_path</span> <span class="o">=</span> <span class="s2">&quot;../data/iiif-manifests/&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder_path</span> <span class="o">=</span> <span class="s2">&quot;.example_data/iiif-manifests/&quot;</span>
 <span class="n">manifests</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="s2">&quot;BnF. Departement des manuscrits. Francais 2170.json&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;BnF. Departement des manuscrits. Francais 2187.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2170.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2187.json&quot;</span><span class="p">,</span>
       <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 1950.json&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;BnF. Departement des manuscrits. Francais 2196.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2196.json&quot;</span><span class="p">,</span>
       <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2228.json&quot;</span><span class="p">,</span>
       <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2608.json&quot;</span>       
 <span class="p">]</span>
 
 <span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hidden cell creates content for using with Thebe Live-Code</span>
+<span class="c1"># &gt;&gt;&gt;change paths, when Jupyter Book is published&lt;&lt;&lt;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">iiif_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data/iiif-manifests&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">iiif_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>  
+  
+<span class="n">file_list_1</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;adliger_vergleich.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;books.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;library.json&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">file_list_1</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        
+<span class="n">file_list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2228</span><span class="p">,</span> <span class="mi">2608</span><span class="p">,</span> <span class="mi">2170</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">2196</span><span class="p">]</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement</span><span class="si">%20d</span><span class="s1">es%20Manuscrits.</span><span class="si">%20F</span><span class="s1">rancais%20&#39;</span>
+<span class="n">base_file_name</span> <span class="o">=</span> <span class="s1">&#39;BnF. Departement des Manuscrits. Francais &#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_list_2</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iiif_folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">base_file_name</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -597,7 +642,7 @@
 </div>
 <div class="section" id="aufbau-einer-json-datei">
 <h1>Aufbau einer JSON-Datei<a class="headerlink" href="#aufbau-einer-json-datei" title="Permalink to this headline">¶</a></h1>
-<p>Betrachten wir einmal den Inhalt der Datei “library.json” in unserem Ordner “data”. Es handelt sich hier nicht um einen ausführbaren Code:</p>
+<p>Betrachten wir einmal den Inhalt der Datei “library.json” in unserem Ordner “example_data”. Es handelt sich hier nicht um einen ausführbaren Code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;My Library&quot;</span><span class="p">,</span>
     <span class="s2">&quot;books available&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
@@ -655,7 +700,7 @@
 <p>Anschließend können wir den Inhalt der Datei mit der Funktion <code class="docutils literal notranslate"><span class="pre">load()</span></code> auslesen und als Dictionary in einer Variable speichern:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/library.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
     <span class="n">library_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">library_content</span><span class="p">))</span>
@@ -681,18 +726,18 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Max Mustermann&quot;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">library_content</span><span class="p">,</span> <span class="n">json_file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wenn Sie die JSON-Datei aus dem Ordner “data” heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen.Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch “\n” bzw. “\t” repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> einen weiteren Parameter (<code class="docutils literal notranslate"><span class="pre">indent</span></code>) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:</p>
+<p>Wenn Sie die JSON-Datei aus dem Ordner “example_data” heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen.Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch “\n” bzw. “\t” repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> einen weiteren Parameter (<code class="docutils literal notranslate"><span class="pre">indent</span></code>) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Maxine Musterfrau&quot;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/library_version_2&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">library_content</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -704,7 +749,7 @@
 <h1>JSON in den Digitalen Geschichtswissenschaften: IIIF<a class="headerlink" href="#json-in-den-digitalen-geschichtswissenschaften-iiif" title="Permalink to this headline">¶</a></h1>
 <p>Ein zunehmend wichtig werdender Datenstandard im Cultural-Heritage-Bereich ist das <a class="reference external" href="https://iiif.io/"><em>International Image Interoperability Framework (IIIF)</em></a> (Aussprache: Triple-I-F). Es wurde ursprünglich von verschiedenen GLAM-Einrichtung (Galleries, Libraries, Archives, Museums) entwickelt. Ziel war es, ein standardisiertes Framework für ein Datenmodell zu schaffen, um bildbasiertes Kulturgut interoperabel, also unabhängig von den sich unterscheidenden Standards unterschiedlicher Kultureinrichtungen, online präsentieren und austauschen zu können. Dabei sollten nicht nur Metadaten zur Beschreibung des Kontextes der einzelnen Kulturgutobjekte gespeichert werden können, sondern insbesondere bei Werken, die aus mehreren Bilddateien bestehen, logische Zusammenhänge zwischen den Einzelbildern für das Gesamtwerk erhalten werden. Die Anwendungsmöglichkeiten von IIIF sind sehr vielfältig; <a class="reference external" href="https://github.com/IIIF/awesome-iiif">zahlreiche Einrichtungen und Projekte</a> greifen mittlerweile darauf zurück.</p>
 <p>Sie müssen sich für diese Einführung nicht intensiv in IIIF einarbeiten. In der folgenden Übungsaufgabe werden wir uns ausschließlich auf die <a class="reference external" href="http://ronallo.com/iiif-workshop/presentation/">Presentation API</a> konzentrieren. In aller Kürze beschrieben definiert die <em>Presentation API</em> einen Standard zur Strukturierung einer JSON-Datei um die Zusammenhänge eines bildbasierten Werkes beschreiben zu können (<a class="reference external" href="https://iiif.io/api/presentation/3.0/">Vollständige Dokumentation der <em>Presentation API</em></a>). Eine solche Datei wird <em>Manifest</em> genannt.</p>
-<p>In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht – nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript “Grandes Chroniques de France”; Sie finden es im Ordner im Pfad “data/iiif-manifests” unter “BnF. Departement des Manuscrits. Français 2608.json”. Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste “metadata” gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste “canvases” gespeichert (die ein Dictionary in der Liste “sequences” ist). Jede Seite der Handschrift wird dabei durch ein “canvas”-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste “images” nach dem Schlüssel “&#64;id”.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Der Link zur Bilddatei der ersten Seite der “Grandes Chroniques de France” ist z.B. <a class="reference external" href="https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg">https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg</a>. Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.</p>
+<p>In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht – nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript “Grandes Chroniques de France”; Sie finden es im Ordner im Pfad “example_data/iiif-manifests” unter “BnF. Departement des Manuscrits. Français 2608.json”. Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste “metadata” gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste “canvases” gespeichert (die ein Dictionary in der Liste “sequences” ist). Jede Seite der Handschrift wird dabei durch ein “canvas”-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste “images” nach dem Schlüssel “&#64;id”.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Der Link zur Bilddatei der ersten Seite der “Grandes Chroniques de France” ist z.B. <a class="reference external" href="https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg">https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg</a>. Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.</p>
 <p>Angenommen, Sie wollen nun die Scans aller Seiten der Handschrift herunterladen. In diesem Fall können Sie natürlich auch die Handschrift im <a class="reference external" href="https://gallica.bnf.fr/ark:/12148/btv1b8451604g">Viewer der französischen Nationalbibliothek</a> aufrufen und die Digitalisate dort herunterladen. Wollen Sie das jedoch für mehrere Dutzend oder gar Hundert Handschriften tun, bieten Ihnen die IIIF-Manifeste eine Möglichkeit den Download automatisiert durchzuführen.</p>
 </div>
 <div class="section" id="aufgabe-json-daten-verarbeiten">
@@ -718,17 +763,62 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder_path</span> <span class="o">=</span> <span class="s2">&quot;../data/iiif-manifests/&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder_path</span> <span class="o">=</span> <span class="s2">&quot;.example_data/iiif-manifests/&quot;</span>
 <span class="n">manifests</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="s2">&quot;BnF. Departement des manuscrits. Francais 2170.json&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;BnF. Departement des manuscrits. Francais 2187.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2170.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2187.json&quot;</span><span class="p">,</span>
       <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 1950.json&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;BnF. Departement des manuscrits. Francais 2196.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2196.json&quot;</span><span class="p">,</span>
       <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2228.json&quot;</span><span class="p">,</span>
       <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2608.json&quot;</span>       
 <span class="p">]</span>
 
 <span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hidden cell creates content for using with Thebe Live-Code</span>
+<span class="c1"># &gt;&gt;&gt;change paths, when Jupyter Book is published&lt;&lt;&lt;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">iiif_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data/iiif-manifests&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">iiif_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>  
+  
+<span class="n">file_list_1</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;adliger_vergleich.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;books.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;library.json&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">file_list_1</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        
+<span class="n">file_list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2228</span><span class="p">,</span> <span class="mi">2608</span><span class="p">,</span> <span class="mi">2170</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">2196</span><span class="p">]</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement</span><span class="si">%20d</span><span class="s1">es%20Manuscrits.</span><span class="si">%20F</span><span class="s1">rancais%20&#39;</span>
+<span class="n">base_file_name</span> <span class="o">=</span> <span class="s1">&#39;BnF. Departement des Manuscrits. Francais &#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_list_2</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iiif_folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">base_file_name</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -9,7 +9,7 @@
 # 
 # ## Aufbau einer JSON-Datei
 # 
-# Betrachten wir einmal den Inhalt der Datei "library.json" in unserem Ordner "data". Es handelt sich hier nicht um einen ausführbaren Code:
+# Betrachten wir einmal den Inhalt der Datei "library.json" in unserem Ordner "example_data". Es handelt sich hier nicht um einen ausführbaren Code:
 
 # ```
 # {
@@ -73,7 +73,7 @@ import json
 # In[ ]:
 
 
-with open("../data/library.json", "r") as json_file:
+with open("example_data/library.json", "r") as json_file:
     library_content = json.load(json_file)
 
 print(type(library_content))
@@ -99,18 +99,18 @@ for book in book_list:
 
 library_content['owner'] = "Max Mustermann"
 
-with open("../data/library_version_2.json", "w") as json_file:
+with open("example_data/library_version_2.json", "w") as json_file:
     json.dump(library_content, json_file)
 
 
-# Wenn Sie die JSON-Datei aus dem Ordner "data" heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen.Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch "\\n" bzw. "\\t" repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion `dump()` einen weiteren Parameter (`indent`) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:
+# Wenn Sie die JSON-Datei aus dem Ordner "example_data" heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen.Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch "\\n" bzw. "\\t" repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion `dump()` einen weiteren Parameter (`indent`) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:
 
 # In[ ]:
 
 
 library_content['owner'] = "Maxine Musterfrau"
 
-with open("../data/library_version_2", "w") as json_file:
+with open("example_data/library_version_2.json", "w") as json_file:
     json.dump(library_content, json_file, indent = 4)
 
 
@@ -122,7 +122,7 @@ with open("../data/library_version_2", "w") as json_file:
 # 
 # Sie müssen sich für diese Einführung nicht intensiv in IIIF einarbeiten. In der folgenden Übungsaufgabe werden wir uns ausschließlich auf die [Presentation API](http://ronallo.com/iiif-workshop/presentation/) konzentrieren. In aller Kürze beschrieben definiert die *Presentation API* einen Standard zur Strukturierung einer JSON-Datei um die Zusammenhänge eines bildbasierten Werkes beschreiben zu können ([Vollständige Dokumentation der *Presentation API*](https://iiif.io/api/presentation/3.0/)). Eine solche Datei wird *Manifest* genannt.
 # 
-# In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht -- nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript "Grandes Chroniques de France"; Sie finden es im Ordner im Pfad "data/iiif-manifests" unter "BnF. Departement des Manuscrits. Français 2608.json". Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste "metadata" gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste "canvases" gespeichert (die ein Dictionary in der Liste "sequences" ist). Jede Seite der Handschrift wird dabei durch ein "canvas"-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste "images" nach dem Schlüssel "@id".[^fn1] Der Link zur Bilddatei der ersten Seite der "Grandes Chroniques de France" ist z.B. [https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg). Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.
+# In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht -- nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript "Grandes Chroniques de France"; Sie finden es im Ordner im Pfad "example_data/iiif-manifests" unter "BnF. Departement des Manuscrits. Français 2608.json". Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste "metadata" gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste "canvases" gespeichert (die ein Dictionary in der Liste "sequences" ist). Jede Seite der Handschrift wird dabei durch ein "canvas"-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste "images" nach dem Schlüssel "@id".[^fn1] Der Link zur Bilddatei der ersten Seite der "Grandes Chroniques de France" ist z.B. [https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg](https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg). Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.
 # 
 # Angenommen, Sie wollen nun die Scans aller Seiten der Handschrift herunterladen. In diesem Fall können Sie natürlich auch die Handschrift im [Viewer der französischen Nationalbibliothek](https://gallica.bnf.fr/ark:/12148/btv1b8451604g) aufrufen und die Digitalisate dort herunterladen. Wollen Sie das jedoch für mehrere Dutzend oder gar Hundert Handschriften tun, bieten Ihnen die IIIF-Manifeste eine Möglichkeit den Download automatisiert durchzuführen.
 
@@ -136,17 +136,61 @@ with open("../data/library_version_2", "w") as json_file:
 # In[ ]:
 
 
-folder_path = "../data/iiif-manifests/"
+folder_path = ".example_data/iiif-manifests/"
 manifests = [
-      "BnF. Departement des manuscrits. Francais 2170.json",
-      "BnF. Departement des manuscrits. Francais 2187.json",
+      "BnF. Departement des Manuscrits. Francais 2170.json",
+      "BnF. Departement des Manuscrits. Francais 2187.json",
       "BnF. Departement des Manuscrits. Francais 1950.json",
-      "BnF. Departement des manuscrits. Francais 2196.json",
+      "BnF. Departement des Manuscrits. Francais 2196.json",
       "BnF. Departement des Manuscrits. Francais 2228.json",
       "BnF. Departement des Manuscrits. Francais 2608.json"       
 ]
 
 # Ihr Code
+
+
+# In[ ]:
+
+
+# hidden cell creates content for using with Thebe Live-Code
+# >>>change paths, when Jupyter Book is published<<<
+
+import requests
+import os
+
+data_folder = 'example_data'
+
+try:
+    os.mkdir(data_folder)
+except:
+    pass
+
+iiif_folder = 'example_data/iiif-manifests'
+
+try:
+    os.mkdir(iiif_folder)
+except:
+    pass  
+  
+file_list_1 = [('adliger_vergleich.txt', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt'),
+             ('books.csv', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv'),
+             ('library.json', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json')]
+
+for file_name, url in file_list_1:
+    response = requests.get(url)
+
+    with open(f'example_data/{file_name}', 'w', encoding='UTF8') as f:
+        f.write(response.text)
+        
+file_list_2 = [1950, 2228, 2608, 2170, 2187, 2196]
+base_url = 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement%20des%20Manuscrits.%20Francais%20'
+base_file_name = 'BnF. Departement des Manuscrits. Francais '
+
+for i in file_list_2:
+    response = requests.get(f'{base_url}{str(i)}.json')
+
+    with open(f'{iiif_folder}/{base_file_name}{str(i)}.json', 'w', encoding='UTF8') as f:
+        f.write(response.text)
 
 
 # [^fn1]: "images" muss eine Liste sein, da ein IIIF-"canvas" auch aus mehreren Bilddateien bestehen kann. So kann etwa im Manifest abgebildet werden, dass zu einer Seite einer Handschrift nur Fragmente existieren; jedes Fragment kann durch eine eigene Bilddatei dargestellt werden. Das nur als kleines Beispiel für die Flexibilität von IIIF.

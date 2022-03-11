@@ -405,7 +405,7 @@
 <div class="section" id="grundlagen">
 <h2>Grundlagen<a class="headerlink" href="#grundlagen" title="Permalink to this headline">¶</a></h2>
 <p>Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.</p>
-<p>Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Order gespeichert, der zugleich ein Unterordner eines anderen ist).</p>
+<p>Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist).</p>
 <p>Name, Dateityp und Speicherdatei lassen sich als <em>Pfad</em> angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:</p>
 <p>für Linux und Mac:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Lehre</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
@@ -436,7 +436,7 @@
 <span class="s1">denn ohne dass er etwas Böses getan hätte, </span>
 <span class="s1">wurde er eines Morgens verhaftet. &#39;&#39;&#39;</span>
 
-<span class="n">prozess_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">prozess_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
 <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_sentence_prozess</span><span class="p">)</span>
 <span class="n">prozess_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -450,13 +450,13 @@
 <span class="s1">denn ohne dass er etwas Böses getan hätte, </span>
 <span class="s1">wurde er eines Morgens verhaftet. &#39;&#39;&#39;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
     <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_sentence_prozess</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wenn Sie “w” als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner “data” sollte sich nun die Datei “der_prozess” finden.</p>
+<p>Wenn Sie “w” als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner “example_data” sollte sich nun die Datei “der_prozess” finden.</p>
 <p>Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter “a” (append).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -466,7 +466,7 @@
 <span class="s1">die ihm jeden Tag gegen acht Uhr früh das Frühstück brachte, </span>
 <span class="s1">kam diesmal nicht.&#39;&#39;&#39;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
     <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">second_sentence_prozess</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -475,7 +475,7 @@
 <p>Um den Inhalt einer Datei auszulesen verwenden Sie “r” (read) als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> sowie die Funktion <code class="docutils literal notranslate"><span class="pre">read()</span></code>. Diese gibt Ihnen den Inhalt der Datei als String zurück.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
     <span class="n">prozess_content</span> <span class="o">=</span> <span class="n">prozess_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">prozess_content</span><span class="p">)</span>
@@ -486,7 +486,7 @@
 <p>In einigen Fällen müssen Sie eine Datei Zeile für Zeile auslesen und weiterverarbeiten. In diesem Fall verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>. Um den Unterschied zu <code class="docutils literal notranslate"><span class="pre">read()</span></code> besser erkennen zu können, geben wir noch die Länge des jeweiligen Strings aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;../data/adliger_vergleich.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
     <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -501,7 +501,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;../data/adliger_vergleich.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
     <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -521,7 +521,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <p>Wenn Sie Dateien einlesen oder schreiben, dann empfiehlt es sich, die Kodierung direkt zu spezifizieren. Das tun Sie, indem Sie bei Funktionen wie <code class="docutils literal notranslate"><span class="pre">open()</span></code>, <code class="docutils literal notranslate"><span class="pre">read()</span></code> oder <code class="docutils literal notranslate"><span class="pre">write()</span></code> etc. einen weiteren Parameter definieren: <code class="docutils literal notranslate"><span class="pre">encoding=&quot;&quot;</span></code>. Schauen Sie sich im folgenden Codeblock an, wie der Parameter verwendet wird:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;../data/adliger_vergleich.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
     <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -539,6 +539,51 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hidden cell creates content for using with Thebe Live-Code</span>
+<span class="c1"># &gt;&gt;&gt;change paths, when Jupyter Book is published&lt;&lt;&lt;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">iiif_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data/iiif-manifests&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">iiif_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>  
+  
+<span class="n">file_list_1</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;adliger_vergleich.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;books.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;library.json&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">file_list_1</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        
+<span class="n">file_list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2228</span><span class="p">,</span> <span class="mi">2608</span><span class="p">,</span> <span class="mi">2170</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">2196</span><span class="p">]</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement</span><span class="si">%20d</span><span class="s1">es%20Manuscrits.</span><span class="si">%20F</span><span class="s1">rancais%20&#39;</span>
+<span class="n">base_file_name</span> <span class="o">=</span> <span class="s1">&#39;BnF. Departement des Manuscrits. Francais &#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_list_2</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iiif_folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">base_file_name</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -582,7 +627,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <div class="section" id="grundlagen">
 <h2>Grundlagen<a class="headerlink" href="#grundlagen" title="Permalink to this headline">¶</a></h2>
 <p>Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.</p>
-<p>Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Order gespeichert, der zugleich ein Unterordner eines anderen ist).</p>
+<p>Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist).</p>
 <p>Name, Dateityp und Speicherdatei lassen sich als <em>Pfad</em> angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:</p>
 <p>für Linux und Mac:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Lehre</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
@@ -613,7 +658,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <span class="s1">denn ohne dass er etwas Böses getan hätte, </span>
 <span class="s1">wurde er eines Morgens verhaftet. &#39;&#39;&#39;</span>
 
-<span class="n">prozess_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">prozess_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
 <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_sentence_prozess</span><span class="p">)</span>
 <span class="n">prozess_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -627,13 +672,13 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <span class="s1">denn ohne dass er etwas Böses getan hätte, </span>
 <span class="s1">wurde er eines Morgens verhaftet. &#39;&#39;&#39;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
     <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_sentence_prozess</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Wenn Sie “w” als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner “data” sollte sich nun die Datei “der_prozess” finden.</p>
+<p>Wenn Sie “w” als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner “example_data” sollte sich nun die Datei “der_prozess” finden.</p>
 <p>Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter “a” (append).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,7 +688,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <span class="s1">die ihm jeden Tag gegen acht Uhr früh das Frühstück brachte, </span>
 <span class="s1">kam diesmal nicht.&#39;&#39;&#39;</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
     <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">second_sentence_prozess</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -652,7 +697,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <p>Um den Inhalt einer Datei auszulesen verwenden Sie “r” (read) als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> sowie die Funktion <code class="docutils literal notranslate"><span class="pre">read()</span></code>. Diese gibt Ihnen den Inhalt der Datei als String zurück.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
     <span class="n">prozess_content</span> <span class="o">=</span> <span class="n">prozess_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">prozess_content</span><span class="p">)</span>
@@ -663,7 +708,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <p>In einigen Fällen müssen Sie eine Datei Zeile für Zeile auslesen und weiterverarbeiten. In diesem Fall verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>. Um den Unterschied zu <code class="docutils literal notranslate"><span class="pre">read()</span></code> besser erkennen zu können, geben wir noch die Länge des jeweiligen Strings aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;../data/adliger_vergleich.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
     <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -678,7 +723,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;../data/adliger_vergleich.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
     <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -698,7 +743,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <p>Wenn Sie Dateien einlesen oder schreiben, dann empfiehlt es sich, die Kodierung direkt zu spezifizieren. Das tun Sie, indem Sie bei Funktionen wie <code class="docutils literal notranslate"><span class="pre">open()</span></code>, <code class="docutils literal notranslate"><span class="pre">read()</span></code> oder <code class="docutils literal notranslate"><span class="pre">write()</span></code> etc. einen weiteren Parameter definieren: <code class="docutils literal notranslate"><span class="pre">encoding=&quot;&quot;</span></code>. Schauen Sie sich im folgenden Codeblock an, wie der Parameter verwendet wird:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;../data/adliger_vergleich.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
     <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -716,6 +761,51 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hidden cell creates content for using with Thebe Live-Code</span>
+<span class="c1"># &gt;&gt;&gt;change paths, when Jupyter Book is published&lt;&lt;&lt;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">iiif_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data/iiif-manifests&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">iiif_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>  
+  
+<span class="n">file_list_1</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;adliger_vergleich.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;books.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;library.json&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">file_list_1</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        
+<span class="n">file_list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2228</span><span class="p">,</span> <span class="mi">2608</span><span class="p">,</span> <span class="mi">2170</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">2196</span><span class="p">]</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement</span><span class="si">%20d</span><span class="s1">es%20Manuscrits.</span><span class="si">%20F</span><span class="s1">rancais%20&#39;</span>
+<span class="n">base_file_name</span> <span class="o">=</span> <span class="s1">&#39;BnF. Departement des Manuscrits. Francais &#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_list_2</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iiif_folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">base_file_name</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -44,7 +44,7 @@ import csv
 # In[ ]:
 
 
-with open("../data/books.csv", "r") as csv_file:
+with open("example_data/books.csv", "r") as csv_file:
     books_reader = csv.reader(csv_file, delimiter = ";")
 
     for row in books_reader:
@@ -58,7 +58,7 @@ with open("../data/books.csv", "r") as csv_file:
 # In[ ]:
 
 
-with open("../data/books.csv", "r") as csv_file:
+with open("example_data/books.csv", "r") as csv_file:
     books_reader = csv.reader(csv_file, delimiter = ";")
 
     for row in books_reader:
@@ -74,7 +74,7 @@ with open("../data/books.csv", "r") as csv_file:
 # In[ ]:
 
 
-with open("../data/books.csv", "r") as csv_file:
+with open("example_data/books.csv", "r") as csv_file:
     books_reader = csv.reader(csv_file, delimiter = ";")
 
     next(books_reader)
@@ -92,7 +92,7 @@ with open("../data/books.csv", "r") as csv_file:
 # In[ ]:
 
 
-with open("../data/more_books.csv", "w", newline="") as csv_file:
+with open("example_data/more_books.csv", "w", newline="") as csv_file:
     books_writer = csv.writer(csv_file, delimiter = ",")
 
     header = ['ID', ' Titel', ' Autor', ' Erscheinungsjahr']
@@ -112,7 +112,7 @@ with open("../data/more_books.csv", "w", newline="") as csv_file:
     books_writer.writerow(new_book)
 
 
-# Schauen Sie wieder im Ordner "data" nach: Finden Sie die Datei "more_books.csv" und enthält sie die gewünschten Informationen?
+# Schauen Sie wieder im Ordner "example_data" nach: Finden Sie die Datei "more_books.csv" und enthält sie die gewünschten Informationen?
 
 # ## DictReader: Eine Alternative zum Lesen und Erstellen von CSVs
 # Neben dieser Methode zum Bearbeiten von CSV-Dateien stellt die Python-Bibliothek noch die Möglichkeit bereit, CSVs als Dictionaries zu öffnen. Dies kann hilfreich sein, wenn Ihnen die genaue Position der Zellen nicht bekannt ist und Sie stattdessen mit den *Namen* der Spalten arbeiten möchten. Das Auslesen funktioniert dabei ähnlich wie oben:
@@ -120,7 +120,7 @@ with open("../data/more_books.csv", "w", newline="") as csv_file:
 # In[ ]:
 
 
-with open("../data/books.csv", "r") as csv_file:
+with open("example_data/books.csv", "r") as csv_file:
     books_reader = csv.DictReader(csv_file, delimiter = ";")
 
     for row in books_reader:
@@ -133,7 +133,7 @@ with open("../data/books.csv", "r") as csv_file:
 # In[ ]:
 
 
-with open("../data/more_books.csv", "w", newline="") as csv_file:
+with open("example_data/more_books.csv", "w", newline="") as csv_file:
     header = ["ID",
             "Titel",
             "Autor",
@@ -186,4 +186,48 @@ with open("../data/more_books.csv", "w", newline="") as csv_file:
 import csv
 
 # Ihr Code
+
+
+# In[ ]:
+
+
+# hidden cell creates content for using with Thebe Live-Code
+# >>>change paths, when Jupyter Book is published<<<
+
+import requests
+import os
+
+data_folder = 'example_data'
+
+try:
+    os.mkdir(data_folder)
+except:
+    pass
+
+iiif_folder = 'example_data/iiif-manifests'
+
+try:
+    os.mkdir(iiif_folder)
+except:
+    pass  
+  
+file_list_1 = [('adliger_vergleich.txt', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt'),
+             ('books.csv', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv'),
+             ('library.json', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json')]
+
+for file_name, url in file_list_1:
+    response = requests.get(url)
+
+    with open(f'example_data/{file_name}', 'w', encoding='UTF8') as f:
+        f.write(response.text)
+        
+file_list_2 = [1950, 2228, 2608, 2170, 2187, 2196]
+base_url = 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement%20des%20Manuscrits.%20Francais%20'
+base_file_name = 'BnF. Departement des Manuscrits. Francais '
+
+for i in file_list_2:
+    response = requests.get(f'{base_url}{str(i)}.json')
+
+    with open(f'{iiif_folder}/{base_file_name}{str(i)}.json', 'w', encoding='UTF8') as f:
+        f.write(response.text)
 

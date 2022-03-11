@@ -8,7 +8,7 @@
 # ## Grundlagen
 # Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.
 # 
-# Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Order gespeichert, der zugleich ein Unterordner eines anderen ist).
+# Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist).
 # 
 # Name, Dateityp und Speicherdatei lassen sich als *Pfad* angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:
 # 
@@ -47,7 +47,7 @@ first_sentence_prozess = '''Jemand musste Josef K. verleumdet haben,
 denn ohne dass er etwas Böses getan hätte, 
 wurde er eines Morgens verhaftet. '''
 
-prozess_file = open("../data/der_prozess.txt", "w")
+prozess_file = open("example_data/der_prozess.txt", "w")
 prozess_file.write(first_sentence_prozess)
 prozess_file.close()
 
@@ -61,11 +61,11 @@ first_sentence_prozess = '''Jemand musste Josef K. verleumdet haben,
 denn ohne dass er etwas Böses getan hätte, 
 wurde er eines Morgens verhaftet. '''
 
-with open("../data/der_prozess.txt", "w") as prozess_file:
+with open("example_data/der_prozess.txt", "w") as prozess_file:
     prozess_file.write(first_sentence_prozess)
 
 
-# Wenn Sie "w" als zweiten Parameter für `open()` verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner "data" sollte sich nun die Datei "der_prozess" finden. 
+# Wenn Sie "w" als zweiten Parameter für `open()` verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner "example_data" sollte sich nun die Datei "der_prozess" finden. 
 # 
 # Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter "a" (append).
 
@@ -78,7 +78,7 @@ seiner Zimmervermieterin,
 die ihm jeden Tag gegen acht Uhr früh das Frühstück brachte, 
 kam diesmal nicht.'''
 
-with open("../data/der_prozess.txt", "a") as prozess_file:
+with open("example_data/der_prozess.txt", "a") as prozess_file:
     prozess_file.write(second_sentence_prozess)
 
 
@@ -87,7 +87,7 @@ with open("../data/der_prozess.txt", "a") as prozess_file:
 # In[ ]:
 
 
-with open("../data/der_prozess.txt", "r") as prozess_file:
+with open("example_data/der_prozess.txt", "r") as prozess_file:
     prozess_content = prozess_file.read()
 
 print(prozess_content)
@@ -98,7 +98,7 @@ print(prozess_content)
 # In[ ]:
 
 
-file_name = "../data/adliger_vergleich.txt"
+file_name = "example_data/adliger_vergleich.txt"
 
 with open(file_name, "r") as arbitration_file:
     arbitration_content = arbitration_file.readlines()
@@ -112,7 +112,7 @@ for line in arbitration_content:
 # In[ ]:
 
 
-file_name = "../data/adliger_vergleich.txt"
+file_name = "example_data/adliger_vergleich.txt"
 
 with open(file_name, "r") as arbitration_file:
     arbitration_content = arbitration_file.read()
@@ -133,7 +133,7 @@ print(f"Der Dateiinhalt umfasst {len(arbitration_content)} Zeichen.")
 # In[ ]:
 
 
-file_name = "../data/adliger_vergleich.txt"
+file_name = "example_data/adliger_vergleich.txt"
 
 with open(file_name, "r", encoding="utf8") as arbitration_file:
     arbitration_content = arbitration_file.read()
@@ -150,4 +150,48 @@ print(f"Der Dateiinhalt umfasst {len(arbitration_content)} Zeichen.")
 
 
 # Ihr Code
+
+
+# In[ ]:
+
+
+# hidden cell creates content for using with Thebe Live-Code
+# >>>change paths, when Jupyter Book is published<<<
+
+import requests
+import os
+
+data_folder = 'example_data'
+
+try:
+    os.mkdir(data_folder)
+except:
+    pass
+
+iiif_folder = 'example_data/iiif-manifests'
+
+try:
+    os.mkdir(iiif_folder)
+except:
+    pass  
+  
+file_list_1 = [('adliger_vergleich.txt', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt'),
+             ('books.csv', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv'),
+             ('library.json', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json')]
+
+for file_name, url in file_list_1:
+    response = requests.get(url)
+
+    with open(f'example_data/{file_name}', 'w', encoding='UTF8') as f:
+        f.write(response.text)
+        
+file_list_2 = [1950, 2228, 2608, 2170, 2187, 2196]
+base_url = 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement%20des%20Manuscrits.%20Francais%20'
+base_file_name = 'BnF. Departement des Manuscrits. Francais '
+
+for i in file_list_2:
+    response = requests.get(f'{base_url}{str(i)}.json')
+
+    with open(f'{iiif_folder}/{base_file_name}{str(i)}.json', 'w', encoding='UTF8') as f:
+        f.write(response.text)
 
