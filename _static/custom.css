@@ -1,0 +1,24 @@
+*, h1, h2, h3 {
+    font-family: Bahnschrift;
+    font-stretch: condensed;    
+   }
+
+p {
+    font-size: 20px;
+  }
+
+span.caption-text {
+    font-size: 18px;
+  }
+
+li {
+    font-size: 16px;
+   }
+
+/* body {
+    background: gainsboro;
+}
+
+/* div.container-xl {
+    background: gainsboro;
+}
