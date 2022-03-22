@@ -379,28 +379,23 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Schleifen
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-schleifen">
    while-Schleifen
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aufgaben-while-schleifen">
    Aufgaben: While-Schleifen
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-schleifen">
    for-Schleifen
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-primzahlen-ausgeben">
    Aufgabe: Primzahlen ausgeben
   </a>
  </li>
@@ -424,28 +419,23 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Schleifen
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#while-schleifen">
    while-Schleifen
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aufgaben-while-schleifen">
    Aufgaben: While-Schleifen
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-schleifen">
    for-Schleifen
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-primzahlen-ausgeben">
    Aufgabe: Primzahlen ausgeben
   </a>
  </li>
@@ -458,12 +448,11 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="section" id="schleifen">
+  <div class="tex2jax_ignore mathjax_ignore section" id="schleifen">
 <h1>Schleifen<a class="headerlink" href="#schleifen" title="Permalink to this headline">¶</a></h1>
 <p>Nachdem wir gelernt haben, wie man ein Programm schreibt, das Anweisungen erst dann ausführt, wenn gewisse Bedingungen erfüllt sind (oder eben auch nicht), wollen wir uns nun anschauen, was wir tun müssen, wenn wir bestimmte Arbeitsschritte wiederholt ausführen möchten. Dazu können wir uns die Schleifen-Funktionen von Python zu Nutze machen. Hiervon gibt es im Wesentlichen zwei Typen, die wir sehr häufig verwenden werden: die <code class="docutils literal notranslate"><span class="pre">while</span></code>- und die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen.</p>
-</div>
 <div class="section" id="while-schleifen">
-<h1><a class="reference external" href="https://www.python-kurs.eu/python3_schleifen.php">while-Schleifen</a><a class="headerlink" href="#while-schleifen" title="Permalink to this headline">¶</a></h1>
+<h2><a class="reference external" href="https://www.python-kurs.eu/python3_schleifen.php">while-Schleifen</a><a class="headerlink" href="#while-schleifen" title="Permalink to this headline">¶</a></h2>
 <p>Schauen wir uns zunächst die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife an.</p>
 <p>Mit einem <code class="docutils literal notranslate"><span class="pre">while</span></code>-Statement können wir einen Codeblock so lange ausführen wie die Bedingung der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Anweisung den Wahrheitswert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt. Strukturell sieht die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife den <code class="docutils literal notranslate"><span class="pre">if</span></code>-Statements sehr ähnlich: Wir benötigen ein Schlüsselwort und zwar das <code class="docutils literal notranslate"><span class="pre">while</span></code> und eine Bedingung, die einen Wahrheitswert ergibt, gefolgt von einem Doppelpunkt. In der nächsten Zeile schließt sich dann, mit einer Einrückung beginnend, ein Codeblock an, der in Abhängigkeit vom Wahrheitswert der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Bedingung ausgeführt wird. <code class="docutils literal notranslate"><span class="pre">If</span></code> und <code class="docutils literal notranslate"><span class="pre">While</span></code> sehen demnach hinsichtlich ihres Aufbaus ähnlich aus, in Bezug auf ihr Verhalten unterscheiden sie sich allerdings deutlich.</p>
 <p>Sehen wir uns dazu diese Schleife an:</p>
@@ -505,7 +494,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="aufgaben-while-schleifen">
-<h1>Aufgaben: While-Schleifen<a class="headerlink" href="#aufgaben-while-schleifen" title="Permalink to this headline">¶</a></h1>
+<h2>Aufgaben: While-Schleifen<a class="headerlink" href="#aufgaben-while-schleifen" title="Permalink to this headline">¶</a></h2>
 <p><strong>Aufgabe 1:</strong> Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines <a class="reference external" href="https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&amp;recno=2313&amp;page=116&amp;q=&amp;sort=&amp;fq=&amp;total=8538">Tagungsberichts</a> vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -552,7 +541,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="for-schleifen">
-<h1><a class="reference external" href="https://www.python-kurs.eu/python3_for-schleife.php">for-Schleifen</a><a class="headerlink" href="#for-schleifen" title="Permalink to this headline">¶</a></h1>
+<h2><a class="reference external" href="https://www.python-kurs.eu/python3_for-schleife.php">for-Schleifen</a><a class="headerlink" href="#for-schleifen" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleifen setzen Sie also ein, wenn Sie einen Codeblock so lange wiederholt ausführen wollen, wie eine Bedingung erfüllt ist. Was aber, wenn Sie bereits wissen, dass ein Codeblock nur eine bestimmte Anzahl von Malen wiederholt werden soll? In diesem Fall können Sie auf die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife zurückgreifen (im Deutschen gelegentlich auch als <em>Zählschleife</em> bezeichnet):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -608,8 +597,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Generell erschweren Sprünge im Programm, wie man sie durch <code class="docutils literal notranslate"><span class="pre">break</span></code> umsetzen kann, jedoch die Lesbarkeit Ihres Codes. Versuchen Sie dessen Einsatz zu vermeiden, indem Sie die Abbruchbedingungen Ihrer Schleifen möglichst allgemein formulieren. Manchmal ist eine Lösung, wie die obige, jedoch einfacher und zielführender.</p>
 </div>
-<div class="section" id="id2">
-<h1>Aufgabe: Primzahlen ausgeben<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aufgabe-primzahlen-ausgeben">
+<span id="id2"></span><h2>Aufgabe: Primzahlen ausgeben<a class="headerlink" href="#aufgabe-primzahlen-ausgeben" title="Permalink to this headline">¶</a></h2>
 <p><strong>Knobelaufgabe für Zahlenbegeisterte:</strong></p>
 <p>Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> alle <a class="reference external" href="https://de.wikipedia.org/wiki/Primzahl">Primzahlen</a> zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Kapitel an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende Schritt-für-Schritt-Anleitung schreiben. Diese können Sie dann in Programmcode übersetzen.</p>
 <div class="cell docutils container">
@@ -625,6 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
 <dd><p>Bei der Nutzung des Jupyter Notebooks über ein Terminal kann es zu Problemen beim Abbruch von Endlosschleifen kommen. Im Notfall können Sie im Terminal in diesen Fällen Strg+C zweimal eingeben. Aber Vorsicht: Nicht gespeicherte Änderungen gehen verloren und Sie müssen das Notebook neu starten.</p>
 </dd>
 </dl>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

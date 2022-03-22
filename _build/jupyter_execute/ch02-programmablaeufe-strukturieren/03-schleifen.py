@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Schleifen
+# # Schleifen
 # 
 # Nachdem wir gelernt haben, wie man ein Programm schreibt, das Anweisungen erst dann ausführt, wenn gewisse Bedingungen erfüllt sind (oder eben auch nicht), wollen wir uns nun anschauen, was wir tun müssen, wenn wir bestimmte Arbeitsschritte wiederholt ausführen möchten. Dazu können wir uns die Schleifen-Funktionen von Python zu Nutze machen. Hiervon gibt es im Wesentlichen zwei Typen, die wir sehr häufig verwenden werden: die `while`- und die `for`-Schleifen.
 # 
