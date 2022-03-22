@@ -42,12 +42,11 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -241,6 +240,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -309,14 +354,17 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Jupyter Book Python</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Jupyter Book Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -348,46 +396,11 @@
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-book-python">
-<h1>Jupyter Book Python<a class="headerlink" href="#jupyter-book-python" title="Permalink to this headline">¶</a></h1>
-<p>Entwicklung des Jupyter Book für Python</p>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./."
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">

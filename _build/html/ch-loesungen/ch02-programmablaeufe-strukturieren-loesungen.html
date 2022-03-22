@@ -42,12 +42,11 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -400,19 +399,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Lösungen zu den Aufgaben aus dem Abschnitt Programmabläufe strukturieren</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lösungen zu den Aufgaben aus dem Abschnitt Programmabläufe strukturieren</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#losung-aufgabe-bedingte-anweisungen">
    Lösung: Aufgabe Bedingte Anweisungen
@@ -430,7 +430,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -607,188 +609,8 @@ Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notr
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="losungen-zu-den-aufgaben-aus-dem-abschnitt-programmablaufe-strukturieren">
-<h1>Lösungen zu den Aufgaben aus dem Abschnitt Programmabläufe strukturieren<a class="headerlink" href="#losungen-zu-den-aufgaben-aus-dem-abschnitt-programmablaufe-strukturieren" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="losung-aufgabe-bedingte-anweisungen">
-<h2>Lösung: Aufgabe Bedingte Anweisungen<a class="headerlink" href="#losung-aufgabe-bedingte-anweisungen" title="Permalink to this headline">¶</a></h2>
-<p>Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene <code class="docutils literal notranslate"><span class="pre">print</span></code>-Kommandos ausgeführt werden: “Die Magna Carta stammt aus einem späteren Jahr.”, “Die Vereinbarungen stammen aus einem früheren Jahr.”, “Die Eingabe ist korrekt!”.
-Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notranslate"><span class="pre">input</span></code>-Funktion in ein <code class="docutils literal notranslate"><span class="pre">integer</span></code> umwandeln müssen. Wie das geht, können Sie im ersten Übungsnotebook ggf. noch mal nachlesen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># guessing game</span>
-
-<span class="c1"># Initiale Nutzer:inneneingabe, da ein Zahlenwert weiterverarbeitet werden soll, </span>
-<span class="c1"># wird die Eingabe direkt in ein Integer umgewandelt</span>
-<span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Aus welchem Jahr stammt die Magna Carta? (Geben Sie eine Jahreszahl ein.)&quot;</span><span class="p">))</span>
-
-<span class="c1"># Zuweisung der gesuchten korrekten Antwort zu einer Variablen</span>
-<span class="n">correct_answer</span> <span class="o">=</span> <span class="mi">1215</span>
-
-<span class="c1"># Prüfung, ob die Nutzer:inneneingabe der gesuchten Antwort entspricht oder zu hoch</span>
-<span class="c1"># bzw. zu niedrig ist</span>
-<span class="k">if</span> <span class="n">user_input</span> <span class="o">==</span> <span class="n">correct_answer</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Eingabe ist korrekt!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">user_input</span> <span class="o">&gt;</span> <span class="n">correct_answer</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Vereinbarungen stammen aus einem früheren Jahr.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Magna Carta stammt aus einem späteren Jahr.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="losung-aufgaben-while-schleife">
-<h2>Lösung: Aufgaben While-Schleife<a class="headerlink" href="#losung-aufgaben-while-schleife" title="Permalink to this headline">¶</a></h2>
-<p><strong>Aufgabe 1</strong> Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines <a class="reference external" href="https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&amp;recno=2313&amp;page=116&amp;q=&amp;sort=&amp;fq=&amp;total=8538">Tagungsberichts</a> vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data</span>
-<span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
-<span class="s1">            erfolgreichen Kombination von traditionellen Arbeitsweisen </span>
-<span class="s1">            mit Methoden der Digital Humanities einen regelrechten Hype. </span>
-<span class="s1">            Digitale Methoden drängen sich besonders an den Stellen auf, </span>
-<span class="s1">            wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. </span>
-<span class="s1">            Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen </span>
-<span class="s1">            nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle </span>
-<span class="s1">            strukturelle Änderungen ergeben: so können analoge Editionen angereichert </span>
-<span class="s1">            werden oder Editionen können als Hybrid durch eine gleichwertige digitale und </span>
-<span class="s1">            analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen</span>
-<span class="s1">            Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, </span>
-<span class="s1">            die die Produkte der Editionswissenschaft publizieren und langfristig </span>
-<span class="s1">            verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung </span>
-<span class="s1">            und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution </span>
-<span class="s1">            müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt </span>
-<span class="s1">            und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel </span>
-<span class="s1">            veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” </span>
-<span class="s1">            betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, </span>
-<span class="s1">            welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für </span>
-<span class="s1">            die Editionswissenschaft gibt.&#39;&#39;&#39;</span>
-
-<span class="c1"># Start des Programms mit einer Nutzereingabe, die genutzt werden kann, um eine sichere Abbruchbedingung </span>
-<span class="c1"># für die while-Schleife zu formulieren; </span>
-<span class="c1"># lower() wird genutzt, um die Eingabe robuster zu machen (nicht mehr case sensitive)</span>
-<span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Möchten Sie das Programm zur Vorkommens-Prüfung starten? (J=Ja, N=Nein)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-
-<span class="c1"># while-Schleife, um zu gewährleisten, dass das Programm so lange läuft, </span>
-<span class="c1"># wie ein*e Nutzer*in eine Eingabe tätigen möchte.</span>
-<span class="c1"># Sobald user_input nicht mehr &quot;j&quot; entspricht, wird die Schleife abgebrochen </span>
-<span class="c1"># und das Programm springt in die letzte Zeile</span>
-<span class="k">while</span> <span class="n">user_input</span> <span class="o">==</span> <span class="s2">&quot;j&quot;</span><span class="p">:</span>
-    
-    <span class="c1"># Nutzereingabe für das Wort, das geprüft werden soll</span>
-    <span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Für welches Wort möchten Sie prüfen, ob es im Text enthalten ist? &quot;</span><span class="p">)</span>
-    
-    <span class="c1"># Prüfung des Vorkommens mit entsprechender Mitteilung und Möglichkeit ein weiteres Wort zu suchen.</span>
-    <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">report</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jawohl, dieses Wort ist im Text enthalten.&quot;</span><span class="p">)</span>
-        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Möchten Sie ein weiteres Wort suchen? (J=Ja, N=Nein)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Wort ist leider nicht im Text enthalten.&quot;</span><span class="p">)</span>
-        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Möchten Sie ein weiteres Wort suchen? (J=Ja, N=Nein)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-        
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Programm ist jetzt beendet. Vielen Dank fürs Mitmachen!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Aufgabe 2 “Same but different”:</strong> Schreiben Sie ein kurzes Programm, das eine Benutzer*in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer*in mitgeteilt werden, ob die Angabe zu groß, oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initiale Nutzer:inneneingabe, da ein Zahlenwert weiterverarbeitet werden soll, </span>
-<span class="c1"># wird die Eingabe direkt in ein Integer umgewandelt</span>
-<span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;In welchem Jahr begann die Französische Revolution? &quot;</span><span class="p">))</span>
-
-<span class="c1"># Zuweisung der gesuchten korrekten Antwort zu einer Variablen</span>
-<span class="n">correct_date</span> <span class="o">=</span> <span class="mi">1789</span>
-
-<span class="c1"># while-Schleife, um zu gewährleisten, dass das Programm so lange läuft, wie die Nutzer:inneneingabe nicht </span>
-<span class="c1"># der gesuchten Anwort entspricht.</span>
-<span class="k">while</span> <span class="n">user_input</span> <span class="o">!=</span> <span class="n">correct_date</span><span class="p">:</span>
-    
-    <span class="c1"># Prüfung, ob die Nutzer:inneneingabe zu groß ist mit Option, einen neuen Tipp abzugeben</span>
-    <span class="k">if</span> <span class="n">user_input</span> <span class="o">&gt;</span> <span class="n">correct_date</span><span class="p">:</span>
-        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Die Angabe war leider zu spät. Versuchen Sie es noch mal: &quot;</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Die Angabe war leider zu früh. Versuchen Sie es noch mal: &quot;</span><span class="p">))</span> 
-
-<span class="c1"># Wurde das korrekte Jahr eingegeben, dann ist die Bedingung der While-Schleife nicht mehr erfüllt</span>
-<span class="c1"># und sie wird beendet, damit ist dann auch unser Programm am Ende angelangt.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das ist korrekt.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="losung-aufgabe-primzahlen-ausgeben">
-<h2>Lösung: Aufgabe Primzahlen ausgeben<a class="headerlink" href="#losung-aufgabe-primzahlen-ausgeben" title="Permalink to this headline">¶</a></h2>
-<p><strong>Knobelaufgabe für Zahlenbegeisterte</strong></p>
-<p>Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> alle <a class="reference external" href="https://de.wikipedia.org/wiki/Primzahl">Primzahlen</a> zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Notebook an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende Schritt-für-Schritt-Anleitung schreiben. Diese können Sie dann in Programmcode übersetzen. (Musterlösung folgt nach Abgabefrist)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wir legen einen Schalter fest, um eine boolesche Bedingung zu prüfen</span>
-<span class="n">is_prime</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="c1"># Erste for-Schleife: Wir gehen alle Zahlen von 3 bis 200 durch und prüfen jedes Mal, </span>
-<span class="c1"># ob es sich um eine Primzahl handelt.</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">201</span><span class="p">):</span>
-    <span class="c1"># Zweite for-Schleife: Für jede Zahl prüfen wir, ob sie sich durch eine Zahl kleiner </span>
-    <span class="c1"># als sie selbst teilen lässt.</span>
-    <span class="k">for</span> <span class="n">divisor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
-        <span class="c1"># Wenn eine Zahl durch eine andere teilbar ist, ist der Rest der Division 0.</span>
-        <span class="c1"># Wenn dieser Fall eintritt, kann es sich nicht um eine Primzahl handeln.</span>
-        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="k">break</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># An dieser Stelle dürfen wir die Schleife noch nicht abbrechen. </span>
-            <span class="c1"># Evtl. ist die zu prüfenden</span>
-            <span class="c1"># Zahl i ja noch durch eine größere Zahl als der aktuelle Wert von j teilbar.</span>
-            <span class="n">is_prime</span> <span class="o">=</span> <span class="kc">True</span>
-    
-    <span class="c1"># Erst wenn wir i durch alle Zahlen kleiner als sich selbst geteilt haben </span>
-    <span class="c1"># und bei jeder Division ein Rest übrig geblieben ist, </span>
-    <span class="c1"># können wir sicher sein, dass es sich um eine Primzahl handelt.</span>
-    <span class="k">if</span> <span class="n">is_prime</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./ch-loesungen"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="part01-python-basics-loesungen.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -805,7 +627,7 @@ Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notr
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">

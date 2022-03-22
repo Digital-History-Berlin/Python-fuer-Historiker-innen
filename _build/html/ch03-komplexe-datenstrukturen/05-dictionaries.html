@@ -42,12 +42,11 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -243,6 +242,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -384,19 +429,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Dictionaries</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dictionaries</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dictionaries-erstellen">
    Dictionaries erstellen
@@ -444,7 +490,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -655,222 +703,8 @@
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="dictionaries">
-<h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries">Dictionaries</a><a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
-<p>Eine weitere zentrale Datenstruktur in Python, mit der Daten auf mächtige Art und Weise organisiert werden können, ist das sogenannte Dictionary. Sie können sich die Funktionsweise vorstellen wie bei Glossaren, Wörterbüchern oder Lexika: Auf Basis eines Schlüsselbegriffs können Sie unterschiedlich detailreiche Informationen zu diesem Begriff abrufen.</p>
-<p>Wie bei einer Liste handelt es sich um eine veränderbare Sammlung von potentiell unterschiedlichen Werten. Anders als bei Listen allerdings erfolgt der Zugriff nicht automatisch über Integers als Positionsangabe, sondern über die sogenannten <em>keys</em>, denn Dictionaries bestehen aus Schlüssel-Wert-Paaren (<em>key-value pairs</em>). Die <em>keys</em> können aus unterschiedlichen Datentypen bestehen. Für das jeweilige Dictionary müssen Sie allerdings einzigartig sein, damit unmissverständlich die gespeicherten Informationen abgerufen werden können.</p>
-<p>Ein weiterer Unterschied zu Listen ist, dass Dicitionaries nicht geordnet sind. Während die Ordnung bei Listen durchaus ein Kriterium dafür ist, ob zwei Listen identisch sind, spielt dies für Dictionaries keine Rolle.</p>
-<div class="section" id="dictionaries-erstellen">
-<h2>Dictionaries erstellen<a class="headerlink" href="#dictionaries-erstellen" title="Permalink to this headline">¶</a></h2>
-<p>Wie bei Sets werden Dicitionaries durch geschweifte Klammern interpretierbar. Sie unterscheiden sich aber hinsichtlich der Organisation der jeweils gespeicherten Daten. Ein Dictionary kann wie folgt aussehen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Franz Kafka&quot;</span><span class="p">:</span><span class="s2">&quot;Der Prozess&quot;</span><span class="p">,</span> 
-         <span class="s2">&quot;Charles Dickens&quot;</span><span class="p">:</span><span class="s2">&quot;Eine Geschichte aus zwei Städten&quot;</span><span class="p">,</span> 
-         <span class="s2">&quot;J. K. Rowling&quot;</span><span class="p">:[</span><span class="s2">&quot;Harry Potter und der Stein der Weisen&quot;</span><span class="p">,</span> 
-                          <span class="s2">&quot;Harry Potter und die Kammer des Schreckens&quot;</span><span class="p">,</span> 
-                          <span class="s2">&quot;Harry Potter und der Gefangene von Askaban&quot;</span><span class="p">]}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Mit dieser Codezeile wird ein Dictionary der Variablen <code class="docutils literal notranslate"><span class="pre">books</span></code> zugewiesen. Die Schlüssel (<em>keys</em>) sind in diesem Beispiel die Namen der Autor:innen und die ihnen jeweils zugewiesenen Werte (<em>values</em>) sind korrespondierende Buchtitel. Die Zuordnung der Werte zu einem Schlüssel wird durch Doppelpunkte signalisiert, einzelne Instanzen sind durch Kommata voneinander abgegrenzt. Diese Struktur müssen Sie zur Unterscheidung von Sets beibehalten.</p>
-<p>Anhand des Eintrags zu “J. K. Rowling” wird ersichtlich, dass sich auch Dictionaries verschachteln lassen. Eine Liste als korrespondierender Wert zu einem Schlüssel bietet sich bspw. dann an, wenn Sie mit geordneten Daten arbeiten wollen. Ein <em>key</em> kann aber auch weitere Dictionaries enthalten. Das ermöglicht Ihnen, komplexe Datenstrukturen flexibel zu modellieren.</p>
-<p>Zugreifen können Sie nun auf diese Werte durch die Angabe des Schlüssels. Wie bei der Indizierung bei den bisher kennengelernten sequenziellen Datentypen werden auch hierzu eckige Klammern verwendet:<a class="footnote-reference brackets" href="#fn1" id="id1">1</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Ein populäres Buch von Franz Kafka ist </span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">books</span><span class="p">[</span><span class="s2">&quot;Franz Kafka&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">.&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Der erste Teil in der Harry-Potter-Reihe heißt </span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">books</span><span class="p">[</span><span class="s2">&quot;J. K. Rowling&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">.&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wenn Sie auf einen Schlüssel zugreifen wollen, der nicht im Dictionary hinterlegt ist, dann erhalten Sie eine <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>-Fehlermeldung – ganz ähnlich den <em>out of range</em> <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>-Fehlermeldungen bei Listen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Albert Camus </span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">books</span><span class="p">[</span><span class="s2">&quot;Albert Camus&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2"> wird in der Coronakrise wieder viel gelesen.&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Falls wir das nicht vorhandene Schlüssel-Wert-Paar nun hinzufügen wollen, dann können wir dieselbe Notation verwenden, die wir auch für den Zugriff gebrauchen, und in Kombination mit dem Zuweisungssymbol entsprechende Inhalte integrieren:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">books</span><span class="p">[</span><span class="s2">&quot;Albert Camus&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Die Pest&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="p">[</span><span class="s2">&quot;Albert Camus&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Das Dictionary <code class="docutils literal notranslate"><span class="pre">books</span></code> enthält nun ein Schlüssel-Wert-Paar bestehend aus “Albert Camus” und “Die Pest”. Auf diese Weise können beliebige Einträge hinzugefügt oder auch bearbeitet werden.</p>
-</div>
-<div class="section" id="keys-values-und-items">
-<h2><code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code> und <code class="docutils literal notranslate"><span class="pre">items()</span></code><a class="headerlink" href="#keys-values-und-items" title="Permalink to this headline">¶</a></h2>
-<p>Mit den drei Methoden <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code> und <code class="docutils literal notranslate"><span class="pre">items()</span></code> werden listenähnliche Objekte erzeugt, die allerdings nicht modifizierbar sind. Sie bieten einen einfachen Zugriff auf die im Dictionary gespeicherten Daten. Notieren Sie im Kommentarbereich, was die Methoden im jeweiligen For-Loop machen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">books</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># </span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">books</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Diese Methoden können auch genutzt werden, um zu prüfen, ob bestimmte Werte oder Schlüssel in einem Dictionary vorhanden sind. Dazu können wieder, wie schon bei der Arbeit mit Listen, die Operatoren <code class="docutils literal notranslate"><span class="pre">in</span></code> und <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> genutzt werden. Prüfen Sie jeweils für <em>keys</em> und <em>values</em>, ob Inhalte im <code class="docutils literal notranslate"><span class="pre">books</span></code>-Dictionary enthalten sind:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Sollten Sie mit richtigen Listen weiterarbeiten wollen, dann können Sie die listenähnlichen Rückgabewerte einfach <code class="docutils literal notranslate"><span class="pre">list()</span></code> übergeben:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">authors</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">authors</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="get">
-<h2><code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
-<p>Die <code class="docutils literal notranslate"><span class="pre">get()</span></code>-Methode gibt den Wert für einen angegebenen Schlüssel zurück, wenn dieser im Dictionary existiert. Optional kann ein zweites Argument angegeben werden, das zurückgegeben werden soll, wenn der entsprechend angegebene Schlüssel fehlt. Per <em>default</em> wird <code class="docutils literal notranslate"><span class="pre">None</span></code> zurückgegeben, wenn kein Rückgabewert für diesen Fall spezifiziert wurde.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Charles Dickens&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Edgar Allan Poe&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Edgar Allan Poe&quot;</span><span class="p">,</span> <span class="s2">&quot;kein Eintrag&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="eintrage-entfernen">
-<h2>Einträge entfernen<a class="headerlink" href="#eintrage-entfernen" title="Permalink to this headline">¶</a></h2>
-<p>Auch für Dictionaries stehen mit dem <code class="docutils literal notranslate"><span class="pre">del</span></code>-Statement und <code class="docutils literal notranslate"><span class="pre">clear()</span></code> Möglichkeiten zur Verfügung, um einzelne Elemente eines Dictionaries zu entfernen oder den gesamten Inhalt zu löschen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete entry on Albert Camus</span>
-<span class="k">del</span> <span class="n">books</span><span class="p">[</span><span class="s2">&quot;Albert Camus&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove all entries from dictionary</span>
-<span class="n">books</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">books</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="aufgabe-einfache-frequenzanalyse-mit-python">
-<span id="id2"></span><h2>Aufgabe: Einfache Frequenzanalyse mit Python<a class="headerlink" href="#aufgabe-einfache-frequenzanalyse-mit-python" title="Permalink to this headline">¶</a></h2>
-<p>Abschließend wollen wir auf Basis Ihres tokenisierten Textes ein kleines textanalytisches Programm gestalten, mit dem Sie die <a class="reference external" href="https://de.wikipedia.org/wiki/Absolute_H%C3%A4ufigkeit">absolute</a> und <a class="reference external" href="https://de.wikipedia.org/wiki/Relative_H%C3%A4ufigkeit">relative Frequenz</a> der in Ihrem Text enthaltenen Wörter ermitteln können. Die absolute Häufigkeit haben Sie bereits in der <a class="reference internal" href="04-sets.html#aufgaben-sets"><span class="std std-ref">Zwischenaufgabe zu den Sets</span></a> ermittelt. Jetzt wollen wir die Funktionalitäten von Dictionaries dafür nutzen.</p>
-<p>Als Basis benötigen Sie dazu wieder Ihren tokenisierten Text. Für die Berechnung der Frequenzen definieren Sie zwei Funktionen:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">count_absolute_frequency()</span></code></p>
-<ul>
-<li><p>Diese Funktion sollte ein Dictionary zurückgeben, das pro Wort (<em>key</em>) die Anzahl seines Vorkommens im Text (<em>value</em>) abspeichert.</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">count_relative_frequency()</span></code></p>
-<ul>
-<li><p>Diese Funktion sollte ein Dictionary zurückgeben, das die ermittelten absoluten Häufigkeiten ins Verhältnis zur Gesamtlänge des Textes setzt. Zusätzlich können Sie die so ermittelten Werte mit 1000 (zur Ermittlung der Häufigkeit pro 1000 Token) oder 100 (zur Ermittlung des prozentualen Anteils) multiplizieren, was die Vergleichbarkeit der ermittelten Werte zwischen verschieden langen Texten erleichtert.</p></li>
-</ul>
-</li>
-</ul>
-<p>Geben Sie sowohl die absoluten als auch die relativen Häufigkeiten für Ihren Text aus.</p>
-<p><strong>Hinweise:</strong></p>
-<ul class="simple">
-<li><p>Nutzen Sie Schleifen und Bedingungen</p></li>
-<li><p>Für die Berechnung bei der ersten Funktion können Sie sich an Ihrer Herangehensweise im Abschnitt über Sets orientieren; bei der zweiten Funktion helfen Division und Multiplikation</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<p><strong>Bemerkung:</strong></p>
-<p>In diesem Kapitel konnten wir Ihnen lediglich einen ersten Eindruck von der Arbeit mit Listen, Tupeln, Sets und Dictionaries vermitteln. Wenn Sie sich durch die Dokumentation zu den einzelnen Datenstrukturen durcharbeiten, werden Sie feststellen, dass die Möglichkeiten noch sehr viel umfangreicher sind. Es bietet sich an, sich bedarfsweise und anwendungsorientiert immer tiefer einzuarbeiten.</p>
-<p><img alt="alt text" src="https://res.cloudinary.com/practicaldev/image/fetch/s--AHhADEXH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://pics.me.me/trying-to-learn-any-programming-language-100-just-a-little-7917454.png" /></p>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Der Backslash in den Zeichenketten der obigen Notebookzellen dient dazu, Zeichen, die in Python nicht nur für sich selbst stehen, sondern eine besondere Funktion besitzen, wie in diesem Fall Anführungszeichen, von dieser Funktionalität zu entbinden. Das zweite Anführungszeichen in dieser Zeichenfolge <code class="docutils literal notranslate"><span class="pre">&quot;\&quot;&quot;</span></code> wird vom Interpreter dann lediglich als Satzzeichen interpretiert und nicht als Abschluss des Datentyps <em>string</em>.</p>
-</dd>
-</dl>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./ch03-komplexe-datenstrukturen"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="04-sets.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -887,7 +721,7 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">

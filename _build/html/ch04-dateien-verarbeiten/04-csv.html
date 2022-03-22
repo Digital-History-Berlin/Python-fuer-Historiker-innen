@@ -42,15 +42,15 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Informationen zu den Daten aus Part Python Basics" href="../ch-daten/part01-python-basics-daten.html" />
     <link rel="prev" title="JSON" href="03-json.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -242,6 +242,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -358,19 +404,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>CSV</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>CSV</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#allgemeines">
    Allgemeines
@@ -393,7 +440,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -681,299 +730,8 @@
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="csv">
-<h1>CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="allgemeines">
-<h2>Allgemeines<a class="headerlink" href="#allgemeines" title="Permalink to this headline">¶</a></h2>
-<p>Ein weiteres Format zur strukturierten Speicherung von Daten, mit dem Sie als Historiker:innen oft zu tun haben, ist CSV (Comma Separated Values). Es dient der textbasierten Speicherung von Tabellen. Sicher sind Sie mit Exceldateien vertraut. “xls” ist jedoch ein proprietäres Format – CSV-Daten sind wesentlich interoperabler. Wie folgendes Beispiel zeigt, sind CSVs so strukturiert, dass eine Tabellen<em>zeile</em> durch eine Zeile dargestellt wird. Tabellen<em>spalten</em> sind dagegen durch ein Trennzeichen getrennt.</p>
-<p><strong>Darstellung als Tabelle</strong></p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>ID</p></th>
-<th class="head"><p>Titel</p></th>
-<th class="head"><p>Autor</p></th>
-<th class="text-align:right head"><p>Erscheinungsjahr</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>1</p></td>
-<td><p>Der Prozess</p></td>
-<td><p>Franz Kafka</p></td>
-<td class="text-align:right"><p>1935</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
-<td><p>Half of a Yellow Sun</p></td>
-<td><p>Chimanda Ngozi Adichie</p></td>
-<td class="text-align:right"><p>2006</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>3</p></td>
-<td><p>Network Effect</p></td>
-<td><p>Martha Wells</p></td>
-<td class="text-align:right"><p>2020</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Darstellung als CSV</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ID</span><span class="p">;</span><span class="n">Titel</span><span class="p">;</span><span class="n">Autor</span><span class="p">;</span><span class="n">Erscheinungsjahr</span>
-<span class="mi">1</span><span class="p">;</span><span class="n">Der</span> <span class="n">Prozess</span><span class="p">;</span><span class="n">Franz</span> <span class="n">Kafka</span><span class="p">;</span><span class="mi">1935</span>
-<span class="mi">2</span><span class="p">;</span><span class="n">Half</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Yellow</span> <span class="n">Sun</span><span class="p">;</span><span class="n">Chimanda</span> <span class="n">Ngozi</span> <span class="n">Adichie</span><span class="p">;</span><span class="mi">2006</span>
-<span class="mi">3</span><span class="p">;</span><span class="n">Network</span> <span class="n">Effect</span><span class="p">;</span><span class="n">Martha</span> <span class="n">Wells</span><span class="p">;</span><span class="mi">2020</span>
-</pre></div>
-</div>
-<p>(aus der Datei: data/books.csv)</p>
-<p>Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit “;” die wenigsten Probleme.</p>
-<p>Sie können CSV-Dateien in allen gängigen Tabellenkalkulationsprogrammen (z.B. Microsoft Excel) öffnen und bearbeiten oder auch aus solchen Programmen CSVs exportieren.</p>
-</div>
-<div class="section" id="csvs-in-python-offnen-und-speichern">
-<h2>CSVs in Python öffnen und speichern<a class="headerlink" href="#csvs-in-python-offnen-und-speichern" title="Permalink to this headline">¶</a></h2>
-<p>Ähnlich wie für JSON gibt es auch für CSVs Python-Programmbibliotheken, mit denen Sie Daten auslesen und neue CSV-Dateien erstellen können. In dieser Einheit besprechen wir nur die <a class="reference external" href="https://docs.python.org/3/library/csv.html">Standardbibliothek</a> von Python. Wie schon im vorherigen Abschnitt muss diese zuerst importiert werden.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Mit dem folgenden Code können wir den Inhalt einer CSV-Datei auslesen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-    <span class="n">books_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">books_reader</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">reader()</span></code> funktioniert ähnlich wie <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>: Die Datei wird Zeile für Zeile ausgelesen; die einzelnen Zeilen können dann weiterverarbeitet werden. Wichtig ist hier der Paramter <code class="docutils literal notranslate"><span class="pre">delimiter</span></code>. Hier geben Sie an, welches Trennzeichen die CSV-Datei, die Sie öffnen wollen, verwendet. Wenn Sie mit fremden Daten arbeiten, öffnen Sie die CSV-Datei einfach kurz in einem Texteditor um herauszufinden, was Sie hier angeben müssen.</p>
-<p>Wie Sie sehen, werden in diesem Fall die Zeilen als Listen ausgegeben, sodass Sie auf die einzelnen Zellen der Tabelle zugreifen können:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-    <span class="n">books_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">books_reader</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Buch-ID: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Titel: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Autor: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erscheinungsjahr: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wenn Sie den Header nicht berücksichtigen wollen, können Sie ihn z.B. mit <code class="docutils literal notranslate"><span class="pre">next()</span></code> überspringen:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-    <span class="n">books_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
-
-    <span class="nb">next</span><span class="p">(</span><span class="n">books_reader</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">books_reader</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Buch-ID: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Titel: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Autor: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erscheinungsjahr: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Das Schreiben neuer CSV-Dateien funktioniert ebenfalls Zeile für Zeile. Hierbei müssen Sie für jede Zeile eine Liste erstellen, die Sie mit der Funktion <code class="docutils literal notranslate"><span class="pre">writerow()</span></code> zu einem neuen Dateiobjekt hinzufügen können. Bei Windows-Rechner müssen Sie beim Öffnen der Datei den Parameter newline auf einen leeren String (“”) setzen, sonst wir nach jeder Zeile eine Leerzeile geschrieben.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/more_books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-    <span class="n">books_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
-
-    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39; Titel&#39;</span><span class="p">,</span> <span class="s1">&#39; Autor&#39;</span><span class="p">,</span> <span class="s1">&#39; Erscheinungsjahr&#39;</span><span class="p">]</span>
-    <span class="n">books_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-
-    <span class="n">book_id</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">new_title</span> <span class="o">=</span> <span class="s2">&quot;Die Pest&quot;</span>
-    <span class="n">new_author</span> <span class="o">=</span> <span class="s2">&quot;Albert Camus&quot;</span>
-    <span class="n">new_year</span> <span class="o">=</span> <span class="s2">&quot;1947&quot;</span>
-    <span class="n">new_book</span> <span class="o">=</span> <span class="p">[</span><span class="n">book_id</span><span class="p">,</span> <span class="n">new_title</span><span class="p">,</span> <span class="n">new_author</span><span class="p">,</span> <span class="n">new_year</span><span class="p">]</span>
-
-    <span class="n">books_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">new_book</span><span class="p">)</span>
-
-    <span class="n">book_id</span> <span class="o">=</span> <span class="n">book_id</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">new_book</span> <span class="o">=</span> <span class="p">[</span><span class="n">book_id</span><span class="p">,</span> <span class="s2">&quot;The Hobbit&quot;</span><span class="p">,</span> <span class="s2">&quot;John Ronald Reuel Tolkien&quot;</span><span class="p">,</span> <span class="s2">&quot;1937&quot;</span><span class="p">]</span>
-
-    <span class="n">books_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">new_book</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Schauen Sie wieder im Ordner “example_data” nach: Finden Sie die Datei “more_books.csv” und enthält sie die gewünschten Informationen?</p>
-</div>
-<div class="section" id="dictreader-eine-alternative-zum-lesen-und-erstellen-von-csvs">
-<h2>DictReader: Eine Alternative zum Lesen und Erstellen von CSVs<a class="headerlink" href="#dictreader-eine-alternative-zum-lesen-und-erstellen-von-csvs" title="Permalink to this headline">¶</a></h2>
-<p>Neben dieser Methode zum Bearbeiten von CSV-Dateien stellt die Python-Bibliothek noch die Möglichkeit bereit, CSVs als Dictionaries zu öffnen. Dies kann hilfreich sein, wenn Ihnen die genaue Position der Zellen nicht bekannt ist und Sie stattdessen mit den <em>Namen</em> der Spalten arbeiten möchten. Das Auslesen funktioniert dabei ähnlich wie oben:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-    <span class="n">books_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">books_reader</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Titel&#39;</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Erscheinungsjahr&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ebenso können Sie neue CSVs erstellen. Hier gehen Sie so vor, dass Sie für jede Tabellenzeile ein eigenes Dictionary vorbereiten. Wichtig ist dabei, dass Sie die Kopfzeile der Tabelle (die ja die Spaltennamen enthält) vorher in einer Liste definieren und dem DictWriter-Objekt als Parameter übergeben.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/more_books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
-    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Titel&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Autor&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Erscheinungsjahr&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;verfügbar&quot;</span><span class="p">]</span>
-    <span class="n">books_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">fieldnames</span> <span class="o">=</span> <span class="n">header</span><span class="p">)</span>
-    <span class="n">books_writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
-
-    <span class="n">more_input</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">book_id</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="k">while</span><span class="p">(</span><span class="n">more_input</span> <span class="o">==</span> <span class="kc">True</span><span class="p">):</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie einen Titel ein: &quot;</span><span class="p">)</span>
-        <span class="n">author</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie eine Autor*in ein: &quot;</span><span class="p">)</span>
-        <span class="n">year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie ein Erscheinungsjahr ein: &quot;</span><span class="p">)</span>
-        <span class="n">available</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ist das Buch verfügbar? (ja|nein) &quot;</span><span class="p">)</span>
-        <span class="n">more_input_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Möchten Sie weitere Titel eingeben? (j|n) &quot;</span><span class="p">)</span>
-
-        <span class="n">new_book</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="n">book_id</span><span class="p">,</span>
-            <span class="s2">&quot;Titel&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
-            <span class="s2">&quot;Autor&quot;</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
-            <span class="s2">&quot;Erscheinungsjahr&quot;</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span>
-            <span class="s2">&quot;verfügbar&quot;</span><span class="p">:</span> <span class="n">available</span><span class="p">}</span>
-
-        <span class="n">books_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">new_book</span><span class="p">)</span>
-        <span class="n">book_id</span> <span class="o">=</span> <span class="n">book_id</span> <span class="o">+</span> <span class="mi">1</span>
-
-        <span class="k">if</span> <span class="n">more_input_answer</span> <span class="o">==</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
-            <span class="n">more_input</span> <span class="o">=</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Neben der von Python bereitgestellten csv-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>. Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek <code class="docutils literal notranslate"><span class="pre">csv</span></code> zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen.</p>
-</div>
-<div class="section" id="aufgabe-daten-strukturiert-speichern">
-<h2>Aufgabe: Daten strukturiert speichern<a class="headerlink" href="#aufgabe-daten-strukturiert-speichern" title="Permalink to this headline">¶</a></h2>
-<p>Nun haben Sie gelernt Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html#aufgabe-einfache-frequenzanalyse-mit-python"><span class="std std-ref">vorherigen Kapitel</span></a> nachnutzen nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:</p>
-<ul class="simple">
-<li><p>Der zu verarbeitende Text soll dem Programm nun nicht mehr als Variable übergeben werden, sondern aus einer Textdatei extrahiert werden.</p></li>
-<li><p>Die Ausgabe soll nun nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code>, sondern als CSV-Datei erfolgen. Anstatt eines Zeilenumbruchs, soll jede Zeile nun in einer eigenen Tabellenzeile gespeichert werden. Jede Tabellenzeile soll dabei auf folgende Weise strukturiert sein:</p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>id</p></th>
-<th class="head"><p>text</p></th>
-<th class="text-align:right head"><p>anzahl_zeichen</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
-<td><p></p></td>
-<td class="text-align:right"><p></p></td>
-</tr>
-</tbody>
-</table>
-<p><code class="docutils literal notranslate"><span class="pre">id</span></code> entspricht dabei der Nummerierung der einzelnen Zeilen des von Ihnen in der Aufgabe verwendeten Textes. Die Zeilennummerierung müssen Sie hier noch ergänzen. <code class="docutils literal notranslate"><span class="pre">text</span></code> enthält die aus maximal zehn Wörtern bestehende tokenisierte Zeile. <code class="docutils literal notranslate"><span class="pre">anzahl_zeichen</span></code> soll die Anzahl der Buchstaben in der jeweiligen Zeile enthalten.</p>
-<p>Führen Sie das Programm für mindestens einen Text Ihrer Wahl aus.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-
-<span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_thebe-init tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hidden cell creates content for using with Thebe Live-Code</span>
-<span class="c1"># &gt;&gt;&gt;change paths, when Jupyter Book is published&lt;&lt;&lt;</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data&#39;</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="k">pass</span>
-
-<span class="n">iiif_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data/iiif-manifests&#39;</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">iiif_folder</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="k">pass</span>  
-  
-<span class="n">file_list_1</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;adliger_vergleich.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt&#39;</span><span class="p">),</span>
-             <span class="p">(</span><span class="s1">&#39;books.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv&#39;</span><span class="p">),</span>
-             <span class="p">(</span><span class="s1">&#39;library.json&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json&#39;</span><span class="p">)]</span>
-
-<span class="k">for</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">file_list_1</span><span class="p">:</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-        
-<span class="n">file_list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2228</span><span class="p">,</span> <span class="mi">2608</span><span class="p">,</span> <span class="mi">2170</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">2196</span><span class="p">]</span>
-<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement</span><span class="si">%20d</span><span class="s1">es%20Manuscrits.</span><span class="si">%20F</span><span class="s1">rancais%20&#39;</span>
-<span class="n">base_file_name</span> <span class="o">=</span> <span class="s1">&#39;BnF. Departement des Manuscrits. Francais &#39;</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_list_2</span><span class="p">:</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iiif_folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">base_file_name</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./ch04-dateien-verarbeiten"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="03-json.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -982,8 +740,15 @@
             <p class="prev-next-title">JSON</p>
         </div>
     </a>
+    <a class='right-next' id="next-link" href="../ch-daten/part01-python-basics-daten.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Informationen zu den Daten aus Part Python Basics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">

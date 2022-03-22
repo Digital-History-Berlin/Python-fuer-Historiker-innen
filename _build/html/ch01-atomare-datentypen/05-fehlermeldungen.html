@@ -42,12 +42,11 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -243,6 +242,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -354,19 +399,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Fehlermeldungen</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fehlermeldungen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nameerror">
    NameError
@@ -384,7 +430,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -473,100 +521,8 @@ Viele bekannte Programmiersprachen wie C, C++ oder Java nutzen geschweifte Klamm
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="fehlermeldungen">
-<h1>Fehlermeldungen<a class="headerlink" href="#fehlermeldungen" title="Permalink to this headline">¶</a></h1>
-<p>Es gibt viele Typen von Fehlern in Python und vielleicht sind Sie schon in den Notebooks auf einen gestoßen. Wie liest man solche Fehler und löst Sie auf?
-Schauen wir uns das anhand dreier der häufigeren Fehlermeldungen an: <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> und <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>.</p>
-<div class="section" id="nameerror">
-<h2>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h2>
-<p>Auf den <code class="docutils literal notranslate"><span class="pre">NameError</span></code> stößt man insbesondere dann, wenn man das Programmieren mit JupyterNotebooks lernt. Führen wir den folgenden Code aus und sehen uns die Fehlermeldung genauer an:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># error no. 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">not_defined_variable</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Die nun im Ausgabebereich angezeigte Fehlermeldung zeigt Ihnen zunächst, welche Art von Fehler vorliegt. Über den langen Pfeil (—-&gt;) werden Sie darauf hingewiesen, wo im Code der Interpreter auf den Fehler gestoßen ist. Darunter finden Sie eine knappe Erläuterung des Fehlertyps.</p>
-<p>Was Ihnen die Fehlermeldung nun sagt ist, dass Sie mit einer Variablen arbeiten, die bislang im Programmdurchlauf nicht definiert worden ist, d.h., es wurde ihr noch kein Wert zugewiesen, der Container ist also “leer”.</p>
-<p>Auftreten kann der Fehler zum Beispiel dann, wenn Sie anfangen Ihr Notebook zu bearbeiten und es schließen, um es später weiter zu bearbeiten. Sie können unter Umständen beim nächsten Aufruf des Notebooks nicht unmittelbar dort weiter arbeiten, wo Sie aufgehört haben, wenn das, was Sie tun wollen in mehreren, aufeinander aufbauenden Codeblöcken über das Notebook verstreut ist. Der Computer ist gewissermaßen vergesslich: Beim Schließen des Notebooks wird der Speicher - oder das Gedächtnis -, in dem alle Wert-Variablen-Zuweisungen abgelegt sind, gelöscht. Beim nächsten Öffnen des Notebooks muss also der zusammenhängende Code erst wieder der Reihe nach ausgeführt werden.</p>
-</div>
-<div class="section" id="syntaxerror">
-<h2>SyntaxError<a class="headerlink" href="#syntaxerror" title="Permalink to this headline">¶</a></h2>
-<p>Ein anderer häufiger Fehlertyp ist der <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, der immer dann vorkommt, wenn wir keinen validen Python-Code schreiben, wie beispielsweise in diesem Codeblock:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># error no. 2</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="s2">&quot;Textsequenz&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Diese Fehlermeldung zeigt uns nicht nur an, in welcher Zeile der Interpreter auf fehlerhaften Code gestoßen ist, sondern auch an welcher Stelle etwas nicht so gelaufen ist, wie es der Interpreter erwarten würde. Was fehlt hier?</p>
-<p>Was wir hier sehen ist eine <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife, die in Python nach einem ganz bestimmten Muster aufgebaut ist und dazu dient, in kontrollierter Weise eine Anweisung oder eine Gruppe von Anweisungen auszuführen. Sie entspricht dem folgenden Prinzip:</p>
-<p><code class="docutils literal notranslate"><span class="pre">für</span> <span class="pre">jedes</span> <span class="pre">Element</span> <span class="pre">in</span> <span class="pre">einer</span> <span class="pre">Sequenz:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">mach</span> <span class="pre">etwas</span> <span class="pre">(mit</span> <span class="pre">diesem</span> <span class="pre">Element)</span></code></p>
-<p>Mit der <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife können Sie also jedes Element eines sequenziellen Objekts, wie beispielsweise eine Zeichenkette, über die Zuweisung zu einer Variablen bearbeiten oder als Bedingung für eine Anweisung nutzen. Im nächsten Kapitel beschäftigen Sie sich ausführlicher damit. Was hier wichtig ist: Die Schleife muss korrekt aufgebaut sein, um ausgeführt werden zu können. Was in unserem obigen Codeblock fehlt, ist der Doppelpunkt, der zur Einleitung einer <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife zwingend dazu gehört. Fügen wir ihn hinzu, dann wird alles korrekt ausgeführt:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># error no. 2 solved</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="s2">&quot;Textsequenz&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="indentationerror">
-<h2>IndentationError<a class="headerlink" href="#indentationerror" title="Permalink to this headline">¶</a></h2>
-<p>Nach dem Doppelpunkt ist der Code in der Zeile darunter eingerückt. Das hatten wir bislang noch nicht, sollte aber unbedingt beachtet werden.
-Viele bekannte Programmiersprachen wie C, C++ oder Java nutzen geschweifte Klammern (“{}”), um zusammenhängende Codeblöcke zu definieren. Python nutzt demgegenüber die Einrückung (<em>indentation</em>). Demnach beginnt ein Codeblock (also eine <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife bspw.) mit einer Einrückung und endet mit der ersten nicht (oder weniger) eingerückten Zeile. Die Anzahl der Einrückungen je Codeblock-Ebene steht theoretisch den Nutzer:innen frei, um allerdings den gefürchteten <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> zu vermeiden, sollten wir stets die von Jupyter vorgegebene Variante nutzen, die Tabs entspricht (alternativ: 4 Whitespaces pro Einrückung).</p>
-<p>Wenn Sie sich nicht an das Gebot der Einrückung halten, dann erhalten Sie die folgende Fehlermeldung:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># error no. 3</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="s2">&quot;Textsequenz&quot;</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./ch01-atomare-datentypen"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="04-datentyp-numerisch.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -583,7 +539,7 @@ Viele bekannte Programmiersprachen wie C, C++ oder Java nutzen geschweifte Klamm
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">

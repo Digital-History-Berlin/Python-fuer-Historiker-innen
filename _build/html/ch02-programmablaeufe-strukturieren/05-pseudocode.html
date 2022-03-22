@@ -42,12 +42,11 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -243,6 +242,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -331,14 +376,17 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Pseudocode</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pseudocode</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -418,91 +466,8 @@ LOOP OVER TEXT
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="pseudocode">
-<h1>Pseudocode<a class="headerlink" href="#pseudocode" title="Permalink to this headline">¶</a></h1>
-<p>Pseudcode hilft beim Strukturieren von Programmabläufen und unterstützt das algorithmische Denken. Dabei werden Probleme eines Programms in einzelne Schritte zerlegt, danach werden die auf diese Weise identifizierten Teilschritte zunächst generalisiert ausformuliert und als einzelne Bausteine wieder zusammengestellt. Ein Pseudcode, um zunächst zu prüfen, ob in einem Text Vokale enthalten sind, um diese danach auszugeben, könnte etwa wie folgt aussehen:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TEXT =  &quot;text&quot;
-
-LOOP OVER TEXT
-
-    IF ELEMENT IS VOWEL
-
-        PRINT ELEMENT
-</pre></div>
-</div>
-<p>Durch das Ausformulieren eines Programmablaufs in Pseudocode wird das Vorgehen klarer und mögliche Konzept, die zur Lösung einer Problemstellung in Frage kommen, können auf diese Weiser leichter verstanden werden. Pseudocode liefert damit eine Vorlage, die zur Orientierung beim Schreiben des eigentlichen Codes dient. Zugleich ist Pseudocode auf alle Programmiersprachen übertragbar. Nachfolgend findet sich eine weitere beispielhafte Problemstellung, die zunächst in Pseudocode übersetzt und dann in Pythoncode ausgeschrieben ist.</p>
-<p>Für die Zahlen zwischen 1 und 50 soll:</p>
-<ul class="simple">
-<li><p>FizzBuzz ausgegeben werden, wenn die Zahl durch 3 und 5 teilbar ist</p></li>
-<li><p>Fizz ausgegeben werden, wenn die Zahl durch 3 teilbar ist</p></li>
-<li><p>Buzz ausgegeben werden, wenn die Zahl durch 5 teilbar ist</p></li>
-</ul>
-<p>In Pseudocode geschrieben, sieht das Programm beispielweise wie folgt aus:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>FOR i from 1 TO 50 DO
-    IF i is divisible by 3 AND i is divisible by 5 THEN
-        OUTPUT &quot;FizzBuzz&quot;
-    ELSE IF i is divisible by 3 THEN
-        OUTPUT &quot;Fizz&quot;
-    ELSE IF i is divisible by 5 THEN
-        OUTPUT &quot;Buzz&quot;
-    ELSE
-        OUTPUT i
-</pre></div>
-</div>
-<p>In Python ausformuliert ergibt sich der folgende Code:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
-    
-    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
-        
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
-        
-    <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
-        
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./ch02-programmablaeufe-strukturieren"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="04-funktionen.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -519,7 +484,7 @@ LOOP OVER TEXT
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">

@@ -42,12 +42,11 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -243,6 +242,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -359,19 +404,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Arbeiten mit atomaren Datentypen</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Arbeiten mit atomaren Datentypen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ressourcen">
    Ressourcen
@@ -394,7 +440,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -487,104 +535,8 @@
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="arbeiten-mit-atomaren-datentypen">
-<h1>Arbeiten mit atomaren Datentypen<a class="headerlink" href="#arbeiten-mit-atomaren-datentypen" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ressourcen">
-<h2>Ressourcen<a class="headerlink" href="#ressourcen" title="Permalink to this headline">¶</a></h2>
-<p>Die <a class="reference external" href="https://docs.python.org/3/">umfangreiche Dokumentation</a> zu Python bietet hilfreiche Tutorials, ein Glossar und vor allem die Spezifikationen der einzelnen Bibliotheken beziehungsweise <em>libraries</em>.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Sie werden immer wieder auf sie zurückgreifen.</p>
-<p>Eine weitere wichtige Ressource, die Sie immer wieder aufsuchen werden, gleich ob Sie gerade anfangen, zu programmieren oder schon länger dabei sind, ist: <a class="reference external" href="https://stackoverflow.com/">Stackoverflow</a>. Sie werden gerade in den ersten Wochen und Monaten auf kaum ein Problem stoßen, auf das nicht zu irgendeinem Zeitpunkt in der Vergangenheit jemand vor Ihnen gestoßen ist. Lernen Sie voneinander! Wir Historiker:innen sitzen zwar gerne alleine am Schreibtisch, aber wenn es ums Coden geht, dann dürfen, ja <em>sollten</em> wir miteinander arbeiten. <strong>Aber wichtig:</strong> Auch beim Schreiben von Programmcode sollte man Zitierregeln beachten und angeben, wenn man einige Zeilen Code von jemand anderem übernommen hat.</p>
-</div>
-<div class="section" id="tutorials">
-<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
-<p>Das <em>World Wide Web</em> ist voll mit vielen nützlichen Tutorials. Auch auf YouTube finden Sie viele empfehlenswerte Kanäle mit gut nachvollziehbaren Erklärungen, die Ihnen den Einstieg erleichtern und auch spezielle Programmbibliotheken praxisorientiert erläutern. Der Großteil der verfügbaren Angebote ist aber nicht unbedingt auf geisteswissenschaftliche Bedürfnisse zugeschnitten. Wir haben hier daher einige Empfehlungen für Sie zusammengetragen, die Ihnen im weiteren Verlauf nützlich sein können:</p>
-<ul class="simple">
-<li><p>Ein freies Lehrbuch ist zum Beispiel <a class="reference external" href="https://python.swaroopch.com/index.html">“A Byte of Python”</a>. Hier werden keine Vorkenntnisse benötigt. Es stellt sicherlich auch eine gute Ergänzung für diesen Kurs dar.</p></li>
-<li><p>Sehr gut geeignet für Einsteiger:innen mit geisteswissenschaftlichen Forschungsinteressen ist <a class="reference external" href="https://automatetheboringstuff.com/">“Automate the Boring Stuff with Python”</a> von Al Sweigart.</p></li>
-<li><p>Folgert Karsdorp hat eine <a class="reference external" href="https://www.karsdorp.io/python-course/">interaktive Einführung</a> speziell für Geisteswissenschaftler:innen erstellt, die ebenfalls sehr einsteigerfreundlich ist. Hier finden Sie weitere Jupyter-Notebooks, die Sie begleitend zu dieser Übung bearbeiten können, wenn Sie noch mehr coden wollen. Zudem finden Sie einige Themenblöcke, die wir im Rahmen dieser Übung nicht anschneiden können.</p></li>
-<li><p>Paul Vierthaler hat auf seinem YouTube-Kanal Tutorials für seinen <a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Kurs zur Textanalyse</a> zur Verfügung gestellt.</p></li>
-<li><p>Auch auf <a class="reference external" href="https://programminghistorian.org/en/lessons/?topic=python">The Programming Historian</a> finden Sie zahlreiche Python-Lektionen für spezifische geisteswissenschaftliche Anwendungsszenarien.</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/user/schafer5/videos">Corey Schafer</a> bietet auf seinem YouTube-Kanal etliche Tutorials rundum Pythongrundlagen, Softwareentwicklung, aber auch Data Science. Dieser Kanal könnte für Sie vor allem im Anschluss an diesen Kurs interessant sein.</p></li>
-<li><p>Auf der Seite <a class="reference external" href="https://pythonhumanities.com/">PythonHumanities.com</a> stellt William Mattingly ebenfalls zahlreiche Videos mit Bezug Python und Digital Humanities frei zur Verfügung.</p></li>
-</ul>
-</div>
-<div class="section" id="lernziele">
-<h2>Lernziele<a class="headerlink" href="#lernziele" title="Permalink to this headline">¶</a></h2>
-<p>Was Sie am Ende dieser Lektion beantworten können sollen:</p>
-<ul class="simple">
-<li><p>Was sind Variabeln?</p></li>
-<li><p>Was sind Werte?</p></li>
-<li><p>Wie weist man einen Wert einer Variabeln zu?</p></li>
-<li><p>Was sind Datentypen?</p></li>
-<li><p>Was sind Kommentare?</p></li>
-<li><p>Welche arithmetischen Operatoren gibt es?</p></li>
-<li><p>Was sind <em>integers</em>?</p></li>
-<li><p>Was sind <em>floats</em>?</p></li>
-<li><p>Was sind <em>strings</em>?</p></li>
-<li><p>Wie können Informationen ein- und ausgegeben werden?</p></li>
-<li><p>Wie können wir Strings manipulieren?</p></li>
-<li><p>Wie kann der Computer als Taschenrechner verwendet werden?</p></li>
-<li><p>Wie lese ich Fehlermeldungen?</p></li>
-</ul>
-<p>Speziell für diese Übungseinheit empfehlen wir Ihnen die folgenden Ressourcen:</p>
-<ul class="simple">
-<li><p>Wie funktionieren Jupyter Notebooks?</p></li>
-<li><p><a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter-Notebook-Dokumentation</a></p></li>
-<li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/jupyter-notebooks">Einführung von Quinn Dombrowski et al. auf The Programming Historian</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=jZ952vChhuI">YouTube-Tutorial von Michael Fudge (Kurzüberblick: 7 Minuten)</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=HW29067qVWk">YouTube-Tutorial von Corey Schafer (ausführlich: 30 Minuten)</a></p></li>
-<li><p>Grundlagen Python:</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17">Hacking the Humanities</a> Episoden 1-5</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Führen Sie Beispiel-Codeblöcke bitte stets aus. Wenn Sie das Notebook über Binder nutzen, führen Sie bitte die Beispiel-Codeblöcke stets aus. Sie können jederzeit weitere Text- oder Codeblöcke einfügen, um Informationen zu ergänzen oder frei zu coden.</p>
-</div>
-</div>
-<div class="section" id="let-s-code">
-<h2>Let´s code<a class="headerlink" href="#let-s-code" title="Permalink to this headline">¶</a></h2>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Eine <em>library</em> ist eine modulare Sammlung von Funktionen und Methoden, die Ihnen den Programmier-Alltag erleichtert, da sie Ihnen viele Zeilen Code erspart. Sie werden feststellen, dass es durchaus sinnvoll ist, sich genau anzuschauen, was Ihnen da konkret für Arbeit abgenommen wird.</p>
-</dd>
-</dl>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./ch01-atomare-datentypen"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="../ch00-preface/02-einfuehrung.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -601,7 +553,7 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">

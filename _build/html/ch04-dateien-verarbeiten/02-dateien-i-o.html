@@ -42,12 +42,11 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -243,6 +242,52 @@
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateienverarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -359,19 +404,20 @@
         </div>
     </div>
 </div>
-    <!-- Table of contents that is only displayed when printing the page -->
-    <div id="jb-print-docs-body" class="onlyprint">
-        <h1>Dateien öffnen, lesen und bearbeiten</h1>
-        <!-- Table of contents -->
-        <div id="print-main-content" class="row">
-            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
-            <div id="jb-print-toc">
-                
-                <div>
-                    <h2> Contents </h2>
-                </div>
-                <nav aria-label="Page">
-                    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dateien öffnen, lesen und bearbeiten</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grundlagen">
    Grundlagen
@@ -394,7 +440,9 @@
  </li>
 </ul>
 
-                </nav>
+                        </nav>
+                    </div>
+                </div>
             </div>
             
               <div>
@@ -613,230 +661,8 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
 
               </div>
               
-            </div>
-        </div>
-    </div>
-    <div id="main-content" class="row noprint">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="dateien-offnen-lesen-und-bearbeiten">
-<h1>Dateien öffnen, lesen und bearbeiten<a class="headerlink" href="#dateien-offnen-lesen-und-bearbeiten" title="Permalink to this headline">¶</a></h1>
-<p>Bislang haben wir Daten in Variablen gespeichert und Ergebnisse mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgegeben. In der Praxis wollen wir Daten natürlich dauerhaft (persistent) speichern, später wieder bearbeiten können, oder die Daten von Dritten weiterverarbeiten lassen.</p>
-<div class="section" id="grundlagen">
-<h2>Grundlagen<a class="headerlink" href="#grundlagen" title="Permalink to this headline">¶</a></h2>
-<p>Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.</p>
-<p>Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist).</p>
-<p>Name, Dateityp und Speicherdatei lassen sich als <em>Pfad</em> angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:</p>
-<p>für Linux und Mac:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Lehre</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
-</pre></div>
-</div>
-<p>für Windows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">username</span>\<span class="n">Documents</span>\<span class="n">Lehre</span>\<span class="n">Python</span>\<span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
-</pre></div>
-</div>
-<p>Dies ist der <em>absolute</em> Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von <code class="docutils literal notranslate"><span class="pre">dateien_verarbeiten.ipynb</span></code> an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (/) getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (\) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).</p>
-<p>Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit <em>relativen</em> Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt im Ordner “Lehre” auf einem Rechner. Der (relative) Dateipfad zum Notebook wäre dann:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span><span class="o">/</span><span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
-</pre></div>
-</div>
-<p>Durch Angabe von “..” ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner “Documents” z.B. neben “Lehre” auch einen Ordner “Publikationen”. Angenommen ich hätte ein Python-Skript im Ordner “Publikationen” gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad zum Notebook dann:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">../</span><span class="n">Lehre</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
-</pre></div>
-</div>
-<p>Beachten Sie, dass Sie Dateien, mit denen Sie in einem Notebook arbeiten wollen, an einer geeigneten Stelle in Ihrem Dateisystem abzulegen, zum Beispiel dort, wo Sie Ihre Notebooks bearbeiten, dann können Sie ganz einfach darauf zugreifen.</p>
-</div>
-<div class="section" id="dateien-offnen-lesen-und-schreiben">
-<h2>Dateien öffnen, lesen und schreiben<a class="headerlink" href="#dateien-offnen-lesen-und-schreiben" title="Permalink to this headline">¶</a></h2>
-<p>In dieser Einführung arbeiten wir ausschließlich mit textbasierten Dateiformaten (also z.B. txt, csv, json, html, tsv, md, tex, py, …). Diese Dateien lassen sich einfach als String auslesen, der zugleich den Inhalt der Datei repräsentiert. Komplexe Formate, wie Bilder (jpgs, png, tiff, …), PDFs, Worddokumente, Exceldateien oder Video- und Audioformate bestehen zwar letztlich auch nur aus Zeichenketten, sind aber auf eine bestimmte Weise <em>codiert</em>. Auch solche Dateien können Sie mit Python bearbeiten; hierfür werden aber bestimmte Programmbibliotheken benötigt. Falls Sie in einem eigenen Projekt mit einem dieser Formate arbeiten wollen, finden Sie die entsprechenden Bibliotheken meist nach einer kurzen Suche im Internet.</p>
-<p>Das Bearbeiten einer Datei beginnt immer mit der Funktion <code class="docutils literal notranslate"><span class="pre">open()</span></code>. Im folgenden Codeblock erstellen wir eine Testdatei, in der wir den ersten Satz aus Kafkas <em>Prozess</em> speichern.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_sentence_prozess</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
-<span class="s1">denn ohne dass er etwas Böses getan hätte, </span>
-<span class="s1">wurde er eines Morgens verhaftet. &#39;&#39;&#39;</span>
-
-<span class="n">prozess_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-<span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_sentence_prozess</span><span class="p">)</span>
-<span class="n">prozess_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">open()</span></code> erzeugt ein Objekt, das quasi als Schnittstelle zwischen Ihrem Programm und dem Betriebssystem fungiert. <code class="docutils literal notranslate"><span class="pre">open()</span></code> benötigt als Parameter den Namen bzw. Dateipfad der Datei sowie die Angabe in welchem Modus die Datei geöffnet werden soll. Da wir eine noch nicht existierende Datei neu beschreiben wollen, wählen wir hier “w” (write). Das File-Objekt (hier als <code class="docutils literal notranslate"><span class="pre">prozess_file</span></code> gespeichert) verfügt über verschiedene Funktionen zum Lesen und Schreiben von Dateien. Mit <code class="docutils literal notranslate"><span class="pre">write()</span></code> geben wir an, dass wir den String <code class="docutils literal notranslate"><span class="pre">first_sentence_prozess</span></code> (den wir ja in Zeile 1 definiert haben) als Inhalt der Datei speichern wollen. Mit <code class="docutils literal notranslate"><span class="pre">close()</span></code> teilen wir dem File-Objekt mit, dass wir keine Änderungen an der Datei mehr vornehmen möchten. Dieser Schritt muss immer erfolgen, wenn Sie mit Dateien arbeiten (andernfalls könnten Sie versehentlich Ressourcen Ihres Computers für das Beschreiben einer Datei binden, obwohl sie an anderer Stelle benötigt werden). Damit <code class="docutils literal notranslate"><span class="pre">close()</span></code> auch im Falle eines Fehlers ausgeführt wird, verwenden Sie am besten so oft es geht folgendes Statement:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_sentence_prozess</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
-<span class="s1">denn ohne dass er etwas Böses getan hätte, </span>
-<span class="s1">wurde er eines Morgens verhaftet. &#39;&#39;&#39;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
-    <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_sentence_prozess</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Wenn Sie “w” als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner “example_data” sollte sich nun die Datei “der_prozess” finden.</p>
-<p>Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter “a” (append).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_sentence_prozess</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">Die Köchin der Frau Grubach, </span>
-<span class="s1">seiner Zimmervermieterin, </span>
-<span class="s1">die ihm jeden Tag gegen acht Uhr früh das Frühstück brachte, </span>
-<span class="s1">kam diesmal nicht.&#39;&#39;&#39;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
-    <span class="n">prozess_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">second_sentence_prozess</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Um den Inhalt einer Datei auszulesen verwenden Sie “r” (read) als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> sowie die Funktion <code class="docutils literal notranslate"><span class="pre">read()</span></code>. Diese gibt Ihnen den Inhalt der Datei als String zurück.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
-    <span class="n">prozess_content</span> <span class="o">=</span> <span class="n">prozess_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">prozess_content</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>In einigen Fällen müssen Sie eine Datei Zeile für Zeile auslesen und weiterverarbeiten. In diesem Fall verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>. Um den Unterschied zu <code class="docutils literal notranslate"><span class="pre">read()</span></code> besser erkennen zu können, geben wir noch die Länge des jeweiligen Strings aus:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
-    <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">arbitration_content</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Textzeile: &quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zeile ist </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="si">}</span><span class="s2"> Zeichen lang.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*&#39;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
-    <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dateiinhalt:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">arbitration_content</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Dateiinhalt umfasst </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">arbitration_content</span><span class="p">)</span><span class="si">}</span><span class="s2"> Zeichen.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="zeichenkodierung">
-<h2>Zeichenkodierung<a class="headerlink" href="#zeichenkodierung" title="Permalink to this headline">¶</a></h2>
-<p>Möglicherweise haben Sie bei der Durchsicht der Ausgabeergebnisse festgestellt, dass manche Wörter etwas seltsam aufgelöst werden. Statt “gräflich” finden wir im Output bspw. die Zeichenfolge “grÃ¤flich”. Hierbei handelt es sich um einen Konflikt bezüglich der Kodierung des Textbestandes. Die Daten sind anders kodiert als es unser Interpreter standardmäßig vermutet.</p>
-<p>Was heißt das konkret?
-Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets angezeigt wird beruht im Kern auf einer Kombination von Nullen und Einsen, also auf dem Binärcode. Das heißt, dass alle Zeichen, die wir visuell auf dem Bildschirm wahrnehmen, aus einem solchen <a class="reference external" href="https://de.wikipedia.org/wiki/Bin%C3%A4rcode">Binärcode</a> zusammengesetzt sind. Zur Repräsentation der verschiedenen Sprachfamilien haben sich im Laufe der Zeit verschiedene Kodierungssysteme herausgebildet, die das Konzept eines Zeichens mit einer graphischen Repräsentation verknüpfen. Ein früher Standard war <a class="reference external" href="https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange">ASCII</a>, der aber beispielsweise keine Umlaute kodieren konnte. Heute ist vor allem <a class="reference external" href="https://de.wikipedia.org/wiki/UTF-8">UTF-8</a> als Speicherformat für Unicode etabliert, mit dem theoretisch über eine Millionen Zeichen kodiert werden können. <a class="reference external" href="https://de.wikipedia.org/wiki/Unicode">Unicode</a> basiert auf dem Konzept, jedes sinntragende Schriftzeichen oder Textelement aller Schriftkulturen und Zeichensysteme durch einen digitalen Code zu repräsentieren. Bei der konkreten Arbeit werden Sie aber feststellen, dass nicht alle Textdaten einer einheitlichen Kodierung entsprechen, was eben unter anderem an der Historizität von Kodierungssystemen und zum Teil sich verändernden Standards liegt.</p>
-<p>Wenn Sie Dateien einlesen oder schreiben, dann empfiehlt es sich, die Kodierung direkt zu spezifizieren. Das tun Sie, indem Sie bei Funktionen wie <code class="docutils literal notranslate"><span class="pre">open()</span></code>, <code class="docutils literal notranslate"><span class="pre">read()</span></code> oder <code class="docutils literal notranslate"><span class="pre">write()</span></code> etc. einen weiteren Parameter definieren: <code class="docutils literal notranslate"><span class="pre">encoding=&quot;&quot;</span></code>. Schauen Sie sich im folgenden Codeblock an, wie der Parameter verwendet wird:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arbitration_file</span><span class="p">:</span>
-    <span class="n">arbitration_content</span> <span class="o">=</span> <span class="n">arbitration_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dateiinhalt:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">arbitration_content</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Dateiinhalt umfasst </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">arbitration_content</span><span class="p">)</span><span class="si">}</span><span class="s2"> Zeichen.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="aufgabe-textdaten-speichern">
-<h2>Aufgabe: Textdaten speichern<a class="headerlink" href="#aufgabe-textdaten-speichern" title="Permalink to this headline">¶</a></h2>
-<p>Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/03-schleifen.html#aufgabe-primzahlen-ausgeben"><span class="std std-ref">Aufgabe zur Berechnung</span></a> der Primzahlen so an, dass die Ergebnisse nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der zur Verfügung gestellten Musterlösung.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ihr Code</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_thebe-init tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hidden cell creates content for using with Thebe Live-Code</span>
-<span class="c1"># &gt;&gt;&gt;change paths, when Jupyter Book is published&lt;&lt;&lt;</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data&#39;</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="k">pass</span>
-
-<span class="n">iiif_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data/iiif-manifests&#39;</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">iiif_folder</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="k">pass</span>  
-  
-<span class="n">file_list_1</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;adliger_vergleich.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt&#39;</span><span class="p">),</span>
-             <span class="p">(</span><span class="s1">&#39;books.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv&#39;</span><span class="p">),</span>
-             <span class="p">(</span><span class="s1">&#39;library.json&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json&#39;</span><span class="p">)]</span>
-
-<span class="k">for</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">file_list_1</span><span class="p">:</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-        
-<span class="n">file_list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2228</span><span class="p">,</span> <span class="mi">2608</span><span class="p">,</span> <span class="mi">2170</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">2196</span><span class="p">]</span>
-<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement</span><span class="si">%20d</span><span class="s1">es%20Manuscrits.</span><span class="si">%20F</span><span class="s1">rancais%20&#39;</span>
-<span class="n">base_file_name</span> <span class="o">=</span> <span class="s1">&#39;BnF. Departement des Manuscrits. Francais &#39;</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_list_2</span><span class="p">:</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iiif_folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">base_file_name</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "executablebooks/jupyter-book",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            kernelName: "python3",
-            path: "./ch04-dateien-verarbeiten"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
+            
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="01-dateien-verarbeiten.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -853,7 +679,7 @@ Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets ange
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
