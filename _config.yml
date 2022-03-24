@@ -1,10 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Python Basics Jupyter Testversion
+title: Python für Historiker:innen
 author: Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider
 copyright: "2022"
-logo: Logo_DigitalHistoryBerlin.png
+logo: img/Logo_DigitalHistoryBerlin.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

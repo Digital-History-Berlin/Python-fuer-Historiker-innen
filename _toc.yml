@@ -1,5 +1,5 @@
 format: jb-book
-root: index.md
+root: home.md
 parts:
 - caption: Preface
   chapters: 

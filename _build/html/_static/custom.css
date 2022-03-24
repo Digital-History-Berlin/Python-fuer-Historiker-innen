@@ -1,10 +1,15 @@
-*, h1, h2, h3 {
+div, h1, h2, h3 {
     font-family: Bahnschrift;
     font-stretch: condensed;    
    }
 
 p {
     font-size: 20px;
+  }
+
+div.CodeMirror-code {
+    font-family: monospace;
+    font-size: 14px;
   }
 
 span.caption-text {
@@ -14,11 +19,3 @@ span.caption-text {
 li {
     font-size: 16px;
    }
-
-/* body {
-    background: gainsboro;
-}
-
-/* div.container-xl {
-    background: gainsboro;
-}
