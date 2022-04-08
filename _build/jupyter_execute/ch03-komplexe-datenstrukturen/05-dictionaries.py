@@ -23,7 +23,7 @@ books = {"Franz Kafka":"Der Prozess",
                           "Harry Potter und der Gefangene von Askaban"]}
 
 
-# Mit dieser Codezeile wird ein Dictionary der Variablen `books` zugewiesen. Die Schlüssel (*keys*) sind in diesem Beispiel die Namen der Autor:innen und die ihnen jeweils zugewiesenen Werte (*values*) sind korrespondierende Buchtitel. Die Zuordnung der Werte zu einem Schlüssel wird durch Doppelpunkte signalisiert, einzelne Instanzen sind durch Kommata voneinander abgegrenzt. Diese Struktur müssen Sie zur Unterscheidung von Sets beibehalten.
+# Mit dieser Codezeile wird ein Dictionary der Variable `books` zugewiesen. Die Schlüssel (*keys*) sind in diesem Beispiel die Namen der Autor:innen und die ihnen jeweils zugewiesenen Werte (*values*) sind korrespondierende Buchtitel. Die Zuordnung der Werte zu einem Schlüssel wird durch Doppelpunkte signalisiert, einzelne Instanzen sind durch Kommata voneinander abgegrenzt. Diese Struktur müssen Sie zur Unterscheidung von Sets beibehalten.
 # 
 # Anhand des Eintrags zu "J. K. Rowling" wird ersichtlich, dass sich auch Dictionaries verschachteln lassen. Eine Liste als korrespondierender Wert zu einem Schlüssel bietet sich bspw. dann an, wenn Sie mit geordneten Daten arbeiten wollen. Ein *key* kann aber auch weitere Dictionaries enthalten. Das ermöglicht Ihnen, komplexe Datenstrukturen flexibel zu modellieren.
 # 
@@ -143,8 +143,8 @@ books.clear()
 print(books)
 
 
-# (aufgabe-einfache-frequenzanalyse-mit-python)=
-# ## Aufgabe: Einfache Frequenzanalyse mit Python
+# (aufgabe-einfache-frequenzanalyse)=
+# ## Aufgabe: Einfache Frequenzanalyse
 # 
 # Abschließend wollen wir auf Basis Ihres tokenisierten Textes ein kleines textanalytisches Programm gestalten, mit dem Sie die [absolute](https://de.wikipedia.org/wiki/Absolute_H%C3%A4ufigkeit) und [relative Frequenz](https://de.wikipedia.org/wiki/Relative_H%C3%A4ufigkeit) der in Ihrem Text enthaltenen Wörter ermitteln können. Die absolute Häufigkeit haben Sie bereits in der [Zwischenaufgabe zu den Sets](aufgaben-sets) ermittelt. Jetzt wollen wir die Funktionalitäten von Dictionaries dafür nutzen.
 # 

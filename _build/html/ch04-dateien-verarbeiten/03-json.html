@@ -283,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
-     Kapitel Dateienverarbeiten
+     Kapitel Dateien verarbeiten
     </a>
    </li>
   </ul>
@@ -385,13 +385,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jsons-in-python-offnen-und-speichern">
-   JSONs in Python öffnen und speichern
+  <a class="reference internal nav-link" href="#jsons-offnen-und-speichern">
+   JSONs öffnen und speichern
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#json-in-den-digitalen-geschichtswissenschaften-iiif">
-   JSON in den Digitalen Geschichtswissenschaften: IIIF
+  <a class="reference internal nav-link" href="#json-in-der-digital-history-iiif">
+   JSON in der Digital History: IIIF
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -425,13 +425,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jsons-in-python-offnen-und-speichern">
-   JSONs in Python öffnen und speichern
+  <a class="reference internal nav-link" href="#jsons-offnen-und-speichern">
+   JSONs öffnen und speichern
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#json-in-den-digitalen-geschichtswissenschaften-iiif">
-   JSON in den Digitalen Geschichtswissenschaften: IIIF
+  <a class="reference internal nav-link" href="#json-in-der-digital-history-iiif">
+   JSON in der Digital History: IIIF
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -499,8 +499,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Der Inhalt der JSON-Datei “library.json” besteht demnach aus einem Dictionary mit vier Schlüssel-Wert-Paaren (“label”, “books available”, “owner”, “books”). In “books” ist eine Liste bzw. - im JSON-Sprech - ein Array gespeichert, das weitere Dictionaries respektive Objekte enthält. Jedes Dictionary / Objekt modelliert dabei ein einzelnes Buch.</p>
 <p>Wenn Sie mit den hier verwendeten Begriffen Probleme haben, gehen Sie am besten nochmal die Abschnitte zu <em>Listen</em> und <em>Dictionaries</em> im letzten Kapitel durch.</p>
 </div>
-<div class="section" id="jsons-in-python-offnen-und-speichern">
-<h2>JSONs in Python öffnen und speichern<a class="headerlink" href="#jsons-in-python-offnen-und-speichern" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="jsons-offnen-und-speichern">
+<h2>JSONs öffnen und speichern<a class="headerlink" href="#jsons-offnen-und-speichern" title="Permalink to this headline">¶</a></h2>
 <p>Nun wollen wir ein Programm schreiben, mit dem wir die Datei “library.json” auslesen und um weitere Bücher erweitern können. Mit dem unten angeführten Code, den Sie bereits aus dem letzten Kapitel kennen, können Sie auch JSON-Dateien öffnen und bearbeiten. Allerdings können wir den Inhalt der Datei dann nur als String verarbeiten – die Struktur aus Dictionaries und Listen geht verloren. Natürlich können wir auch ein Programm schreiben, dass an den richtigen Stellen die richtigen Klammern einfügt – dies ist jedoch aufwändiger als den Inhalt der JSON-Datei in ein einzelnes Dictionary zu konvertieren. Hierzu stellt Python die Programmbibliothek <code class="docutils literal notranslate"><span class="pre">json</span></code> zur Verfügung. Um diese in Ihrem Programm verwenden zu können, muss diese zunächst importiert werden. Das geschieht, wenn Sie folgende Zeile ausführen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Ab jetzt können wir die Daten weiterverarbeiten, wie im letzten Kapiteö behandelt: Sie können damit wie mit jedem anderen Dictionary arbeiten. Mit folgendem Code können Sie etwa alle in der Bibliothek gespeicherten Buchtitel, Autor:innen und das Jahr der letzten Auflage auslesen:</p>
+<p>Ab jetzt können wir die Daten weiterverarbeiten, wie im letzten Kapitel behandelt: Sie können damit wie mit jedem anderen Dictionary arbeiten. Mit folgendem Code können Sie etwa alle in der Bibliothek gespeicherten Buchtitel, Autor:innen und das Jahr der letzten Auflage auslesen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_list</span> <span class="o">=</span> <span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;books&#39;</span><span class="p">]</span>
@@ -544,7 +544,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Wenn Sie die JSON-Datei aus dem Ordner “example_data” heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen.Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch “\n” bzw. “\t” repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> einen weiteren Parameter (<code class="docutils literal notranslate"><span class="pre">indent</span></code>) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:</p>
+<p>Wenn Sie die JSON-Datei aus dem Ordner “example_data” heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen. Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch “\n” bzw. “\t” repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> einen weiteren Parameter (<code class="docutils literal notranslate"><span class="pre">indent</span></code>) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Maxine Musterfrau&quot;</span>
@@ -557,11 +557,149 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Wenn Sie die JSON-Datei nun noch einmal öffnen, dann sollte sie sich schon sehr viel übersichtlicher darstellen.</p>
 </div>
-<div class="section" id="json-in-den-digitalen-geschichtswissenschaften-iiif">
-<h2>JSON in den Digitalen Geschichtswissenschaften: IIIF<a class="headerlink" href="#json-in-den-digitalen-geschichtswissenschaften-iiif" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="json-in-der-digital-history-iiif">
+<h2>JSON in der Digital History: IIIF<a class="headerlink" href="#json-in-der-digital-history-iiif" title="Permalink to this headline">¶</a></h2>
 <p>Ein zunehmend wichtig werdender Datenstandard im Cultural-Heritage-Bereich ist das <a class="reference external" href="https://iiif.io/"><em>International Image Interoperability Framework (IIIF)</em></a> (Aussprache: Triple-I-F). Es wurde ursprünglich von verschiedenen GLAM-Einrichtung (Galleries, Libraries, Archives, Museums) entwickelt. Ziel war es, ein standardisiertes Framework für ein Datenmodell zu schaffen, um bildbasiertes Kulturgut interoperabel, also unabhängig von den sich unterscheidenden Standards unterschiedlicher Kultureinrichtungen, online präsentieren und austauschen zu können. Dabei sollten nicht nur Metadaten zur Beschreibung des Kontextes der einzelnen Kulturgutobjekte gespeichert werden können, sondern insbesondere bei Werken, die aus mehreren Bilddateien bestehen, logische Zusammenhänge zwischen den Einzelbildern für das Gesamtwerk erhalten werden. Die Anwendungsmöglichkeiten von IIIF sind sehr vielfältig; <a class="reference external" href="https://github.com/IIIF/awesome-iiif">zahlreiche Einrichtungen und Projekte</a> greifen mittlerweile darauf zurück.</p>
 <p>Sie müssen sich für diese Einführung nicht intensiv in IIIF einarbeiten. In der folgenden Übungsaufgabe werden wir uns ausschließlich auf die <a class="reference external" href="http://ronallo.com/iiif-workshop/presentation/">Presentation API</a> konzentrieren. In aller Kürze beschrieben definiert die <em>Presentation API</em> einen Standard zur Strukturierung einer JSON-Datei um die Zusammenhänge eines bildbasierten Werkes beschreiben zu können (<a class="reference external" href="https://iiif.io/api/presentation/3.0/">Vollständige Dokumentation der <em>Presentation API</em></a>). Eine solche Datei wird <em>Manifest</em> genannt.</p>
 <p>In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht – nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript “Grandes Chroniques de France”; Sie finden es im Ordner im Pfad “example_data/iiif-manifests” unter “BnF. Departement des Manuscrits. Français 2608.json”. Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste “metadata” gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste “canvases” gespeichert (die ein Dictionary in der Liste “sequences” ist). Jede Seite der Handschrift wird dabei durch ein “canvas”-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste “images” nach dem Schlüssel “&#64;id”.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Der Link zur Bilddatei der ersten Seite der “Grandes Chroniques de France” ist z.B. <a class="reference external" href="https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg">https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg</a>. Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.</p>
+<p>Hier ein Auszug der ersten 130 Zeilen der JSON-Datei, die insgesamt mehr als 30.000 Zeilen umfasst.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">{</span>
+<span class="sd">    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/manifest.json&quot;,</span>
+<span class="sd">    &quot;label&quot;: &quot;BnF. Département des Manuscrits. Français 2608&quot;,</span>
+<span class="sd">    &quot;attribution&quot;: &quot;Bibliothèque nationale de France&quot;,</span>
+<span class="sd">    &quot;license&quot;: &quot;https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica&quot;,</span>
+<span class="sd">    &quot;logo&quot;: &quot;https://gallica.bnf.fr/mbImage/logos/logo-bnf.png&quot;,</span>
+<span class="sd">    &quot;related&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g&quot;,</span>
+<span class="sd">    &quot;seeAlso&quot;: [</span>
+<span class="sd">        &quot;http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:bnf.fr:gallica/ark:/12148/btv1b8451604g&quot;</span>
+<span class="sd">    ],</span>
+<span class="sd">    &quot;description&quot;: &quot;Grandes Chroniques de France&quot;,</span>
+<span class="sd">    &quot;metadata&quot;: [</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Repository&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Digitised by&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Bibliothèque nationale de France&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Source Images&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Metadata Source&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:bnf.fr:gallica/ark:/12148/btv1b8451604g&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Shelfmark&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Bibliothèque nationale de France. Département des Manuscrits. Français 2608&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Title&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Grandes Chroniques de France&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Date&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;1390-1405&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Language&quot;,</span>
+<span class="sd">            &quot;value&quot;: [</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@value&quot;: &quot;français&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@value&quot;: &quot;latin&quot;</span>
+<span class="sd">                }</span>
+<span class="sd">            ]</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Format&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Paris. - Écriture bâtarde. Un copiste. Hastes montantes avec parfois grotesques dans la marge supérieure. - Décoration: Selon A. Hedeman, le ms. aurait été exécuté sur le modèle du ms. de Charles V, le ms. BnF Français 2813. Il se distingue cependant de son modèle pour suivre le découpage en chapitres d’une autre copie royale, le ms. BnF, Français 10135. Une vingtaine de miniatures se retrouvent par ailleurs dans deux mss contemporains, les mss Vienne, ÖNB, Cod. 2564 et Lyon, BM, ms. 880. Reflétant l’évolution de la situation politique, l’ensemble du cycle d’enluminures offre une « vision atténuée du conflit franco-anglais » (Rioust – Karaskova 2015, p. 12) : la plupart des peintures traitant de la suprématie française sur les Anglais ont été omises, sans doute parce que la France a entrepris des négociations de paix avec l’Angleterre dans les années 1390. Les Anglais mis en scène par l’artiste n’apparaissent plus à leur désavantage : f. 481v : siège de Reims (1359/1360) ; f. 483v : traité de Brétigny (8 mai 1360) ; f. 521v : couronnement de Richard II, futur gendre de Charles VI (cf. Hedeman, The royal Image…, p. 140). Bien que le ms. ait été commandé pour Charles VI, le ms. ne contient aucune représentation de son sacre, reflet des absences du roi (Rioust – Karaskova 2015, p. 11). Les différentes chroniques sont généralement introduites par un portrait du roi couronné. On note qu’aucune illustration ni initiale ornée n’annoncent l’avènement du règne de Philippe de Valois, marqué par l’extinction de la dynastie des Capétiens directs. Bien que la décoration marginale indique une provenance parisienne, le style des illustrations est caractéristique de l’enluminure pragoise des années1390 et peut être attribué à un maître bohémien venu travailler à Paris (Paris 1400…, cat. 168, p. 272-273 ; Rioust – Karaskova 2015, p. 16-18). Les petits fleurons qui partent de chaque angle des peintures se retrouvent dans plusieurs manuscrits commandités par Wenceslas IV de Bohême ou son entourage: la Bible dite de Wenceslas (Vienne, ÖNB, Cod. 2759-64), le Livre d&#39;heures du Narodni Muzeum (Prague, Narodni Muzeum, KNM VH 36), le Psautier de Raudnitz (Prague, cathédrale Saint vit, Cim. 7), la Bible ms. M. 833 de la Pierpont Morgan Library (New York), la Bulle d&#39;Or de Vienne (Vienne, ÖNB, Cod. 338), la Bible de Konrad von Vechta (Anvers, Museum Plantin-Moretus, Cod. MS 15.1-15.2), copiés dans les premières années du XVe siècle (Rioust – Karaskova 2015, p. 16-18). Une peinture frontispice (175 x 160 mm) au f. 2v ; 75 peintures de petit format. F. 1 : moine présentant la chronique à saint Louis et saint Denis, symbolisant l’un, un modèle de bon gouvernement pour ses successeurs, l’autre, le protecteur du royaume mais aussi de la santé royale dans l’épreuve de la maladie de Charles VI. Bien que le roi ne soit pas représenté, sa personne est évoquée à travers les armes portées par deux cerfs ailés, son emblème favori dans les deux dernières décennies du XIVe siècle. F. 2v. Peinture frontispice compartimentée en quatre scènes : débarquement des Grecs à Troie ; siège de Troie ; couronnement de Pharamond ; bataille entre les Francs et les Romains, symbolisant la chute de l’empire et la suprématie de la royauté française, mettant en lumière l’ancienneté et la noblesse des Francs et leur suprématie sur l’empire (cf. M.-H. Tesnière, dans Trésors de la Bibliothèque nationale…, cat. 33). Légendes des illustrations : voir Hedeman, The Royal Image…, p. 239-240, et la base Mandragore : www. Mandragore.bnf.fr Décoration secondaire :Encadrements de baguettes avec rinceaux de vignettes et dragon (f. 1). Dans la marge inférieure du f. 1 deux cerfs ailés supportent les armoiries royales. Au f. 2v, armoiries de Jean du Mas.Initiales ornées de vignettes (5 lignes) au début du prologue et des différentes parties du texte (début des Chroniques, des différents livres des Chroniques des règnes de Charlemagne et de Philippe Auguste, des chapitres ornés d’une peinture).Lettres filigranées (2 lignes) au début des autres chapitres et des tables des chapitres. Lettres filigranées (1 ligne) au début des têtes de chapitres indiqués dans les tables et au sein du texte. - Parchemin. - 544 ff. précédés de trois feuillets de garde en parchemin (A, B, C) ; suivis d’un feuillet de garde en parchemin. - 350 x 255 mm (justification : 235/240 x 175 mm). - 46 cahiers : 112 (f. 1-12) ; 212 (f. 13-24) ; 312 (f. 25-34) ; 412 (f. 35-48) ; 512 (f. 49-60) ; 612 (f. 61-72) ; 712 (f. 73-84) ; 812 (f. 85-96) ; 912 (f. 97-108) ; 1012 (f. 109-120) ; 1112 (f. 121-132) ; 1212 (f. 133-144) ; 1312 (f. 145-156) ; 1412 (f. 157-168) ; 1512 (f. 169-180) ; 1612 (f. 181-192) ; 1712 (f. 193-204) ; 1812 (f. 205-216) ; 1912 (f. 217-228) ; 2012 (f. 229-240) ; 2112 (f. 241-252) ; 2212 (f. 253-264) ; 2312 (f. 265-276) ; 2412 (f. 277-288) ; 2512 (f. 289-300) ; 2612 (f. 301-311, incluant un feuillet 304bis) ; 2712 (f. 312-323) ; 2812 (f. 324-335) ; 2912 (f. 336-347 ; les f. 339 et 344, mal reliés, sont à inverser) ; 3012 (f. 348-359) ; 3112 (f. 360-371) ; 3212 (f. 372-383) ; 3312 (f. 384-395) ; 3412 (f. 396-407) ; 3512 (f. 408-419 ; f. 413-414 mal reliés et à inverser) ; 3612 (f. 420-431) ; 3712 (f. 432-442, incluant un feuillet 432bis) ; 3812 (f. 443-454) ; 3912 (f. 455-466) ; 4012 (f. 467-478) ; 4112 (f. 479-490) ; 4212 (f. 491-502) ; 4312 (f. 503-514) ; 4412 (f. 515-526) ; 4512 (f. 527-538) ; 466 (f. 539-544). Réclames, signatures apparentes de cahiers à l’encre brune et rouge. Deux colonnes par page.Foliotation contemporaine du manuscrit en chiffres romains rubriqués. Titres courants rubriqués dans la marge supérieure ; certains titres ne correspondent pas à la geste indiquée : f. 308-311v, le récit du règne de Louis VIII a pour titre : « Du roy Philippe Dieudonné ». Foliotation moderne : omission des f. 304bis, 432bis. Feuillets mal reliés dans les cahiers 29 et 35. Incipit du volume, des tables des chapitres et des différentes gestes, titres des chapitres avec leur numérotation rubriqués. Lettres en attente pour les lettres filigranées et certaines initiales ornées.Traces de restauration ancienne. Tables des chapitres jusqu’à la chronique du règne de Louis VIII (f. 308). Annotations marginales contemporaines du manuscrit : f. 501r-v. Annotations marginales postérieures (XIXe s.) : f. 94, 166, 338v, 339v. - Réglure à l’encre. - Reliure en maroquin brun avec armes royales sur les plats (Ancien Régime), à triple filet doré. Tranche dorée. Dos au chiffre royal (Ancien Régime, avant 1792). Titre en capitales dorées : « CHRONIQUE. DE FRANCE / APPELLEES. DE S. DENYS. / FINISSANT . A CHARL. VI. ». - F. 1 et 543v : estampille de la « Bibliothecae Regiae » (Ancien régime, avant 1725), correspondant au modèle Josserand-Bruno, type A, n° 1&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Relation&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Notice du catalogue : http://archivesetmanuscrits.bnf.fr/ark:/12148/cc779857&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Type&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Manuscrit&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Place&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Lieu de copie : Paris&quot;</span>
+<span class="sd">        }</span>
+<span class="sd">    ],</span>
+<span class="sd">    &quot;sequences&quot;: [</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;canvases&quot;: [</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f1&quot;,</span>
+<span class="sd">                    &quot;label&quot;: &quot;plat supérieur&quot;,</span>
+<span class="sd">                    &quot;height&quot;: 6275,</span>
+<span class="sd">                    &quot;width&quot;: 4555,</span>
+<span class="sd">                    &quot;images&quot;: [</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;motivation&quot;: &quot;sc:painting&quot;,</span>
+<span class="sd">                            &quot;on&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f1&quot;,</span>
+<span class="sd">                            &quot;resource&quot;: {</span>
+<span class="sd">                                &quot;format&quot;: &quot;image/jpeg&quot;,</span>
+<span class="sd">                                &quot;service&quot;: {</span>
+<span class="sd">                                    &quot;profile&quot;: &quot;http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2&quot;,</span>
+<span class="sd">                                    &quot;@context&quot;: &quot;http://iiif.io/api/image/1/context.json&quot;,</span>
+<span class="sd">                                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1&quot;</span>
+<span class="sd">                                },</span>
+<span class="sd">                                &quot;height&quot;: 6275,</span>
+<span class="sd">                                &quot;width&quot;: 4555,</span>
+<span class="sd">                                &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg&quot;,</span>
+<span class="sd">                                &quot;@type&quot;: &quot;dctypes:Image&quot;</span>
+<span class="sd">                            },</span>
+<span class="sd">                            &quot;@type&quot;: &quot;oa:Annotation&quot;</span>
+<span class="sd">                        }</span>
+<span class="sd">                    ],</span>
+<span class="sd">                    &quot;thumbnail&quot;: {</span>
+<span class="sd">                        &quot;@id&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g/f1.thumbnail&quot;</span>
+<span class="sd">                    },</span>
+<span class="sd">                    &quot;@type&quot;: &quot;sc:Canvas&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f2&quot;,</span>
+<span class="sd">                    &quot;label&quot;: &quot;contreplat sup.&quot;,</span>
+<span class="sd">                    &quot;height&quot;: 6217,</span>
+<span class="sd">                    &quot;width&quot;: 4584,</span>
+<span class="sd">                    &quot;images&quot;: [</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;motivation&quot;: &quot;sc:painting&quot;,</span>
+<span class="sd">                            &quot;on&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f2&quot;,</span>
+<span class="sd">                            &quot;resource&quot;: {</span>
+<span class="sd">                                &quot;format&quot;: &quot;image/jpeg&quot;,</span>
+<span class="sd">                                &quot;service&quot;: {</span>
+<span class="sd">                                    &quot;profile&quot;: &quot;http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2&quot;,</span>
+<span class="sd">                                    &quot;@context&quot;: &quot;http://iiif.io/api/image/1/context.json&quot;,</span>
+<span class="sd">                                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f2&quot;</span>
+<span class="sd">                                },</span>
+<span class="sd">                                &quot;height&quot;: 6217,</span>
+<span class="sd">                                &quot;width&quot;: 4584,</span>
+<span class="sd">                                &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f2/full/full/0/native.jpg&quot;,</span>
+<span class="sd">                                &quot;@type&quot;: &quot;dctypes:Image&quot;</span>
+<span class="sd">                            },</span>
+<span class="sd">                            &quot;@type&quot;: &quot;oa:Annotation&quot;</span>
+<span class="sd">                        }</span>
+<span class="sd">                    ],</span>
+<span class="sd">                    &quot;thumbnail&quot;: {</span>
+<span class="sd">                        &quot;@id&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g/f2.thumbnail&quot;</span>
+<span class="sd">                    },</span>
+<span class="sd">                    &quot;@type&quot;: &quot;sc:Canvas&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Angenommen, Sie wollen nun die Scans aller Seiten der Handschrift herunterladen. In diesem Fall können Sie natürlich auch die Handschrift im <a class="reference external" href="https://gallica.bnf.fr/ark:/12148/btv1b8451604g">Viewer der französischen Nationalbibliothek</a> aufrufen und die Digitalisate dort herunterladen. Wollen Sie das jedoch für mehrere Dutzend oder gar Hundert Handschriften tun, bieten Ihnen die IIIF-Manifeste eine Möglichkeit den Download automatisiert durchzuführen.</p>
 </div>
 <div class="section" id="aufgabe-json-daten-verarbeiten">
@@ -690,9 +828,15 @@ const thebe_selector_output = ".output, .cell_output"
     <footer class="footer">
   <p>
     
-      By Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider<br/>
+      By <a href="https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history">Digital History, Humboldt-Universität zu Berlin</a><br/>
     
         &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <div>
+<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
+</div>
+
+      </div>
   </p>
 </footer>
 </main>

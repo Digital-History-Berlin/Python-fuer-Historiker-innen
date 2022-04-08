@@ -283,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
-     Kapitel Dateienverarbeiten
+     Kapitel Dateien verarbeiten
     </a>
    </li>
   </ul>
@@ -410,14 +410,16 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-formatieren-ein-einstieg">
-   Strings formatieren - ein Einstieg
+  <a class="reference internal nav-link" href="#strings-formatieren">
+   Strings formatieren
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
-   Groß- und Kleinschreibung ändern
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
+     Groß- und Kleinschreibung ändern
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ausgabe-formatieren">
@@ -480,14 +482,16 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-formatieren-ein-einstieg">
-   Strings formatieren - ein Einstieg
+  <a class="reference internal nav-link" href="#strings-formatieren">
+   Strings formatieren
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
-   Groß- und Kleinschreibung ändern
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grosz-und-kleinschreibung-andern">
+     Groß- und Kleinschreibung ändern
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ausgabe-formatieren">
@@ -511,7 +515,10 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="vertiefung-der-arbeit-mit-strings">
 <h1>Vertiefung der Arbeit mit Strings<a class="headerlink" href="#vertiefung-der-arbeit-mit-strings" title="Permalink to this headline">¶</a></h1>
 <p>Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt,um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.</p>
+</div>
 <div class="section" id="lange-von-strings-bestimmen">
 <h2>Länge von Strings bestimmen<a class="headerlink" href="#lange-von-strings-bestimmen" title="Permalink to this headline">¶</a></h2>
 <p>Mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#len">len()</a> kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.</p>
@@ -573,6 +580,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><strong>Was fällt Ihnen einschränkend bei diesen Funktionen auf?</strong></p>
 <p><em>Ihre Antwort</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="strings-ersetzen">
 <h2>Strings ersetzen<a class="headerlink" href="#strings-ersetzen" title="Permalink to this headline">¶</a></h2>
@@ -655,11 +669,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="strings-formatieren-ein-einstieg">
-<h2>Strings formatieren - ein Einstieg<a class="headerlink" href="#strings-formatieren-ein-einstieg" title="Permalink to this headline">¶</a></h2>
-</div>
+<div class="section" id="strings-formatieren">
+<h2>Strings formatieren<a class="headerlink" href="#strings-formatieren" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="grosz-und-kleinschreibung-andern">
-<h2>Groß- und Kleinschreibung ändern<a class="headerlink" href="#grosz-und-kleinschreibung-andern" title="Permalink to this headline">¶</a></h2>
+<h3>Groß- und Kleinschreibung ändern<a class="headerlink" href="#grosz-und-kleinschreibung-andern" title="Permalink to this headline">¶</a></h3>
 <p>Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im Codeblock die Funktionsweise der jeweiligen Funktionen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -684,6 +697,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nb">print</span><span class="p">(</span><span class="n">example_text_title</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">example_text_capitalized</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -773,9 +787,15 @@ const thebe_selector_output = ".output, .cell_output"
     <footer class="footer">
   <p>
     
-      By Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider<br/>
+      By <a href="https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history">Digital History, Humboldt-Universität zu Berlin</a><br/>
     
         &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <div>
+<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
+</div>
+
+      </div>
   </p>
 </footer>
 </main>

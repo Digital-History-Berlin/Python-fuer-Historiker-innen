@@ -59,7 +59,7 @@ print(some_list)
 # 
 # 
 
-# ## Konkatenierung
+# ### Konkatenierung
 # 
 # Verschiedene Listen können durch sehr einfache Weise mittels des "+"-Operators zusammengefügt werden. 
 
@@ -76,14 +76,15 @@ print(book_titles)
 
 # Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die Instanzen aus `another_list` an die Instanzen in `book_titles` angehängt und die Variable `book_titles` wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.
 
-# ## `append()` und `extend()`
+# ### `append()` und `extend()`
 # Die Methoden `append()` und `extend()` funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.
 
 # In[ ]:
 
 
 # append list by user input
-book_titles.append(input("Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: "))
+book_titles.append(input("""Geben Sie einen Buchtitel ein, 
+                            der einer bestehenden Liste hinzugefügt werden soll: """))
 print(book_titles)
 
 
@@ -98,14 +99,15 @@ print(some_list)
 
 # Mit `extend()` können Sie also direkt mehrere Elemente hinzufügen. Der Effekt ist dabei ähnlich dem der einfachen "Addition".
 
-# ## `insert()`
+# ### `insert()`
 # Dagegen fügt die `insert()`-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste: 
 
 # In[ ]:
 
 
 # insert value at third position
-book_titles.insert(2, input("Geben Sie einen Buchtitel ein, der einer bestehenden Liste hinzugefügt werden soll: "))
+book_titles.insert(2, input("""Geben Sie einen Buchtitel ein, 
+                            der einer bestehenden Liste hinzugefügt werden soll: """))
 print(book_titles)
 
 
@@ -172,7 +174,7 @@ book_titles[-4][4] = "test"
 len(book_titles)
 
 
-# ## Listen nach Vorkommen von Elementen prüfen
+# ## Listen auf Elemente prüfen
 # 
 # Wenn Sie prüfen möchten, ob ein *item* in einer Liste enthalten ist, dann können Sie die Operatoren `in` und `not in` nutzen. Sie erhalten als Rückgabewert Boolesche Wahrheitswerte:
 
@@ -188,7 +190,7 @@ len(book_titles)
 "Kulturgeschichte" in book_titles
 
 
-# Die Prüfung des Vorkommens können Sie mit der Formulierung von bedingten Anweisungen kombinieren. Schreiben Sie ein kurzes `If-Else-`Statement, das prüft, ob ein beliebiger Titel in der Liste `book_titles` vorhanden ist. Ist dies der Fall, soll eine entsprechende Mitteilung ausgegeben werden. Ist dies nicht der Fall, dann soll der Titel hinzugefügt werden.
+# Die Prüfung des Vorkommens können Sie mit der Formulierung von bedingten Anweisungen kombinieren. Schreiben Sie ein kurzes `if-else-`Statement, das prüft, ob ein beliebiger Titel in der Liste `book_titles` vorhanden ist. Ist dies der Fall, soll eine entsprechende Mitteilung ausgegeben werden. Ist dies nicht der Fall, dann soll der Titel hinzugefügt werden.
 
 # In[ ]:
 
@@ -219,7 +221,7 @@ some_list.count("d")
 
 # Das Zeichen "d" kommt als *item* also insgesamt viermal in der Liste `some_list` vor.
 
-# ## Ausschneiden (Slicing)
+# ## Slicing
 # 
 # Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bei Strings bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.
 # 
@@ -243,7 +245,7 @@ some_list.count("d")
 # Ersetzen Sie die Titel zwei bis vier in book_titles durch neue Titel
 
 
-# ## Elemente entfernen: `remove()`, `pop()`, `clear()` und `del`
+# ## Elemente entfernen
 # 
 # Freilich gibt es auch verschiedene Möglichkeiten um Instanzen aus Listen zu entfernen. 
 # 
@@ -386,7 +388,7 @@ print(tokenized_report)
 # **Hinweise:**
 # - Ihre Funktionen sollten auf beliebige Texte anwendbar sein
 # - Nutzen Sie bedingte Anweisungen und Schleifen
-# - Machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch von Formatierungsmöglichkeiten bei Zeichenketten
+# - Machen Sie Gebrauch von Listenfunktionen, Ranges und Konkatenierung sowie von Formatierungsmöglichkeiten bei Zeichenketten
 
 # In[ ]:
 

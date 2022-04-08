@@ -282,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Kapitel Dateienverarbeiten
+     Kapitel Dateien verarbeiten
     </a>
    </li>
   </ul>
@@ -474,7 +474,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="losung-aufgabe-json-daten-verarbeiten">
 <h2>Lösung: Aufgabe JSON-Daten verarbeiten<a class="headerlink" href="#losung-aufgabe-json-daten-verarbeiten" title="Permalink to this headline">¶</a></h2>
-<p>Schreiben Sie ein Programm zur Vorbereitung eines automatischen Downloads aller Bilddateien der Scans einer Reihe von vorgegebenen mittelalterlichen Handschriften. Die IIIF-Manifeste der einzelnen Handschriften finden Sie in im Ordner data/iiif-manifests. Ihr Programm sollte die folgenden Aufgaben durchführen:</p>
+<p>Schreiben Sie ein Programm zur Vorbereitung eines automatischen Downloads aller Bilddateien der Scans einer Reihe von vorgegebenen mittelalterlichen Handschriften. Die IIIF-Manifeste der einzelnen Handschriften finden Sie in im Ordner example_data/iiif-manifests. Ihr Programm sollte die folgenden Aufgaben durchführen:</p>
 <ul class="simple">
 <li><p>Die Links zu den Bilddateien der Scans sollten in einer Textdatei (.txt) gespeichert werden. Nach jedem Link soll ein Zeilenumbruch erfolgen. Die Links werden also zeilenweise in der Datei aufgelistet.</p></li>
 <li><p>Es soll für jede Handschrift jeweils eine eigene Textdatei erstellt werden, die die Links zu ihren Scans enthält.</p></li>
@@ -503,7 +503,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1"># Wir gehen die einzelnen IIIF-Manifestdateien der Reihe nach durch, </span>
 <span class="k">for</span> <span class="n">manifest_name</span> <span class="ow">in</span> <span class="n">manifests</span><span class="p">:</span>
     
-    <span class="c1"># öffnen der Datein</span>
+    <span class="c1"># öffnen der Dateien</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}{</span><span class="n">manifest_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
         
         <span class="c1"># einlesen JSON-Datei als JSON-Objekt mit der JSON-Bibliothek </span>
@@ -572,7 +572,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="losung-aufgabe-daten-strukturiert-speichern">
 <h2>Lösung: Aufgabe Daten strukturiert speichern<a class="headerlink" href="#losung-aufgabe-daten-strukturiert-speichern" title="Permalink to this headline">¶</a></h2>
-<p>Nun haben Sie gelernt Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html#aufgabe-einfache-frequenzanalyse-mit-python"><span class="std std-ref">vorherigen Kapitel</span></a> nachnutzen nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:</p>
+<p>Nun haben Sie gelernt, Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html#aufgabe-einfache-frequenzanalyse"><span class="std std-ref">vorherigen Kapitel</span></a> nachnutzen nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:</p>
 <ul class="simple">
 <li><p>Der zu verarbeitende Text soll dem Programm nun nicht mehr als Variable übergeben werden, sondern aus einer Textdatei extrahiert werden.</p></li>
 <li><p>Die Ausgabe soll nun nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code>, sondern als CSV-Datei erfolgen. Anstatt eines Zeilenumbruchs, soll jede Zeile nun in einer eigenen Tabellenzeile gespeichert werden. Jede Tabellenzeile soll dabei auf folgende Weise strukturiert sein:</p></li>
@@ -720,9 +720,15 @@ const thebe_selector_output = ".output, .cell_output"
     <footer class="footer">
   <p>
     
-      By Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider<br/>
+      By <a href="https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history">Digital History, Humboldt-Universität zu Berlin</a><br/>
     
         &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <div>
+<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
+</div>
+
+      </div>
   </p>
 </footer>
 </main>

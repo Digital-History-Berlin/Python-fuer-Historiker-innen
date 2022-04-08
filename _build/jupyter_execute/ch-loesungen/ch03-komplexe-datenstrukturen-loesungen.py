@@ -11,17 +11,17 @@
 # 
 # 2. Definieren Sie zwei Funktionen:
 # - `tokenize_text()` soll folgende Operationen beinhalten: 
-#  - Entferung von Interpunktionszeichen
-#  - Lowercasing aller Großbuchstaben
-#  - Tokenisierung der Textdaten anhand von Whitespaces
+#   - Entfernung von Interpunktionszeichen
+#   - Lowercasing aller Großbuchstaben
+#   - Tokenisierung der Textdaten anhand von Whitespaces
 # - `segment_text()` soll die tokenisierten Textdaten zu Segmenten in folgender Art weiterverarbeiten:
-#  - Segmente sollten nicht länger als 10 Wörter sein
-#  - Der Text soll am Ende zeilenweise (`\n`) als zusammenhängende Zeichenkette ausgegeben werden.
+#   - Segmente sollten nicht länger als 10 Wörter sein
+#   - Der Text soll am Ende zeilenweise (`\n`) als zusammenhängende Zeichenkette ausgegeben werden.
 # 
 # **Hinweise:**
 # - Ihre Funktionen sollten auf beliebige Texte anwendbar sein
-# - nutzen Sie bedingte Anweisungen und Schleifen
-# - machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierungs- oder auch Formatierungsmöglichkeiten von Zeichenketten
+# - Nutzen Sie bedingte Anweisungen und Schleifen
+# - Machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierung oder auch von Formatierungsmöglichkeiten von Zeichenketten
 
 # In[10]:
 
@@ -111,7 +111,6 @@ else:
 
 
 # ## Lösungen: Aufgaben Sets 
-# Zum Abschluss wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Notebook gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte *Vocabulary Density* berechnen.
 # 
 # ### a) Anzahl der Wörter in einem Text ermitteln
 # Für diese Aufgabe benötigen wir Ihren in der [vorherigen Zwischenaufgabe tokenisierten Text](aufgabe-text-preprocessing). Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte `print`-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.
@@ -156,7 +155,8 @@ def compute_vocabulary_density(tokenized_text):
 print(compute_vocabulary_density(tokenized_text))
 
 
-# ## Lösung: Aufgabe Einfache Frequenzanalyse mit Python
+# (loesung-aufgabe-einfache-frequenzanalyse)=
+# ## Lösung: Aufgabe Einfache Frequenzanalyse
 # 
 # Abschließend wollen wir auf Basis Ihres tokenisierten Textes ein kleines textanalytisches Programm gestalten, mit dem Sie die [absolute](https://de.wikipedia.org/wiki/Absolute_H%C3%A4ufigkeit) und [relative Frequenz](https://de.wikipedia.org/wiki/Relative_H%C3%A4ufigkeit) der in Ihrem Text enthaltenen Wörter ermitteln können. Die absolute Häufigkeit haben Sie bereits in der [Zwischenaufgabe zu den Sets](aufgaben-sets) ermittelt. Jetzt wollen wir die Funktionalitäten von Dictionaries dafür nutzen.
 # 

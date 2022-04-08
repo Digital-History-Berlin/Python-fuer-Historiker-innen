@@ -5,7 +5,9 @@
 # 
 # Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt,um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.
 # 
+# :::{note} 
 # Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.
+# :::
 
 # ## Länge von Strings bestimmen
 # 
@@ -66,7 +68,7 @@ print(example_text.index("ß"))
 # In[ ]:
 
 
-
+# your answer
 
 
 # ## Strings ersetzen
@@ -146,9 +148,9 @@ print(concat)
 # your code
 
 
-# ## Strings formatieren - ein Einstieg
+# ## Strings formatieren
 
-# ## Groß- und Kleinschreibung ändern
+# ### Groß- und Kleinschreibung ändern
 # 
 # Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im Codeblock die Funktionsweise der jeweiligen Funktionen.
 

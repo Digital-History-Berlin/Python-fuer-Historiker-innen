@@ -37,7 +37,7 @@ with open(file_name, 'w') as prime_file:
 
 # ## Lösung: Aufgabe JSON-Daten verarbeiten
 # 
-# Schreiben Sie ein Programm zur Vorbereitung eines automatischen Downloads aller Bilddateien der Scans einer Reihe von vorgegebenen mittelalterlichen Handschriften. Die IIIF-Manifeste der einzelnen Handschriften finden Sie in im Ordner data/iiif-manifests. Ihr Programm sollte die folgenden Aufgaben durchführen:
+# Schreiben Sie ein Programm zur Vorbereitung eines automatischen Downloads aller Bilddateien der Scans einer Reihe von vorgegebenen mittelalterlichen Handschriften. Die IIIF-Manifeste der einzelnen Handschriften finden Sie in im Ordner example_data/iiif-manifests. Ihr Programm sollte die folgenden Aufgaben durchführen:
 # * Die Links zu den Bilddateien der Scans sollten in einer Textdatei (.txt) gespeichert werden. Nach jedem Link soll ein Zeilenumbruch erfolgen. Die Links werden also zeilenweise in der Datei aufgelistet.
 # * Es soll für jede Handschrift jeweils eine eigene Textdatei erstellt werden, die die Links zu ihren Scans enthält.
 # * Der Name jeder Textdatei soll der Titel der jeweiligen Handschrift sein (also z.B. "Grandes Chroniques de France.txt").
@@ -66,7 +66,7 @@ manifests = [
 # Wir gehen die einzelnen IIIF-Manifestdateien der Reihe nach durch, 
 for manifest_name in manifests:
     
-    # öffnen der Datein
+    # öffnen der Dateien
     with open(f'{folder_path}{manifest_name}', "r", encoding="UTF-8") as json_file:
         
         # einlesen JSON-Datei als JSON-Objekt mit der JSON-Bibliothek 
@@ -131,7 +131,8 @@ for manifest_name in manifests:
 
 
 # ## Lösung: Aufgabe Daten strukturiert speichern
-# Nun haben Sie gelernt Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem [vorherigen Kapitel](aufgabe-einfache-frequenzanalyse-mit-python) nachnutzen nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:
+# 
+# Nun haben Sie gelernt, Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem [vorherigen Kapitel](aufgabe-einfache-frequenzanalyse) nachnutzen nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:
 # * Der zu verarbeitende Text soll dem Programm nun nicht mehr als Variable übergeben werden, sondern aus einer Textdatei extrahiert werden.
 # * Die Ausgabe soll nun nicht mehr mit `print()`, sondern als CSV-Datei erfolgen. Anstatt eines Zeilenumbruchs, soll jede Zeile nun in einer eigenen Tabellenzeile gespeichert werden. Jede Tabellenzeile soll dabei auf folgende Weise strukturiert sein:
 # 

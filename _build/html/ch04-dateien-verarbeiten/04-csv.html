@@ -51,7 +51,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Informationen zu den Daten aus Part Python Basics" href="../ch-daten/part01-python-basics-daten.html" />
+    <link rel="next" title="Informationen zu den Daten aus Python Basics" href="../ch-daten/part01-python-basics-daten.html" />
     <link rel="prev" title="JSON" href="03-json.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -283,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
-     Kapitel Dateienverarbeiten
+     Kapitel Dateien verarbeiten
     </a>
    </li>
   </ul>
@@ -385,13 +385,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csvs-in-python-offnen-und-speichern">
-   CSVs in Python öffnen und speichern
+  <a class="reference internal nav-link" href="#csvs-offnen-und-speichern">
+   CSVs öffnen und speichern
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dictreader-eine-alternative-zum-lesen-und-erstellen-von-csvs">
-   DictReader: Eine Alternative zum Lesen und Erstellen von CSVs
+  <a class="reference internal nav-link" href="#dictreader-zum-arbeiten-mit-csvs">
+   DictReader zum Arbeiten mit CSVs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -425,13 +425,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#csvs-in-python-offnen-und-speichern">
-   CSVs in Python öffnen und speichern
+  <a class="reference internal nav-link" href="#csvs-offnen-und-speichern">
+   CSVs öffnen und speichern
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dictreader-eine-alternative-zum-lesen-und-erstellen-von-csvs">
-   DictReader: Eine Alternative zum Lesen und Erstellen von CSVs
+  <a class="reference internal nav-link" href="#dictreader-zum-arbeiten-mit-csvs">
+   DictReader zum Arbeiten mit CSVs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -487,12 +487,12 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="mi">3</span><span class="p">;</span><span class="n">Network</span> <span class="n">Effect</span><span class="p">;</span><span class="n">Martha</span> <span class="n">Wells</span><span class="p">;</span><span class="mi">2020</span>
 </pre></div>
 </div>
-<p>(aus der Datei: data/books.csv)</p>
+<p>(aus der Datei: example_data/books.csv)</p>
 <p>Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit “;” die wenigsten Probleme.</p>
 <p>Sie können CSV-Dateien in allen gängigen Tabellenkalkulationsprogrammen (z.B. Microsoft Excel) öffnen und bearbeiten oder auch aus solchen Programmen CSVs exportieren.</p>
 </div>
-<div class="section" id="csvs-in-python-offnen-und-speichern">
-<h2>CSVs in Python öffnen und speichern<a class="headerlink" href="#csvs-in-python-offnen-und-speichern" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="csvs-offnen-und-speichern">
+<h2>CSVs öffnen und speichern<a class="headerlink" href="#csvs-offnen-und-speichern" title="Permalink to this headline">¶</a></h2>
 <p>Ähnlich wie für JSON gibt es auch für CSVs Python-Programmbibliotheken, mit denen Sie Daten auslesen und neue CSV-Dateien erstellen können. In dieser Einheit besprechen wir nur die <a class="reference external" href="https://docs.python.org/3/library/csv.html">Standardbibliothek</a> von Python. Wie schon im vorherigen Abschnitt muss diese zuerst importiert werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -548,7 +548,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Das Schreiben neuer CSV-Dateien funktioniert ebenfalls Zeile für Zeile. Hierbei müssen Sie für jede Zeile eine Liste erstellen, die Sie mit der Funktion <code class="docutils literal notranslate"><span class="pre">writerow()</span></code> zu einem neuen Dateiobjekt hinzufügen können. Bei Windows-Rechner müssen Sie beim Öffnen der Datei den Parameter newline auf einen leeren String (“”) setzen, sonst wir nach jeder Zeile eine Leerzeile geschrieben.</p>
+<p>Das Schreiben neuer CSV-Dateien funktioniert ebenfalls Zeile für Zeile. Hierbei müssen Sie für jede Zeile eine Liste erstellen, die Sie mit der Funktion <code class="docutils literal notranslate"><span class="pre">writerow()</span></code> zu einem neuen Dateiobjekt hinzufügen können. Bei Windows-Rechnern müssen Sie beim Öffnen der Datei den Parameter newline auf einen leeren String (“”) setzen, sonst wir nach jeder Zeile eine Leerzeile geschrieben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/more_books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
@@ -575,8 +575,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Schauen Sie wieder im Ordner “example_data” nach: Finden Sie die Datei “more_books.csv” und enthält sie die gewünschten Informationen?</p>
 </div>
-<div class="section" id="dictreader-eine-alternative-zum-lesen-und-erstellen-von-csvs">
-<h2>DictReader: Eine Alternative zum Lesen und Erstellen von CSVs<a class="headerlink" href="#dictreader-eine-alternative-zum-lesen-und-erstellen-von-csvs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dictreader-zum-arbeiten-mit-csvs">
+<h2>DictReader zum Arbeiten mit CSVs<a class="headerlink" href="#dictreader-zum-arbeiten-mit-csvs" title="Permalink to this headline">¶</a></h2>
 <p>Neben dieser Methode zum Bearbeiten von CSV-Dateien stellt die Python-Bibliothek noch die Möglichkeit bereit, CSVs als Dictionaries zu öffnen. Dies kann hilfreich sein, wenn Ihnen die genaue Position der Zellen nicht bekannt ist und Sie stattdessen mit den <em>Namen</em> der Spalten arbeiten möchten. Das Auslesen funktioniert dabei ähnlich wie oben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -631,7 +631,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aufgabe-daten-strukturiert-speichern">
 <h2>Aufgabe: Daten strukturiert speichern<a class="headerlink" href="#aufgabe-daten-strukturiert-speichern" title="Permalink to this headline">¶</a></h2>
-<p>Nun haben Sie gelernt Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html#aufgabe-einfache-frequenzanalyse-mit-python"><span class="std std-ref">vorherigen Kapitel</span></a> nachnutzen. Falls Sie diese Aufgaben in der letzten Einheit nicht lösen konnten, können Sie den Code aus der Musterlösung verwenden. Passen Sie das Programm wie folgt an:</p>
+<p>Nun haben Sie gelernt, Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html#aufgabe-einfache-frequenzanalyse"><span class="std std-ref">vorherigen Kapitel</span></a> nachnutzen. Falls Sie diese Aufgaben nicht lösen konnten, können Sie den Code aus der <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html#loesung-aufgabe-einfache-frequenzanalyse"><span class="std std-ref">Musterlösung</span></a> verwenden. Passen Sie das Programm wie folgt an:</p>
 <ul class="simple">
 <li><p>Der zu verarbeitende Text soll dem Programm nun nicht mehr als Variable übergeben werden, sondern aus einer Textdatei extrahiert werden.</p></li>
 <li><p>Die Ausgabe soll nun nicht mehr mit <code class="docutils literal notranslate"><span class="pre">print()</span></code>, sondern als CSV-Datei erfolgen. Anstatt eines Zeilenumbruchs, soll jede Zeile nun in einer eigenen Tabellenzeile gespeichert werden. Jede Tabellenzeile soll dabei auf folgende Weise strukturiert sein:</p></li>
@@ -744,7 +744,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="../ch-daten/part01-python-basics-daten.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Informationen zu den Daten aus Part Python Basics</p>
+        <p class="prev-next-title">Informationen zu den Daten aus Python Basics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -755,9 +755,15 @@ const thebe_selector_output = ".output, .cell_output"
     <footer class="footer">
   <p>
     
-      By Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider<br/>
+      By <a href="https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history">Digital History, Humboldt-Universität zu Berlin</a><br/>
     
         &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <div>
+<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
+</div>
+
+      </div>
   </p>
 </footer>
 </main>

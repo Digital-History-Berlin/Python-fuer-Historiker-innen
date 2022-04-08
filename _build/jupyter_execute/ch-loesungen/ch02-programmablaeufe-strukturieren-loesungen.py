@@ -7,7 +7,7 @@
 # ## Lösung: Aufgabe Bedingte Anweisungen
 # 
 # Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene `print`-Kommandos ausgeführt werden: "Die Magna Carta stammt aus einem späteren Jahr.", "Die Vereinbarungen stammen aus einem früheren Jahr.", "Die Eingabe ist korrekt!". 
-# Denken Sie dabei daran, dass Sie den Wert der `input`-Funktion in ein `integer` umwandeln müssen. Wie das geht, können Sie im ersten Übungsnotebook ggf. noch mal nachlesen.
+# Denken Sie dabei daran, dass Sie den Wert der `input`-Funktion in ein `integer` umwandeln müssen.
 
 # In[ ]:
 
@@ -85,7 +85,7 @@ while user_input == "j":
 print("Das Programm ist jetzt beendet. Vielen Dank fürs Mitmachen!")
 
 
-# **Aufgabe 2 "Same but different":** Schreiben Sie ein kurzes Programm, das eine Benutzer\*in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer\*in mitgeteilt werden, ob die Angabe zu groß, oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
+# **Aufgabe 2 "Same but different":** Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß, oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
 
 # In[ ]:
 
@@ -112,11 +112,12 @@ while user_input != correct_date:
 print("Das ist korrekt.")
 
 
+# (loesung-aufgabe-primzahlen-ausgeben)=
 # ## Lösung: Aufgabe Primzahlen ausgeben
 # 
 # **Knobelaufgabe für Zahlenbegeisterte** 
 # 
-# Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit `print()` alle [Primzahlen](https://de.wikipedia.org/wiki/Primzahl) zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Notebook an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende Schritt-für-Schritt-Anleitung schreiben. Diese können Sie dann in Programmcode übersetzen. (Musterlösung folgt nach Abgabefrist)
+# Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit `print()` alle [Primzahlen](https://de.wikipedia.org/wiki/Primzahl) zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Notebook an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende Schritt-für-Schritt-Anleitung schreiben. Diese können Sie dann in Programmcode übersetzen.
 
 # In[ ]:
 

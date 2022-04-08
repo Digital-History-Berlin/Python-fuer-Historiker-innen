@@ -4,7 +4,8 @@
 # # [Funktionen](https://www.python-kurs.eu/python3_funktionen.php)
 # 
 # ## Definition von Funktionen
-# Funktionen dienen dazu Codeblöcke wiederverwendbar zu machen. Oft ist es erforderlich, bestimmte Aufgaben innerhalb eines Programms auch unabhängig von bestimmten Vorbedingungen (wie bei Schleifen) mehrfach auszuführen[^fn1]. Nehmen wir an, Sie möchten herausfinden, welche von zwei Zahlen größer ist als die andere:
+# Funktionen dienen dazu,
+#  Codeblöcke wiederverwendbar zu machen. Oft ist es erforderlich, bestimmte Aufgaben innerhalb eines Programms auch unabhängig von bestimmten Vorbedingungen (wie bei Schleifen) mehrfach auszuführen[^fn1]. Nehmen wir an, Sie möchten herausfinden, welche von zwei Zahlen größer ist als die andere:
 
 # In[ ]:
 
@@ -84,7 +85,7 @@ compare_numbers(12)
 compare_numbers(12, 15, 23)
 
 
-# Grundsätzlich kennen Sie die Syntax von Funktionen bereits aus dem letzten Notebook. `print()`, `format()` oder `type()` ruft jeweils anderswo definierten Programmcode auf und nimmt bei diesem Aufruf eine bestimmte Anzahl von Paramtern an (wie bei `print("Hallo")`; hier ist der String `"Hallo"` der übergebene Parameter).
+# Grundsätzlich kennen Sie die Syntax von Funktionen bereits aus einer der letzten Lektion. `print()`, `format()` oder `type()` ruft jeweils anderswo definierten Programmcode auf und nimmt bei diesem Aufruf eine bestimmte Anzahl von Paramtern an (wie bei `print("Hallo")`; hier ist der String `"Hallo"` der übergebene Parameter).
 
 # ## Namensräume
 # 
@@ -142,6 +143,12 @@ print(my_number)
 
 # Konnten Sie nachvollziehen, was hier passiert?
 
+# In[ ]:
+
+
+# your answer
+
+
 # ## Ergebnisse weiterverarbeiten
 # 
 # Kehren wir nochmal zu unserem Ausgangsbeispiel zurück, bei dem zwei Zahlen miteinander verglichen werden:
@@ -192,6 +199,12 @@ print(compare_numbers(12, compare_numbers(50, 80)))
 
 
 # *Ihre Erklärung*
+
+# In[ ]:
+
+
+# your answer
+
 
 # Natürlich können wir auch Werte vom Typ Boolean zurückgeben, wenn wir eine Funktion schreiben wollen, die eine Aussage überprüfen soll:
 

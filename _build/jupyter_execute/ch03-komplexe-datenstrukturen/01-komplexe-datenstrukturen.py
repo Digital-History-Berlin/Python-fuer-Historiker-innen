@@ -3,7 +3,7 @@
 
 # # Komplexe Datenstrukturen
 # 
-# Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch ein paar Schritte weitergehen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellt Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten. 
+# Inzwischen haben Sie schon einige grundlegende Pythonkenntnisse erworben. Sie können bereits mit einfachen Datentypen wie Zeichenketten oder Zahlen Berechnungen anstellen, Bedingungen und Schleifen formulieren sowie interaktive Programme schreiben und ausführen. In dieser Übungseinheit wollen wir nun noch ein paar Schritte weitergehen. Sie werden komplexe Datenstrukturen kennenlernen, die Ihnen die ein oder andere bereits gestellte Aufgabe erleichtern können und ganz neue Gestaltungsmöglichkeiten bieten. 
 # 
 # Was sind Datenstrukturen? Grundsätzlich nichts anderes als eine bestimmte Anordnung und Organisation von miteinander in Beziehung stehenden Daten. In Python gibt es vier eingebaute Datenstrukturen: *list*, *tuple*, *set* und *dictionary*. Sie bieten Ihnen einige grundlegende Funktionalitäten zur Modellierung von Daten.
 

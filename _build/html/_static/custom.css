@@ -3,13 +3,13 @@ div, h1, h2, h3 {
     font-stretch: condensed;    
    }
 
-p {
-    font-size: 20px;
-  }
-
 div.CodeMirror-code {
     font-family: monospace;
     font-size: 14px;
+  }
+
+p {
+    font-size: 20px;
   }
 
 span.caption-text {

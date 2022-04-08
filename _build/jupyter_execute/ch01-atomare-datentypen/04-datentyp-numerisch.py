@@ -64,7 +64,7 @@ round(5.7823432)
 # In[ ]:
 
 
-
+# your answer
 
 
 # ## Komplexe Zahlen
@@ -79,9 +79,10 @@ z = 1 + 2j
 type(z)
 
 
+# (datentyp-aendern)=
 # ## Datentyp ändern
 # 
-# Wir hatten darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der Input-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer*inneneingaben arbeiten, dann können wir den String explizit umwandeln.
+# Wir hatten darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der Input-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.
 # 
 # **Zum Beispiel:**
 
@@ -103,7 +104,8 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 # Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen ([complex()](https://docs.python.org/3/library/functions.html#complex)), Strings ([str()](https://docs.python.org/3/library/functions.html#func-str)), Integers ([int()](https://docs.python.org/3/library/functions.html#int)) und Gleitkommazahlen ([float()](https://docs.python.org/3/library/functions.html#float)).
 
-# ## Arithmetische Operatoren - Der Computer als Taschenrechner
+# ## Arithmetische Operatoren
+# 
 # Python kann ganz einfach genutzt werden, um einfache und auch komplexere mathematische Berechnungen zu lösen. Sie können die Programmierumgebung gewissermaßen wie einen Taschenrechner benutzen oder kleine Programme schreiben, die Ihnen wiederkehrende Aufgaben, wie beispielsweise Prozentrechnung, abnehmen. 
 # 
 # Probieren Sie zunächst die nachfolgenden Berechnungen aus und erklären Sie, wofür die mathematischen Symbole (Operatoren) stehen. Sie werden feststellen, dass wir einige der Operatoren auch bei der Arbeit mit Zeichenketten genutzt haben.
@@ -130,10 +132,10 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 # 
 # *Ihre Antwort*
 
-# In[ ]:
+# In[1]:
 
 
-
+# your answer
 
 
 # In[ ]:
@@ -167,7 +169,7 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 # In[ ]:
 
 
-
+# your answer
 
 
 # In[ ]:
@@ -201,7 +203,7 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 # In[ ]:
 
 
-
+# your answer
 
 
 # In[ ]:
@@ -229,7 +231,7 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 # In[ ]:
 
 
-
+# your answer
 
 
 # In[ ]:
@@ -269,7 +271,7 @@ str(30) * 2
 # In[ ]:
 
 
-
+# your answer
 
 
 # ## Aufgabe: Der Computer als Taschenrechner

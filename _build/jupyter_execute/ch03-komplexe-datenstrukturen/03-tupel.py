@@ -62,7 +62,15 @@ d = "bell hooks",
 print(type(d))
 
 
-# **Erklären Sie für die Variablen `c` und `d` den Unterschied. Warum ist das angehängte Komma notwendig?** *Ihre Antwort*
+# **Erklären Sie für die Variablen `c` und `d` den Unterschied. Warum ist das angehängte Komma notwendig?** 
+# 
+# *Ihre Antwort*
+
+# In[ ]:
+
+
+# your answer
+
 
 # Auch wenn die runden Klammern für Tupel also optional sind, empfiehlt es sich, mit ihnen zu arbeiten, um Ihren Code explizit und leicht verständlich zu halten.
 

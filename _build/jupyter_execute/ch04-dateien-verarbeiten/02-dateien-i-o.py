@@ -5,7 +5,8 @@
 # 
 # Bislang haben wir Daten in Variablen gespeichert und Ergebnisse mit `print()` ausgegeben. In der Praxis wollen wir Daten natürlich dauerhaft (persistent) speichern, später wieder bearbeiten können, oder die Daten von Dritten weiterverarbeiten lassen.
 
-# ## Grundlagen
+# ## Grundlagen Dateipfade
+# 
 # Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.
 # 
 # Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist).
@@ -24,16 +25,16 @@
 # 
 # Dies ist der *absolute* Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von `dateien_verarbeiten.ipynb` an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (/) getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (\\) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).
 # 
-# Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit *relativen* Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt im Ordner "Lehre" auf einem Rechner. Der (relative) Dateipfad zum Notebook wäre dann:
+# Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit *relativen* Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt (wie im obigen Beispiel) im Ordner "Python" auf einem Rechner. Der (relative) Dateipfad zum Notebook ausgehend vom Ordner "Lehre" wäre dann:
 # ```
 # Python/dateien_verarbeiten.ipynb
 # ```
-# Durch Angabe von ".." ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner "Documents" z.B. neben "Lehre" auch einen Ordner "Publikationen". Angenommen ich hätte ein Python-Skript im Ordner "Publikationen" gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad zum Notebook dann:
+# Durch Angabe von ".." ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner "Documents" z.B. neben "Lehre" auch einen Ordner "Publikationen". Angenommen ich hätte ein Python-Skript im Ordner "Publikationen" gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad ausgehend vom Notebook im Ordner "Python" zu dem Skript dann:
 # ```
-# ../Lehre/Python/dateien_verarbeiten.ipynb
+# ../Publikationen/python_skript.py
 # ```
 
-# Beachten Sie, dass Sie Dateien, mit denen Sie in einem Notebook arbeiten wollen, an einer geeigneten Stelle in Ihrem Dateisystem abzulegen, zum Beispiel dort, wo Sie Ihre Notebooks bearbeiten, dann können Sie ganz einfach darauf zugreifen. 
+# Beachten Sie, dass Sie Dateien, mit denen Sie in einem Notebook arbeiten wollen, an einer geeigneten Stelle in Ihrem Dateisystem ablegen, zum Beispiel dort, wo Sie Ihre Notebooks bearbeiten, dann können Sie ganz einfach darauf zugreifen. 
 
 # ## Dateien öffnen, lesen und schreiben
 # In dieser Einführung arbeiten wir ausschließlich mit textbasierten Dateiformaten (also z.B. txt, csv, json, html, tsv, md, tex, py, ...). Diese Dateien lassen sich einfach als String auslesen, der zugleich den Inhalt der Datei repräsentiert. Komplexe Formate, wie Bilder (jpgs, png, tiff, ...), PDFs, Worddokumente, Exceldateien oder Video- und Audioformate bestehen zwar letztlich auch nur aus Zeichenketten, sind aber auf eine bestimmte Weise *codiert*. Auch solche Dateien können Sie mit Python bearbeiten; hierfür werden aber bestimmte Programmbibliotheken benötigt. Falls Sie in einem eigenen Projekt mit einem dieser Formate arbeiten wollen, finden Sie die entsprechenden Bibliotheken meist nach einer kurzen Suche im Internet.
@@ -144,7 +145,7 @@ print(f"Der Dateiinhalt umfasst {len(arbitration_content)} Zeichen.")
 
 # ## Aufgabe: Textdaten speichern
 # 
-# Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der [Aufgabe zur Berechnung](aufgabe-primzahlen-ausgeben) der Primzahlen so an, dass die Ergebnisse nicht mehr mit `print()` ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der zur Verfügung gestellten Musterlösung.
+# Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der [Aufgabe zur Berechnung](aufgabe-primzahlen-ausgeben) der Primzahlen so an, dass die Ergebnisse nicht mehr mit `print()` ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der zur Verfügung gestellten [Musterlösung](loesung-aufgabe-primzahlen-ausgeben).
 
 # In[ ]:
 

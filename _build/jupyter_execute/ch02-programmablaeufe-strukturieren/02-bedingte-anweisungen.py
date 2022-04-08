@@ -87,7 +87,7 @@ print(5 != 5)
 
 # ## [Bedingte Abfragen mit if, elif und else](https://www.python-kurs.eu/python3_bedingte_anweisungen.php)
 # 
-# Was können wir nun alles mit den Operatoren und den Datentypen, die wir bisher kennengelernt und in diesem Notebook noch kennenlernen werden, anstellen? 
+# Was können wir nun alles mit den Operatoren und den Datentypen, die wir bisher kennengelernt und in dieser Lektion noch kennenlernen werden, anstellen? 
 # 
 # Bisher haben wir unsere Programme vor allem als eine Abfolge von Instruktionen geschrieben: 
 # 
@@ -252,7 +252,6 @@ else:
 # In[ ]:
 
 
-
 sub_string = "Editionswissenschaft"
 
 if sub_string in example_text or sub_string in dh_definition:
@@ -291,12 +290,18 @@ print("Das Programm ist beendet.")
 
 # *Was fällt Ihnen auf? Tragen Sie es hier ein:*
 
+# In[ ]:
+
+
+# your answer
+
+
 # Wir können also mit Python Programme schreiben, die auf Basis der Auswertung von Aussagen entscheiden, ob eine Anweisung ausgeführt oder übersprungen wird oder Programme, die eine von mehreren Anweisungen zur Ausführung auswählen, je nachdem, welche Bedingungen erfüllt wurden.
 
 # ## Aufgabe: Bedingte Anweisungen
 # 
 # Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene `print`-Kommandos ausgeführt werden: "Die Magna Carta stammt aus einem späteren Jahr.", "Die Vereinbarungen stammen aus einem früheren Jahr.", "Die Eingabe ist korrekt!". 
-# Denken Sie dabei daran, dass Sie den Wert der `input`-Funktion in ein `integer` umwandeln müssen. Wie das geht, können Sie im ersten Kapitel noch mal nachlesen.
+# Denken Sie dabei daran, dass Sie den Wert der `input`-Funktion in ein `integer` umwandeln müssen. Wie das geht, können Sie im [ersten Kapitel](datentyp-aendern) noch mal nachlesen.
 
 # In[ ]:
 

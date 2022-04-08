@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# (pseudocode)=
 # # Pseudocode
 # 
 # Pseudcode hilft beim Strukturieren von Programmabläufen und unterstützt das algorithmische Denken. Dabei werden Probleme eines Programms in einzelne Schritte zerlegt, danach werden die auf diese Weise identifizierten Teilschritte zunächst generalisiert ausformuliert und als einzelne Bausteine wieder zusammengestellt. Ein Pseudcode, um zunächst zu prüfen, ob in einem Text Vokale enthalten sind, um diese danach auszugeben, könnte etwa wie folgt aussehen: 
@@ -13,7 +14,7 @@
 #     
 #             PRINT ELEMENT
 # 
-# Durch das Ausformulieren eines Programmablaufs in Pseudocode wird das Vorgehen klarer und mögliche Konzept, die zur Lösung einer Problemstellung in Frage kommen, können auf diese Weiser leichter verstanden werden. Pseudocode liefert damit eine Vorlage, die zur Orientierung beim Schreiben des eigentlichen Codes dient. Zugleich ist Pseudocode auf alle Programmiersprachen übertragbar. Nachfolgend findet sich eine weitere beispielhafte Problemstellung, die zunächst in Pseudocode übersetzt und dann in Pythoncode ausgeschrieben ist. 
+# Durch das Ausformulieren eines Programmablaufs in Pseudocode wird das Vorgehen klarer und mögliche Konzept, die zur Lösung einer Problemstellung in Frage kommen, können auf diese Weise leichter verstanden werden. Pseudocode liefert damit eine Vorlage, die zur Orientierung beim Schreiben des eigentlichen Codes dient. Zugleich ist Pseudocode auf alle Programmiersprachen übertragbar. Nachfolgend findet sich eine weitere beispielhafte Problemstellung, die zunächst in Pseudocode übersetzt und dann in Pythoncode ausgeschrieben ist. 
 # 
 # Für die Zahlen zwischen 1 und 50 soll:
 # 

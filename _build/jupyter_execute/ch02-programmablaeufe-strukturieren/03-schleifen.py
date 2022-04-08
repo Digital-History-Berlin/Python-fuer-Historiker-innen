@@ -8,7 +8,7 @@
 # ## [while-Schleifen](https://www.python-kurs.eu/python3_schleifen.php)
 # Schauen wir uns zunächst die `while`-Schleife an.
 # 
-# Mit einem `while`-Statement können wir einen Codeblock so lange ausführen wie die Bedingung der `while`-Anweisung den Wahrheitswert `True` ergibt. Strukturell sieht die `while`-Schleife den `if`-Statements sehr ähnlich: Wir benötigen ein Schlüsselwort und zwar das `while` und eine Bedingung, die einen Wahrheitswert ergibt, gefolgt von einem Doppelpunkt. In der nächsten Zeile schließt sich dann, mit einer Einrückung beginnend, ein Codeblock an, der in Abhängigkeit vom Wahrheitswert der `while`-Bedingung ausgeführt wird. `If` und `While` sehen demnach hinsichtlich ihres Aufbaus ähnlich aus, in Bezug auf ihr Verhalten unterscheiden sie sich allerdings deutlich.
+# Mit einem `while`-Statement können wir einen Codeblock so lange ausführen wie die Bedingung der `while`-Anweisung den Wahrheitswert `True` ergibt. Strukturell sieht die `while`-Schleife den `if`-Statements sehr ähnlich: Wir benötigen ein Schlüsselwort und zwar das `while` und eine Bedingung, die einen Wahrheitswert ergibt, gefolgt von einem Doppelpunkt. In der nächsten Zeile schließt sich dann, mit einer Einrückung beginnend, ein Codeblock an, der in Abhängigkeit vom Wahrheitswert der `while`-Bedingung ausgeführt wird. `If` und `while` sehen demnach hinsichtlich ihres Aufbaus ähnlich aus, in Bezug auf ihr Verhalten unterscheiden sie sich allerdings deutlich.
 # 
 # Sehen wir uns dazu diese Schleife an:
 
@@ -160,7 +160,7 @@ print(f"number = {number}")
 # 
 # **Knobelaufgabe für Zahlenbegeisterte:** 
 # 
-# Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit `print()` alle [Primzahlen](https://de.wikipedia.org/wiki/Primzahl) zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Kapitel an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende Schritt-für-Schritt-Anleitung schreiben. Diese können Sie dann in Programmcode übersetzen.
+# Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit `print()` alle [Primzahlen](https://de.wikipedia.org/wiki/Primzahl) zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Kapitel an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende [Schritt-für-Schritt-Anleitung](pseudocode) schreiben. Diese können Sie dann in Programmcode übersetzen.
 
 # In[ ]:
 
