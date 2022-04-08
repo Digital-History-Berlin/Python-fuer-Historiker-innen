@@ -19,10 +19,3 @@ Blog: [Digital History Berlin. Digitale Geschichtswissenschaften an der Humboldt
 
 
 Version 1.0 vom 24.04.2022
-
-Lizenz unter: 
-```{figure} img/cc-zero.png
-:alt: Lizenz CC Zero
-:width: 100px
-:align: left
-```

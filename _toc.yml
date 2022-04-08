@@ -65,4 +65,4 @@ parts:
     - file: ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.ipynb
       title: Kapitel Komplexe Datenstrukturen
     - file: ch-loesungen/ch04-dateien-verarbeiten-loesungen.ipynb
-      title: Kapitel Dateienverarbeiten
+      title: Kapitel Dateien verarbeiten
