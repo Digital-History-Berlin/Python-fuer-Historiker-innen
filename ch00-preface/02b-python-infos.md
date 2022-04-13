@@ -1,0 +1,28 @@
+# Python - Einstieg leicht gemacht
+
+Falls Sie sich über den Namen gewundert haben sollten: Benannt wurde die Programmiersprache nicht etwa nach einer Schlange (obgleich sie sich auch im Logo wiederfindet), sondern nach einer Fernsehserie der britischen Komikergruppe Monty Python, von der van Rossum ein großer Fan ist. In der [offiziellen Dokumentation](https://docs.python.org/3/) und in Beispielcode werden Sie häufig entsprechende Anspielungen finden. 
+
+Bei Python handelt es sich um eine plattformunabhängige, sogenannte "general purpose" Programmiersprache, d.h., sie ist für sehr viele unterschiedliche Anwendungsfälle einsetzbar. Das hat sie mit anderen Sprachen wie JavaScript oder C++, die Ihnen vielleicht geläufig sind, gemein. Anders als aber beispielsweise C++, ist Python eine interpretierte Sprache. Was hat es damit auf sich? Sie müssen wissen: Wenn Sie Code schreiben, dann muss dieser, um ausgeführt werden zu können, noch in Maschinensprache übersetzt werden. Das sind Anweisungen, die üblicherweise aus Nullen und Einsen, dem sogenannten Binärcode, bestehen. Für den Übersetzungsvorgang gibt es zwei Herangehensweisen: die Kompilierung und Interpretation. Die Kompilierung erfolgt auf Seiten der Programmierer:innen; der Maschinencode wird vor dem Ausführen quasi gespeichert und kann auf jedem anderen Rechner mit ähnlichem Prozessor ausgeführt werden. Demgegenüber erfolgt die Interpretation auf dem Rechner der Benutzer:innen; der Code wird immer dann in Maschinensprache übersetzt, wenn er ausgeführt werden soll.
+
+Zudem ist Python durch einen hohen Grad an Modularität gekennzeichnet. Der Programmcode kann leicht in kleinere Einheiten aufgeteilt werden, die einem sehr spezifischen Zweck dienen und dann in unterschiedlichen Kontexten eingebunden und somit wiederverwendet werden. Python kommt direkt mit einer sehr umfangreichen Standardbibliothek solcher Module daher, die größtenteils plattformunabhängig sind und für zahlreiche Anwendungsfälle bereits die passenden Lösungen bieten.
+
+## Nützliche Ressourcen
+
+Die [umfangreiche Dokumentation](https://docs.python.org/3/) zu Python bietet hilfreiche Tutorials, ein Glossar und vor allem die Spezifikationen der einzelnen Bibliotheken. Sie werden immer wieder auf sie zurückgreifen.
+
+Eine weitere wichtige Ressource, die Sie immer wieder aufsuchen werden, gleich ob Sie gerade anfangen, zu programmieren oder schon länger dabei sind, ist: [Stackoverflow](https://stackoverflow.com/). Sie werden gerade in den ersten Wochen und Monaten auf kaum ein Problem stoßen, auf das nicht zu irgendeinem Zeitpunkt in der Vergangenheit jemand vor Ihnen gestoßen ist. Lernen Sie voneinander! Wir Historiker:innen sitzen zwar gerne alleine am Schreibtisch, aber wenn es ums Coden geht, dann dürfen, ja *sollten* wir miteinander arbeiten. **Aber wichtig:** Auch beim Schreiben von Programmcode sollte man Zitierregeln beachten und angeben, wenn man einige Zeilen Code von jemand anderem übernommen hat.
+
+## Tutorials
+Das *World Wide Web* ist voll mit vielen nützlichen Tutorials. Auch auf YouTube finden Sie viele empfehlenswerte Kanäle mit gut nachvollziehbaren Erklärungen, die Ihnen den Einstieg erleichtern und auch spezielle Programmbibliotheken praxisorientiert erläutern. Der Großteil der verfügbaren Angebote ist aber nicht unbedingt auf geisteswissenschaftliche Bedürfnisse zugeschnitten. Wir haben hier daher einige Empfehlungen für Sie zusammengetragen, die Ihnen im weiteren Verlauf als Ergänzung zu diesem Jupyter Book nützlich sein können:
+
+- Ein freies Lehrbuch ist zum Beispiel ["A Byte of Python"](https://python.swaroopch.com/index.html). Hier werden keine Vorkenntnisse benötigt. Wenn es schon etwas fortgeschrittener sein darf und Geistes- und Kulturwissenschaftler:innen ansprechen soll, bieten Folgert Karsdorp, Mike Kestemont und Allen Riddell mit ["Humanities Data Analysis. Case Studies with Python"](https://www.humanitiesdataanalysis.org/) für zahlreiche Anwendungsfälle wie Data Mining oder auch Stilometrie einsteigerfreundliche Notebooks - allerdings nicht zur online Bearbeitung. Eine interaktive Einführung für Geisteswissenschaftler:innen hat Folgert Karsdorp mit [dieser Lernressource](https://www.karsdorp.io/python-course/)  erstellt. 
+ 
+- Sehr gut geeignet für Einsteiger:innen mit geistes- und sozialwissenschaftlichen Forschungsinteressen ist auch das von Melanie Walsh erarbeitete Jupyter Book ["Introduction to Cultural Analytics & Python](https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html) oder das online publizierte Textbuch ["Automate the Boring Stuff with Python"](https://automatetheboringstuff.com/) von Al Sweigart. 
+ 
+- Paul Vierthaler hat auf seinem YouTube-Kanal Tutorials für seinen [Kurs zur Textanalyse](https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17) zur Verfügung gestellt.
+ 
+- Auch auf [The Programming Historian](https://programminghistorian.org/en/lessons/?topic=python) finden Sie zahlreiche Python-Lektionen für spezifische geisteswissenschaftliche Anwendungsszenarien.
+ 
+- [Corey Schafer](https://www.youtube.com/user/schafer5/videos) bietet auf seinem YouTube-Kanal etliche Tutorials rund um Pythongrundlagen, Softwareentwicklung, aber auch Data Science. 
+ 
+- Auf der Seite [PythonHumanities.com](https://pythonhumanities.com/) stellt William Mattingly ebenfalls zahlreiche Videos mit Bezug Python und Digital Humanities frei zur Verfügung.

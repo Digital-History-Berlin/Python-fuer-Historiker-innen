@@ -7,6 +7,11 @@ parts:
     title: Vorwort
   - file: ch00-preface/02-einfuehrung.md
     title: Einführung
+    sections:
+    - file: ch00-preface/02a-installationsempfehlung.md
+      title: Installationsempfehlung
+    - file: ch00-preface/02b-python-infos.md
+      title: Infos zu Python 
 - caption: Python Basics
   chapters:
   - file: ch01-atomare-datentypen/01-atomare-datentypen.ipynb
