@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON &#8212; Python für Historiker:innen</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CSV" href="04-csv.html" />
+    <link rel="prev" title="Dateien öffnen, lesen und bearbeiten" href="02-dateien-i-o.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python für Historiker:innen</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../home.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preface
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch00-preface/01-vorwort.html">
+   Vorwort
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch00-preface/02-einfuehrung.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch01-atomare-datentypen/01-atomare-datentypen.html">
+   Atomare Datentypen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/02-hallo-welt.html">
+     Hallo Welt!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/03-datentyp-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/04-datentyp-numerisch.html">
+     Numerische Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/05-fehlermeldungen.html">
+     Fehlermeldungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.html">
+   Programmabläufe strukturieren
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/02-bedingte-anweisungen.html">
+     Bedingte Anweisungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/03-schleifen.html">
+     Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/04-funktionen.html">
+     Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/05-pseudocode.html">
+     Pseudocode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch03-komplexe-datenstrukturen/01-komplexe-datenstrukturen.html">
+   Komplexe Datenstrukturen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/02-listen.html">
+     Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/03-tupel.html">
+     Tupel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/04-sets.html">
+     Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html">
+     Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="01-dateien-verarbeiten.html">
+   Dateien verarbeiten
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-dateien-i-o.html">
+     Dateien öffnen, lesen, bearbeiten
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-csv.html">
+     CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.html">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateien verarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch04-dateien-verarbeiten/03-json.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/ch04-dateien-verarbeiten/03-json.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufbau-einer-json-datei">
+   Aufbau einer JSON-Datei
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jsons-offnen-und-speichern">
+   JSONs öffnen und speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-in-der-digital-history-iiif">
+   JSON in der Digital History: IIIF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-json-daten-verarbeiten">
+   Aufgabe: JSON-Daten verarbeiten
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>JSON</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufbau-einer-json-datei">
+   Aufbau einer JSON-Datei
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jsons-offnen-und-speichern">
+   JSONs öffnen und speichern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-in-der-digital-history-iiif">
+   JSON in der Digital History: IIIF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe-json-daten-verarbeiten">
+   Aufgabe: JSON-Daten verarbeiten
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="json">
+<h1><a class="reference external" href="https://de.wikipedia.org/wiki/JavaScript_Object_Notation">JSON</a><a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h1>
+<p>Einfache Textdateien, wie wir sie soeben eingelesen und geschrieben haben, sind für zahlreiche Anwendungsfälle schon sehr nützlich. Sie sind aber vergleichsweise unstrukturiert. Sehr oft wollen wir im Rahmen historischer Forschungsarbeiten aber mit eindeutig organsierten und strukturierten Informationen arbeiten. Wir können bei einem Korpus mit Briefen zum Beispiel folgende Informationen zu jedem Brief haben: Datum, Ort, Verfasser:in, Adressat:in, Brieftext sowie weiter Informationen. In einfachen Textdateien könnten wir nicht so ohne Weiteres auf diese Informationen zugreifen. Für solche Anwedungsszenarien gibt es allerdings eine Reihe von Dateiformaten, von denen wir im folgenden zwei genauer in den Blick nehmen werden.</p>
+<p>JSON ist ein verbreites Dateiformat zur textbasierten Speicherung strukturierter Daten. Ursprünglich wurde es im Rahmen der Programmiersprache <a class="reference external" href="https://de.wikipedia.org/wiki/JavaScript"><em>JavaScript</em></a> (JSON ist ein Akronym für “JavaScript Object Notation”) zum Austausch von Daten verwendet. Inzwischen ist das Format zu einem wichtigen Standard zur maschinenbasierten Kommunikation zwischen unterschiedlichen Plattformen geworden. Es ist unabhängig von bestimmten Programmiersprachen. Die Strukturierung von JSON-Dateien unterliegt nur <a class="reference external" href="https://www.json.org/json-en.html">wenigen Regeln</a>. Lesen Sie sich die Inhalte der verlinkten Seite in Ruhe durch.</p>
+<div class="section" id="aufbau-einer-json-datei">
+<h2>Aufbau einer JSON-Datei<a class="headerlink" href="#aufbau-einer-json-datei" title="Permalink to this headline">¶</a></h2>
+<p>Betrachten wir einmal den Inhalt der Datei “library.json” in unserem Ordner “example_data”. Es handelt sich hier nicht um einen ausführbaren Code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;My Library&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;books available&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;owner&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;books&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Der Prozess&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Franz Kafka&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1935</span><span class="p">,</span>
+            <span class="s2">&quot;editions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">1935</span><span class="p">,</span>
+                <span class="mi">1946</span><span class="p">,</span>
+                <span class="mi">1963</span><span class="p">,</span>
+                <span class="mi">1990</span><span class="p">,</span>
+                <span class="mi">2011</span><span class="p">,</span>
+                <span class="mi">2012</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Half of a Yellow Sun&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Chimamanda Ngozi Adichie&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2006</span><span class="p">,</span>
+            <span class="s2">&quot;editions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">2006</span><span class="p">,</span>
+                <span class="mi">2007</span><span class="p">,</span>
+                <span class="mi">2017</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Network Effect&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Martha Wells&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span>
+            <span class="s2">&quot;editions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="mi">2020</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Mit dem Wissen aus dem letzten Notebook wird Ihnen wahrscheinlich auffallen, dass der Inhalt der Datei wie eine Kombination aus Dictionaries und Listen aussieht. Tatsächlich sind die zugrundeliegenden Konzepte identisch. Einzig die Benennung ist etwas anders – in JSON-Dateien heißen Dictionaries <em>Objekte</em>, Listen heißen <em>Arrays</em>. Ein weiterer feiner Unterschied ist die Verwendung von <code class="docutils literal notranslate"><span class="pre">null</span></code> für ein leeres Element in JSON. In Python verwenden Sie dagegen <code class="docutils literal notranslate"><span class="pre">None</span></code>, wenn eine Variable keinen Wert haben soll. Strings und Integers funktionieren, wie Sie es aus Python kennen.</p>
+<p>Der Inhalt der JSON-Datei “library.json” besteht demnach aus einem Dictionary mit vier Schlüssel-Wert-Paaren (“label”, “books available”, “owner”, “books”). In “books” ist eine Liste bzw. - im JSON-Sprech - ein Array gespeichert, das weitere Dictionaries respektive Objekte enthält. Jedes Dictionary / Objekt modelliert dabei ein einzelnes Buch.</p>
+<p>Wenn Sie mit den hier verwendeten Begriffen Probleme haben, gehen Sie am besten nochmal die Abschnitte zu <em>Listen</em> und <em>Dictionaries</em> im letzten Kapitel durch.</p>
+</div>
+<div class="section" id="jsons-offnen-und-speichern">
+<h2>JSONs öffnen und speichern<a class="headerlink" href="#jsons-offnen-und-speichern" title="Permalink to this headline">¶</a></h2>
+<p>Nun wollen wir ein Programm schreiben, mit dem wir die Datei “library.json” auslesen und um weitere Bücher erweitern können. Mit dem unten angeführten Code, den Sie bereits aus dem letzten Kapitel kennen, können Sie auch JSON-Dateien öffnen und bearbeiten. Allerdings können wir den Inhalt der Datei dann nur als String verarbeiten – die Struktur aus Dictionaries und Listen geht verloren. Natürlich können wir auch ein Programm schreiben, dass an den richtigen Stellen die richtigen Klammern einfügt – dies ist jedoch aufwändiger als den Inhalt der JSON-Datei in ein einzelnes Dictionary zu konvertieren. Hierzu stellt Python die Programmbibliothek <code class="docutils literal notranslate"><span class="pre">json</span></code> zur Verfügung. Um diese in Ihrem Programm verwenden zu können, muss diese zunächst importiert werden. Das geschieht, wenn Sie folgende Zeile ausführen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Anschließend können wir den Inhalt der Datei mit der Funktion <code class="docutils literal notranslate"><span class="pre">load()</span></code> auslesen und als Dictionary in einer Variable speichern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">library_content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">library_content</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">library_content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ab jetzt können wir die Daten weiterverarbeiten, wie im letzten Kapitel behandelt: Sie können damit wie mit jedem anderen Dictionary arbeiten. Mit folgendem Code können Sie etwa alle in der Bibliothek gespeicherten Buchtitel, Autor:innen und das Jahr der letzten Auflage auslesen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_list</span> <span class="o">=</span> <span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;books&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">book_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Das Buch &#39;</span><span class="si">{</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39; von &#39;</span><span class="si">{</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39; </span>
+<span class="s1">    wurde zuletzt im Jahr </span><span class="si">{</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;editions&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> aufgelegt.</span><span class="se">\n</span><span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Änderungen an der <em>Datei</em> “library.json” können Sie ähnlich, wie im vorherigen Abschnitt beschrieben, vornehmen. Bereiten Sie zuerst die Dictionary-Variable vor, die den Inhalt der JSON-Datei speichert. Anschließend kann die Variable mit der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> in eine JSON-Datei exportiert werden. Ähnlich wie die Funktion <code class="docutils literal notranslate"><span class="pre">write()</span></code>, die Sie weiter oben kennen gelernt haben, benötigt <code class="docutils literal notranslate"><span class="pre">dump()</span></code>, die Dictionary-Variable und ein Datei-Objekt als Parameter. Hier aktualisieren wir die fehlende Information unter “owner”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Max Mustermann&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">library_content</span><span class="p">,</span> <span class="n">json_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wenn Sie die JSON-Datei aus dem Ordner “example_data” heraus öffnen (zum Beispiel mittels Editor) werden Sie feststellen, dass der Inhalt nun in einer einzigen Zeile gespeichert ist. Insbesondere bei sehr großen JSON-Dateien lässt sich so Speicherplatz sparen. Zur Erinnerung: Zeilenumbrüche und Tabstobs werden durch “\n” bzw. “\t” repräsentiert; auch einzelne Zeichen verbrauchen Speicherkapazität. Oft müssen Sie bei der Arbeit mit JSON-Dateien aber auch in die Dateien reinschauen; hier helfen dann Zeilenumbrüche und Einrückungen. Sie können der Funktion <code class="docutils literal notranslate"><span class="pre">dump()</span></code> einen weiteren Parameter (<code class="docutils literal notranslate"><span class="pre">indent</span></code>) mit der Anzahl der Einrückungen nach einem Zeilenumbruch übergeben. Auf diese Weise wird die JSON-Datei lesbarer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">library_content</span><span class="p">[</span><span class="s1">&#39;owner&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Maxine Musterfrau&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/library_version_2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">library_content</span><span class="p">,</span> <span class="n">json_file</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wenn Sie die JSON-Datei nun noch einmal öffnen, dann sollte sie sich schon sehr viel übersichtlicher darstellen.</p>
+</div>
+<div class="section" id="json-in-der-digital-history-iiif">
+<h2>JSON in der Digital History: IIIF<a class="headerlink" href="#json-in-der-digital-history-iiif" title="Permalink to this headline">¶</a></h2>
+<p>Ein zunehmend wichtig werdender Datenstandard im Cultural-Heritage-Bereich ist das <a class="reference external" href="https://iiif.io/"><em>International Image Interoperability Framework (IIIF)</em></a> (Aussprache: Triple-I-F). Es wurde ursprünglich von verschiedenen GLAM-Einrichtung (Galleries, Libraries, Archives, Museums) entwickelt. Ziel war es, ein standardisiertes Framework für ein Datenmodell zu schaffen, um bildbasiertes Kulturgut interoperabel, also unabhängig von den sich unterscheidenden Standards unterschiedlicher Kultureinrichtungen, online präsentieren und austauschen zu können. Dabei sollten nicht nur Metadaten zur Beschreibung des Kontextes der einzelnen Kulturgutobjekte gespeichert werden können, sondern insbesondere bei Werken, die aus mehreren Bilddateien bestehen, logische Zusammenhänge zwischen den Einzelbildern für das Gesamtwerk erhalten werden. Die Anwendungsmöglichkeiten von IIIF sind sehr vielfältig; <a class="reference external" href="https://github.com/IIIF/awesome-iiif">zahlreiche Einrichtungen und Projekte</a> greifen mittlerweile darauf zurück.</p>
+<p>Sie müssen sich für diese Einführung nicht intensiv in IIIF einarbeiten. In der folgenden Übungsaufgabe werden wir uns ausschließlich auf die <a class="reference external" href="http://ronallo.com/iiif-workshop/presentation/">Presentation API</a> konzentrieren. In aller Kürze beschrieben definiert die <em>Presentation API</em> einen Standard zur Strukturierung einer JSON-Datei um die Zusammenhänge eines bildbasierten Werkes beschreiben zu können (<a class="reference external" href="https://iiif.io/api/presentation/3.0/">Vollständige Dokumentation der <em>Presentation API</em></a>). Eine solche Datei wird <em>Manifest</em> genannt.</p>
+<p>In der folgenden Aufgabe werden wir mit mittelalterlichen Handschriften arbeiten. Eine einzelne Handschrift kann als ein einzelnes, bildbasiertes Werk verstanden werden. Beachten Sie dabei, dass es hier um das tatsächliche Buch, das in irgendeiner Bibliothek liegt, geht – nicht um den Text der Handschrift oder um Faksimiles. Eine Handschrift kann somit durch ein IIIF-Manifest repräsentiert werden. Betrachten wir z.B. das Manuskript “Grandes Chroniques de France”; Sie finden es im Ordner im Pfad “example_data/iiif-manifests” unter “BnF. Departement des Manuscrits. Français 2608.json”. Wir müssen an dieser Stelle nicht auf jedes Detail genau eingehen. Metadaten der Handschrift sind in der Liste “metadata” gespeichert. Hier finden Sie z.B. den Titel, die Datierung oder die Sprache, in der der Text verfasst ist. Das Manifest enthält außerdem die Links zu den Bilddateien der Scans der einzelnen Seiten. Diese sind im Manifest in der Liste “canvases” gespeichert (die ein Dictionary in der Liste “sequences” ist). Jede Seite der Handschrift wird dabei durch ein “canvas”-Dictionary repräsentiert. Um den Link zur Bilddatei der jeweiligen Seite zu finden, suchen Sie in der Liste “images” nach dem Schlüssel “&#64;id”.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Der Link zur Bilddatei der ersten Seite der “Grandes Chroniques de France” ist z.B. <a class="reference external" href="https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg">https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg</a>. Schauen Sie sich die JSON-Datei gut an und vollziehen Sie ihren Aufbau nach.</p>
+<p>Hier ein Auszug der ersten 130 Zeilen der JSON-Datei, die insgesamt mehr als 30.000 Zeilen umfasst.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">{</span>
+<span class="sd">    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/manifest.json&quot;,</span>
+<span class="sd">    &quot;label&quot;: &quot;BnF. Département des Manuscrits. Français 2608&quot;,</span>
+<span class="sd">    &quot;attribution&quot;: &quot;Bibliothèque nationale de France&quot;,</span>
+<span class="sd">    &quot;license&quot;: &quot;https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica&quot;,</span>
+<span class="sd">    &quot;logo&quot;: &quot;https://gallica.bnf.fr/mbImage/logos/logo-bnf.png&quot;,</span>
+<span class="sd">    &quot;related&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g&quot;,</span>
+<span class="sd">    &quot;seeAlso&quot;: [</span>
+<span class="sd">        &quot;http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:bnf.fr:gallica/ark:/12148/btv1b8451604g&quot;</span>
+<span class="sd">    ],</span>
+<span class="sd">    &quot;description&quot;: &quot;Grandes Chroniques de France&quot;,</span>
+<span class="sd">    &quot;metadata&quot;: [</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Repository&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Digitised by&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Bibliothèque nationale de France&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Source Images&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Metadata Source&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;http://oai.bnf.fr/oai2/OAIHandler?verb=GetRecord&amp;metadataPrefix=oai_dc&amp;identifier=oai:bnf.fr:gallica/ark:/12148/btv1b8451604g&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Shelfmark&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Bibliothèque nationale de France. Département des Manuscrits. Français 2608&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Title&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Grandes Chroniques de France&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Date&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;1390-1405&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Language&quot;,</span>
+<span class="sd">            &quot;value&quot;: [</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@value&quot;: &quot;français&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@value&quot;: &quot;latin&quot;</span>
+<span class="sd">                }</span>
+<span class="sd">            ]</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Format&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Paris. - Écriture bâtarde. Un copiste. Hastes montantes avec parfois grotesques dans la marge supérieure. - Décoration: Selon A. Hedeman, le ms. aurait été exécuté sur le modèle du ms. de Charles V, le ms. BnF Français 2813. Il se distingue cependant de son modèle pour suivre le découpage en chapitres d’une autre copie royale, le ms. BnF, Français 10135. Une vingtaine de miniatures se retrouvent par ailleurs dans deux mss contemporains, les mss Vienne, ÖNB, Cod. 2564 et Lyon, BM, ms. 880. Reflétant l’évolution de la situation politique, l’ensemble du cycle d’enluminures offre une « vision atténuée du conflit franco-anglais » (Rioust – Karaskova 2015, p. 12) : la plupart des peintures traitant de la suprématie française sur les Anglais ont été omises, sans doute parce que la France a entrepris des négociations de paix avec l’Angleterre dans les années 1390. Les Anglais mis en scène par l’artiste n’apparaissent plus à leur désavantage : f. 481v : siège de Reims (1359/1360) ; f. 483v : traité de Brétigny (8 mai 1360) ; f. 521v : couronnement de Richard II, futur gendre de Charles VI (cf. Hedeman, The royal Image…, p. 140). Bien que le ms. ait été commandé pour Charles VI, le ms. ne contient aucune représentation de son sacre, reflet des absences du roi (Rioust – Karaskova 2015, p. 11). Les différentes chroniques sont généralement introduites par un portrait du roi couronné. On note qu’aucune illustration ni initiale ornée n’annoncent l’avènement du règne de Philippe de Valois, marqué par l’extinction de la dynastie des Capétiens directs. Bien que la décoration marginale indique une provenance parisienne, le style des illustrations est caractéristique de l’enluminure pragoise des années1390 et peut être attribué à un maître bohémien venu travailler à Paris (Paris 1400…, cat. 168, p. 272-273 ; Rioust – Karaskova 2015, p. 16-18). Les petits fleurons qui partent de chaque angle des peintures se retrouvent dans plusieurs manuscrits commandités par Wenceslas IV de Bohême ou son entourage: la Bible dite de Wenceslas (Vienne, ÖNB, Cod. 2759-64), le Livre d&#39;heures du Narodni Muzeum (Prague, Narodni Muzeum, KNM VH 36), le Psautier de Raudnitz (Prague, cathédrale Saint vit, Cim. 7), la Bible ms. M. 833 de la Pierpont Morgan Library (New York), la Bulle d&#39;Or de Vienne (Vienne, ÖNB, Cod. 338), la Bible de Konrad von Vechta (Anvers, Museum Plantin-Moretus, Cod. MS 15.1-15.2), copiés dans les premières années du XVe siècle (Rioust – Karaskova 2015, p. 16-18). Une peinture frontispice (175 x 160 mm) au f. 2v ; 75 peintures de petit format. F. 1 : moine présentant la chronique à saint Louis et saint Denis, symbolisant l’un, un modèle de bon gouvernement pour ses successeurs, l’autre, le protecteur du royaume mais aussi de la santé royale dans l’épreuve de la maladie de Charles VI. Bien que le roi ne soit pas représenté, sa personne est évoquée à travers les armes portées par deux cerfs ailés, son emblème favori dans les deux dernières décennies du XIVe siècle. F. 2v. Peinture frontispice compartimentée en quatre scènes : débarquement des Grecs à Troie ; siège de Troie ; couronnement de Pharamond ; bataille entre les Francs et les Romains, symbolisant la chute de l’empire et la suprématie de la royauté française, mettant en lumière l’ancienneté et la noblesse des Francs et leur suprématie sur l’empire (cf. M.-H. Tesnière, dans Trésors de la Bibliothèque nationale…, cat. 33). Légendes des illustrations : voir Hedeman, The Royal Image…, p. 239-240, et la base Mandragore : www. Mandragore.bnf.fr Décoration secondaire :Encadrements de baguettes avec rinceaux de vignettes et dragon (f. 1). Dans la marge inférieure du f. 1 deux cerfs ailés supportent les armoiries royales. Au f. 2v, armoiries de Jean du Mas.Initiales ornées de vignettes (5 lignes) au début du prologue et des différentes parties du texte (début des Chroniques, des différents livres des Chroniques des règnes de Charlemagne et de Philippe Auguste, des chapitres ornés d’une peinture).Lettres filigranées (2 lignes) au début des autres chapitres et des tables des chapitres. Lettres filigranées (1 ligne) au début des têtes de chapitres indiqués dans les tables et au sein du texte. - Parchemin. - 544 ff. précédés de trois feuillets de garde en parchemin (A, B, C) ; suivis d’un feuillet de garde en parchemin. - 350 x 255 mm (justification : 235/240 x 175 mm). - 46 cahiers : 112 (f. 1-12) ; 212 (f. 13-24) ; 312 (f. 25-34) ; 412 (f. 35-48) ; 512 (f. 49-60) ; 612 (f. 61-72) ; 712 (f. 73-84) ; 812 (f. 85-96) ; 912 (f. 97-108) ; 1012 (f. 109-120) ; 1112 (f. 121-132) ; 1212 (f. 133-144) ; 1312 (f. 145-156) ; 1412 (f. 157-168) ; 1512 (f. 169-180) ; 1612 (f. 181-192) ; 1712 (f. 193-204) ; 1812 (f. 205-216) ; 1912 (f. 217-228) ; 2012 (f. 229-240) ; 2112 (f. 241-252) ; 2212 (f. 253-264) ; 2312 (f. 265-276) ; 2412 (f. 277-288) ; 2512 (f. 289-300) ; 2612 (f. 301-311, incluant un feuillet 304bis) ; 2712 (f. 312-323) ; 2812 (f. 324-335) ; 2912 (f. 336-347 ; les f. 339 et 344, mal reliés, sont à inverser) ; 3012 (f. 348-359) ; 3112 (f. 360-371) ; 3212 (f. 372-383) ; 3312 (f. 384-395) ; 3412 (f. 396-407) ; 3512 (f. 408-419 ; f. 413-414 mal reliés et à inverser) ; 3612 (f. 420-431) ; 3712 (f. 432-442, incluant un feuillet 432bis) ; 3812 (f. 443-454) ; 3912 (f. 455-466) ; 4012 (f. 467-478) ; 4112 (f. 479-490) ; 4212 (f. 491-502) ; 4312 (f. 503-514) ; 4412 (f. 515-526) ; 4512 (f. 527-538) ; 466 (f. 539-544). Réclames, signatures apparentes de cahiers à l’encre brune et rouge. Deux colonnes par page.Foliotation contemporaine du manuscrit en chiffres romains rubriqués. Titres courants rubriqués dans la marge supérieure ; certains titres ne correspondent pas à la geste indiquée : f. 308-311v, le récit du règne de Louis VIII a pour titre : « Du roy Philippe Dieudonné ». Foliotation moderne : omission des f. 304bis, 432bis. Feuillets mal reliés dans les cahiers 29 et 35. Incipit du volume, des tables des chapitres et des différentes gestes, titres des chapitres avec leur numérotation rubriqués. Lettres en attente pour les lettres filigranées et certaines initiales ornées.Traces de restauration ancienne. Tables des chapitres jusqu’à la chronique du règne de Louis VIII (f. 308). Annotations marginales contemporaines du manuscrit : f. 501r-v. Annotations marginales postérieures (XIXe s.) : f. 94, 166, 338v, 339v. - Réglure à l’encre. - Reliure en maroquin brun avec armes royales sur les plats (Ancien Régime), à triple filet doré. Tranche dorée. Dos au chiffre royal (Ancien Régime, avant 1792). Titre en capitales dorées : « CHRONIQUE. DE FRANCE / APPELLEES. DE S. DENYS. / FINISSANT . A CHARL. VI. ». - F. 1 et 543v : estampille de la « Bibliothecae Regiae » (Ancien régime, avant 1725), correspondant au modèle Josserand-Bruno, type A, n° 1&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Relation&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Notice du catalogue : http://archivesetmanuscrits.bnf.fr/ark:/12148/cc779857&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Type&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Manuscrit&quot;</span>
+<span class="sd">        },</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;label&quot;: &quot;Place&quot;,</span>
+<span class="sd">            &quot;value&quot;: &quot;Lieu de copie : Paris&quot;</span>
+<span class="sd">        }</span>
+<span class="sd">    ],</span>
+<span class="sd">    &quot;sequences&quot;: [</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;canvases&quot;: [</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f1&quot;,</span>
+<span class="sd">                    &quot;label&quot;: &quot;plat supérieur&quot;,</span>
+<span class="sd">                    &quot;height&quot;: 6275,</span>
+<span class="sd">                    &quot;width&quot;: 4555,</span>
+<span class="sd">                    &quot;images&quot;: [</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;motivation&quot;: &quot;sc:painting&quot;,</span>
+<span class="sd">                            &quot;on&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f1&quot;,</span>
+<span class="sd">                            &quot;resource&quot;: {</span>
+<span class="sd">                                &quot;format&quot;: &quot;image/jpeg&quot;,</span>
+<span class="sd">                                &quot;service&quot;: {</span>
+<span class="sd">                                    &quot;profile&quot;: &quot;http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2&quot;,</span>
+<span class="sd">                                    &quot;@context&quot;: &quot;http://iiif.io/api/image/1/context.json&quot;,</span>
+<span class="sd">                                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1&quot;</span>
+<span class="sd">                                },</span>
+<span class="sd">                                &quot;height&quot;: 6275,</span>
+<span class="sd">                                &quot;width&quot;: 4555,</span>
+<span class="sd">                                &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f1/full/full/0/native.jpg&quot;,</span>
+<span class="sd">                                &quot;@type&quot;: &quot;dctypes:Image&quot;</span>
+<span class="sd">                            },</span>
+<span class="sd">                            &quot;@type&quot;: &quot;oa:Annotation&quot;</span>
+<span class="sd">                        }</span>
+<span class="sd">                    ],</span>
+<span class="sd">                    &quot;thumbnail&quot;: {</span>
+<span class="sd">                        &quot;@id&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g/f1.thumbnail&quot;</span>
+<span class="sd">                    },</span>
+<span class="sd">                    &quot;@type&quot;: &quot;sc:Canvas&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f2&quot;,</span>
+<span class="sd">                    &quot;label&quot;: &quot;contreplat sup.&quot;,</span>
+<span class="sd">                    &quot;height&quot;: 6217,</span>
+<span class="sd">                    &quot;width&quot;: 4584,</span>
+<span class="sd">                    &quot;images&quot;: [</span>
+<span class="sd">                        {</span>
+<span class="sd">                            &quot;motivation&quot;: &quot;sc:painting&quot;,</span>
+<span class="sd">                            &quot;on&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/canvas/f2&quot;,</span>
+<span class="sd">                            &quot;resource&quot;: {</span>
+<span class="sd">                                &quot;format&quot;: &quot;image/jpeg&quot;,</span>
+<span class="sd">                                &quot;service&quot;: {</span>
+<span class="sd">                                    &quot;profile&quot;: &quot;http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level2&quot;,</span>
+<span class="sd">                                    &quot;@context&quot;: &quot;http://iiif.io/api/image/1/context.json&quot;,</span>
+<span class="sd">                                    &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f2&quot;</span>
+<span class="sd">                                },</span>
+<span class="sd">                                &quot;height&quot;: 6217,</span>
+<span class="sd">                                &quot;width&quot;: 4584,</span>
+<span class="sd">                                &quot;@id&quot;: &quot;https://gallica.bnf.fr/iiif/ark:/12148/btv1b8451604g/f2/full/full/0/native.jpg&quot;,</span>
+<span class="sd">                                &quot;@type&quot;: &quot;dctypes:Image&quot;</span>
+<span class="sd">                            },</span>
+<span class="sd">                            &quot;@type&quot;: &quot;oa:Annotation&quot;</span>
+<span class="sd">                        }</span>
+<span class="sd">                    ],</span>
+<span class="sd">                    &quot;thumbnail&quot;: {</span>
+<span class="sd">                        &quot;@id&quot;: &quot;https://gallica.bnf.fr/ark:/12148/btv1b8451604g/f2.thumbnail&quot;</span>
+<span class="sd">                    },</span>
+<span class="sd">                    &quot;@type&quot;: &quot;sc:Canvas&quot;</span>
+<span class="sd">                },</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Angenommen, Sie wollen nun die Scans aller Seiten der Handschrift herunterladen. In diesem Fall können Sie natürlich auch die Handschrift im <a class="reference external" href="https://gallica.bnf.fr/ark:/12148/btv1b8451604g">Viewer der französischen Nationalbibliothek</a> aufrufen und die Digitalisate dort herunterladen. Wollen Sie das jedoch für mehrere Dutzend oder gar Hundert Handschriften tun, bieten Ihnen die IIIF-Manifeste eine Möglichkeit den Download automatisiert durchzuführen.</p>
+</div>
+<div class="section" id="aufgabe-json-daten-verarbeiten">
+<h2>Aufgabe: JSON-Daten verarbeiten<a class="headerlink" href="#aufgabe-json-daten-verarbeiten" title="Permalink to this headline">¶</a></h2>
+<p>Schreiben Sie ein Programm zur Vorbereitung eines automatischen Downloads aller Bilddateien der Scans einer Reihe von vorgegebenen mittelalterlichen Handschriften. Die IIIF-Manifeste der einzelnen Handschriften finden Sie in im Ordner data/iiif-manifests. Ihr Programm sollte die folgenden Aufgaben durchführen:</p>
+<ul class="simple">
+<li><p>Die Links zu den Bilddateien der Scans sollten in einer Textdatei (.txt) gespeichert werden. Nach jedem Link soll ein Zeilenumbruch erfolgen. Die Links werden also zeilenweise in der Datei aufgelistet.</p></li>
+<li><p>Es soll für jede Handschrift jeweils eine eigene Textdatei erstellt werden, die die Links zu ihren Scans enthält.</p></li>
+<li><p>Der Name jeder Textdatei soll der Titel der jeweiligen Handschrift sein (also z.B. “Grandes Chroniques de France.txt”).</p></li>
+<li><p><em>Optional: Extrahieren Sie nur die Links aus den IIIF-Manifesten, deren Handschriften irgendwann zwischen den Jahren 1300 und 1400 datiert sind.</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder_path</span> <span class="o">=</span> <span class="s2">&quot;.example_data/iiif-manifests/&quot;</span>
+<span class="n">manifests</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2170.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2187.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 1950.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2196.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2228.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;BnF. Departement des Manuscrits. Francais 2608.json&quot;</span>       
+<span class="p">]</span>
+
+<span class="c1"># Ihr Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_thebe-init tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hidden cell creates content for using with Thebe Live-Code</span>
+<span class="c1"># &gt;&gt;&gt;change paths, when Jupyter Book is published&lt;&lt;&lt;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">iiif_folder</span> <span class="o">=</span> <span class="s1">&#39;example_data/iiif-manifests&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">iiif_folder</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>  
+  
+<span class="n">file_list_1</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;adliger_vergleich.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;books.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv&#39;</span><span class="p">),</span>
+             <span class="p">(</span><span class="s1">&#39;library.json&#39;</span><span class="p">,</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">file_list_1</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;example_data/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        
+<span class="n">file_list_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">2228</span><span class="p">,</span> <span class="mi">2608</span><span class="p">,</span> <span class="mi">2170</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">2196</span><span class="p">]</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement</span><span class="si">%20d</span><span class="s1">es%20Manuscrits.</span><span class="si">%20F</span><span class="s1">rancais%20&#39;</span>
+<span class="n">base_file_name</span> <span class="o">=</span> <span class="s1">&#39;BnF. Departement des Manuscrits. Francais &#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_list_2</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">iiif_folder</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">base_file_name</span><span class="si">}{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>“images” muss eine Liste sein, da ein IIIF-“canvas” auch aus mehreren Bilddateien bestehen kann. So kann etwa im Manifest abgebildet werden, dass zu einer Seite einer Handschrift nur Fragmente existieren; jedes Fragment kann durch eine eigene Bilddatei dargestellt werden. Das nur als kleines Beispiel für die Flexibilität von IIIF.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch04-dateien-verarbeiten"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-dateien-i-o.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Dateien öffnen, lesen und bearbeiten</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04-csv.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CSV</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By <a href="https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history">Digital History, Humboldt-Universität zu Berlin</a><br/>
+    
+        &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <div>
+<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
+</div>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

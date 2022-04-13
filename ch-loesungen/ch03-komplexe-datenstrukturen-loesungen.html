@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lösungen zu den Aufgaben aus dem Abschnitt Komplexe Datenstrukturen &#8212; Python für Historiker:innen</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lösungen zu den Aufgaben aus dem Abschnitt Dateien verarbeiten" href="ch04-dateien-verarbeiten-loesungen.html" />
+    <link rel="prev" title="Lösungen zu den Aufgaben aus dem Abschnitt Programmabläufe strukturieren" href="ch02-programmablaeufe-strukturieren-loesungen.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Logo_DigitalHistoryBerlin.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python für Historiker:innen</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../home.html">
+   Home
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preface
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch00-preface/01-vorwort.html">
+   Vorwort
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch00-preface/02-einfuehrung.html">
+   Einführung
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch01-atomare-datentypen/01-atomare-datentypen.html">
+   Atomare Datentypen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/02-hallo-welt.html">
+     Hallo Welt!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/03-datentyp-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/04-datentyp-numerisch.html">
+     Numerische Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch01-atomare-datentypen/05-fehlermeldungen.html">
+     Fehlermeldungen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.html">
+   Programmabläufe strukturieren
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/02-bedingte-anweisungen.html">
+     Bedingte Anweisungen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/03-schleifen.html">
+     Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/04-funktionen.html">
+     Funktionen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/05-pseudocode.html">
+     Pseudocode
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch03-komplexe-datenstrukturen/01-komplexe-datenstrukturen.html">
+   Komplexe Datenstrukturen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/02-listen.html">
+     Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/03-tupel.html">
+     Tupel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/04-sets.html">
+     Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch03-komplexe-datenstrukturen/05-dictionaries.html">
+     Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch04-dateien-verarbeiten/01-dateien-verarbeiten.html">
+   Dateien verarbeiten
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch04-dateien-verarbeiten/02-dateien-i-o.html">
+     Dateien öffnen, lesen, bearbeiten
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch04-dateien-verarbeiten/03-json.html">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch04-dateien-verarbeiten/04-csv.html">
+     CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Daten
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-daten/part01-python-basics-daten.html">
+   Daten Python Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lösungen zu den Aufgaben
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="part01-python-basics-loesungen.html">
+   Lösungen Python Basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch02-programmablaeufe-strukturieren-loesungen.html">
+     Kapitel Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Kapitel Komplexe Datenstrukturen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch04-dateien-verarbeiten-loesungen.html">
+     Kapitel Dateien verarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/ch-loesungen/ch03-komplexe-datenstrukturen-loesungen.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-text-preprocessing">
+   Lösung: Aufgabe Text Preprocessing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-interaktives-programm-gestalten">
+   Lösung: Aufgabe Interaktives Programm gestalten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losungen-aufgaben-sets">
+   Lösungen: Aufgaben Sets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-anzahl-der-worter-in-einem-text-ermitteln">
+     a) Anzahl der Wörter in einem Text ermitteln
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
+     b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-einfache-frequenzanalyse">
+   Lösung: Aufgabe Einfache Frequenzanalyse
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lösungen zu den Aufgaben aus dem Abschnitt Komplexe Datenstrukturen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-text-preprocessing">
+   Lösung: Aufgabe Text Preprocessing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-interaktives-programm-gestalten">
+   Lösung: Aufgabe Interaktives Programm gestalten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losungen-aufgaben-sets">
+   Lösungen: Aufgaben Sets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-anzahl-der-worter-in-einem-text-ermitteln">
+     a) Anzahl der Wörter in einem Text ermitteln
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
+     b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-aufgabe-einfache-frequenzanalyse">
+   Lösung: Aufgabe Einfache Frequenzanalyse
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="losungen-zu-den-aufgaben-aus-dem-abschnitt-komplexe-datenstrukturen">
+<h1>Lösungen zu den Aufgaben aus dem Abschnitt Komplexe Datenstrukturen<a class="headerlink" href="#losungen-zu-den-aufgaben-aus-dem-abschnitt-komplexe-datenstrukturen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="losung-aufgabe-text-preprocessing">
+<h2>Lösung: Aufgabe Text Preprocessing<a class="headerlink" href="#losung-aufgabe-text-preprocessing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Aufgabenstellung:</strong></p>
+<ol class="simple">
+<li><p>Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie ihn einer Variablen zu.</p></li>
+<li><p>Definieren Sie zwei Funktionen:</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tokenize_text()</span></code> soll folgende Operationen beinhalten:</p>
+<ul>
+<li><p>Entfernung von Interpunktionszeichen</p></li>
+<li><p>Lowercasing aller Großbuchstaben</p></li>
+<li><p>Tokenisierung der Textdaten anhand von Whitespaces</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">segment_text()</span></code> soll die tokenisierten Textdaten zu Segmenten in folgender Art weiterverarbeiten:</p>
+<ul>
+<li><p>Segmente sollten nicht länger als 10 Wörter sein</p></li>
+<li><p>Der Text soll am Ende zeilenweise (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) als zusammenhängende Zeichenkette ausgegeben werden.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Hinweise:</strong></p>
+<ul class="simple">
+<li><p>Ihre Funktionen sollten auf beliebige Texte anwendbar sein</p></li>
+<li><p>Nutzen Sie bedingte Anweisungen und Schleifen</p></li>
+<li><p>Machen Sie Gebrauch von den Listenfunktionen, Ranges und Konkatenierung oder auch von Formatierungsmöglichkeiten von Zeichenketten</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer erfolgreichen Kombination von traditionellen Arbeitsweisen mit Methoden der Digital Humanities einen regelrechten Hype. Digitale Methoden drängen sich besonders an den Stellen auf, wo sie eine Überwindung der Beschränkungen des analogen Drucks versprechen. Zugleich zeichnet sich ab, dass mit einem Wechsel zu digitalen Editionsformen nicht nur neue Werkzeuge genutzt werden, sondern dass sich prinzipielle strukturelle Änderungen ergeben: so können analoge Editionen angereichert werden oder Editionen können als Hybrid durch eine gleichwertige digitale und analoge Version repräsentiert werden. Editoren werden angesichts dieser neuen Möglichkeiten vor neue Herausforderungen gestellt. Gleiches gilt für Infrastrukturen, die die Produkte der Editionswissenschaft publizieren und langfristig verfügbar machen sollen. Grundlegende Fragen der Qualitätsmessung und -bewertung, der Arbeitsorganisation, Vernetzung und Distribution müssen bei der digitalen Editionswissenschaft anders bzw. neu gestellt und bewertet werden. Die vom Forschungsverbund Marbach Weimar Wolfenbüttel veranstaltete Tagung “Digitale Metamorphose: Digital Humanities und Editionswissenschaft” betrachtete diese neuen Möglichkeiten kritisch und ging dabei auch der Frage nach, welche Grenzen und Gefahren es jenseits der offensichtlichen Vorteile für die Editionswissenschaft gibt. Den Auftakt der Tagung bildeten die Eröffnungsvorträge von BODO PLACHTA (Amsterdam) und JOÃO DIONÍSIO (Lissabon). Plachta wies auf die Bedeutung von philologischen Standards für die Editionsarbeit hin und stellte diese in ihrer historischen Entwicklung dar. Die aus dieser Entwicklung hervorgegangen editorischen Praktiken sollten auch im digitalen Medium gepflegt und weiterentwickelt werden. Die Vorteile des Digitalen dürfen nicht zu einem blinden Technikvertrauen führen, sondern müssen mit den traditionellen Qualitätsansprüchen der Editionswissenschaft kombiniert werden. Dionísio betonte die stetig wachsende Internationalität der Editionswissenschaft, die durch digitale Methoden und insbesondere durch neue Kommunikationsformen gefördert wird. Er beschrieb dabei die digitale Transformation der Editionswissenschaft in verschiedensten Bereichen wie dem Akt des Lesens, der institutionellen Kooperation, der Konstruktion und Interpretation von Textbedeutung und Textverstehen. Diesen Wandel skizzierte der Beiträger an den Beispielen der Archive und Gedächtnisinstitutionen sowie an den philologischen Netzwerken und wissenschaftlichen Verlagen. Austausch und Kooperationen werden in Zukunft gänzlich neue Editionsvorhaben ermöglichen und die Vernetzung über Sprach- und Landesgrenzen hinweg fördern. HEINZ-WERNER KRAMSKI (Marbach) eröffnete das erste Panel mit einem Beitrag über die Bestanderhaltung von digitalen Archivalien am Beispiel des Nachlasses des Literaturwissenschaftlers und Medientheoretikers Friedrich Kittler. Dabei verdeutlichte der Beiträger die vielfältigen Herausforderungen, die digitale Nachlässe über veraltete oder proprietäre Datei- und Textformate hinaus mit sich bringen. Gebrauchsspuren an Hardware, verschmutzte Datenträger oder selbst geschriebene Software der ehemaligen Anwender sind einige der sehr anschaulichen Fallbeispiele, die im Beitrag erwähnt wurden. SYBILLE SÖRING (Göttingen) stellte Textgrid und DARIAH als Infrastrukturen für digitale Editionen vor.[1] Textgrid stellt eine Arbeitsoberfläche für das – auch kollaborative – Auszeichnen von Text nach XML/TEI-P5 ebenso zur Verfügung als auch zahlreiche dabei unterstützende und analysierende Tools. DARIAH-DE unterstützt digital arbeitende Geistes- und Kulturwissenschaftler mit Digital-Humanities-Tools und fachwissenschaftlichen Diensten. Anhand des Editionsprojektes “Theodor Fontane: Notizbücher. Digitale genetisch-kritische und kommentierte Edition” erläutere die Referentin das Zusammenspiel der Infrastrukturen in den Bereichen der Erstellung, Präsentation und der nachhaltigen Verfügbarkeit.[2] PETER ANDORFER (Wien) erläuterte am Beispiel seines Editionsprojektes zur Weltbeschreibung des Tiroler Bauerns Leonhard Millinger die Vor- und Nachteile der Wolfenbütteler Digitalen Bibliothek (WDB) als Infrastruktur für die Erstellung einer digitalen Edition.[3] Die Rolle der Infrastruktur sieht Andorfer in einer generellen Unterstützung des Editionsvorhaben. Infrastrukturen können aber dem Editor nicht alle technischen und Kodierungsfragen und -entscheidungen abnehmen, eine “One-fits-all”-Lösung wird es alleine aufgrund der Spezifika von digitalen Editionen nicht geben können. Darüber hinaus betonte Andorfer, dass es für Editionen viel wichtiger sei, technische Ansprechpartner zu haben, die das Editionsvorhaben im Rahmen der gewählten Infrastruktur betreuen. Im ersten Teil seines Vortrages stellte ROLAND S. KAMZELAK (Marbach) die Hybrid-Edition der Tagebücher Harry Graf Kesslers vor. Ausgehend von der Edition wurde im zweiten Teil des Vortrags die interne Normdatenbank AMIE des Deutschen Literatur Archivs Marbach vorgestellt.[4] Die editionsübergreifende Datenbank ermöglicht es, direkt von den in ihr verzeichneten Registern in die Textstelle der jeweiligen Edition zu springen. Darüber hinaus verzeichnet die Datenbank die einzelnen Editionsrichtlinien. Der Vortrag zeigte überzeugend auf, wie arbeitserleichternd eine zentrale Datenhaltung und -pflege in Verbindung mit Normdaten für Editionsprojekte sein kann. In ihrem Beitrag stellte URSULA KUNDERT (Wolfenbüttel) anhand des Forschungsprojekts “Mediengeschichte der Psalmen” das Zusammenspiel von verschiedenen Infrastrukturen, zentralen Nachweissystemen und Social-Media-Angeboten dar. So entstand ein Abbild eines virtuellen Arbeitsplatzes, der sich auf verschiedene digitale Angebote erstreckt und das digitale Forschungsvorhaben mit dem Forschungsprofil des jeweiligen Forschers und dessen Einspeisung in fachspezifische Netzwerke unterstützt. Darüber hinaus wurde die Wichtigkeit einer intellektuellen Verbindung ausgehend von digitalen Editionen thematisiert. Nach dem ersten Panel fanden Kurzvorstellungen aktueller digitaler Editionsprojekte statt. HARTMUT BEYER (Wolfenbüttel) stellte die Edition des Tagebuches von Christian II. von Anhalt-Bernburg (1599–1656) vor. Die digitale Neuedition der deutschsprachigen Schwesternbücher des 14. Jahrhunderts wurde von CARINA HOFF (Trier) präsentiert. Danach stellten JULIA SCHMIDT-FUNKE und MARTIN PRELL (beide Jena) die digitale Edition der Briefe Erdmuthe Benignas von Reuß-Ebersdorf (1670–1732) vor. Das zweite Panel der Tagung eröffnete INGA HANNA RALLE (Wolfenbüttel) mit einem Vortrag, der einerseits das digitale Editionsvorhaben des Tagebuchs von Herzog August dem Jüngeren von Braunschweig-Wolfenbüttel und das damit in Verbindung stehende Selbstzeugnis-Repertorium der Herzog August Bibliothek vorstellte. Anderseits thematisierte der Vortrag die Bedeutung der Benutzbarkeit, Nutzerführung und Lesbarkeit von digitalen Editionen. Diese für die Nutzung von digitalen Editionen elementaren Faktoren werden noch nicht ausreichend bei der Editionserstellung berücksichtigt und stehen häufig hinter der Implementierung neuer technischer Methoden zurück. In dem nächsten Beitrag stellte ULRIKE HENNY (Köln) Reviewingverfahren für digitale Editionen vor. Dabei wurde die Rezensionszeitschrift RIDE vorgestellt und der von der Fachredaktion der Zeitschrift entwickelte Kriterienkatalog zur Besprechung von digitalen Editionen zur Diskussion gestellt.[5] Während Qualitätskriterien, die auch bei gedruckten Editionen angewendet werden, bei der Bewertung von digitalen Editionen adaptiert werden können, kommen zusätzlich noch weitere Faktoren hinzu, die vor allem aus dem Bereich der technischen Standards stammen. Zu Beginn des dritten Panels zeigte GEORG VOGELER (Graz) am Beispiel mittelalterlicher Rechnungsbücher das Potential der Digital Humanities und der sematischen Modellierung auf. Durch die Repräsentation von Text im Bild, durch das Mark-up von sprachlichen Informationen und die Auszeichnung von Bedeutung können unterschiedliche Zugänge zu editionskritischen Inhalten ermöglicht werden. Je nach wissenschaftlichem Blickwinkel schließen sich divergierende Ebenen somit nicht aus, sondern eröffnen neue Potenziale. Der Vortrag von JÖRG WETTLAUFER (Göttingen) ging auf die Möglichkeiten des Semantic Webs für die digitale Editionswissenschaft ein. Anhand zahlreicher Tools und Initiativen (LOD, RDF/SPARQL, Wikidata) zeigte er beispielsweise, wie eine automatische Generierung von Verknüpfungen aussehen kann, wo aber auch gleichzeitig Defizite der Qualitätssicherung und Herausforderungen liegen. Mit einem musikwissenschaftlichen Beitrag brachte JOACHIM VEIT (Paderborn) eine weitere fachliche Facette der digitalen Editionswissenschaft ein. Anhand von ausgewählten Beispielen wurde die Umsetzung von Musikeditionen demonstriert und auch die verschiedenen Entwicklungsschritte von ersten Prototypen bis zum aktuellen Stand aufgezeigt. Es stellte sich heraus, dass insbesondere das Feld der Musikeditionen, hier vor allem im Bereich der Visualisierung, von den Digital Humanities profitiert. GERRIT BRÜNING (Frankfurt am Main) diskutierte in seinem Beitrag das Verhältnis von Material und dessen digitaler Aufbereitung anhand der digitalen Faust-Edition.[6] Er thematisierte dabei das Verhältnis von analoger und digitaler Edition hinsichtlich Standards und kanonischer Vorbilder, die hier beispielsweise im Fall der “Weimarer Ausgabe” vorliegen. Es wurde deutlich, dass das Digitale hier Lösungen für die differenzierte Darstellung (Text-Genese vs. Dokument-Genese) bieten kann. Auch das dritte Panel schloss mit der Kurzvorstellung aktueller Editionsprojekte. BRITTA KLOSTERBERG (Halle) präsentierte die Aufbereitung der Tagebücher im Francke-Portal. CLAUDIA BAMBERG und JOCHEN STROBER (beide Marburg) zeigten den aktuellen Stand und Perspektiven bei der Briefedition A. W. Schlegels. Den Abschluss markierte die Präsentation von FRANZISKA DIEHR (Göttingen) zu einem Editionsprojekt, das Maya-Hieroglyphentexte digital aufbereitet. Die Tagungsteilnehmer waren sich darin einig, dass die Editionswissenschaft auf vielfache Weise von den Digital Humanities profitiert und sich durch die digitalen Methoden neue Editionsvorhaben eröffnen. Die Plenumsdiskussionen zwischen der Tagungsleitung und den Keynotespeakern machte aber auch deutlich, dass die grundsätzlichen, an digitale Editionsvorhaben zu stellenden Qualitätsansprüche sich an den traditionellen Standards orientieren müssen. Diese Kombination stellt die Editoren aber auch die Infrastruktureinrichtungen vor neue Herausforderungen. Dabei wurden insbesondere in den Bereichen der Qualitätsmessung, der Nachhaltigkeit, der Dissemination und der Visualisierung noch weiteres Potenzial für zukünftige Tagungen ausgemacht. Aber gerade diese Ergebnisse zeigen, dass es keine Trennung von analogen und digitalen Editoren geben darf, sondern dass die erfolgreiche Metamorphose der Editionswissenschaft in das digitale Zeitalter eine gemeinsame Aufgabe ist.&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition der Funktion zur Tokenisierung</span>
+<span class="k">def</span> <span class="nf">tokenize_text</span><span class="p">(</span><span class="n">source_text</span><span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;]&quot;</span><span class="p">]:</span>
+        <span class="n">source_text</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">each</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            
+    <span class="n">lowered_text</span> <span class="o">=</span> <span class="n">source_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    
+    <span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">lowered_text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">tokenized_text</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tokenize_text</span><span class="p">(</span><span class="n">report</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definition der Funktion zur Segmentierung</span>
+<span class="k">def</span> <span class="nf">segment_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">segments</span><span class="p">):</span>
+    <span class="c1"># segmentation</span>
+    <span class="n">segmented_text</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">),</span> <span class="n">segments</span><span class="p">):</span>
+        <span class="n">segmented_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">segments</span><span class="p">])</span> <span class="c1"># i=0, 10, ...</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Das Ergebnis der Segmentierung ist eine Liste von Sublisten, </span>
+<span class="s1">    die maximal so lang sind wie per Parameter </span><span class="se">\&quot;</span><span class="s1">segments</span><span class="se">\&quot;</span><span class="s1"> spezifiziert: &quot; , &quot;</span><span class="se">\n</span><span class="s1">&quot; , segmented_text&#39;&#39;&#39;</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># insert newlines </span>
+    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">segmented_text</span><span class="p">:</span>
+        <span class="n">separator</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">each</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">separator</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das Ergebnis der Einfügung der Newlines sieht wie folgt aus: &quot;</span> <span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="p">,</span> <span class="n">segmented_text</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># transform list into single string     </span>
+    <span class="n">segments</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">segmented_text</span><span class="p">:</span>
+        <span class="n">segments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">each</span><span class="p">[:]))</span>
+    <span class="n">output_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">segments</span><span class="p">[:])</span>  
+
+    <span class="k">return</span> <span class="n">output_text</span>
+
+<span class="c1"># Aufruf der Funktionen</span>
+<span class="n">tokenized_text</span> <span class="o">=</span> <span class="n">tokenize_text</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="n">segmented_text</span> <span class="o">=</span> <span class="n">segment_text</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der segmentierte Text sieht dann so aus:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">segmented_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="losung-aufgabe-interaktives-programm-gestalten">
+<h2>Lösung: Aufgabe Interaktives Programm gestalten<a class="headerlink" href="#losung-aufgabe-interaktives-programm-gestalten" title="Permalink to this headline">¶</a></h2>
+<p>Schreiben Sie ein kleines interaktives Programm, das eine Liste von Namen erstellt, solange der:die Nutzer:in einen Eintrag hinzufügen möchte. Die Namen sollen als Tupel strukturiert sein und jeweils Vor- und Nachnamen enthalten. Zum Abschluss des Programms soll dem:der Nutzer:in die Liste bestehend aus Tupeln ausgegeben werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start programm with user input</span>
+<span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Möchten Sie ein Namensverzeichnis erstellen? (J = ja, N = nein) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># initialize empty list</span>
+<span class="n">list_of_names</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># add names to list if and as long as input_data equals yes</span>
+<span class="k">if</span> <span class="n">input_data</span> <span class="o">==</span> <span class="s2">&quot;j&quot;</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">input_data</span> <span class="o">==</span> <span class="s2">&quot;j&quot;</span><span class="p">:</span>
+        <span class="n">first_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie lautet der Vorname? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">last_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie lautet der Nachname? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">)</span> <span class="c1"># create immutable tuple </span>
+        <span class="n">list_of_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="c1"># add tuple to list</span>
+        <span class="n">input_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Möchten Sie einen weiteren Namen hinzufügen? (J = ja, N = nein) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+  <span class="c1"># final notice</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ihre Namensliste enthält die folgenden Einträge: </span><span class="si">{</span><span class="n">list_of_names</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">Vielen Dank! &quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Okay, dann nicht.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="losungen-aufgaben-sets">
+<h2>Lösungen: Aufgaben Sets<a class="headerlink" href="#losungen-aufgaben-sets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-anzahl-der-worter-in-einem-text-ermitteln">
+<h3>a) Anzahl der Wörter in einem Text ermitteln<a class="headerlink" href="#a-anzahl-der-worter-in-einem-text-ermitteln" title="Permalink to this headline">¶</a></h3>
+<p>Für diese Aufgabe benötigen wir Ihren in der <a class="reference internal" href="../ch03-komplexe-datenstrukturen/02-listen.html#aufgabe-text-preprocessing"><span class="std std-ref">vorherigen Zwischenaufgabe tokenisierten Text</span></a>. Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte <code class="docutils literal notranslate"><span class="pre">print</span></code>-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.</p>
+<p>Für die Bearbeitung dieser Aufgabe benötigen Sie <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen, <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingungen und die Lerninhalte zu Listen und Tupeln.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transform list into set</span>
+<span class="n">unique_words_report</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">)</span> 
+<span class="n">word_frequency_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">unique_words_report</span><span class="p">:</span>
+    <span class="n">word_count</span> <span class="o">=</span> <span class="n">tokenized_text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">word_frequency</span> <span class="o">=</span> <span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">word_count</span><span class="p">)</span>
+    <span class="n">word_frequency_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word_frequency</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">word_frequency_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Das Wort </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> kommt insgesamt </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">-mal im Tagungsbericht vor.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
+<h3>b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten<a class="headerlink" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten" title="Permalink to this headline">¶</a></h3>
+<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>. Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
+<p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher zu lesen ist der Text.</p>
+<p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren im vorherigen Abschnitt eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
+<span class="k">def</span> <span class="nf">compute_vocabulary_density</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parameter: list of strings</span>
+<span class="sd">    The function returns float indicating the vocabulary density of a given tokenized text.&quot;&quot;&quot;</span>
+    <span class="n">vocabulary_density</span> <span class="o">=</span>  <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vocabulary_density</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">compute_vocabulary_density</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="losung-aufgabe-einfache-frequenzanalyse">
+<span id="loesung-aufgabe-einfache-frequenzanalyse"></span><h2>Lösung: Aufgabe Einfache Frequenzanalyse<a class="headerlink" href="#losung-aufgabe-einfache-frequenzanalyse" title="Permalink to this headline">¶</a></h2>
+<p>Abschließend wollen wir auf Basis Ihres tokenisierten Textes ein kleines textanalytisches Programm gestalten, mit dem Sie die <a class="reference external" href="https://de.wikipedia.org/wiki/Absolute_H%C3%A4ufigkeit">absolute</a> und <a class="reference external" href="https://de.wikipedia.org/wiki/Relative_H%C3%A4ufigkeit">relative Frequenz</a> der in Ihrem Text enthaltenen Wörter ermitteln können. Die absolute Häufigkeit haben Sie bereits in der <a class="reference internal" href="../ch03-komplexe-datenstrukturen/04-sets.html#aufgaben-sets"><span class="std std-ref">Zwischenaufgabe zu den Sets</span></a> ermittelt. Jetzt wollen wir die Funktionalitäten von Dictionaries dafür nutzen.</p>
+<p>Als Basis benötigen Sie dazu wieder Ihren tokenisierten Text. Für die Berechnung der Frequenzen definieren Sie zwei Funktionen:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">count_absolute_frequency()</span></code></p>
+<ul>
+<li><p>Diese Funktion sollte ein Dictionary zurückgeben, das pro Wort (<em>key</em>) die Anzahl seines Vorkommens im Text (<em>value</em>) abspeichert.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count_relative_frequency()</span></code></p>
+<ul>
+<li><p>Diese Funktion sollte ein Dictionary zurückgeben, das die ermittelten absoluten Häufigkeiten ins Verhältnis zur Gesamtlänge des Textes setzt. Zusätzlich können Sie die so ermittelten Werte mit 1000 (zur Ermittlung der Häufigkeit pro 1000 Token) oder 100 (zur Ermittlung des prozentualen Anteils) multiplizieren, was die Vergleichbarkeit der ermittelten Werte zwischen verschieden langen Texten erleichtert.</p></li>
+</ul>
+</li>
+</ul>
+<p>Geben Sie sowohl die absoluten als auch die relativen Häufigkeiten für Ihren Text aus.</p>
+<p><strong>Hinweise:</strong></p>
+<ul class="simple">
+<li><p>Nutzen Sie Schleifen und Bedingungen</p></li>
+<li><p>Für die Berechnung bei der ersten Funktion können Sie sich an Ihrer Herangehensweise im Abschnitt über Sets orientieren; bei der zweiten Funktion helfen Division und Multiplikation</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
+
+<span class="c1"># Funktionen definieren</span>
+
+<span class="k">def</span> <span class="nf">count_absolute_frequency</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parameter: list of strings</span>
+<span class="sd">    The function returns a dictionary object containing the absolute frequency for</span>
+<span class="sd">    each unique token in a given text.&quot;&quot;&quot;</span>
+
+    <span class="c1"># initialize empty dictionary</span>
+    <span class="n">frequencies</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># compute absolute frequency</span>
+    <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokenized_text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">frequencies</span><span class="p">:</span>
+            <span class="n">frequencies</span><span class="p">[</span><span class="n">token</span><span class="p">]</span> <span class="o">=</span> <span class="n">frequencies</span><span class="p">[</span><span class="n">token</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">frequencies</span><span class="p">[</span><span class="n">token</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            
+    <span class="nb">print</span><span class="p">(</span><span class="n">frequencies</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">frequencies</span>
+
+<span class="k">def</span> <span class="nf">count_relative_frequency</span><span class="p">(</span><span class="n">frequency_dict</span><span class="p">,</span> <span class="n">tokenized_text</span><span class="p">,</span> <span class="n">multiplyer</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parameters: dictionary object of absolute frequencies; list of strings;</span>
+<span class="sd">    integer, which determines the value for calculating the relative frequency</span>
+<span class="sd">    (e.g. 100 for percentage or 1000 for &quot;per 1000 words&quot;) </span>
+<span class="sd">    The function returns a dictionary object containing the relative frequency for</span>
+<span class="sd">    each unique token in a given text.&quot;&quot;&quot;</span>
+
+    <span class="c1"># compute relative frequency</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">frequency_dict</span><span class="p">:</span>
+        <span class="n">frequency_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">frequency_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">))</span> <span class="o">*</span> <span class="n">multiplyer</span>
+    <span class="k">return</span> <span class="n">frequency_dict</span>
+
+<span class="c1"># Aufruf der Funktionen</span>
+
+<span class="n">absolute_frequencies_report</span> <span class="o">=</span> <span class="n">count_absolute_frequency</span><span class="p">(</span><span class="n">tokenized_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ergebnis der Berechnung der absoluten Häufigkeit:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">absolute_frequencies_report</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">relative_frequencies_report</span> <span class="o">=</span> <span class="n">count_relative_frequency</span><span class="p">(</span><span class="n">absolute_frequencies_report</span><span class="p">,</span> <span class="n">tokenized_text</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ergebnis der Berechnung der relativen Häufigkeit (in diesem Fall Prozent):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">relative_frequencies_report</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./ch-loesungen"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch02-programmablaeufe-strukturieren-loesungen.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lösungen zu den Aufgaben aus dem Abschnitt Programmabläufe strukturieren</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch04-dateien-verarbeiten-loesungen.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lösungen zu den Aufgaben aus dem Abschnitt Dateien verarbeiten</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By <a href="https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history">Digital History, Humboldt-Universität zu Berlin</a><br/>
+    
+        &copy; Copyright 2022.<br/>
+      <div class="extra_footer">
+        <div>
+<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
+</div>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
