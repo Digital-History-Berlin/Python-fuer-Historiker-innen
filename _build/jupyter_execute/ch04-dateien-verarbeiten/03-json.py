@@ -311,9 +311,9 @@ try:
 except:
     pass  
   
-file_list_1 = [('adliger_vergleich.txt', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/adliger_vergleich.txt'),
-             ('books.csv', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/books.csv'),
-             ('library.json', 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/library.json')]
+file_list_1 = [('adliger_vergleich.txt', 'https://raw.githubusercontent.com/Digital-History-Berlin/Python-fuer-Historiker-innen/main/ch04-dateien-verarbeiten/example_data/adliger_vergleich.txt'),
+             ('books.csv', 'https://raw.githubusercontent.com/Digital-History-Berlin/Python-fuer-Historiker-innen/main/ch04-dateien-verarbeiten/example_data/books.csv'),
+             ('library.json', 'https://raw.githubusercontent.com/Digital-History-Berlin/Python-fuer-Historiker-innen/main/ch04-dateien-verarbeiten/example_data/library.json')]
 
 for file_name, url in file_list_1:
     response = requests.get(url)
@@ -322,7 +322,7 @@ for file_name, url in file_list_1:
         f.write(response.text)
         
 file_list_2 = [1950, 2228, 2608, 2170, 2187, 2196]
-base_url = 'https://raw.githubusercontent.com/martindroege/jb-example-data/main/iiif-manifests/BnF.%20Departement%20des%20Manuscrits.%20Francais%20'
+base_url = 'https://github.com/Digital-History-Berlin/Python-fuer-Historiker-innen/blob/main/ch04-dateien-verarbeiten/example_data/iiif-manifests/BnF.%20Departement%20des%20Manuscrits.%20Francais%20'
 base_file_name = 'BnF. Departement des Manuscrits. Francais '
 
 for i in file_list_2:
