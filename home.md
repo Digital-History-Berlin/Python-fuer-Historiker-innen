@@ -1,5 +1,8 @@
 # Home
 
+*Python für Historiker:innen*
+*Ein anwendungsorientierter und interaktiver Einstieg*
+
 ````{div} full-width
 ```{figure} img/unter-den-linden-hiltmann-logo.jpg
 :class: full-width
@@ -18,4 +21,4 @@ Homepage: [Professur für Digital History an der Humboldt-Universität zu Berlin
 Blog: [Digital History Berlin. Digitale Geschichtswissenschaften an der Humboldt-Universität zu Berlin](https://dhistory.hypotheses.org/)
 
 
-Version 1.0 vom 24.04.2022
+Version 0.9 vom 13.04.2022
