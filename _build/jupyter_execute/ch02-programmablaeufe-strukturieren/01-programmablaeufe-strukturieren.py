@@ -38,7 +38,7 @@ print(f"Sie sparen {value} Euro und müssen noch {netto} Euro bezahlen.")
 # 
 # In dieser Einheit lernen Sie nun einige grundlegende Befehle kennen, mit denen Sie den Ablauf Ihrer Programme strukturieren können: Bedingte Anweisungen, Schleifen und Funktionen. 
 # 
-# Hintergrund: Oft wollen Sie Teile Ihres Programms nur dann ausführen lassen, wenn bestimmte Rahmenbedingungen herrschen -- bspw. wenn eine Variable einen bestimmten Wert hat. So könnten Sie die Berechnung im obigen Beispiel etwa von einem bestimmten Grundwert abhängig machen (das ist natürlich nur ein fiktives Szenario). An anderer Stelle sollen Teile Ihres Codes wiederholt ausgeführt werden, allerdings ohne, dass Sie die Anweisungen immer wieder mühevoll ausschreiben müssen. Das ist zum Beispiel relevant, wenn wir mehrere Dateien wie Textquellen verarbeiten wollen. Aber dazu erfahren Sie in späteren Kapiteln mehr.
+# Hintergrund: Oft wollen Sie Teile Ihres Programms nur dann ausführen lassen, wenn bestimmte Rahmenbedingungen herrschen -- bspw. wenn eine Variable einen bestimmten Wert hat. So könnten Sie die Berechnung im obigen Beispiel etwa von einem bestimmten Grundwert abhängig machen (das ist natürlich nur ein fiktives Szenario). An anderer Stelle sollen Teile Ihres Codes wiederholt ausgeführt werden, allerdings ohne, dass Sie die Anweisungen immer wieder mühevoll ausschreiben müssen. Das ist zum Beispiel relevant, wenn wir mehrere Dateien wie Textquellen verarbeiten wollen. Aber dazu erfahren Sie in [späteren Kapiteln](../ch04-dateien-verarbeiten/01-dateien-verarbeiten.ipynb) mehr.
 # 
 # In dieser Lektion lernen wir erst einmal die Konzepte der bedingten Anweisungen, Schleifen und Funktionen kennen.
 

@@ -75,7 +75,7 @@ print(5 == 5)
 print("42" == 42)
 
 
-# Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (`==`) verwendet werden, da, wie Sie im ersten Kapitel gelernt haben, das einfache Gleichheitszeichen (`=`) bereits für die Zuweisung von Werten zu Variablen reserviert ist.
+# Kontraintuitiv sind auf den ersten Blick vielleicht nur die letzten beiden Abfragen, die prüfen, ob zwei Werte identisch sind. Hier müssen zwei Gleichheitszeichen (`==`) verwendet werden, da, wie Sie im [ersten Kapitel](variablen-definieren) gelernt haben, das einfache Gleichheitszeichen (`=`) bereits für die Zuweisung von Werten zu Variablen reserviert ist.
 # 
 # Der Operator zur Prüfung der Ungleichheit hingegen besteht aus einem Ausrufezeichen gefolgt von einem einzelnen Gleichheitszeichen:
 

@@ -58,8 +58,6 @@ round(5.7823432)
 
 
 # **Was ist beim zweiten Beispiel passiert? Prüfen Sie ggf. den Datentyp.** 
-# 
-# *Ihre Antwort*
 
 # In[ ]:
 
@@ -69,7 +67,7 @@ round(5.7823432)
 
 # ## Komplexe Zahlen
 # 
-# Ein besonderer numerischer Datentyp sind die [komplexen Zahlen](https://en.wikipedia.org/wiki/Complex_number). Da dieser Datentyp in Szenarien, mit denen Historiker:innen programmatisch arbeiten, selten vorkommt, soll er an dieser Stelle nicht weiter erläutert werden - dennoch sollter dieser zumindest kurz erwähnt werden.
+# Ein besonderer numerischer Datentyp sind die [komplexen Zahlen](https://en.wikipedia.org/wiki/Complex_number). Da dieser Datentyp in Szenarien, mit denen Historiker:innen programmatisch arbeiten, selten vorkommt, soll er an dieser Stelle nicht weiter erläutert werden -- dennoch sollter dieser zumindest kurz erwähnt werden.
 
 # In[ ]:
 
@@ -128,9 +126,7 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 2 - 3
 
 
-# **Wofür stehen die Operatoren + und - in diesen Beispielen?** 
-# 
-# *Ihre Antwort*
+# **Wofür stehen die Operatoren + und - in diesen Beispielen?**
 
 # In[1]:
 
@@ -163,8 +159,6 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 
 # **Wofür stehen die Operatoren * und \*\* in diesen Beispielen?** 
-# 
-# *Ihre Antwort*
 
 # In[ ]:
 
@@ -196,9 +190,7 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 10 // 3
 
 
-# **Wodurch unterscheiden sich die Berechnungen mit / und //?** 
-# 
-# *Ihre Antwort*
+# **Wodurch unterscheiden sich die Berechnungen mit / und //?**
 
 # In[ ]:
 
@@ -225,8 +217,6 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 
 # **Erklären Sie die Funktionsweise des sog. Modulo-Operators:** 
-# 
-# *Ihre Antwort*
 
 # In[ ]:
 
@@ -265,8 +255,6 @@ str(30) * 2
 
 
 # **Erklären Sie, was in den einzelnen Codezeilen passiert ist:** 
-# 
-# *Ihre Antwort*
 
 # In[ ]:
 

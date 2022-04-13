@@ -3,7 +3,7 @@
 
 # # Vertiefung der Arbeit mit Strings
 # 
-# Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt,um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.
+# Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt, um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.
 # 
 # :::{note} 
 # Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.
@@ -117,7 +117,7 @@ concat_some_string = some_string.join("IN SERT")
 print(concat_some_string)
 
 
-# **Frage an Sie: Was ist bei dem Join-Vorgang passiert?** *Ihre Antwort*
+# **Frage an Sie: Was ist bei dem Join-Vorgang passiert?**
 
 # Die Join-Funktion kann auch auf leere Strings angewendet werden:
 

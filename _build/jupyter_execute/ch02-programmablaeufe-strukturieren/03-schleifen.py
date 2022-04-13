@@ -97,6 +97,7 @@ user_input = int(input("In welchem Jahr begann die Französische Revolution? "))
 # your code
 
 
+# (for-schleifen)=
 # ## [for-Schleifen](https://www.python-kurs.eu/python3_for-schleife.php)
 # `while`-Schleifen setzen Sie also ein, wenn Sie einen Codeblock so lange wiederholt ausführen wollen, wie eine Bedingung erfüllt ist. Was aber, wenn Sie bereits wissen, dass ein Codeblock nur eine bestimmte Anzahl von Malen wiederholt werden soll? In diesem Fall können Sie auf die `for`-Schleife zurückgreifen (im Deutschen gelegentlich auch als *Zählschleife* bezeichnet):
 

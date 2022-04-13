@@ -37,11 +37,13 @@ for element in "Textsequenz"
 
 # Diese Fehlermeldung zeigt uns nicht nur an, in welcher Zeile der Interpreter auf fehlerhaften Code gestoßen ist, sondern auch an welcher Stelle etwas nicht so gelaufen ist, wie es der Interpreter erwarten würde. Was fehlt hier?
 # 
-# Was wir hier sehen ist eine `for`-Schleife, die in Python nach einem ganz bestimmten Muster aufgebaut ist und dazu dient, in kontrollierter Weise eine Anweisung oder eine Gruppe von Anweisungen auszuführen. Sie entspricht dem folgenden Prinzip:
+# Was wir hier sehen ist eine [for-Schleife](for-Schleife), die in Python nach einem ganz bestimmten Muster aufgebaut ist und dazu dient, in kontrollierter Weise eine Anweisung oder eine Gruppe von Anweisungen auszuführen. Sie entspricht dem folgenden Prinzip:
 # 
-# `für jedes Element in einer Sequenz:
+# ```
+# für jedes Element in einer Sequenz:
 # 
-#         mach etwas (mit diesem Element)`
+#         mach etwas (mit diesem Element)
+# ```
 # 
 # Mit der `for`-Schleife können Sie also jedes Element eines sequenziellen Objekts, wie beispielsweise eine Zeichenkette, über die Zuweisung zu einer Variablen bearbeiten oder als Bedingung für eine Anweisung nutzen. Im nächsten Kapitel beschäftigen Sie sich ausführlicher damit. Was hier wichtig ist: Die Schleife muss korrekt aufgebaut sein, um ausgeführt werden zu können. Was in unserem obigen Codeblock fehlt, ist der Doppelpunkt, der zur Einleitung einer `for`-Schleife zwingend dazu gehört. Fügen wir ihn hinzu, dann wird alles korrekt ausgeführt:
 # 
