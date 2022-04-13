@@ -1,13 +1,9 @@
 # Home
 
-**Python für Historiker:innen**
-
-**Ein anwendungsorientierter und interaktiver Einstieg**
-
 ````{div} full-width
-```{figure} img/digital_history_header_UDL3.png
+```{figure} img/PythonHistoriker_innen_header_UDL7.png
 :class: full-width
-:alt: Humboldt-Universität zu Berlin Hauptgebäude mit Logo
+:alt: Humboldt-Universität zu Berlin Hauptgebäude mit Logo Digital History Berlin
 :width: 1600px
 :align: center
 ```
@@ -22,4 +18,4 @@ Homepage: [Professur für Digital History an der Humboldt-Universität zu Berlin
 Blog: [Digital History Berlin. Digitale Geschichtswissenschaften an der Humboldt-Universität zu Berlin](https://dhistory.hypotheses.org/)
 
 
-Version 0.9 vom 13.04.2022
+Version 0.10 vom 13.04.2022
