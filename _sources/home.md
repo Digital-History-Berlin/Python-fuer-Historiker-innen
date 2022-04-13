@@ -5,7 +5,7 @@
 **Ein anwendungsorientierter und interaktiver Einstieg**
 
 ````{div} full-width
-```{figure} img/unter-den-linden-hiltmann-logo.jpg
+```{figure} img/digital_history_header_UDL3.png
 :class: full-width
 :alt: Humboldt-Universität zu Berlin Hauptgebäude mit Logo
 :width: 1600px

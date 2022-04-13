@@ -1,7 +1,7 @@
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
 # Python für Historiker:innen
-## Ein anwendungsorientierter und interaktiver Einstieg
+**Ein anwendungsorientierter und interaktiver Einstieg**
 
 Das Jupyter Book richtet sich an Historiker:innen, die einen ersten anwendungsorientierten und interaktiven Einstieg in die Programmiersprache Python suchen. Neben den Grundlagen der Skriptsprache werden auch weitere Einsatzgebiete für Historiker:innen vorgestellt.
 
