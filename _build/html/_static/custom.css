@@ -1,5 +1,6 @@
 div, h1, h2, h3 {
-    font-family: Bahnschrift;
+    font-family: 'BAHNSCHRIFT';
+    src:url('../fonts/Bahnschrift-Font-Family/BAHNSCHRIFT.TTF');
     font-stretch: condensed;    
    }
 
