@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vertiefung der Arbeit mit Strings &#8212; Python für Historiker:innen</title>
+    <title>Arbeiten mit Strings &#8212; Python für Historiker:innen</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -107,30 +107,18 @@ const thebe_selector_output = ".output, .cell_output"
    Vorwort
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../ch00-preface/02-einfuehrung.html">
    Einführung
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ch00-preface/02a-installationsempfehlung.html">
-     Installationsempfehlung
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ch00-preface/02b-python-infos.html">
-     Infos zu Python
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../ch00-preface/03-nutzung.html">
+  <a class="reference internal" href="../ch00-preface/03-python-infos.html">
+   Infos zu Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch00-preface/04-nutzung.html">
    Nutzung dieses Jupyter Books
   </a>
  </li>
@@ -145,15 +133,15 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="01-atomare-datentypen.html">
    Atomare Datentypen
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="02-hallo-welt.html">
-     Hallo Welt!
+     Hallo, Welt!
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -167,18 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05-fehlermeldungen.html">
-     Fehlermeldungen
+    <a class="reference internal" href="06-aufgabe-skript-schreiben.html">
+     Erste Aufgabe
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-fehlermeldungen.html">
+   Fehlermeldungen
+  </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.html">
    Programmabläufe strukturieren
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -209,8 +202,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../ch03-komplexe-datenstrukturen/01-komplexe-datenstrukturen.html">
    Komplexe Datenstrukturen
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -241,8 +234,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../ch04-dateien-verarbeiten/01-dateien-verarbeiten.html">
    Dateien verarbeiten
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -287,8 +280,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../ch-loesungen/part01-python-basics-loesungen.html">
    Lösungen Python Basics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -306,6 +299,55 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../ch-loesungen/ch04-dateien-verarbeiten-loesungen.html">
      Kapitel Dateien verarbeiten
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Empfehlungen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-empfehlungen/01-installationsempfehlungen.html">
+   Installationsempfehlungen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-empfehlungen/02-zitierempfehlungen.html">
+   Zitationsvorschläge
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ch-empfehlungen/03-ressourcen.html">
+   Ressourcen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-empfehlungen/04-atomare-datentypen-ressourcen.html">
+     Atomare Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-empfehlungen/05-programmablaeufe-strukturieren-ressourcen.html">
+     Programmabläufe strukturieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-empfehlungen/06-komplexe-datentypen-ressourcen.html">
+     Komplexe Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ch-empfehlungen/07-dateien-verarbeiten-ressourcen.html">
+     Dateien verarbeiten
     </a>
    </li>
   </ul>
@@ -418,6 +460,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indizierung-und-slicing">
+   Indizierung und Slicing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lange-von-strings-bestimmen">
    Länge von Strings bestimmen
   </a>
@@ -479,7 +526,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Vertiefung der Arbeit mit Strings</h1>
+                <h1>Arbeiten mit Strings</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -489,6 +536,11 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indizierung-und-slicing">
+   Indizierung und Slicing
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lange-von-strings-bestimmen">
    Länge von Strings bestimmen
@@ -550,16 +602,90 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vertiefung-der-arbeit-mit-strings">
-<h1>Vertiefung der Arbeit mit Strings<a class="headerlink" href="#vertiefung-der-arbeit-mit-strings" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="arbeiten-mit-strings">
+<h1>Arbeiten mit Strings<a class="headerlink" href="#arbeiten-mit-strings" title="Permalink to this headline">¶</a></h1>
 <p>Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt, um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.</p>
 </div>
+<div class="section" id="indizierung-und-slicing">
+<h2>Indizierung und Slicing<a class="headerlink" href="#indizierung-und-slicing" title="Permalink to this headline">¶</a></h2>
+<p>Allerdings benötigten wir für die Begrüßung nur einen Teil der <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h. sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (<em>characters</em>). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über <strong>Indices</strong> direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das “e” beispielsweise durch den Ausdruck <code class="docutils literal notranslate"><span class="pre">my_variable[1]</span></code>.</p>
+<p>Wundern Sie sich darüber, warum der zweite Buchstabe in der Zeichenkette an der Indexposition “1” steht? Schauen wir uns den String genauer an:</p>
+<p><img alt="alt text" src="https://i.imgur.com/gGDkY0P.png" /></p>
+<p>Ein String ist von links nach rechts durchnummeriert. <strong>Achtung:</strong> Die Zählung beginnt allerdings bei 0! Zeichenketten können auch umgekehrt gelesen werden, also von rechts nach links. Dann fangen wir bei -1 an. Auf diese Weise ist jedes Zeichen direkt ansteuerbar - auch Satzzeichen oder Leerzeichen, sogenannte <em>whitespaces</em>. Für unsere interaktive Abwandlung des Hallo-Welt-Programms haben wir in der Ausgabefunktion nur einen ganz bestimmten Wertbereich ausgewählt und zwar <code class="docutils literal notranslate"><span class="pre">Hello,</span> </code>. Diesen Wertebereich können wir durch Nutzung der Indexpositionen ausschneiden (<em>slicing</em>).</p>
+<p>Wie bei der Indizierung benutzen wir für das <strong>Slicing</strong> eckige Klammern, statt einem Wert benötigen wir allerdings eine Start- und eine Endposition. Führen Sie die folgenden Slicing-Anweisungen aus und erklären Sie die Funktionsweise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_variable</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ihre Erklärung</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_variable</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ihre Erklärung</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_variable</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ihre Erklärung</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_variable</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ihre Erklärung</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_variable</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ihre Erklärung</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_variable</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ihre Erklärung</em></p>
+<p>Üben wir das Ausschneiden von Strings noch ein wenig.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
+<span class="s1">                  denn ohne dass er etwas Böses getan hätte, </span>
+<span class="s1">                  wurde er eines Morgens verhaftet.&#39;&#39;&#39;</span>
+
+<span class="c1"># schneiden Sie die Zeichenfolge &quot;Josef K.&quot; aus</span>
+
+
+<span class="c1"># schneiden Sie das letzte Wort aus</span>
+
+
+<span class="c1"># schneiden Sie ab &quot;denn&quot; (also mit d beginnend) jedes 3. Zeichen aus</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="lange-von-strings-bestimmen">
 <h2>Länge von Strings bestimmen<a class="headerlink" href="#lange-von-strings-bestimmen" title="Permalink to this headline">¶</a></h2>
-<p>Mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#len">len()</a> kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.</p>
+<p>Mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#len"><code class="docutils literal notranslate"><span class="pre">len()</span></code></a> kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
@@ -573,7 +699,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="zahlen">
 <h2>Zählen<a class="headerlink" href="#zahlen" title="Permalink to this headline">¶</a></h2>
-<p>Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.count">count()</a> kann gezählt werden, wie oft ein Element in dem Objekt vorhanden ist.</p>
+<p>Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.count"><code class="docutils literal notranslate"><span class="pre">count()</span></code></a> kann gezählt werden, wie oft ein Element in dem Objekt vorhanden ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">)</span>
@@ -591,7 +717,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="finden">
 <h2>Finden<a class="headerlink" href="#finden" title="Permalink to this headline">¶</a></h2>
-<p>Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.find">find()</a> kann ermittelt werden, an welcher Position im Objekt sich ein Element befindet. Die <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.index">Index-Funktion</a> funktioniert auf ganz ähnliche Weise, mit dem Unterschied, dass statt einer “-1” eine Fehlermeldung ausgegeben wird, wenn ein gesuchter String sich nicht in der Zeichenkette befindet.</p>
+<p>Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.find"><code class="docutils literal notranslate"><span class="pre">find()</span></code></a> kann ermittelt werden, an welcher Position im Objekt sich ein Element befindet. Die <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code>-Funktion</a> funktioniert auf ganz ähnliche Weise, mit dem Unterschied, dass statt einer “-1” eine Fehlermeldung ausgegeben wird, wenn ein gesuchter String sich nicht in der Zeichenkette befindet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">example_text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;u&quot;</span><span class="p">))</span>
@@ -628,7 +754,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="strings-ersetzen">
 <h2>Strings ersetzen<a class="headerlink" href="#strings-ersetzen" title="Permalink to this headline">¶</a></h2>
-<p>Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace">replace()</a> kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen Parameter verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen Variablen zugewiesen werden. Optional kann noch ein dritter Parameter, <em>count</em>, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll.</p>
+<p>Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a> kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen Parameter verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen Variablen zugewiesen werden. Optional kann noch ein dritter Parameter, <em>count</em>, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># replace old substring with new input</span>
@@ -662,7 +788,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="konkatenierung">
 <h2>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h2>
-<p>Die Zusammenfügung von Strings durch die “Addition” und “Multiplikation” haben wir nun schon kennengelernt. Es gibt noch eine weitere Variante, mit der Sie Zeichenketten auf eine sehr spezifische Weise verknüpfen können: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.join">join()</a>. Die Funktion wird auf ein String-Objekt angewendet und gibt eine Zeichenkette zurück, die um die Elemente eines sequenziellen Objekts angereichert wurde.</p>
+<p>Die Zusammenfügung von Strings durch die “Addition” und “Multiplikation” haben wir nun schon kennengelernt. Es gibt noch eine weitere Variante, mit der Sie Zeichenketten auf eine sehr spezifische Weise verknüpfen können: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.join"><code class="docutils literal notranslate"><span class="pre">join()</span></code></a>. Die Funktion wird auf ein String-Objekt angewendet und gibt eine Zeichenkette zurück, die um die Elemente eines sequenziellen Objekts angereichert wurde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate join-function</span>
@@ -674,7 +800,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p><strong>Frage an Sie: Was ist bei dem Join-Vorgang passiert?</strong></p>
-<p>Die Join-Funktion kann auch auf leere Strings angewendet werden:</p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">join()</span></code>-Funktion kann auch auf leere Strings angewendet werden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrate join-function with empty string</span>
@@ -698,7 +824,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Die nun ausgegebene Zeichenkette ist sehr lang. Sie zu lesen ist umständlich. Sie können durch das Einfügen von “\n” Zeilenumbrüche in Ihre Strings einbauen. Wandeln Sie das vorherige Beispiel so ab, dass zwischen dem ersten Satz von Kafkas “Der Prozeß” und dem ersten Satz von Dickens zwei Zeilenumbrüche erfolgen.</p>
+<p>Die nun ausgegebene Zeichenkette ist sehr lang. Sie zu lesen ist umständlich. Sie können durch das Einfügen von <code class="docutils literal notranslate"><span class="pre">\n</span></code> Zeilenumbrüche in Ihre Strings einbauen. Wandeln Sie das vorherige Beispiel so ab, dass zwischen dem ersten Satz von Kafkas “Der Prozeß” und dem ersten Satz von Dickens zwei Zeilenumbrüche erfolgen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -742,7 +868,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="ausgabe-formatieren">
 <h2>Ausgabe formatieren<a class="headerlink" href="#ausgabe-formatieren" title="Permalink to this headline">¶</a></h2>
-<p>Bislang sah die Ausgabe unserer Ergebnisse mit der Print-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diesen Abschnitt soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (“{}”) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
+<p>Bislang sah die Ausgabe unserer Ergebnisse mit der <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diesen Abschnitt soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
 <p><strong>Ein Beispiel:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -752,7 +878,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p><strong>f-strings</strong></p>
-<p>Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein ‘f’ vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden.</p>
+<p>Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein <code class="docutils literal notranslate"><span class="pre">f</span></code> vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Beispieltext &#39;</span><span class="si">{</span><span class="n">example_text</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">ist </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">)</span><span class="si">}</span><span class="s2"> Zeichen lang.&quot;</span><span class="p">)</span>
@@ -768,7 +894,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aufgabe-skript-uberarbeiten">
 <h2>Aufgabe: Skript überarbeiten<a class="headerlink" href="#aufgabe-skript-uberarbeiten" title="Permalink to this headline">¶</a></h2>
-<p>Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts <a class="reference internal" href="02-hallo-welt.html#aufgabe-skript-schreiben"><span class="std std-ref">konzipierte Skript</span></a> und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
+<p>Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts <a class="reference internal" href="06-aufgabe-skript-schreiben.html#aufgabe-skript-schreiben"><span class="std std-ref">konzipierte Skript</span></a> und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>

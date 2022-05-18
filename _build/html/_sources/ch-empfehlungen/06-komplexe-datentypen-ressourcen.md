@@ -1,1 +1,0 @@
-# Speziell für diese Übungseinheit empfehlen wir Ihnen die folgenden Ressourcen:
