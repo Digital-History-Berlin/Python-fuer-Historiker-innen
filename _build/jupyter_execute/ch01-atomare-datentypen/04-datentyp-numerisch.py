@@ -3,7 +3,7 @@
 
 # # Numerische Datentypen
 # 
-# Sie haben sich bereits eingehend mit dem Datentyp *string* auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von [numerischen Datentypen](https://docs.python.org/3/library/stdtypes.html#typesnumeric), die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion type() können wir die Information einfach in Python erfragen.
+# Sie haben sich bereits eingehend mit dem Datentyp *string* auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von [numerischen Datentypen](https://docs.python.org/3/library/stdtypes.html#typesnumeric), die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion `type()` können wir die Information einfach in Python erfragen.
 
 # In[ ]:
 
@@ -39,7 +39,7 @@ type(y)
 
 # Beachten Sie, dass in Python Dezimalzahlen mit einem Punkt und nicht mit einem Komma geschrieben werden.
 # 
-# Dezimalzahlen weisen nicht selten zahlreiche Nachkommastellen auf. Es kann dann gewünscht sein, diese durch Rundung zu verringern. Das können Sie mit der Funktion [round()](https://docs.python.org/3/library/functions.html#round) erledigen. Sie nimmt als erstes Argument den jeweiligen Wert, der gerundet werden soll, und optional als zweites Argument die Anzahl der gewünschten Nachkommastellen.
+# Dezimalzahlen weisen nicht selten zahlreiche Nachkommastellen auf. Es kann dann gewünscht sein, diese durch Rundung zu verringern. Das können Sie mit der Funktion [`round()`](https://docs.python.org/3/library/functions.html#round) erledigen. Sie nimmt als erstes Argument den jeweiligen Wert, der gerundet werden soll, und optional als zweites Argument die Anzahl der gewünschten Nachkommastellen.
 # 
 # **Zwei Beispiele:**
 
@@ -80,7 +80,7 @@ type(z)
 # (datentyp-aendern)=
 # ## Datentyp ändern
 # 
-# Wir hatten darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der Input-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.
+# Wir hatten darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der `input()`-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.
 # 
 # **Zum Beispiel:**
 
@@ -100,7 +100,7 @@ age_int = int(input("How old are you? "))
 print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 
-# Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen ([complex()](https://docs.python.org/3/library/functions.html#complex)), Strings ([str()](https://docs.python.org/3/library/functions.html#func-str)), Integers ([int()](https://docs.python.org/3/library/functions.html#int)) und Gleitkommazahlen ([float()](https://docs.python.org/3/library/functions.html#float)).
+# Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen ([`complex()`](https://docs.python.org/3/library/functions.html#complex)), Strings ([`str()`](https://docs.python.org/3/library/functions.html#func-str)), Integers ([`int()`](https://docs.python.org/3/library/functions.html#int)) und Gleitkommazahlen ([`float()`](https://docs.python.org/3/library/functions.html#float)).
 
 # ## Arithmetische Operatoren
 # 

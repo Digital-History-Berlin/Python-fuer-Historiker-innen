@@ -17,7 +17,7 @@
 print(not_defined_variable)
 
 
-# Die nun im Ausgabebereich angezeigte Fehlermeldung zeigt Ihnen zunächst, welche Art von Fehler vorliegt. Über den langen Pfeil (---->) werden Sie darauf hingewiesen, wo im Code der Interpreter auf den Fehler gestoßen ist. Darunter finden Sie eine knappe Erläuterung des Fehlertyps.
+# Die nun im Ausgabebereich angezeigte Fehlermeldung zeigt Ihnen zunächst, welche Art von Fehler vorliegt. Über den langen Pfeil (`---->`) werden Sie darauf hingewiesen, wo im Code der Interpreter auf den Fehler gestoßen ist. Darunter finden Sie eine knappe Erläuterung des Fehlertyps.
 # 
 # Was Ihnen die Fehlermeldung nun sagt, ist, dass Sie mit einer Variablen arbeiten, die bislang im Programmdurchlauf nicht definiert worden ist, d.h., es wurde ihr noch kein Wert zugewiesen, der Container ist also "leer". 
 # 
@@ -37,7 +37,7 @@ for element in "Textsequenz"
 
 # Diese Fehlermeldung zeigt uns nicht nur an, in welcher Zeile der Interpreter auf fehlerhaften Code gestoßen ist, sondern auch an welcher Stelle etwas nicht so gelaufen ist, wie es der Interpreter erwarten würde. Was fehlt hier?
 # 
-# Was wir hier sehen ist eine [for-Schleife](for-Schleife), die in Python nach einem ganz bestimmten Muster aufgebaut ist und dazu dient, in kontrollierter Weise eine Anweisung oder eine Gruppe von Anweisungen auszuführen. Sie entspricht dem folgenden Prinzip:
+# Was wir hier sehen ist eine `for`-Schleife, die in Python nach einem ganz bestimmten Muster aufgebaut ist und dazu dient, in kontrollierter Weise eine Anweisung oder eine Gruppe von Anweisungen auszuführen. Sie entspricht dem folgenden Prinzip:
 # 
 # ```
 # für jedes Element in einer Sequenz:

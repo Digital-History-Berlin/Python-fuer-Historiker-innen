@@ -7,12 +7,9 @@ parts:
     title: Vorwort
   - file: ch00-preface/02-einfuehrung.md
     title: Einführung
-    sections:
-    - file: ch00-preface/02a-installationsempfehlung.md
-      title: Installationsempfehlung
-    - file: ch00-preface/02b-python-infos.md
-      title: Infos zu Python
-  - file: ch00-preface/03-nutzung.md
+  - file: ch00-preface/03-python-infos.md
+    title: Infos zu Python
+  - file: ch00-preface/04-nutzung.md
     title: Nutzung dieses Jupyter Books
 - caption: Python Basics
   chapters:
@@ -20,13 +17,15 @@ parts:
     title: Atomare Datentypen
     sections:
     - file: ch01-atomare-datentypen/02-hallo-welt.ipynb
-      title: Hallo Welt!
+      title: Hallo, Welt!
     - file: ch01-atomare-datentypen/03-datentyp-strings.ipynb
       title: Strings
     - file: ch01-atomare-datentypen/04-datentyp-numerisch.ipynb
       title: Numerische Datentypen
-    - file: ch01-atomare-datentypen/05-fehlermeldungen.ipynb
-      title: Fehlermeldungen
+    - file: ch01-atomare-datentypen/06-aufgabe-skript-schreiben.ipynb
+      title: Erste Aufgabe
+  - file: ch01-atomare-datentypen/05-fehlermeldungen.ipynb
+    title: Fehlermeldungen
   - file: ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.ipynb
     title: Programmabläufe strukturieren
     sections: 
@@ -73,3 +72,20 @@ parts:
       title: Kapitel Komplexe Datenstrukturen
     - file: ch-loesungen/ch04-dateien-verarbeiten-loesungen.ipynb
       title: Kapitel Dateien verarbeiten
+- caption: Empfehlungen
+  chapters:
+  - file: ch-empfehlungen/01-installationsempfehlungen.md
+    title: Installationsempfehlungen
+  - file: ch-empfehlungen/02-zitierempfehlungen.md
+    title: Zitationsvorschläge
+  - file: ch-empfehlungen/03-ressourcen.md
+    title: Ressourcen
+    sections:
+    - file: ch-empfehlungen/04-atomare-datentypen-ressourcen.md
+      title: Atomare Datentypen
+    - file: ch-empfehlungen/05-programmablaeufe-strukturieren-ressourcen.md
+      title: Programmabläufe strukturieren
+    - file: ch-empfehlungen/06-komplexe-datentypen-ressourcen.md
+      title: Komplexe Datentypen
+    - file: ch-empfehlungen/07-dateien-verarbeiten-ressourcen.md
+      title: Dateien verarbeiten
