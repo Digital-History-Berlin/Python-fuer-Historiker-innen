@@ -5,10 +5,15 @@
 # 
 # Nachdem wir gelernt haben, wie man ein Programm schreibt, das Anweisungen erst dann ausführt, wenn gewisse Bedingungen erfüllt sind (oder eben auch nicht), wollen wir uns nun anschauen, was wir tun müssen, wenn wir bestimmte Arbeitsschritte wiederholt ausführen möchten. Dazu können wir uns die Schleifen-Funktionen von Python zu Nutze machen. Hiervon gibt es im Wesentlichen zwei Typen, die wir sehr häufig verwenden werden: die `while`- und die `for`-Schleifen.
 # 
+# :::{index} While-Schleife
+# :name: while-schleife
+# :::
+# 
 # ## [while-Schleifen](https://www.python-kurs.eu/python3_schleifen.php)
+# 
 # Schauen wir uns zunächst die `while`-Schleife an.
 # 
-# Mit einem `while`-Statement können wir einen Codeblock so lange ausführen wie die Bedingung der `while`-Anweisung den Wahrheitswert `True` ergibt. Strukturell sieht die `while`-Schleife den `if`-Statements sehr ähnlich: Wir benötigen ein Schlüsselwort und zwar das `while` und eine Bedingung, die einen Wahrheitswert ergibt, gefolgt von einem Doppelpunkt. In der nächsten Zeile schließt sich dann, mit einer Einrückung beginnend, ein Codeblock an, der in Abhängigkeit vom Wahrheitswert der `while`-Bedingung ausgeführt wird. `If` und `while` sehen demnach hinsichtlich ihres Aufbaus ähnlich aus, in Bezug auf ihr Verhalten unterscheiden sie sich allerdings deutlich.
+# Mit einem `while`-Statement können wir einen Codeblock so lange ausführen wie die Bedingung der `while`-Anweisung den {term}`Wahrheitswert` `True` ergibt. Strukturell sieht die `while`-Schleife den `if`-Statements sehr ähnlich: Wir benötigen ein {term}`Schlüsselwort` und zwar das `while` und eine Bedingung, die einen Wahrheitswert ergibt, gefolgt von einem Doppelpunkt. In der nächsten Zeile schließt sich dann, mit einer Einrückung beginnend, ein Codeblock an, der in Abhängigkeit vom Wahrheitswert der `while`-Bedingung ausgeführt wird. `If` und `while` sehen demnach hinsichtlich ihres Aufbaus ähnlich aus, in Bezug auf ihr Verhalten unterscheiden sie sich allerdings deutlich.
 # 
 # Sehen wir uns dazu diese Schleife an:
 
@@ -27,17 +32,19 @@ print(f"my_number = {my_number}")
 
 
 # Die `while`-Schleife ist genau wie eine `if`-Abfrage aufgebaut. Die Zeile hinter dem Schlüsselbegriff `while` muss also entweder den Wert `True` oder `False` annehmen können. Das Programm kehrt jedoch nach jedem Durchlauf des eingerückten Codeblocks zum Kopf der Schleife (hier in Zeile 3) zurück und prüft ob die Abfrage immer noch `True` zurückgibt. Erst wenn dies nicht mehr der Fall ist, wird die Schleife beendet und das Programm springt zu Zeile 9.
-
-# Aber Vorsicht! `While`-Schleifen können ganz schön tricky sein, wenn wir nicht dafür sorgen, dass der Wahrheitswert der `while`-Bedingung irgendwann auf `False` springt. Vier zentrale Eigenschaften zeichnen einen Algorithmus aus: *Allgemeingültigkeit*, *Finitheit*, *Eindeutigkeit* und *Variabilität*. Insbesondere das Kriterium der *Finitheit* müssen Sie bei Schleifen im Hinterkopf behalten. Wenn Sie eine Schleife ohne Abbruchbedingung definieren, wird Ihr Programm immer weiterlaufen; wie etwa im nachfolgenden Beispiel:
-
-# :::{warning}
+# 
+# ::::{margin}
+# :::{admonition} Achtung!
+# :class: warning
 # Führen Sie den Code nur aus, wenn Sie wissen, wie Sie eine Endlosschleife abbrechen können!
 # :::
-
+# ::::
+# 
+# Aber Vorsicht! `While`-Schleifen können ganz schön tricky sein, wenn wir nicht dafür sorgen, dass der Wahrheitswert der `while`-Bedingung irgendwann auf `False` springt. Vier zentrale Eigenschaften zeichnen einen Algorithmus aus: *Allgemeingültigkeit*, *Finitheit*, *Eindeutigkeit* und *Variabilität*. Insbesondere das Kriterium der *Finitheit* müssen Sie bei Schleifen im Hinterkopf behalten. Wenn Sie eine Schleife ohne Abbruchbedingung definieren, wird Ihr Programm immer weiterlaufen; wie etwa im nachfolgenden Beispiel:
 # 
 # **Manueller Abbruch einer Endlosschleife:**
 # 
-# Jupyter Notebook: Sie können das Programm durch einen Klick auf den Ausführbutton links oben im Codeblock oder in der Menüleiste durch Runtime->Interrupt execution abbrechen.
+# Jupyter Notebook in Binder: Sie können das Programm durch einen Klick auf den Ausführbutton links oben im Codeblock oder in der Menüleiste durch Runtime->Interrupt execution abbrechen.
 # 
 # Jupyter Notebook über Anaconda Distribution: Stop-Symbol in der Werkzeugleiste.[^fn1])
 
@@ -54,7 +61,9 @@ print(f"my_number = {my_number}")
 
 # ## Aufgaben: While-Schleifen
 # 
-# **Aufgabe 1:** Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines [Tagungsberichts](https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&recno=2313&page=116&q=&sort=&fq=&total=8538) vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden. 
+# **Aufgabe 1:** 
+# 
+# Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines [Tagungsberichts](https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&recno=2313&page=116&q=&sort=&fq=&total=8538) vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden. 
 
 # In[ ]:
 
@@ -87,7 +96,9 @@ report = '''Die Editionswissenschaft erlebt nicht zuletzt wegen einer
 # your code
 
 
-# **Aufgabe 2: "Same but different":** Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß, oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
+# **Aufgabe 2:** 
+# 
+# Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
 
 # In[ ]:
 
@@ -97,6 +108,10 @@ user_input = int(input("In welchem Jahr begann die Französische Revolution? "))
 # your code
 
 
+# :::{index} For-Schleife
+# :name: for-schleife
+# :::
+# 
 # (for-schleifen)=
 # ## [for-Schleifen](https://www.python-kurs.eu/python3_for-schleife.php)
 # `while`-Schleifen setzen Sie also ein, wenn Sie einen Codeblock so lange wiederholt ausführen wollen, wie eine Bedingung erfüllt ist. Was aber, wenn Sie bereits wissen, dass ein Codeblock nur eine bestimmte Anzahl von Malen wiederholt werden soll? In diesem Fall können Sie auf die `for`-Schleife zurückgreifen (im Deutschen gelegentlich auch als *Zählschleife* bezeichnet):
@@ -110,6 +125,10 @@ for number in range(1, 11):
 print(f"number = {number}")
 
 
+# :::{index} single: Funktion ; range()
+# :name: range_
+# :::
+# 
 # Die Syntax ist hier etwas anders als bei `if` und `while`. Mit `number` wird eine Zählvariable definiert (die auch einen anderen Namen als `number` haben kann). Nach jedem Durchlauf der Schleife (also immer, wenn der eingerückte Codeblock einmal ausgeführt worden ist), wird diese Zählvariable automatisch um 1 erhöht. Hinter `in` wird ein Wertebereich angegeben. In diesem Fall handelt es sich um einen Wertebereich, der durch die Funktion `range()` definiert wird, Sie könnten dort aber auch beispielsweise eine Variable ansprechen, in der ein sequenzielles Objekt wie eine Zeichenkette oder Liste abgespeichert ist. Solange jedenfalls die Zählvariable einen Wert innerhalb dieses Wertebereichs hat, wird die Schleife wiederholt. Natürlichsprachlich könnten Sie Zeile 1 lesen als "Wiederhole folgenden Codeblock solange `number` kleiner als 11 ist. Erhöhe bei jedem Durchlauf `number` um 1."
 
 # Mit der Funktion `range()` können Sie auch angeben, in welchen Schritten die `for`-Schleife den Wertebereich durchlaufen soll. Wollen Sie `number` etwa nicht um 1, sondern um 2 erhöhen, können Sie das wie folgt angeben:
@@ -138,7 +157,7 @@ print(f"number = {number}")
 
 # Beachten Sie, dass Sie eine `for`-Schleife auch problemlos mit einer `while`-Schleife implementieren können. Das erste Codebeispiel zur `for`-Schleife ist identisch mit dem ersten Codebeispiel der `while`-Schleife etwas weiter oben. Wo möglich, sollten Sie jedoch `for`-Schleifen einsetzen. Dadurch wird Ihr Code nicht nur kürzer, sondern auch leichter verständlich. Wie Sie später sehen werden, lassen sich `for`-Schleifen in vielen Fällen außerdem wesentlich flexibler einsetzen.
 
-# Gelegentlich kann es sein, dass Sie eine Schleife abbrechen möchten, obwohl ihre eigene Abbruchbedingung noch nicht erfüllt ist, etwa wenn Sie in unserem Beispiel verhindern wollen, dass es zur Überlastung des Systems durch eine zu hohe Usereingabe kommt. Nehmen wir dazu noch mal unser letztes Programm, fügen aber die Bedingung hinzu, dass die Schleife abbrechen soll, sobald `number` den Wert 21 annimmt. Hierfür benötigen Sie das Schlüsselwort `break`:
+# Gelegentlich kann es sein, dass Sie eine Schleife abbrechen möchten, obwohl ihre eigene Abbruchbedingung noch nicht erfüllt ist, etwa wenn Sie in unserem Beispiel verhindern wollen, dass es zur Überlastung des Systems durch eine zu hohe Usereingabe kommt. Nehmen wir dazu noch mal unser letztes Programm, fügen aber die Bedingung hinzu, dass die Schleife abbrechen soll, sobald `number` den Wert 21 annimmt. Hierfür benötigen Sie das {term}`Schlüsselwort` `break`:
 
 # In[ ]:
 
@@ -158,8 +177,6 @@ print(f"number = {number}")
 
 # (aufgabe-primzahlen-ausgeben)=
 # ## Aufgabe: Primzahlen ausgeben
-# 
-# **Knobelaufgabe für Zahlenbegeisterte:** 
 # 
 # Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit `print()` alle [Primzahlen](https://de.wikipedia.org/wiki/Primzahl) zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Kapitel an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende [Schritt-für-Schritt-Anleitung](pseudocode) schreiben. Diese können Sie dann in Programmcode übersetzen.
 

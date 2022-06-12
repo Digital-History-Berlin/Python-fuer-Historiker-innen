@@ -3,15 +3,27 @@
 
 # # [Listen](https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists)
 # 
+# :::{index} Liste
+# :name: liste
+# ::: 
+# 
 # Im Alltag greifen wir häufig auf Sie zurück: ob zur Planung des Wocheneinkaufs, zur Erstellung von Gästelisten oder zur Organisation anstehender Aufgaben. Listen sind allgegenwärtig. 
 # 
-# Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. Im ersten Kapitel haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch *items* oder *Instanzen* genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Wenn eine Liste einer Variablen zugewiesen wird spricht man auch von *list value*. Ein solcher *list value* sieht wie folgt aus:
+# :::{index} list value
+# :name: list_value
+# ::: 
+# 
+# Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. Im ersten Kapitel haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten {term}`Sequenz` ab. Das können entweder singuläre {term}`Elemente` (auch {term}`items` oder {term}`Instanzen` genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Wenn eine Liste einer Variablen zugewiesen wird spricht man auch von *list value*. Ein solcher *list value* sieht wie folgt aus:
 # 
 # `[1, 2, 3, 4]`
 # 
+# :::{index} single: Liste ; erstellen
+# :name: liste_erstellen
+# :::
+# 
 # ## Listen erstellen
 # 
-# Analog zu Strings, die Sie an einfachen oder doppelten Anführungszeichen erkennen können, werden Anfang und Ende von Listen durch eckige Klammern angezeigt. Die einzelnen in der Liste enthaltenen Elemente bzw. *items* werden voneinander durch Kommata getrennt. Als Werte können beliebige Datentypen in den Listen gespeichert werden. Hier einige Beispiele:
+# Analog zu Strings, die Sie an einfachen oder doppelten Anführungszeichen erkennen können, werden Anfang und Ende von Listen durch eckige Klammern `[]` angezeigt. Die einzelnen in der Liste enthaltenen Elemente bzw. *items* werden voneinander durch Kommata getrennt. Als Werte können beliebige Datentypen in den Listen gespeichert werden. Hier einige Beispiele:
 
 # In[ ]:
 
@@ -39,6 +51,10 @@ print(book_titles)
 
 # Die Variable `book_titles` enthält neben Strings als Werten auch eine Liste und diese Liste wiederum enthält andere Werte vom Datentyp *string*. 
 # 
+# :::{index} single: Liste ; leere
+# :name: liste_leere
+# :::
+# 
 # Ebenso ist es möglich, ähnlich wie bei der Arbeit mit Strings, mit leeren Listen zu arbeiten. Dazu weisen Sie einer Variablen schlicht die beiden Indikatoren `[` und `]` für Listenobjekte zu:
 
 # In[ ]:
@@ -49,16 +65,22 @@ some_list = []
 print(some_list)
 
 
+# :::{index} single: Liste ; bearbeiten
+# :name: liste_bearbeiten
+# :::
+# 
 # ## Listen bearbeiten
 # 
-# Die Variable `some_list` enthält nun einen *list value*, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:
+# Die Variable `some_list` enthält nun einen list value, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:
 # - Konkatenierung mittels "+"-Operator
 # - `append()`
 # - `extend()`
 # - `insert()`
-# 
-# 
 
+# :::{index} single: Liste ; konkatenieren
+# :name: liste_konkatenieren
+# :::
+# 
 # ### Konkatenierung
 # 
 # Verschiedene Listen können durch sehr einfache Weise mittels des "+"-Operators zusammengefügt werden. 
@@ -74,9 +96,18 @@ book_titles = book_titles + another_list
 print(book_titles)
 
 
-# Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die Instanzen aus `another_list` an die Instanzen in `book_titles` angehängt und die Variable `book_titles` wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.
+# Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die {term}`Instanzen` aus `another_list` an die Instanzen in `book_titles` angehängt und die Variable `book_titles` wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.
 
+# :::{index} single: Liste ; append()
+# :name: append_
+# :::
+# 
+# :::{index} single: Liste ; extend()
+# :name: extend_
+# :::
+# 
 # ### `append()` und `extend()`
+# 
 # Die Methoden `append()` und `extend()` funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.
 
 # In[ ]:
@@ -99,7 +130,12 @@ print(some_list)
 
 # Mit `extend()` können Sie also direkt mehrere Elemente hinzufügen. Der Effekt ist dabei ähnlich dem der einfachen "Addition".
 
+# :::{index} single: Liste ; insert()
+# :name: insert_
+# :::
+# 
 # ### `insert()`
+# 
 # Dagegen fügt die `insert()`-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste: 
 
 # In[ ]:
@@ -111,8 +147,18 @@ book_titles.insert(2, input("""Geben Sie einen Buchtitel ein,
 print(book_titles)
 
 
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Auch bei Listen beginnt die Zählung stets bei 0.
+# :::
+# ::::
 # 
-# Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer:inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.
+# Wir übergeben der Funktion als {term}`Parameter` zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer:inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.
+# 
+# :::{index} single: Liste ; indizieren
+# :name: indizieren
+# :::
 # 
 # ## Indizieren
 # 
@@ -132,11 +178,9 @@ print("In der Coronakrise war \"" + book_titles[1] + "\" wieder auf der Bestsell
 print(f"{book_titles[-3]} und {book_titles[3]} kann ich wirklich empfehlen.")
 
 
-# Auf die einzelnen Werte an den verschiedenen Positionen in der Liste greifen Sie also vermittels eckiger Klammern zu, die an die entsprechende Variable gehängt wird. Das kennen Sie schon von Strings. `book_titles[0]` repräsentiert in diesem Beispiel die Zeichenkette `"Die Verwandlung"`. Das ermöglicht es Ihnen, mit einzelnen Elementen weiterzuarbeiten, beispielsweise um sie gezielt in andere Zeichenketten einzusetzen. Wie bei Strings können Listen dabei sowohl von links nach rechts, als auch von rechts nach links gelesen werden.
+# Auf die einzelnen Werte an den verschiedenen Positionen in der Liste greifen Sie also vermittels eckiger Klammern zu, die an die entsprechende Variable gehängt wird. Das kennen Sie schon von Strings. `book_titles[0]` repräsentiert in diesem Beispiel die Zeichenkette `Die Verwandlung`. Das ermöglicht es Ihnen, mit einzelnen Elementen weiterzuarbeiten, beispielsweise um sie gezielt in andere Zeichenketten einzusetzen. Wie bei Strings können Listen dabei sowohl von links nach rechts, als auch von rechts nach links gelesen werden.
 # 
 # Wie eingangs festgelegt enthält unsere Liste von Buchtiteln selbst wiederum eine Liste. Um auf die Werte in verschachtelten Instanzen zuzugreifen, können mehrere Indizes nacheinander genutzt werden. Der erste bezieht sich dann auf die Instanz in der "Mutterliste" und der zweite auf den Wert innerhalb dieses Listenelements:
-# 
-# 
 
 # In[ ]:
 
@@ -153,6 +197,10 @@ book_titles[-4][3] = "Harry Potter und der Feuerkelch"
 print(book_titles)
 
 
+# :::{index} IndexError
+# :name: indexerror
+# :::
+# 
 # Wenn Sie eine Indexposition adressieren die hingegen größer als die Länge der Liste ist, dann erhalten Sie einen `IndexError`, der Ihnen signalisiert, dass Sie über das Ziel hinaus geschossen sind.
 
 # In[ ]:
@@ -162,6 +210,10 @@ book_titles[-4][4] = "test"
 
 
 # Das weist bereits auf eine Schwierigkeit hin. Häufig kann es vorkommen, dass Sie mit unbekannten oder so umfangreichen Datensammlungen arbeiten, dass Sie gar nicht so genau ihre Ausmaße kennen.
+# 
+# :::{index} single: Liste ; len()
+# :name: list_len_
+# :::
 # 
 # ### Länge bestimmen
 # 
@@ -174,9 +226,13 @@ book_titles[-4][4] = "test"
 len(book_titles)
 
 
+# :::{index} single: Liste ; auf Elemente prüfen
+# :name: auf_elemente_prüfen
+# :::
+# 
 # ## Listen auf Elemente prüfen
 # 
-# Wenn Sie prüfen möchten, ob ein *item* in einer Liste enthalten ist, dann können Sie die Operatoren `in` und `not in` nutzen. Sie erhalten als Rückgabewert Boolesche Wahrheitswerte:
+# Wenn Sie prüfen möchten, ob ein *item* in einer Liste enthalten ist, dann können Sie die Operatoren `in` und `not in` nutzen. Sie erhalten als {term}`Rückgabewerte` eine Booleschen {term}`Wahrheitswert`:
 
 # In[ ]:
 
@@ -190,7 +246,7 @@ len(book_titles)
 "Kulturgeschichte" in book_titles
 
 
-# Die Prüfung des Vorkommens können Sie mit der Formulierung von bedingten Anweisungen kombinieren. Schreiben Sie ein kurzes `if-else-`Statement, das prüft, ob ein beliebiger Titel in der Liste `book_titles` vorhanden ist. Ist dies der Fall, soll eine entsprechende Mitteilung ausgegeben werden. Ist dies nicht der Fall, dann soll der Titel hinzugefügt werden.
+# Die Prüfung des Vorkommens können Sie mit der Formulierung von [bedingten Anweisungen](bedingte_anweisungen) kombinieren. Schreiben Sie ein kurzes `if-else-`Statement, das prüft, ob ein beliebiger Titel in der Liste `book_titles` vorhanden ist. Ist dies der Fall, soll eine entsprechende Mitteilung ausgegeben werden. Ist dies nicht der Fall, dann soll der Titel hinzugefügt werden.
 
 # In[ ]:
 
@@ -198,6 +254,10 @@ len(book_titles)
 # your code
 
 
+# :::{index} single: Liste ; index()
+# :name: list_index_
+# :::
+# 
 # Um zu ermitteln, an welcher Stelle ein Wert in einer Liste erstmals vorkommt, kann die `index()`-Funktion verwendet werden. 
 
 # In[ ]:
@@ -208,7 +268,11 @@ book_titles.index("Die Pest")
 
 # Da die Indizierung stets bei `0` beginnt, signalisiert Ihnen der Rückgabewert `1`, dass der Titel "Die Pest" sich an der zweiten Position in der Liste befindet. 
 # 
-# Optional kann der Funktion eine Start- und Endposition wie beim Slicing übergeben werden, um ggf. einen bestimmten Bereich zu definieren, in dem der Wert gefunden werden soll.
+# Optional kann der Funktion eine Start- und Endposition wie beim [Slicing](slicing) übergeben werden, um ggf. einen bestimmten Bereich zu definieren, in dem der Wert gefunden werden soll.
+# 
+# :::{index} single: Liste ; count()
+# :name: list_count_
+# :::
 # 
 # Mit der Methode `count()` kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein *integer*. Wir demonstrieren das hier anhand der weiter oben im Notebook definierten Liste `some_list`:
 
@@ -221,6 +285,10 @@ some_list.count("d")
 
 # Das Zeichen "d" kommt als *item* also insgesamt viermal in der Liste `some_list` vor.
 
+# :::{index} single: Liste ; slicing
+# :name: list_slicing
+# :::
+# 
 # ## Slicing
 # 
 # Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bei Strings bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.
@@ -245,6 +313,10 @@ some_list.count("d")
 # Ersetzen Sie die Titel zwei bis vier in book_titles durch neue Titel
 
 
+# :::{index} single: Liste ; remove()
+# :name: remove_
+# :::
+# 
 # ## Elemente entfernen
 # 
 # Freilich gibt es auch verschiedene Möglichkeiten um Instanzen aus Listen zu entfernen. 
@@ -259,7 +331,11 @@ some_list.remove("d")
 print(some_list.count("d"))
 
 
-# Per *default* entfernt `pop()` das letzte *item* einer Liste. Durch Angabe einer Indexposition können aber auch gezielt Elemente aus der Liste herausgelöst werden. 
+# :::{index} single: Liste ; pop()
+# :name: pop_
+# :::
+# 
+# Per {term}`default` entfernt `pop()` das letzte *item* einer Liste. Durch Angabe einer Indexposition können aber auch gezielt Elemente aus der Liste herausgelöst werden. 
 
 # In[ ]:
 
@@ -279,7 +355,11 @@ first_item = some_list.pop(0)
 print(first_item)
 
 
-# Zwar wird mit `pop()` die gewünschte Instanz aus der Liste entfernt, doch bietet die Funktion zusätzlich die Möglichkeit, mit der aus der Liste herausgelösten Instanz weiterzuarbeiten. 
+# Zwar wird mit `pop()` die gewünschte Instanz aus der Liste entfernt, doch bietet die Funktion zusätzlich die Möglichkeit, mit der aus der Liste herausgelösten Instanz weiterzuarbeiten.
+# 
+# :::{index} single: Liste ; clear()
+# :name: clear_
+# :::
 # 
 # Mit `clear()` werden alle Elemente einer Liste gelöscht:
 
@@ -291,6 +371,10 @@ print(some_list)
 
 
 # Das Resultat ist eine leere Liste, mit der bei Bedarf weiter gearbeitet werden kann.
+# 
+# :::{index} single: Liste ; del
+# :name: del_
+# :::
 # 
 # Das `del`-Statement verbindet einige dieser Funktionen und geht zum Teil noch darüber hinaus. Erklären Sie im vorgesehenen Kommentarbereich, was die nachfolgenden Anweisungen machen:
 
@@ -334,6 +418,10 @@ print(numbers)
 # 
 # In unserer ersten Zwischenaufgabe werden wir versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen-, sondern auf Wortebene.
 # 
+# :::{index} single: Funktion ; split()
+# :name: split_
+# :::
+# 
 # Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die `split()`-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine Zeichenfolge sein. Per default werden Strings anhand der *whitespaces*, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll. 
 
 # In[ ]:
@@ -369,7 +457,8 @@ tokenized_report = report.split()
 print(tokenized_report)
 
 
-# Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise *tokenisiert* werden. Das sogenannte [*tokenizing*](https://de.wikipedia.org/wiki/Tokenisierung) von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld [*Natural Language Processing*](https://en.wikipedia.org/wiki/Natural_language_processing). NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird. 
+# Mit der `split()`-Funktion können textuelle Daten auf eine sehr simple Weise *tokenisiert* werden. Das sogenannte [*tokenizing*](https://de.wikipedia.org/wiki/Tokenisierung) von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld [*Natural Language Processing*](https://en.wikipedia.org/wiki/Natural_language_processing). NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
+#  
 # Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten *Tokens* zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.
 
 # **Aufgabenstellung:**

@@ -34,7 +34,7 @@ netto = base - value
 print(f"Sie sparen {value} Euro und müssen noch {netto} Euro bezahlen.")
 
 
-# Den obigen Codeblock kennen Sie ja bereits aus einer der Aufgabe aus der ersten Lektion.
+# Den obigen Codeblock kennen Sie ja bereits aus einer der Aufgabe aus der [ersten Lektion](aufgabe-computer-als-taschenrechner).
 # 
 # In dieser Einheit lernen Sie nun einige grundlegende Befehle kennen, mit denen Sie den Ablauf Ihrer Programme strukturieren können: Bedingte Anweisungen, Schleifen und Funktionen. 
 # 
@@ -50,15 +50,3 @@ print(f"Sie sparen {value} Euro und müssen noch {netto} Euro bezahlen.")
 # * Was sind Schleifen?
 # * Was sind Funktionen?
 # * Was ist Pseudocode?
-# 
-# ## Ressourcen
-# 
-# Für diese Übungseinheit sind die folgenden Ressourcen zusätzlich hilfreich:
-# 
-# * [Automate the Boring Stuff: Flow Control](https://automatetheboringstuff.com/2e/chapter2/)
-# * [Automate the Boring Stuff: Functions](https://automatetheboringstuff.com/2e/chapter3/)
-# * [Hacking the Humanities](https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17) Episoden 7, 8 und 12
-# * [A Byte of Python: Control Flow](https://python.swaroopch.com/control_flow.html)
-# * [A Byte of Python: Functions](https://python.swaroopch.com/functions.html)
-
-# 

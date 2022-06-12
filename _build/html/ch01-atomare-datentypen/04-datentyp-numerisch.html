@@ -353,6 +353,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-appendix/01-glossar.html">
+   Glossar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -550,7 +567,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="numerische-datentypen">
 <h1>Numerische Datentypen<a class="headerlink" href="#numerische-datentypen" title="Permalink to this headline">¶</a></h1>
-<p>Sie haben sich bereits eingehend mit dem Datentyp <em>string</em> auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesnumeric">numerischen Datentypen</a>, die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion <code class="docutils literal notranslate"><span class="pre">type()</span></code> können wir die Information einfach in Python erfragen.</p>
+<p id="type">Sie haben sich bereits eingehend mit dem Datentyp <em>string</em> auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesnumeric">numerischen Datentypen</a>, die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion <code class="docutils literal notranslate"><span class="pre">type()</span></code> können wir die Information einfach in Python erfragen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># identify the datatype</span>
@@ -561,7 +578,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="ganzzahlen">
-<h2>Ganzzahlen<a class="headerlink" href="#ganzzahlen" title="Permalink to this headline">¶</a></h2>
+<span id="integers"></span><h2>Ganzzahlen<a class="headerlink" href="#ganzzahlen" title="Permalink to this headline">¶</a></h2>
 <p>Bei <em>integers</em> handelt es sich um ganze Zahlen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,6 +587,13 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="margin sidebar" id="floats">
+<p class="sidebar-title"></p>
+<div class="note admonition">
+<p class="admonition-title">Wichtig!</p>
+<p>Beachten Sie, dass in Python Dezimalzahlen mit einem Punkt und <strong><em>nicht</em></strong> mit einem Komma geschrieben werden.</p>
 </div>
 </div>
 </div>
@@ -585,8 +609,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Beachten Sie, dass in Python Dezimalzahlen mit einem Punkt und nicht mit einem Komma geschrieben werden.</p>
-<p>Dezimalzahlen weisen nicht selten zahlreiche Nachkommastellen auf. Es kann dann gewünscht sein, diese durch Rundung zu verringern. Das können Sie mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#round"><code class="docutils literal notranslate"><span class="pre">round()</span></code></a> erledigen. Sie nimmt als erstes Argument den jeweiligen Wert, der gerundet werden soll, und optional als zweites Argument die Anzahl der gewünschten Nachkommastellen.</p>
+<p id="round">Dezimalzahlen weisen nicht selten zahlreiche Nachkommastellen auf. Es kann dann gewünscht sein, diese durch Rundung zu verringern. Das können Sie mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#round"><code class="docutils literal notranslate"><span class="pre">round()</span></code></a> erledigen. Sie nimmt als erstes Argument den jeweiligen Wert, der gerundet werden soll, und optional als zweites Argument die Anzahl der gewünschten Nachkommastellen.</p>
 <p><strong>Zwei Beispiele:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -614,7 +637,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="komplexe-zahlen">
-<h2>Komplexe Zahlen<a class="headerlink" href="#komplexe-zahlen" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Komplexe Zahlen<a class="headerlink" href="#komplexe-zahlen" title="Permalink to this headline">¶</a></h2>
 <p>Ein besonderer numerischer Datentyp sind die <a class="reference external" href="https://en.wikipedia.org/wiki/Complex_number">komplexen Zahlen</a>. Da dieser Datentyp in Szenarien, mit denen Historiker:innen programmatisch arbeiten, selten vorkommt, soll er an dieser Stelle nicht weiter erläutert werden – dennoch sollter dieser zumindest kurz erwähnt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -628,7 +651,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="datentyp-andern">
 <span id="datentyp-aendern"></span><h2>Datentyp ändern<a class="headerlink" href="#datentyp-andern" title="Permalink to this headline">¶</a></h2>
-<p>Wir hatten darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.</p>
+<p>Wir hatten darauf hingewiesen, dass Variablen in Python <a class="reference internal" href="../ch-appendix/01-glossar.html#term-dynamisch-typisiert"><span class="xref std std-term">dynamisch typisiert</span></a> werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.</p>
 <p><strong>Zum Beispiel:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -648,10 +671,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex"><code class="docutils literal notranslate"><span class="pre">complex()</span></code></a>), Strings (<a class="reference external" href="https://docs.python.org/3/library/functions.html#func-str"><code class="docutils literal notranslate"><span class="pre">str()</span></code></a>), Integers (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int"><code class="docutils literal notranslate"><span class="pre">int()</span></code></a>) und Gleitkommazahlen (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float"><code class="docutils literal notranslate"><span class="pre">float()</span></code></a>).</p>
+<span class="target" id="complex"></span><span class="target" id="str"></span><span class="target" id="int"></span><p id="float">Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex"><code class="docutils literal notranslate"><span class="pre">complex()</span></code></a>), Strings (<a class="reference external" href="https://docs.python.org/3/library/functions.html#func-str"><code class="docutils literal notranslate"><span class="pre">str()</span></code></a>), Integers (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int"><code class="docutils literal notranslate"><span class="pre">int()</span></code></a>) und Gleitkommazahlen (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float"><code class="docutils literal notranslate"><span class="pre">float()</span></code></a>).</p>
 </div>
 <div class="section" id="arithmetische-operatoren">
-<h2>Arithmetische Operatoren<a class="headerlink" href="#arithmetische-operatoren" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Arithmetische Operatoren<a class="headerlink" href="#arithmetische-operatoren" title="Permalink to this headline">¶</a></h2>
 <p>Python kann ganz einfach genutzt werden, um einfache und auch komplexere mathematische Berechnungen zu lösen. Sie können die Programmierumgebung gewissermaßen wie einen Taschenrechner benutzen oder kleine Programme schreiben, die Ihnen wiederkehrende Aufgaben, wie beispielsweise Prozentrechnung, abnehmen.</p>
 <p>Probieren Sie zunächst die nachfolgenden Berechnungen aus und erklären Sie, wofür die mathematischen Symbole (Operatoren) stehen. Sie werden feststellen, dass wir einige der Operatoren auch bei der Arbeit mit Zeichenketten genutzt haben.</p>
 <div class="cell docutils container">
@@ -829,7 +852,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="aufgabe-der-computer-als-taschenrechner">
-<h2>Aufgabe: Der Computer als Taschenrechner<a class="headerlink" href="#aufgabe-der-computer-als-taschenrechner" title="Permalink to this headline">¶</a></h2>
+<span id="aufgabe-computer-als-taschenrechner"></span><h2>Aufgabe: Der Computer als Taschenrechner<a class="headerlink" href="#aufgabe-der-computer-als-taschenrechner" title="Permalink to this headline">¶</a></h2>
 <p>Zum Abschluss dieser Lektion sollen Sie ein kleines Skript schreiben, das eine einfache mathematische Rechnung enthält. In welcher Form Sie diese integrieren bleibt Ihnen überlassen. Ihr Programmcode sollte zudem mindestens eine Eingabe-Funktion sowie eine formatierte Ausgabe enthalten. Beziehen Sie außerdem nach eigenem Ermessen aus allen Lektionsinhalten Komponenten in Ihr Skript ein.</p>
 <p><strong>Ihre Lösung könnte zum Beispiel aussehen wie dieser einfache Prozentrechner:</strong></p>
 <div class="cell docutils container">
@@ -851,7 +874,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>Ihr Skript-Beispiel für die Lektion “Atomare Datentypen”:</strong></p>
+<p><strong>Ihr Skript:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>

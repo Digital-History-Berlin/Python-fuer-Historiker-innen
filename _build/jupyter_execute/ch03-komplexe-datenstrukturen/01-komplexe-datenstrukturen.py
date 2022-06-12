@@ -19,10 +19,3 @@
 # und schließlich sollten Sie am Ende des Kapitels dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten. 
 # 
 # In den folgenden Abschnitten erwarten Sie statt einer größeren Aufgabe mehrere kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Abschnitten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren. 
-# 
-# ## Ressourcen
-# 
-# Für diese Übungseinheit werden die folgenden Ressourcen zusätzlich empfohlen:
-# - [Hacking the Humanities](https://www.youtube.com/playlist?list=PL6kqrM2i6BPIpEF5yHPNkYhjHm-FYWh17): Episoden 6 und 9
-# - [Automate the Boring Stuff: Lists](https://automatetheboringstuff.com/2e/chapter4/)
-# - [Automate the Boring Stuff: Dictionaries and Structuring Data](https://automatetheboringstuff.com/2e/chapter5/)

@@ -353,6 +353,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-appendix/01-glossar.html">
+   Glossar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -531,8 +548,8 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="csv">
 <h1>CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="allgemeines">
-<h2>Allgemeines<a class="headerlink" href="#allgemeines" title="Permalink to this headline">¶</a></h2>
-<p>Ein weiteres Format zur strukturierten Speicherung von Daten, mit dem Sie als Historiker:innen oft zu tun haben, ist CSV (Comma Separated Values). Es dient der textbasierten Speicherung von Tabellen. Sicher sind Sie mit Exceldateien vertraut. “xls” ist jedoch ein proprietäres Format – CSV-Daten sind wesentlich interoperabler. Wie folgendes Beispiel zeigt, sind CSVs so strukturiert, dass eine Tabellen<em>zeile</em> durch eine Zeile dargestellt wird. Tabellen<em>spalten</em> sind dagegen durch ein Trennzeichen getrennt.</p>
+<span id="id1"></span><h2>Allgemeines<a class="headerlink" href="#allgemeines" title="Permalink to this headline">¶</a></h2>
+<p>Ein weiteres Format zur strukturierten Speicherung von Daten, mit dem Sie als Historiker:innen oft zu tun haben, ist CSV (Comma Separated Values). Es dient der textbasierten Speicherung von Tabellen. Sicher sind Sie mit Exceldateien vertraut. <code class="docutils literal notranslate"><span class="pre">.xls</span></code> ist jedoch ein <a class="reference internal" href="../ch-appendix/01-glossar.html#term-proprietares-Format"><span class="xref std std-term">proprietäres Format</span></a> – CSV-Daten sind wesentlich interoperabler. Wie folgendes Beispiel zeigt, sind CSVs so strukturiert, dass eine Tabellen<em>zeile</em> durch eine Zeile dargestellt wird. Tabellen<em>spalten</em> sind dagegen durch ein Trennzeichen getrennt.</p>
 <p><strong>Darstellung als Tabelle</strong></p>
 <table class="colwidths-auto table">
 <thead>
@@ -567,13 +584,20 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="mi">3</span><span class="p">;</span><span class="n">Network</span> <span class="n">Effect</span><span class="p">;</span><span class="n">Martha</span> <span class="n">Wells</span><span class="p">;</span><span class="mi">2020</span>
 </pre></div>
 </div>
-<p>(aus der Datei: example_data/books.csv)</p>
-<p>Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit “;” die wenigsten Probleme.</p>
+<p>(aus der Datei: <code class="docutils literal notranslate"><span class="pre">example_data/books.csv</span></code>)</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="note admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Beachten Sie bei <code class="docutils literal notranslate"><span class="pre">csv</span></code>-Dateien das Trennzeichen.</p>
+</div>
+</div>
+<p>Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit <code class="docutils literal notranslate"><span class="pre">;</span></code> die wenigsten Probleme.</p>
 <p>Sie können CSV-Dateien in allen gängigen Tabellenkalkulationsprogrammen (z.B. Microsoft Excel) öffnen und bearbeiten oder auch aus solchen Programmen CSVs exportieren.</p>
 </div>
 <div class="section" id="csvs-offnen-und-speichern">
 <h2>CSVs öffnen und speichern<a class="headerlink" href="#csvs-offnen-und-speichern" title="Permalink to this headline">¶</a></h2>
-<p>Ähnlich wie für JSON gibt es auch für CSVs Python-Programmbibliotheken, mit denen Sie Daten auslesen und neue CSV-Dateien erstellen können. In dieser Einheit besprechen wir nur die <a class="reference external" href="https://docs.python.org/3/library/csv.html">Standardbibliothek</a> von Python. Wie schon im vorherigen Abschnitt muss diese zuerst importiert werden.</p>
+<p id="csv-import">Ähnlich wie für JSON gibt es auch für CSVs Python-Programmbibliotheken, mit denen Sie Daten auslesen und neue CSV-Dateien erstellen können. In dieser Einheit besprechen wir nur die <a class="reference external" href="https://docs.python.org/3/library/csv.html">Standardbibliothek</a> von Python. Wie schon im vorherigen Abschnitt muss diese zuerst importiert werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
@@ -593,7 +617,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">reader()</span></code> funktioniert ähnlich wie <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>: Die Datei wird Zeile für Zeile ausgelesen; die einzelnen Zeilen können dann weiterverarbeitet werden. Wichtig ist hier der Paramter <code class="docutils literal notranslate"><span class="pre">delimiter</span></code>. Hier geben Sie an, welches Trennzeichen die CSV-Datei, die Sie öffnen wollen, verwendet. Wenn Sie mit fremden Daten arbeiten, öffnen Sie die CSV-Datei einfach kurz in einem Texteditor um herauszufinden, was Sie hier angeben müssen.</p>
+<p id="csv-reader">Die Funktion <code class="docutils literal notranslate"><span class="pre">reader()</span></code> funktioniert ähnlich wie <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>: Die Datei wird Zeile für Zeile ausgelesen; die einzelnen Zeilen können dann weiterverarbeitet werden. Wichtig ist hier der Paramter <code class="docutils literal notranslate"><span class="pre">delimiter</span></code>. Hier geben Sie an, welches Trennzeichen die CSV-Datei, die Sie öffnen wollen, verwendet. Wenn Sie mit fremden Daten arbeiten, öffnen Sie die CSV-Datei einfach kurz in einem Texteditor, um herauszufinden, was Sie hier angeben müssen.</p>
 <p>Wie Sie sehen, werden in diesem Fall die Zeilen als Listen ausgegeben, sodass Sie auf die einzelnen Zellen der Tabelle zugreifen können:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,7 +634,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Wenn Sie den Header nicht berücksichtigen wollen, können Sie ihn z.B. mit <code class="docutils literal notranslate"><span class="pre">next()</span></code> überspringen:</p>
+<p id="csv-next">Wenn Sie den Header, der die Namen der Tabellenspalten enthält, nicht berücksichtigen wollen, können Sie ihn z.B. mit <code class="docutils literal notranslate"><span class="pre">next()</span></code> überspringen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
@@ -628,7 +652,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Das Schreiben neuer CSV-Dateien funktioniert ebenfalls Zeile für Zeile. Hierbei müssen Sie für jede Zeile eine Liste erstellen, die Sie mit der Funktion <code class="docutils literal notranslate"><span class="pre">writerow()</span></code> zu einem neuen Dateiobjekt hinzufügen können. Bei Windows-Rechnern müssen Sie beim Öffnen der Datei den Parameter newline auf einen leeren String (“”) setzen, sonst wir nach jeder Zeile eine Leerzeile geschrieben.</p>
+<div class="margin sidebar" id="csv-writerow">
+<p class="sidebar-title"></p>
+<div class="note admonition">
+<p class="admonition-title">Wichtig!</p>
+<p>Bei Nutzung eines Windows-Betriebssystem muss der Parameter <code class="docutils literal notranslate"><span class="pre">newline=&quot;&quot;</span></code> lauten.</p>
+</div>
+</div>
+<p>Das Schreiben neuer CSV-Dateien funktioniert ebenfalls Zeile für Zeile. Hierbei müssen Sie für jede Zeile eine Liste erstellen, die Sie mit der Funktion <code class="docutils literal notranslate"><span class="pre">writerow()</span></code> zu einem neuen Dateiobjekt hinzufügen können. Bei Windows-Rechnern müssen Sie beim Öffnen der Datei den Parameter <code class="docutils literal notranslate"><span class="pre">newline</span></code> auf einen leeren String (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) setzen, sonst wird nach jeder Zeile eine Leerzeile geschrieben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/more_books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
@@ -653,10 +684,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Schauen Sie wieder im Ordner “example_data” nach: Finden Sie die Datei “more_books.csv” und enthält sie die gewünschten Informationen?</p>
+<p>Schauen Sie wieder im Ordner <code class="docutils literal notranslate"><span class="pre">example_data</span></code> nach: Finden Sie die Datei <code class="docutils literal notranslate"><span class="pre">more_books.csv</span></code> und enthält sie die gewünschten Informationen?</p>
 </div>
 <div class="section" id="dictreader-zum-arbeiten-mit-csvs">
-<h2>DictReader zum Arbeiten mit CSVs<a class="headerlink" href="#dictreader-zum-arbeiten-mit-csvs" title="Permalink to this headline">¶</a></h2>
+<span id="csv-dictreader"></span><h2>DictReader zum Arbeiten mit CSVs<a class="headerlink" href="#dictreader-zum-arbeiten-mit-csvs" title="Permalink to this headline">¶</a></h2>
 <p>Neben dieser Methode zum Bearbeiten von CSV-Dateien stellt die Python-Bibliothek noch die Möglichkeit bereit, CSVs als Dictionaries zu öffnen. Dies kann hilfreich sein, wenn Ihnen die genaue Position der Zellen nicht bekannt ist und Sie stattdessen mit den <em>Namen</em> der Spalten arbeiten möchten. Das Auslesen funktioniert dabei ähnlich wie oben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -670,7 +701,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Ebenso können Sie neue CSVs erstellen. Hier gehen Sie so vor, dass Sie für jede Tabellenzeile ein eigenes Dictionary vorbereiten. Wichtig ist dabei, dass Sie die Kopfzeile der Tabelle (die ja die Spaltennamen enthält) vorher in einer Liste definieren und dem DictWriter-Objekt als Parameter übergeben.</p>
+<p id="csv-dictwriter">Ebenso können Sie neue CSVs erstellen. Hier gehen Sie so vor, dass Sie für jede Tabellenzeile ein eigenes Dictionary vorbereiten. Wichtig ist dabei, dass Sie die Kopfzeile der Tabelle (die ja die Spaltennamen enthält) vorher in einer Liste definieren und dem DictWriter-Objekt als Parameter übergeben.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/more_books.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
@@ -679,7 +710,7 @@ const thebe_selector_output = ".output, .cell_output"
             <span class="s2">&quot;Autor&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Erscheinungsjahr&quot;</span><span class="p">,</span>
             <span class="s2">&quot;verfügbar&quot;</span><span class="p">]</span>
-    <span class="n">books_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">fieldnames</span> <span class="o">=</span> <span class="n">header</span><span class="p">)</span>
+    <span class="n">books_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
     <span class="n">books_writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
 
     <span class="n">more_input</span> <span class="o">=</span> <span class="kc">True</span>
@@ -707,7 +738,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Neben der von Python bereitgestellten csv-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>. Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek <code class="docutils literal notranslate"><span class="pre">csv</span></code> zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen.</p>
+<p>Neben der von Python bereitgestellten <code class="docutils literal notranslate"><span class="pre">csv</span></code>-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>. Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek <code class="docutils literal notranslate"><span class="pre">csv</span></code> zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen.</p>
 </div>
 <div class="section" id="aufgabe-daten-strukturiert-speichern">
 <h2>Aufgabe: Daten strukturiert speichern<a class="headerlink" href="#aufgabe-daten-strukturiert-speichern" title="Permalink to this headline">¶</a></h2>

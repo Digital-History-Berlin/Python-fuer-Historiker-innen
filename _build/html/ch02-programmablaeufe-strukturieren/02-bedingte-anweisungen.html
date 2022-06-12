@@ -353,6 +353,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-appendix/01-glossar.html">
+   Glossar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -550,8 +567,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="bedingte-anweisungen">
 <h1>Bedingte Anweisungen<a class="headerlink" href="#bedingte-anweisungen" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="boolesche-werte">
-<h2><a class="reference external" href="https://www.w3schools.com/python/python_booleans.asp">Boolesche Werte</a><a class="headerlink" href="#boolesche-werte" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="id1"></span><div class="section" id="boolesche-werte">
+<span id="booleans"></span><h2><a class="reference external" href="https://www.w3schools.com/python/python_booleans.asp">Boolesche Werte</a><a class="headerlink" href="#boolesche-werte" title="Permalink to this headline">¶</a></h2>
 <p>Nachdem Sie in der letzten Einheit schon einige Datentypen kennengelernt haben (<em>int</em>, <em>float</em>, <em>string</em> usw.), fügen wir nun dieser Liste noch einen Weiteren hinzu: den Datentyp <em>Boolean</em>. Er kann lediglich zwei Werte annehmen: <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code>. Sie können damit also sog. Wahrheitswerte abbilden. Benannt wurde dieser Datentyp übrigens nach <a class="reference external" href="https://de.wikipedia.org/wiki/George_Boole">George Boole</a>, der mit der <a class="reference external" href="https://de.wikipedia.org/wiki/Boolesche_Algebra">Booleschen Algebra</a> einen für die Computertechnik grundlegenden Zweig der Mathematik begründete.</p>
 <p>In Python können wir boolesche Variablen durch die bekannte Form der Zuweisung deklarieren:</p>
 <div class="cell docutils container">
@@ -565,7 +582,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>In den meisten Fällen werden wir uns diesen Datentyp aber zu Nutze machen, um zu prüfen, ob logische Aussagen richtig oder falsch sind … und das werden wir sehr häufig prüfen wollen. Oft möchten wir z.B. wissen, ob eine bestimmte Zeichenkette in einem Text auftaucht, dazu können wir das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">in</span></code> nutzen:</p>
+<p>In den meisten Fällen werden wir uns diesen Datentyp aber zu Nutze machen, um zu prüfen, ob <a class="reference internal" href="../ch-appendix/01-glossar.html#term-logische-Aussagen"><span class="xref std std-term">logische Aussagen</span></a> richtig oder falsch sind … und das werden wir sehr häufig prüfen wollen. Oft möchten wir z.B. wissen, ob eine bestimmte Zeichenkette in einem Text auftaucht, dazu können wir das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">in</span></code> nutzen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
@@ -589,8 +606,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="vergleichsoperatoren">
-<h2>Vergleichsoperatoren<a class="headerlink" href="#vergleichsoperatoren" title="Permalink to this headline">¶</a></h2>
-<p>Neben den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:</p>
+<span id="id2"></span><h2>Vergleichsoperatoren<a class="headerlink" href="#vergleichsoperatoren" title="Permalink to this headline">¶</a></h2>
+<p>Neben den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Wahrheitswert"><span class="xref std std-term">Wahrheitswert</span></a> die jeweiligen logischen Aussagen ergeben werden, also ob Sie <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># kleiner als; Notieren Sie sich vor der Ausführung des Codeblocks, </span>
@@ -632,14 +649,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
+<span class="target" id="bedingte-abfragen"></span><span class="target" id="if"></span></div>
 <div class="section" id="bedingte-abfragen-mit-if-elif-und-else">
-<h2><a class="reference external" href="https://www.python-kurs.eu/python3_bedingte_anweisungen.php">Bedingte Abfragen mit if, elif und else</a><a class="headerlink" href="#bedingte-abfragen-mit-if-elif-und-else" title="Permalink to this headline">¶</a></h2>
+<span id="else"></span><h2><a class="reference external" href="https://www.python-kurs.eu/python3_bedingte_anweisungen.php">Bedingte Abfragen mit if, elif und else</a><a class="headerlink" href="#bedingte-abfragen-mit-if-elif-und-else" title="Permalink to this headline">¶</a></h2>
 <p>Was können wir nun alles mit den Operatoren und den Datentypen, die wir bisher kennengelernt und in dieser Lektion noch kennenlernen werden, anstellen?</p>
 <p>Bisher haben wir unsere Programme vor allem als eine Abfolge von Instruktionen geschrieben:</p>
-<p><em>Weise einen Wert einer Variablen zu.</em></p>
+<blockquote class="epigraph">
+<div><p><em>Weise einen Wert einer Variablen zu.</em></p>
 <p><em>Addiere mehrere Werte und weise die Summe einer Variablen zu.</em></p>
 <p><em>Gib den Wert der Variablen aus … usw.</em></p>
+</div></blockquote>
 <p>Wirklich interessant wird es, wenn wir unsere Programme so gestalten, dass bestimmte Schritte nur dann ausgeführt werden, wenn etwaige Vorbedingungen erfüllt sind. Solche logischen Verzweigungen können wir mithilfe der eben kennengelernten Operatoren und Wahrheitswerte und den sogenannten <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfragen definieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -671,10 +690,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="note admonition">
+<p class="admonition-title">Wichtig!</p>
+<p>Nach dem Doppelpunkt einer <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage wird in der nächsten Zeile die Anweisung eingerückt.</p>
+</div>
+</div>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfragen können wir also eine klassische Wenn-Dann-(Andernfalls-)Bedingung formalisieren:</p>
-<p><em>Wenn die Bedingung “sub_string ist in example_text” wahr ist, dann gib die Meldung aus, dass die Zeichenkette im Beispieltext enthalten ist. Optional: Wenn die Bedingung nicht erfüllt ist, dann gib eine Meldung aus, dass die Zeichenkette nicht im Beispieltext enthalten ist.</em></p>
+<blockquote class="epigraph">
+<div><p><em>Wenn die Bedingung “sub_string ist in example_text” wahr ist, dann gib die Meldung aus, dass die Zeichenkette im Beispieltext enthalten ist. Optional: Wenn die Bedingung nicht erfüllt ist, dann gib eine Meldung aus, dass die Zeichenkette nicht im Beispieltext enthalten ist.</em></p>
+</div></blockquote>
 <p>Beachten Sie dabei aber bitte die Einrückungen, beispielsweise in Zeile 4. Die Einrückungen dienen nicht nur einer besseren Lesbarkeit, sondern bedeuten für den Python-Interpreter, dass die <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage und der nachfolgende eingerückte Code zusammengehören. Der nicht mehr eingerückte Code in Zeile 6 gehört nicht mehr zur <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage und wird immer ausgeführt; unabhängig davon, ob diese wahr oder falsch ist.</p>
-<p>Wenn Sie die Einrückung entfernen würden, ruft das den Indentation-Fehler hervor und Ihr Programm wird nicht ausgeführt:</p>
+<p>Wenn Sie die Einrückung entfernen würden, ruft das den <a class="reference internal" href="../ch01-atomare-datentypen/05-fehlermeldungen.html#indentationerror"><span class="std std-ref">Indentation-Fehler</span></a> hervor und Ihr Programm wird nicht ausgeführt:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;Geben Sie ein Wort ein, für das Sie prüfen wollen, </span>
@@ -728,7 +756,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Der Code in Zeile 21 gehört nicht mehr zur <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>-Abfrage und wird immer ausgeführt (solange kein Fehler im Code auftritt) – unabhängig davon, ob die Auswertung der Bedingungen wahr oder falsch ist.</p>
 </div>
 <div class="section" id="else-if-elif">
-<h2>Else-if: elif<a class="headerlink" href="#else-if-elif" title="Permalink to this headline">¶</a></h2>
+<span id="elif"></span><h2>Else-if: elif<a class="headerlink" href="#else-if-elif" title="Permalink to this headline">¶</a></h2>
 <p>Außerdem haben Sie die Möglichkeit, mehrere <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfragen in einem Block zusammenzufassen. So können wir zum Beispiel eine dritte Option zu unserer Abfrage hinzufügen, die den Fall behandelt, in dem beide Zeichenketten identisch sind. Verwenden Sie hierfür das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">elif</span></code> (kurz für “else if”). Die Syntax von <code class="docutils literal notranslate"><span class="pre">elif</span></code> ist identisch zu der von <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -759,11 +787,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Sie können beliebig viele <code class="docutils literal notranslate"><span class="pre">elif</span></code>-Abfragen hinzufügen, dabei ist aber grundsätzlich die Reihenfolge “if …, elif …, elif …, elif …, […], else” zu berücksichtigen.</p>
+<p>Sie können beliebig viele <code class="docutils literal notranslate"><span class="pre">elif</span></code>-Abfragen hinzufügen, dabei ist aber grundsätzlich die Reihenfolge “<code class="docutils literal notranslate"><span class="pre">if</span></code> …, <code class="docutils literal notranslate"><span class="pre">elif</span></code> …, <code class="docutils literal notranslate"><span class="pre">elif</span></code> …, <code class="docutils literal notranslate"><span class="pre">elif</span></code> …, […], <code class="docutils literal notranslate"><span class="pre">else</span></code>” zu berücksichtigen.</p>
 </div>
 <div class="section" id="bedingungen-verknupfen">
-<h2>Bedingungen verknüpfen<a class="headerlink" href="#bedingungen-verknupfen" title="Permalink to this headline">¶</a></h2>
-<p>Sie können in Ihren <code class="docutils literal notranslate"><span class="pre">if</span></code>-Blöcken auch mehrere Bedingungen gleichzeitig abfragen. Diese müssen Sie mit den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">and</span></code> oder <code class="docutils literal notranslate"><span class="pre">or</span></code> miteinander verknüpfen. Diese entsprechen dem logischen UND bzw. ODER. Wie sich die Kombination von <em>wahren</em> (w) und <em>falschen</em> (f) Aussagen mit UND bzw. ODER auf den Wahrheitswert der Gesamtaussage auswirkt, zeigt folgende Tabelle:</p>
+<span id="id3"></span><h2>Bedingungen verknüpfen<a class="headerlink" href="#bedingungen-verknupfen" title="Permalink to this headline">¶</a></h2>
+<p>Sie können in Ihren <code class="docutils literal notranslate"><span class="pre">if</span></code>-Blöcken auch mehrere Bedingungen gleichzeitig abfragen. Diese müssen Sie mit den Schlüsselwörtern <code class="docutils literal notranslate"><span class="pre">and</span></code> oder <code class="docutils literal notranslate"><span class="pre">or</span></code> miteinander verknüpfen. Diese entsprechen dem logischen UND bzw. ODER. Wie sich die Kombination von <em>wahren</em> (w) und <em>falschen</em> (f) Aussagen mit UND bzw. ODER auf den <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Wahrheitswert"><span class="xref std std-term">Wahrheitswert</span></a> der Gesamtaussage auswirkt, zeigt folgende Tabelle:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Aussage_1</p></th>
@@ -825,7 +853,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Durch Klammern können Sie verknüpfte Abfragen auch schachteln. Dann werden zuerst die Rückgabewerte der Abfragen in den Klammern zurückgegeben und erst anschließend mit anderen Abfragen verknüpft. Beachten Sie den Unterschied zwischen folgenden beiden Programmen:</p>
+<p>Durch Klammern können Sie verknüpfte Abfragen auch schachteln. Dann werden zuerst die <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Ruckgabewerte"><span class="xref std std-term">Rückgabewerte</span></a> der Abfragen in den Klammern zurückgegeben und erst anschließend mit anderen Abfragen verknüpft. Beachten Sie den Unterschied zwischen folgenden beiden Programmen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bool_1</span> <span class="o">=</span> <span class="kc">False</span>
@@ -866,7 +894,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aufgabe-bedingte-anweisungen">
 <h2>Aufgabe: Bedingte Anweisungen<a class="headerlink" href="#aufgabe-bedingte-anweisungen" title="Permalink to this headline">¶</a></h2>
-<p>Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene <code class="docutils literal notranslate"><span class="pre">print</span></code>-Kommandos ausgeführt werden: “Die Magna Carta stammt aus einem späteren Jahr.”, “Die Vereinbarungen stammen aus einem früheren Jahr.”, “Die Eingabe ist korrekt!”.
+<p>Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die <a class="reference external" href="https://de.wikipedia.org/wiki/Magna_Carta">Magna Carta</a> stammt. Abhängig von der Eingabe sollen verschiedene <code class="docutils literal notranslate"><span class="pre">print</span></code>-Kommandos ausgeführt werden: “Die Magna Carta stammt aus einem späteren Jahr.”, “Die Vereinbarungen stammen aus einem früheren Jahr.”, “Die Eingabe ist korrekt!”.
 Denken Sie dabei daran, dass Sie den Wert der <code class="docutils literal notranslate"><span class="pre">input</span></code>-Funktion in ein <code class="docutils literal notranslate"><span class="pre">integer</span></code> umwandeln müssen. Wie das geht, können Sie im <a class="reference internal" href="../ch01-atomare-datentypen/04-datentyp-numerisch.html#datentyp-aendern"><span class="std std-ref">ersten Kapitel</span></a> noch mal nachlesen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

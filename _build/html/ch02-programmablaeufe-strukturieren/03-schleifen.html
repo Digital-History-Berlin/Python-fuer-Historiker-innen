@@ -353,6 +353,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-appendix/01-glossar.html">
+   Glossar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -532,9 +549,9 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Schleifen<a class="headerlink" href="#schleifen" title="Permalink to this headline">¶</a></h1>
 <p>Nachdem wir gelernt haben, wie man ein Programm schreibt, das Anweisungen erst dann ausführt, wenn gewisse Bedingungen erfüllt sind (oder eben auch nicht), wollen wir uns nun anschauen, was wir tun müssen, wenn wir bestimmte Arbeitsschritte wiederholt ausführen möchten. Dazu können wir uns die Schleifen-Funktionen von Python zu Nutze machen. Hiervon gibt es im Wesentlichen zwei Typen, die wir sehr häufig verwenden werden: die <code class="docutils literal notranslate"><span class="pre">while</span></code>- und die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen.</p>
 <div class="section" id="while-schleifen">
-<h2><a class="reference external" href="https://www.python-kurs.eu/python3_schleifen.php">while-Schleifen</a><a class="headerlink" href="#while-schleifen" title="Permalink to this headline">¶</a></h2>
+<span id="while-schleife"></span><h2><a class="reference external" href="https://www.python-kurs.eu/python3_schleifen.php">while-Schleifen</a><a class="headerlink" href="#while-schleifen" title="Permalink to this headline">¶</a></h2>
 <p>Schauen wir uns zunächst die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife an.</p>
-<p>Mit einem <code class="docutils literal notranslate"><span class="pre">while</span></code>-Statement können wir einen Codeblock so lange ausführen wie die Bedingung der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Anweisung den Wahrheitswert <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt. Strukturell sieht die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife den <code class="docutils literal notranslate"><span class="pre">if</span></code>-Statements sehr ähnlich: Wir benötigen ein Schlüsselwort und zwar das <code class="docutils literal notranslate"><span class="pre">while</span></code> und eine Bedingung, die einen Wahrheitswert ergibt, gefolgt von einem Doppelpunkt. In der nächsten Zeile schließt sich dann, mit einer Einrückung beginnend, ein Codeblock an, der in Abhängigkeit vom Wahrheitswert der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Bedingung ausgeführt wird. <code class="docutils literal notranslate"><span class="pre">If</span></code> und <code class="docutils literal notranslate"><span class="pre">while</span></code> sehen demnach hinsichtlich ihres Aufbaus ähnlich aus, in Bezug auf ihr Verhalten unterscheiden sie sich allerdings deutlich.</p>
+<p>Mit einem <code class="docutils literal notranslate"><span class="pre">while</span></code>-Statement können wir einen Codeblock so lange ausführen wie die Bedingung der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Anweisung den <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Wahrheitswert"><span class="xref std std-term">Wahrheitswert</span></a> <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt. Strukturell sieht die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife den <code class="docutils literal notranslate"><span class="pre">if</span></code>-Statements sehr ähnlich: Wir benötigen ein <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Schlusselwort"><span class="xref std std-term">Schlüsselwort</span></a> und zwar das <code class="docutils literal notranslate"><span class="pre">while</span></code> und eine Bedingung, die einen Wahrheitswert ergibt, gefolgt von einem Doppelpunkt. In der nächsten Zeile schließt sich dann, mit einer Einrückung beginnend, ein Codeblock an, der in Abhängigkeit vom Wahrheitswert der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Bedingung ausgeführt wird. <code class="docutils literal notranslate"><span class="pre">If</span></code> und <code class="docutils literal notranslate"><span class="pre">while</span></code> sehen demnach hinsichtlich ihres Aufbaus ähnlich aus, in Bezug auf ihr Verhalten unterscheiden sie sich allerdings deutlich.</p>
 <p>Sehen wir uns dazu diese Schleife an:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -552,13 +569,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Die <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife ist genau wie eine <code class="docutils literal notranslate"><span class="pre">if</span></code>-Abfrage aufgebaut. Die Zeile hinter dem Schlüsselbegriff <code class="docutils literal notranslate"><span class="pre">while</span></code> muss also entweder den Wert <code class="docutils literal notranslate"><span class="pre">True</span></code> oder <code class="docutils literal notranslate"><span class="pre">False</span></code> annehmen können. Das Programm kehrt jedoch nach jedem Durchlauf des eingerückten Codeblocks zum Kopf der Schleife (hier in Zeile 3) zurück und prüft ob die Abfrage immer noch <code class="docutils literal notranslate"><span class="pre">True</span></code> zurückgibt. Erst wenn dies nicht mehr der Fall ist, wird die Schleife beendet und das Programm springt zu Zeile 9.</p>
-<p>Aber Vorsicht! <code class="docutils literal notranslate"><span class="pre">While</span></code>-Schleifen können ganz schön tricky sein, wenn wir nicht dafür sorgen, dass der Wahrheitswert der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Bedingung irgendwann auf <code class="docutils literal notranslate"><span class="pre">False</span></code> springt. Vier zentrale Eigenschaften zeichnen einen Algorithmus aus: <em>Allgemeingültigkeit</em>, <em>Finitheit</em>, <em>Eindeutigkeit</em> und <em>Variabilität</em>. Insbesondere das Kriterium der <em>Finitheit</em> müssen Sie bei Schleifen im Hinterkopf behalten. Wenn Sie eine Schleife ohne Abbruchbedingung definieren, wird Ihr Programm immer weiterlaufen; wie etwa im nachfolgenden Beispiel:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="warning admonition">
+<p class="admonition-title">Achtung!</p>
 <p>Führen Sie den Code nur aus, wenn Sie wissen, wie Sie eine Endlosschleife abbrechen können!</p>
 </div>
+</div>
+<p>Aber Vorsicht! <code class="docutils literal notranslate"><span class="pre">While</span></code>-Schleifen können ganz schön tricky sein, wenn wir nicht dafür sorgen, dass der Wahrheitswert der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Bedingung irgendwann auf <code class="docutils literal notranslate"><span class="pre">False</span></code> springt. Vier zentrale Eigenschaften zeichnen einen Algorithmus aus: <em>Allgemeingültigkeit</em>, <em>Finitheit</em>, <em>Eindeutigkeit</em> und <em>Variabilität</em>. Insbesondere das Kriterium der <em>Finitheit</em> müssen Sie bei Schleifen im Hinterkopf behalten. Wenn Sie eine Schleife ohne Abbruchbedingung definieren, wird Ihr Programm immer weiterlaufen; wie etwa im nachfolgenden Beispiel:</p>
 <p><strong>Manueller Abbruch einer Endlosschleife:</strong></p>
-<p>Jupyter Notebook: Sie können das Programm durch einen Klick auf den Ausführbutton links oben im Codeblock oder in der Menüleiste durch Runtime-&gt;Interrupt execution abbrechen.</p>
+<p>Jupyter Notebook in Binder: Sie können das Programm durch einen Klick auf den Ausführbutton links oben im Codeblock oder in der Menüleiste durch Runtime-&gt;Interrupt execution abbrechen.</p>
 <p>Jupyter Notebook über Anaconda Distribution: Stop-Symbol in der Werkzeugleiste.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -575,7 +595,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aufgaben-while-schleifen">
 <h2>Aufgaben: While-Schleifen<a class="headerlink" href="#aufgaben-while-schleifen" title="Permalink to this headline">¶</a></h2>
-<p><strong>Aufgabe 1:</strong> Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines <a class="reference external" href="https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&amp;recno=2313&amp;page=116&amp;q=&amp;sort=&amp;fq=&amp;total=8538">Tagungsberichts</a> vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden.</p>
+<p><strong>Aufgabe 1:</strong></p>
+<p>Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines <a class="reference external" href="https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&amp;recno=2313&amp;page=116&amp;q=&amp;sort=&amp;fq=&amp;total=8538">Tagungsberichts</a> vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
@@ -609,7 +630,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p><strong>Aufgabe 2: “Same but different”:</strong> Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß, oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.</p>
+<p><strong>Aufgabe 2:</strong></p>
+<p>Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_input</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;In welchem Jahr begann die Französische Revolution? &quot;</span><span class="p">))</span>
@@ -621,7 +643,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="for-schleifen">
-<span id="id2"></span><h2><a class="reference external" href="https://www.python-kurs.eu/python3_for-schleife.php">for-Schleifen</a><a class="headerlink" href="#for-schleifen" title="Permalink to this headline">¶</a></h2>
+<span id="for-schleife"></span><span id="id2"></span><h2><a class="reference external" href="https://www.python-kurs.eu/python3_for-schleife.php">for-Schleifen</a><a class="headerlink" href="#for-schleifen" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleifen setzen Sie also ein, wenn Sie einen Codeblock so lange wiederholt ausführen wollen, wie eine Bedingung erfüllt ist. Was aber, wenn Sie bereits wissen, dass ein Codeblock nur eine bestimmte Anzahl von Malen wiederholt werden soll? In diesem Fall können Sie auf die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife zurückgreifen (im Deutschen gelegentlich auch als <em>Zählschleife</em> bezeichnet):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,7 +655,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Die Syntax ist hier etwas anders als bei <code class="docutils literal notranslate"><span class="pre">if</span></code> und <code class="docutils literal notranslate"><span class="pre">while</span></code>. Mit <code class="docutils literal notranslate"><span class="pre">number</span></code> wird eine Zählvariable definiert (die auch einen anderen Namen als <code class="docutils literal notranslate"><span class="pre">number</span></code> haben kann). Nach jedem Durchlauf der Schleife (also immer, wenn der eingerückte Codeblock einmal ausgeführt worden ist), wird diese Zählvariable automatisch um 1 erhöht. Hinter <code class="docutils literal notranslate"><span class="pre">in</span></code> wird ein Wertebereich angegeben. In diesem Fall handelt es sich um einen Wertebereich, der durch die Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code> definiert wird, Sie könnten dort aber auch beispielsweise eine Variable ansprechen, in der ein sequenzielles Objekt wie eine Zeichenkette oder Liste abgespeichert ist. Solange jedenfalls die Zählvariable einen Wert innerhalb dieses Wertebereichs hat, wird die Schleife wiederholt. Natürlichsprachlich könnten Sie Zeile 1 lesen als “Wiederhole folgenden Codeblock solange <code class="docutils literal notranslate"><span class="pre">number</span></code> kleiner als 11 ist. Erhöhe bei jedem Durchlauf <code class="docutils literal notranslate"><span class="pre">number</span></code> um 1.”</p>
+<p id="range">Die Syntax ist hier etwas anders als bei <code class="docutils literal notranslate"><span class="pre">if</span></code> und <code class="docutils literal notranslate"><span class="pre">while</span></code>. Mit <code class="docutils literal notranslate"><span class="pre">number</span></code> wird eine Zählvariable definiert (die auch einen anderen Namen als <code class="docutils literal notranslate"><span class="pre">number</span></code> haben kann). Nach jedem Durchlauf der Schleife (also immer, wenn der eingerückte Codeblock einmal ausgeführt worden ist), wird diese Zählvariable automatisch um 1 erhöht. Hinter <code class="docutils literal notranslate"><span class="pre">in</span></code> wird ein Wertebereich angegeben. In diesem Fall handelt es sich um einen Wertebereich, der durch die Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code> definiert wird, Sie könnten dort aber auch beispielsweise eine Variable ansprechen, in der ein sequenzielles Objekt wie eine Zeichenkette oder Liste abgespeichert ist. Solange jedenfalls die Zählvariable einen Wert innerhalb dieses Wertebereichs hat, wird die Schleife wiederholt. Natürlichsprachlich könnten Sie Zeile 1 lesen als “Wiederhole folgenden Codeblock solange <code class="docutils literal notranslate"><span class="pre">number</span></code> kleiner als 11 ist. Erhöhe bei jedem Durchlauf <code class="docutils literal notranslate"><span class="pre">number</span></code> um 1.”</p>
 <p>Mit der Funktion <code class="docutils literal notranslate"><span class="pre">range()</span></code> können Sie auch angeben, in welchen Schritten die <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife den Wertebereich durchlaufen soll. Wollen Sie <code class="docutils literal notranslate"><span class="pre">number</span></code> etwa nicht um 1, sondern um 2 erhöhen, können Sie das wie folgt angeben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -659,7 +681,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Beachten Sie, dass Sie eine <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife auch problemlos mit einer <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife implementieren können. Das erste Codebeispiel zur <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleife ist identisch mit dem ersten Codebeispiel der <code class="docutils literal notranslate"><span class="pre">while</span></code>-Schleife etwas weiter oben. Wo möglich, sollten Sie jedoch <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen einsetzen. Dadurch wird Ihr Code nicht nur kürzer, sondern auch leichter verständlich. Wie Sie später sehen werden, lassen sich <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen in vielen Fällen außerdem wesentlich flexibler einsetzen.</p>
-<p>Gelegentlich kann es sein, dass Sie eine Schleife abbrechen möchten, obwohl ihre eigene Abbruchbedingung noch nicht erfüllt ist, etwa wenn Sie in unserem Beispiel verhindern wollen, dass es zur Überlastung des Systems durch eine zu hohe Usereingabe kommt. Nehmen wir dazu noch mal unser letztes Programm, fügen aber die Bedingung hinzu, dass die Schleife abbrechen soll, sobald <code class="docutils literal notranslate"><span class="pre">number</span></code> den Wert 21 annimmt. Hierfür benötigen Sie das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">break</span></code>:</p>
+<p>Gelegentlich kann es sein, dass Sie eine Schleife abbrechen möchten, obwohl ihre eigene Abbruchbedingung noch nicht erfüllt ist, etwa wenn Sie in unserem Beispiel verhindern wollen, dass es zur Überlastung des Systems durch eine zu hohe Usereingabe kommt. Nehmen wir dazu noch mal unser letztes Programm, fügen aber die Bedingung hinzu, dass die Schleife abbrechen soll, sobald <code class="docutils literal notranslate"><span class="pre">number</span></code> den Wert 21 annimmt. Hierfür benötigen Sie das <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Schlusselwort"><span class="xref std std-term">Schlüsselwort</span></a> <code class="docutils literal notranslate"><span class="pre">break</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Geben Sie eine natürliche Zahl größer 21 ein: &quot;</span><span class="p">))</span>
@@ -679,8 +701,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aufgabe-primzahlen-ausgeben">
 <span id="id3"></span><h2>Aufgabe: Primzahlen ausgeben<a class="headerlink" href="#aufgabe-primzahlen-ausgeben" title="Permalink to this headline">¶</a></h2>
-<p><strong>Knobelaufgabe für Zahlenbegeisterte:</strong></p>
-<p>Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> alle <a class="reference external" href="https://de.wikipedia.org/wiki/Primzahl">Primzahlen</a> zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Kapitel an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende <a class="reference internal" href="05-pseudocode.html#pseudocode"><span class="std std-ref">Schritt-für-Schritt-Anleitung</span></a> schreiben. Diese können Sie dann in Programmcode übersetzen.</p>
+<p>Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> alle <a class="reference external" href="https://de.wikipedia.org/wiki/Primzahl">Primzahlen</a> zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Kapitel an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende <a class="reference internal" href="05-pseudocode.html#id1"><span class="std std-ref">Schritt-für-Schritt-Anleitung</span></a> schreiben. Diese können Sie dann in Programmcode übersetzen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>

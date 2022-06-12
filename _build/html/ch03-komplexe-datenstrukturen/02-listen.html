@@ -353,6 +353,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-appendix/01-glossar.html">
+   Glossar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -636,12 +653,12 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="listen">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists">Listen</a><a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h1>
-<p>Im Alltag greifen wir häufig auf Sie zurück: ob zur Planung des Wocheneinkaufs, zur Erstellung von Gästelisten oder zur Organisation anstehender Aufgaben. Listen sind allgegenwärtig.</p>
-<p>Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. Im ersten Kapitel haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten Sequenz ab. Das können entweder singuläre Elemente (auch <em>items</em> oder <em>Instanzen</em> genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Wenn eine Liste einer Variablen zugewiesen wird spricht man auch von <em>list value</em>. Ein solcher <em>list value</em> sieht wie folgt aus:</p>
+<p id="liste">Im Alltag greifen wir häufig auf Sie zurück: ob zur Planung des Wocheneinkaufs, zur Erstellung von Gästelisten oder zur Organisation anstehender Aufgaben. Listen sind allgegenwärtig.</p>
+<p id="list-value">Im Coding-Kontext gehören sie zu den sequenziellen beziehungsweise iterierbaren Datentypen, d.h., dass jedes einzelne Element für sich genommen adressierbar ist. Im ersten Kapitel haben Sie bereits mit Strings gearbeitet, die ganz ähnlich funktionieren. Als Datentyp bilden Listen eine Vielzahl von Werten in einer geordneten <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Sequenz"><span class="xref std std-term">Sequenz</span></a> ab. Das können entweder singuläre <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Elemente"><span class="xref std std-term">Elemente</span></a> (auch <a class="reference internal" href="../ch-appendix/01-glossar.html#term-items"><span class="xref std std-term">items</span></a> oder <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Instanzen"><span class="xref std std-term">Instanzen</span></a> genannt) oder wiederum Listen sein (sie lassen sich beliebig tief verschachteln). Auf diese Weise lassen sich Daten hierarchisch strukturieren. Wenn eine Liste einer Variablen zugewiesen wird spricht man auch von <em>list value</em>. Ein solcher <em>list value</em> sieht wie folgt aus:</p>
 <p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code></p>
 <div class="section" id="listen-erstellen">
-<h2>Listen erstellen<a class="headerlink" href="#listen-erstellen" title="Permalink to this headline">¶</a></h2>
-<p>Analog zu Strings, die Sie an einfachen oder doppelten Anführungszeichen erkennen können, werden Anfang und Ende von Listen durch eckige Klammern angezeigt. Die einzelnen in der Liste enthaltenen Elemente bzw. <em>items</em> werden voneinander durch Kommata getrennt. Als Werte können beliebige Datentypen in den Listen gespeichert werden. Hier einige Beispiele:</p>
+<span id="liste-erstellen"></span><h2>Listen erstellen<a class="headerlink" href="#listen-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>Analog zu Strings, die Sie an einfachen oder doppelten Anführungszeichen erkennen können, werden Anfang und Ende von Listen durch eckige Klammern <code class="docutils literal notranslate"><span class="pre">[]</span></code> angezeigt. Die einzelnen in der Liste enthaltenen Elemente bzw. <em>items</em> werden voneinander durch Kommata getrennt. Als Werte können beliebige Datentypen in den Listen gespeichert werden. Hier einige Beispiele:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list containing integers </span>
@@ -668,7 +685,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Die Variable <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> enthält neben Strings als Werten auch eine Liste und diese Liste wiederum enthält andere Werte vom Datentyp <em>string</em>.</p>
-<p>Ebenso ist es möglich, ähnlich wie bei der Arbeit mit Strings, mit leeren Listen zu arbeiten. Dazu weisen Sie einer Variablen schlicht die beiden Indikatoren <code class="docutils literal notranslate"><span class="pre">[</span></code> und <code class="docutils literal notranslate"><span class="pre">]</span></code> für Listenobjekte zu:</p>
+<p id="liste-leere">Ebenso ist es möglich, ähnlich wie bei der Arbeit mit Strings, mit leeren Listen zu arbeiten. Dazu weisen Sie einer Variablen schlicht die beiden Indikatoren <code class="docutils literal notranslate"><span class="pre">[</span></code> und <code class="docutils literal notranslate"><span class="pre">]</span></code> für Listenobjekte zu:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assign empty list</span>
@@ -680,8 +697,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="listen-bearbeiten">
-<h2>Listen bearbeiten<a class="headerlink" href="#listen-bearbeiten" title="Permalink to this headline">¶</a></h2>
-<p>Die Variable <code class="docutils literal notranslate"><span class="pre">some_list</span></code> enthält nun einen <em>list value</em>, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:</p>
+<span id="liste-bearbeiten"></span><h2>Listen bearbeiten<a class="headerlink" href="#listen-bearbeiten" title="Permalink to this headline">¶</a></h2>
+<p>Die Variable <code class="docutils literal notranslate"><span class="pre">some_list</span></code> enthält nun einen list value, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:</p>
 <ul class="simple">
 <li><p>Konkatenierung mittels “+”-Operator</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">append()</span></code></p></li>
@@ -689,7 +706,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><code class="docutils literal notranslate"><span class="pre">insert()</span></code></p></li>
 </ul>
 <div class="section" id="konkatenierung">
-<h3>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h3>
+<span id="liste-konkatenieren"></span><h3>Konkatenierung<a class="headerlink" href="#konkatenierung" title="Permalink to this headline">¶</a></h3>
 <p>Verschiedene Listen können durch sehr einfache Weise mittels des “+”-Operators zusammengefügt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,10 +720,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die Instanzen aus <code class="docutils literal notranslate"><span class="pre">another_list</span></code> an die Instanzen in <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> angehängt und die Variable <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.</p>
-</div>
+<p>Die Ordnung der zusammengefügten Listenelemente ergibt sich aus der Formulierung der Konkatenierung. In diesem Fall werden die <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Instanzen"><span class="xref std std-term">Instanzen</span></a> aus <code class="docutils literal notranslate"><span class="pre">another_list</span></code> an die Instanzen in <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> angehängt und die Variable <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> wiederum mit dem aus der Konkatenierung resultierenden Listenobjekt überschrieben.</p>
+<span class="target" id="append"></span></div>
 <div class="section" id="append-und-extend">
-<h3><code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#append-und-extend" title="Permalink to this headline">¶</a></h3>
+<span id="extend"></span><h3><code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#append-und-extend" title="Permalink to this headline">¶</a></h3>
 <p>Die Methoden <code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code> funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -731,7 +748,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Mit <code class="docutils literal notranslate"><span class="pre">extend()</span></code> können Sie also direkt mehrere Elemente hinzufügen. Der Effekt ist dabei ähnlich dem der einfachen “Addition”.</p>
 </div>
 <div class="section" id="insert">
-<h3><code class="docutils literal notranslate"><span class="pre">insert()</span></code><a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">insert()</span></code><a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
 <p>Dagegen fügt die <code class="docutils literal notranslate"><span class="pre">insert()</span></code>-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -743,11 +760,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Wir übergeben der Funktion als Parameter zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer:inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="note admonition">
+<p class="admonition-title">Wichtig!</p>
+<p>Auch bei Listen beginnt die Zählung stets bei 0.</p>
+</div>
+</div>
+<p>Wir übergeben der Funktion als <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> zunächst die Zielposition innerhalb der Liste und dann den hinzuzufügenden Wert (hier durch eine Nutzer:inneneingabe, aber es kann natürlich auch direkt ein Wert oder eine Variable übergeben werden). Zu beachten ist, dass auch bei Listen die Zählung stets bei 0 beginnt. Die Indexposition 2 entspricht folglich dem dritten Wert innerhalb einer Liste. Dieses Schema dürfte Ihnen schon von den Zeichenketten bekannt sein.</p>
 </div>
 </div>
 <div class="section" id="indizieren">
-<h2>Indizieren<a class="headerlink" href="#indizieren" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Indizieren<a class="headerlink" href="#indizieren" title="Permalink to this headline">¶</a></h2>
 <p>Um nun auf die einzelnen Elemente zuzugreifen, können Sie folgerichtig ganz ähnliche Mechanismen wie bei der Arbeit mit Strings nutzen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -762,7 +786,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Auf die einzelnen Werte an den verschiedenen Positionen in der Liste greifen Sie also vermittels eckiger Klammern zu, die an die entsprechende Variable gehängt wird. Das kennen Sie schon von Strings. <code class="docutils literal notranslate"><span class="pre">book_titles[0]</span></code> repräsentiert in diesem Beispiel die Zeichenkette <code class="docutils literal notranslate"><span class="pre">&quot;Die</span> <span class="pre">Verwandlung&quot;</span></code>. Das ermöglicht es Ihnen, mit einzelnen Elementen weiterzuarbeiten, beispielsweise um sie gezielt in andere Zeichenketten einzusetzen. Wie bei Strings können Listen dabei sowohl von links nach rechts, als auch von rechts nach links gelesen werden.</p>
+<p>Auf die einzelnen Werte an den verschiedenen Positionen in der Liste greifen Sie also vermittels eckiger Klammern zu, die an die entsprechende Variable gehängt wird. Das kennen Sie schon von Strings. <code class="docutils literal notranslate"><span class="pre">book_titles[0]</span></code> repräsentiert in diesem Beispiel die Zeichenkette <code class="docutils literal notranslate"><span class="pre">Die</span> <span class="pre">Verwandlung</span></code>. Das ermöglicht es Ihnen, mit einzelnen Elementen weiterzuarbeiten, beispielsweise um sie gezielt in andere Zeichenketten einzusetzen. Wie bei Strings können Listen dabei sowohl von links nach rechts, als auch von rechts nach links gelesen werden.</p>
 <p>Wie eingangs festgelegt enthält unsere Liste von Buchtiteln selbst wiederum eine Liste. Um auf die Werte in verschachtelten Instanzen zuzugreifen, können mehrere Indizes nacheinander genutzt werden. Der erste bezieht sich dann auf die Instanz in der “Mutterliste” und der zweite auf den Wert innerhalb dieses Listenelements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -780,7 +804,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Wenn Sie eine Indexposition adressieren die hingegen größer als die Länge der Liste ist, dann erhalten Sie einen <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>, der Ihnen signalisiert, dass Sie über das Ziel hinaus geschossen sind.</p>
+<p id="indexerror">Wenn Sie eine Indexposition adressieren die hingegen größer als die Länge der Liste ist, dann erhalten Sie einen <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>, der Ihnen signalisiert, dass Sie über das Ziel hinaus geschossen sind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_titles</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
@@ -790,7 +814,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Das weist bereits auf eine Schwierigkeit hin. Häufig kann es vorkommen, dass Sie mit unbekannten oder so umfangreichen Datensammlungen arbeiten, dass Sie gar nicht so genau ihre Ausmaße kennen.</p>
 <div class="section" id="lange-bestimmen">
-<h3>Länge bestimmen<a class="headerlink" href="#lange-bestimmen" title="Permalink to this headline">¶</a></h3>
+<span id="list-len"></span><h3>Länge bestimmen<a class="headerlink" href="#lange-bestimmen" title="Permalink to this headline">¶</a></h3>
 <p>Das Ausmaß beziehungsweise die Länge einer Liste können Sie ganz einfach mit der Ihnen schon bekannten Methode <code class="docutils literal notranslate"><span class="pre">len()</span></code> ermitteln lassen. Probieren Sie es einmal mit der Ihnen bekannten Syntax aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -803,8 +827,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="listen-auf-elemente-prufen">
-<h2>Listen auf Elemente prüfen<a class="headerlink" href="#listen-auf-elemente-prufen" title="Permalink to this headline">¶</a></h2>
-<p>Wenn Sie prüfen möchten, ob ein <em>item</em> in einer Liste enthalten ist, dann können Sie die Operatoren <code class="docutils literal notranslate"><span class="pre">in</span></code> und <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> nutzen. Sie erhalten als Rückgabewert Boolesche Wahrheitswerte:</p>
+<span id="auf-elemente-prufen"></span><h2>Listen auf Elemente prüfen<a class="headerlink" href="#listen-auf-elemente-prufen" title="Permalink to this headline">¶</a></h2>
+<p>Wenn Sie prüfen möchten, ob ein <em>item</em> in einer Liste enthalten ist, dann können Sie die Operatoren <code class="docutils literal notranslate"><span class="pre">in</span></code> und <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> nutzen. Sie erhalten als <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Ruckgabewerte"><span class="xref std std-term">Rückgabewerte</span></a> eine Booleschen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Wahrheitswert"><span class="xref std std-term">Wahrheitswert</span></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Die Pest&quot;</span> <span class="ow">in</span> <span class="n">book_titles</span>
@@ -819,7 +843,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Die Prüfung des Vorkommens können Sie mit der Formulierung von bedingten Anweisungen kombinieren. Schreiben Sie ein kurzes <code class="docutils literal notranslate"><span class="pre">if-else-</span></code>Statement, das prüft, ob ein beliebiger Titel in der Liste <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> vorhanden ist. Ist dies der Fall, soll eine entsprechende Mitteilung ausgegeben werden. Ist dies nicht der Fall, dann soll der Titel hinzugefügt werden.</p>
+<p>Die Prüfung des Vorkommens können Sie mit der Formulierung von <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/02-bedingte-anweisungen.html#id1"><span class="std std-ref">bedingten Anweisungen</span></a> kombinieren. Schreiben Sie ein kurzes <code class="docutils literal notranslate"><span class="pre">if-else-</span></code>Statement, das prüft, ob ein beliebiger Titel in der Liste <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> vorhanden ist. Ist dies der Fall, soll eine entsprechende Mitteilung ausgegeben werden. Ist dies nicht der Fall, dann soll der Titel hinzugefügt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -827,7 +851,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Um zu ermitteln, an welcher Stelle ein Wert in einer Liste erstmals vorkommt, kann die <code class="docutils literal notranslate"><span class="pre">index()</span></code>-Funktion verwendet werden.</p>
+<p id="list-index">Um zu ermitteln, an welcher Stelle ein Wert in einer Liste erstmals vorkommt, kann die <code class="docutils literal notranslate"><span class="pre">index()</span></code>-Funktion verwendet werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">book_titles</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;Die Pest&quot;</span><span class="p">)</span>
@@ -836,8 +860,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Da die Indizierung stets bei <code class="docutils literal notranslate"><span class="pre">0</span></code> beginnt, signalisiert Ihnen der Rückgabewert <code class="docutils literal notranslate"><span class="pre">1</span></code>, dass der Titel “Die Pest” sich an der zweiten Position in der Liste befindet.</p>
-<p>Optional kann der Funktion eine Start- und Endposition wie beim Slicing übergeben werden, um ggf. einen bestimmten Bereich zu definieren, in dem der Wert gefunden werden soll.</p>
-<p>Mit der Methode <code class="docutils literal notranslate"><span class="pre">count()</span></code> kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein <em>integer</em>. Wir demonstrieren das hier anhand der weiter oben im Notebook definierten Liste <code class="docutils literal notranslate"><span class="pre">some_list</span></code>:</p>
+<p>Optional kann der Funktion eine Start- und Endposition wie beim <a class="reference internal" href="../ch01-atomare-datentypen/03-datentyp-strings.html#slicing"><span class="std std-ref">Slicing</span></a> übergeben werden, um ggf. einen bestimmten Bereich zu definieren, in dem der Wert gefunden werden soll.</p>
+<p id="list-count">Mit der Methode <code class="docutils literal notranslate"><span class="pre">count()</span></code> kann außerdem ermittelt werden, wie oft ein Element in einer Liste vorhanden ist. Als Rückgabewert erhalten wir ein <em>integer</em>. Wir demonstrieren das hier anhand der weiter oben im Notebook definierten Liste <code class="docutils literal notranslate"><span class="pre">some_list</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count occurence of item &quot;d&quot; in some_list</span>
@@ -849,7 +873,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Das Zeichen “d” kommt als <em>item</em> also insgesamt viermal in der Liste <code class="docutils literal notranslate"><span class="pre">some_list</span></code> vor.</p>
 </div>
 <div class="section" id="slicing">
-<h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
+<span id="list-slicing"></span><h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
 <p>Nicht nur der Zugriff auf Instanzen in Listen funktioniert auf dieselbe Weise wie bei Zeichenketten. Auch das Slicing, das Sie bei Strings bereits kennengelernt und angewendet haben, kann hier angewendet werden. Während Sie bei Strings dadurch einen Substring gewinnen, erhalten Sie bei Listen eine Subliste. Hierbei geben Sie wieder mindestens den Anfangs- und Startwert an sowie optional den Step.</p>
 <p>Probieren Sie es einmal anhand von <code class="docutils literal notranslate"><span class="pre">book_titles</span></code> aus:</p>
 <div class="cell docutils container">
@@ -873,7 +897,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="elemente-entfernen">
-<h2>Elemente entfernen<a class="headerlink" href="#elemente-entfernen" title="Permalink to this headline">¶</a></h2>
+<span id="remove"></span><h2>Elemente entfernen<a class="headerlink" href="#elemente-entfernen" title="Permalink to this headline">¶</a></h2>
 <p>Freilich gibt es auch verschiedene Möglichkeiten um Instanzen aus Listen zu entfernen.</p>
 <p>Mit der Methode <code class="docutils literal notranslate"><span class="pre">remove()</span></code> wird das <em>erste</em> Element in einer Liste entfernt, das mit dem der Methode übergebenen Parameter identisch ist:</p>
 <div class="cell docutils container">
@@ -884,7 +908,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Per <em>default</em> entfernt <code class="docutils literal notranslate"><span class="pre">pop()</span></code> das letzte <em>item</em> einer Liste. Durch Angabe einer Indexposition können aber auch gezielt Elemente aus der Liste herausgelöst werden.</p>
+<p id="pop">Per <a class="reference internal" href="../ch-appendix/01-glossar.html#term-default"><span class="xref std std-term">default</span></a> entfernt <code class="docutils literal notranslate"><span class="pre">pop()</span></code> das letzte <em>item</em> einer Liste. Durch Angabe einer Indexposition können aber auch gezielt Elemente aus der Liste herausgelöst werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">some_list</span><span class="p">)</span>
@@ -905,7 +929,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Zwar wird mit <code class="docutils literal notranslate"><span class="pre">pop()</span></code> die gewünschte Instanz aus der Liste entfernt, doch bietet die Funktion zusätzlich die Möglichkeit, mit der aus der Liste herausgelösten Instanz weiterzuarbeiten.</p>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">clear()</span></code> werden alle Elemente einer Liste gelöscht:</p>
+<p id="clear">Mit <code class="docutils literal notranslate"><span class="pre">clear()</span></code> werden alle Elemente einer Liste gelöscht:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">some_list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -915,7 +939,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Das Resultat ist eine leere Liste, mit der bei Bedarf weiter gearbeitet werden kann.</p>
-<p>Das <code class="docutils literal notranslate"><span class="pre">del</span></code>-Statement verbindet einige dieser Funktionen und geht zum Teil noch darüber hinaus. Erklären Sie im vorgesehenen Kommentarbereich, was die nachfolgenden Anweisungen machen:</p>
+<p id="del">Das <code class="docutils literal notranslate"><span class="pre">del</span></code>-Statement verbindet einige dieser Funktionen und geht zum Teil noch darüber hinaus. Erklären Sie im vorgesehenen Kommentarbereich, was die nachfolgenden Anweisungen machen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assign list</span>
@@ -957,9 +981,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="aufgabe-text-preprocessing">
-<span id="id1"></span><h2>Aufgabe: Text Preprocessing<a class="headerlink" href="#aufgabe-text-preprocessing" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Aufgabe: Text Preprocessing<a class="headerlink" href="#aufgabe-text-preprocessing" title="Permalink to this headline">¶</a></h2>
 <p>In unserer ersten Zwischenaufgabe werden wir versuchen, einen Text mit Hilfe der Strukturierungsmöglichkeiten von Listen zu segmentieren, d.h., wir wollen ihn in kleinere Teilbereiche zerlegen. Dabei arbeiten wir diesmal nicht auf Zeichen-, sondern auf Wortebene.</p>
-<p>Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine Zeichenfolge sein. Per default werden Strings anhand der <em>whitespaces</em>, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll.</p>
+<p id="split">Dazu müssen wir eine weitere, zentrale Operation kennenlernen, die auf Zeichenketten angewendet werden kann: die <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion. Mit dieser Methode können Sie eine Zeichenkette durch die Angabe eines Separators teilen. Das kann ein Zeichen oder eine Zeichenfolge sein. Per default werden Strings anhand der <em>whitespaces</em>, also der Leerzeichen zerteilt. Optional kann angegeben werden, wie oft eine Zeichenkette anhand des Separators maximal zerteilt werden soll.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Die Editionswissenschaft erlebt nicht zuletzt wegen einer </span>
@@ -995,8 +1019,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Mit der Split-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>. NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
-Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</em> zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.</p>
+<p>Mit der <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>. NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.</p>
+<p>Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</em> zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.</p>
 <p><strong>Aufgabenstellung:</strong></p>
 <ol class="simple">
 <li><p>Suchen Sie sich einen Beispieltext aus, den Sie im Rahmen dieser Übungseinheit basal verarbeiten und analysieren wollen. Weisen Sie diesen einer Variablen zu.</p></li>

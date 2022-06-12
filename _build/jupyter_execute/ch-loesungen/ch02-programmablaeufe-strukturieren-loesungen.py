@@ -33,7 +33,9 @@ else:
 
 # ## Lösung: Aufgaben While-Schleife
 # 
-# **Aufgabe 1** Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines [Tagungsberichts](https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&recno=2313&page=116&q=&sort=&fq=&total=8538) vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden. 
+# **Aufgabe 1:** 
+# 
+# Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines [Tagungsberichts](https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&recno=2313&page=116&q=&sort=&fq=&total=8538) vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden. 
 
 # In[ ]:
 
@@ -85,7 +87,9 @@ while user_input == "j":
 print("Das Programm ist jetzt beendet. Vielen Dank fürs Mitmachen!")
 
 
-# **Aufgabe 2 "Same but different":** Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß, oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
+# **Aufgabe 2:** 
+# 
+# Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß, oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
 
 # In[ ]:
 
@@ -114,8 +118,6 @@ print("Das ist korrekt.")
 
 # (loesung-aufgabe-primzahlen-ausgeben)=
 # ## Lösung: Aufgabe Primzahlen ausgeben
-# 
-# **Knobelaufgabe für Zahlenbegeisterte** 
 # 
 # Wenden Sie das Gelernte an, indem Sie ein Programm schreiben, das mit `print()` alle [Primzahlen](https://de.wikipedia.org/wiki/Primzahl) zwischen 3 und 200 ausgibt. Zur Erinnerung: Primzahlen sind natürliche Zahlen, die nur durch 1 und durch sich selbst, nicht aber durch andere Zahlen kleiner als sie selbst teilbar sind. Falls Ihnen der Anfang schwer fällt, schauen Sie sich nochmal die Rechenoperatoren aus dem letzten Notebook an. Gegebenenfalls hilft es auch, wenn Sie sich ein Blatt Papier nehmen und in natürlicher Sprache eine auf Stichworten basierende Schritt-für-Schritt-Anleitung schreiben. Diese können Sie dann in Programmcode übersetzen.
 

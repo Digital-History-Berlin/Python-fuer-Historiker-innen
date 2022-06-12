@@ -89,3 +89,9 @@ parts:
       title: Komplexe Datentypen
     - file: ch-empfehlungen/07-dateien-verarbeiten-ressourcen.md
       title: Dateien verarbeiten
+- caption: Appendix
+  chapters:
+  - file: ch-appendix/01-glossar.md
+    title: Glossar
+  - file: genindex
+    title: Index

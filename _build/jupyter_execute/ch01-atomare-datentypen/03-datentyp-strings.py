@@ -3,21 +3,39 @@
 
 # # Arbeiten mit Strings
 # 
-# Sie haben bereits mit der Indizierung, Verkettung und dem Ausschneiden einige Möglichkeiten kennengelernt, um mit Strings zu arbeiten. Hier werden Ihnen überblickshaft noch eine Reihe weiterer Funktionen vorgestellt, die Sie zum Abschluss dieses Abschnitts in Ihr zuvor gestaltetes Programm nach eigenem Ermessen einbinden und ausprobieren können.
+# :::{index} String
+# :name: string
+# :::
 # 
-# :::{note} 
+# :::{admonition} Information
+# :class: note 
 # Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.
+# :::
+# 
+# :::{index} Indizierung
+# :name: indizierung
+# :::
+# 
+# :::{index} Slicing
+# :name: slicing
 # :::
 # 
 # ## Indizierung und Slicing
 # 
-# Allerdings benötigten wir für die Begrüßung nur einen Teil der `Hello, World!`-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h. sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (*characters*). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über **Indices** direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das "e" beispielsweise durch den Ausdruck `my_variable[1]`. 
+# Um eine Begrüßung aus dem Hello-World-Programm zu erstellen - wie im letzten Abschnitt geschehen - benötigen wir jedoch nur einen Teil der `Hello, World!`-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h. sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (*characters*). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über **Indices** direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das "e" beispielsweise durch den Ausdruck `my_variable[1]`. 
 # 
-# Wundern Sie sich darüber, warum der zweite Buchstabe in der Zeichenkette an der Indexposition "1" steht? Schauen wir uns den String genauer an:
+# Wundern Sie sich darüber, warum der zweite Buchstabe in der Zeichenkette an der Indexposition '1' steht? Schauen wir uns den String genauer an:
 # 
 # ![alt text](https://i.imgur.com/gGDkY0P.png)
 # 
-# Ein String ist von links nach rechts durchnummeriert. **Achtung:** Die Zählung beginnt allerdings bei 0! Zeichenketten können auch umgekehrt gelesen werden, also von rechts nach links. Dann fangen wir bei -1 an. Auf diese Weise ist jedes Zeichen direkt ansteuerbar - auch Satzzeichen oder Leerzeichen, sogenannte *whitespaces*. Für unsere interaktive Abwandlung des Hallo-Welt-Programms haben wir in der Ausgabefunktion nur einen ganz bestimmten Wertbereich ausgewählt und zwar `Hello, `. Diesen Wertebereich können wir durch Nutzung der Indexpositionen ausschneiden (*slicing*).
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Die Index-Zählung beginnt immer bei 0.
+# :::
+# ::::
+# 
+# Ein String ist von links nach rechts durchnummeriert. Die Zählung beginnt allerdings bei 0! Zeichenketten können auch umgekehrt gelesen werden, also von rechts nach links. Dann fangen wir bei -1 an. Auf diese Weise ist jedes Zeichen direkt ansteuerbar - auch Satzzeichen oder Leerzeichen, sogenannte *whitespaces*. Für unsere interaktive Abwandlung des Hallo-Welt-Programms haben wir in der Ausgabefunktion nur einen ganz bestimmten Wertbereich ausgewählt und zwar `Hello, `. Diesen Wertebereich können wir durch Nutzung der Indexpositionen ausschneiden (*slicing*).
 # 
 # Wie bei der Indizierung benutzen wir für das **Slicing** eckige Klammern, statt einem Wert benötigen wir allerdings eine Start- und eine Endposition. Führen Sie die folgenden Slicing-Anweisungen aus und erklären Sie die Funktionsweise.
 # 
@@ -88,6 +106,10 @@ example_text = '''Jemand musste Josef K. verleumdet haben,
 # schneiden Sie ab "denn" (also mit d beginnend) jedes 3. Zeichen aus
 
 
+# :::{index} single: Funktion ; len()
+# :name: len_
+# :::
+# 
 # ## Länge von Strings bestimmen
 # 
 # Mit der Funktion [`len()`](https://docs.python.org/3/library/functions.html#len) kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.
@@ -101,6 +123,10 @@ example_text = '''Jemand musste Josef K. verleumdet haben,
 len(example_text)
 
 
+# :::{index} single: Funktion ; count()
+# :name: count_
+# :::
+# 
 # ## Zählen
 # Mit der auf ein String-Objekt angewendeten Funktion [`count()`](https://docs.python.org/3/library/stdtypes.html#str.count) kann gezählt werden, wie oft ein Element in dem Objekt vorhanden ist. 
 
@@ -116,8 +142,16 @@ example_text.count("u")
 example_text.count("e")
 
 
+# :::{index} single: Funktion ; find()
+# :name: find_
+# :::
+# 
+# :::{index} single: Funktion ; index()
+# :name: index_
+# :::
+# 
 # ## Finden
-# Mit der auf ein String-Objekt angewendeten Funktion [`find()`](https://docs.python.org/3/library/stdtypes.html#str.find) kann ermittelt werden, an welcher Position im Objekt sich ein Element befindet. Die [`index()`-Funktion](https://docs.python.org/3/library/stdtypes.html#str.index) funktioniert auf ganz ähnliche Weise, mit dem Unterschied, dass statt einer "-1" eine Fehlermeldung ausgegeben wird, wenn ein gesuchter String sich nicht in der Zeichenkette befindet.
+# Mit der auf ein String-Objekt angewendeten Funktion [`find()`](https://docs.python.org/3/library/stdtypes.html#str.find) kann ermittelt werden, an welcher Position im Objekt sich ein Element befindet. Die [`index()`-Funktion](https://docs.python.org/3/library/stdtypes.html#str.index) funktioniert auf ganz ähnliche Weise, mit dem Unterschied, dass statt einer '-1' eine Fehlermeldung ausgegeben wird, wenn ein gesuchter String sich nicht in der Zeichenkette befindet.
 
 # In[ ]:
 
@@ -150,9 +184,13 @@ print(example_text.index("ß"))
 # your answer
 
 
+# :::{index} single: Funktion ; replace()
+# :name: replace_
+# :::
+# 
 # ## Strings ersetzen
 # 
-# Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion [`replace()`](https://docs.python.org/3/library/stdtypes.html#str.replace) kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen Parameter verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen Variablen zugewiesen werden. Optional kann noch ein dritter Parameter, *count*, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll. 
+# Strings sind wie eingangs erwähnt grundsätzlich unveränderbar. Mit der auf ein String-Objekt angewendeten Funktion [`replace()`](https://docs.python.org/3/library/stdtypes.html#str.replace) kann aber gewissermaßen ein zu definierender Substring durch einen anderen ersetzt werden. Genau genommen wird hierbei die ursprüngliche Zeichenkette nicht verändert, sondern eine Kopie generiert und entsprechend der angegebenen {term}`Parameter` verändert. Diese veränderte Kopie kann entweder den Wert der alten Variablen überschreiben oder einer neuen Variablen zugewiesen werden. Optional kann noch ein dritter Parameter, *count*, angegeben werden, der bestimmt, wie oft ein alter Teilstring durch einen neuen ersetzt werden soll. 
 
 # In[ ]:
 
@@ -181,6 +219,10 @@ print(new_text)
 new_text[:10] * 3
 
 
+# :::{index} single: Funktion ; join()
+# :name: join_
+# :::
+# 
 # ## Konkatenierung 
 # 
 # Die Zusammenfügung von Strings durch die "Addition" und "Multiplikation" haben wir nun schon kennengelernt. Es gibt noch eine weitere Variante, mit der Sie Zeichenketten auf eine sehr spezifische Weise verknüpfen können: [`join()`](https://docs.python.org/3/library/stdtypes.html#str.join). Die Funktion wird auf ein String-Objekt angewendet und gibt eine Zeichenkette zurück, die um die Elemente eines sequenziellen Objekts angereichert wurde.
@@ -227,11 +269,32 @@ print(concat)
 # your code
 
 
+# :::{index} single: Funktion ; upper()
+# :name: upper_
+# :::
+# 
+# :::{index} single: Funktion ; lower()
+# :name: lower_
+# :::
+# 
+# 
+# :::{index} single: Funktion ; swapcase()
+# :name: swapcase_
+# :::
+# 
+# :::{index} single: Funktion ; title()
+# :name: title_
+# :::
+# 
+# :::{index} single: Funktion ; capitalize()
+# :name: capitalize_
+# :::
+# 
 # ## Strings formatieren
-
+# 
 # ### Groß- und Kleinschreibung ändern
 # 
-# Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im Codeblock die Funktionsweise der jeweiligen Funktionen.
+# Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im {term}`Codeblock` die Funktionsweise der jeweiligen Funktionen.
 
 # In[ ]:
 
@@ -258,6 +321,10 @@ print(example_text_title)
 print(example_text_capitalized)
 
 
+# :::{index} Ausgabe formatieren
+# :name: ausgabe_formatieren
+# :::
+# 
 # ## Ausgabe formatieren
 # 
 # Bislang sah die Ausgabe unserer Ergebnisse mit der `print()`-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diesen Abschnitt soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (`{}`) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.
@@ -270,6 +337,17 @@ print(example_text_capitalized)
 print("Der Beispieltext '{0}'\nist {1} Zeichen lang.".format(example_text, len(example_text)))
 
 
+# ::::{margin}
+# :::{admonition} Hinweis
+# :class: note
+# In diesem Jupyter Book werden f-strings zur Formatierung von Strings genutzt.
+# :::
+# ::::
+# 
+# :::{index} f-strings
+# :name: f-strings
+# :::
+# 
 # **f-strings**
 # 
 # Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein `f` vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden. 
@@ -279,10 +357,6 @@ print("Der Beispieltext '{0}'\nist {1} Zeichen lang.".format(example_text, len(e
 
 print(f"Der Beispieltext '{example_text}'\nist {len(example_text)} Zeichen lang.")
 
-
-# :::{note}
-# In diesem Jupyter Book werden f-strings für die Formatierung von Strings genutzt.
-# :::
 
 # Ausführliche Informationen zu den Möglichkeiten der Formatierung von Strings finden Sie in der [Python-Dokumentation](https://docs.python.org/3/library/string.html#format-string-syntax).
 

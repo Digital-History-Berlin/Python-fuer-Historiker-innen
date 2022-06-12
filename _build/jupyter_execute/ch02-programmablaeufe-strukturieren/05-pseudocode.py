@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# (pseudocode)=
 # # Pseudocode
+# 
+# :::{index} Pseudocode
+# :name: pseudocode
+# :::
 # 
 # Pseudcode hilft beim Strukturieren von Programmabläufen und unterstützt das algorithmische Denken. Dabei werden Probleme eines Programms in einzelne Schritte zerlegt, danach werden die auf diese Weise identifizierten Teilschritte zunächst generalisiert ausformuliert und als einzelne Bausteine wieder zusammengestellt. Ein Pseudcode, um zunächst zu prüfen, ob in einem Text Vokale enthalten sind, um diese danach auszugeben, könnte etwa wie folgt aussehen: 
 # 

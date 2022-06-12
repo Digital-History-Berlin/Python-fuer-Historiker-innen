@@ -353,6 +353,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-appendix/01-glossar.html">
+   Glossar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -530,12 +547,10 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dateien-offnen-lesen-und-bearbeiten">
 <h1>Dateien öffnen, lesen und bearbeiten<a class="headerlink" href="#dateien-offnen-lesen-und-bearbeiten" title="Permalink to this headline">¶</a></h1>
-<p>Bislang haben wir Daten in Variablen gespeichert und Ergebnisse mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgegeben. In der Praxis wollen wir Daten natürlich dauerhaft (persistent) speichern, später wieder bearbeiten können, oder die Daten von Dritten weiterverarbeiten lassen.</p>
+<p id="datei-input-output">Bislang haben wir Daten in Variablen gespeichert und Ergebnisse mit <code class="docutils literal notranslate"><span class="pre">print()</span></code> ausgegeben. In der Praxis wollen wir Daten natürlich dauerhaft (persistent) speichern, später wieder bearbeiten können, oder die Daten von Dritten weiterverarbeiten lassen.</p>
 <div class="section" id="grundlagen-dateipfade">
-<h2>Grundlagen Dateipfade<a class="headerlink" href="#grundlagen-dateipfade" title="Permalink to this headline">¶</a></h2>
-<p>Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.</p>
-<p>Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist).</p>
-<p>Name, Dateityp und Speicherdatei lassen sich als <em>Pfad</em> angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:</p>
+<span id="dateipfad"></span><h2>Grundlagen Dateipfade<a class="headerlink" href="#grundlagen-dateipfade" title="Permalink to this headline">¶</a></h2>
+<p>Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen. Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Verzeichnisstruktur"><span class="xref std std-term">Verzeichnisstruktur</span></a> verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist). Name, Dateityp und Speicherdatei lassen sich als <em>Pfad</em> angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:</p>
 <p>für Linux und Mac:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Lehre</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
@@ -544,12 +559,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">username</span>\<span class="n">Documents</span>\<span class="n">Lehre</span>\<span class="n">Python</span>\<span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 </div>
-<p>Dies ist der <em>absolute</em> Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von <code class="docutils literal notranslate"><span class="pre">dateien_verarbeiten.ipynb</span></code> an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (/) getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (\) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).</p>
-<p>Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit <em>relativen</em> Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt (wie im obigen Beispiel) im Ordner “Python” auf einem Rechner. Der (relative) Dateipfad zum Notebook ausgehend vom Ordner “Lehre” wäre dann:</p>
+<p>Dies ist der <em>absolute</em> Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von <code class="docutils literal notranslate"><span class="pre">dateien_verarbeiten.ipynb</span></code> an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (<code class="docutils literal notranslate"><span class="pre">/)</span></code> getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (<code class="docutils literal notranslate"><span class="pre">\</span></code>) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="tip admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Nutzen Sie den relativen Dateipfad, um die Position einer Datei in einer Verzeichnisstruktur auszudrücken.</p>
+</div>
+</div>
+<p>Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit <em>relativen</em> Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt (wie im obigen Beispiel) im Ordner <code class="docutils literal notranslate"><span class="pre">Python</span></code> auf einem Rechner. Der (relative) Dateipfad zum Notebook ausgehend vom Ordner <code class="docutils literal notranslate"><span class="pre">Lehre</span></code> wäre dann:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span><span class="o">/</span><span class="n">dateien_verarbeiten</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 </div>
-<p>Durch Angabe von “..” ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner “Documents” z.B. neben “Lehre” auch einen Ordner “Publikationen”. Angenommen ich hätte ein Python-Skript im Ordner “Publikationen” gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad ausgehend vom Notebook im Ordner “Python” zu dem Skript dann:</p>
+<p>Durch Angabe von <code class="docutils literal notranslate"><span class="pre">..\</span></code> ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner <code class="docutils literal notranslate"><span class="pre">Documents</span></code> z.B. neben <code class="docutils literal notranslate"><span class="pre">Lehre</span></code> auch einen Ordner <code class="docutils literal notranslate"><span class="pre">Publikationen</span></code>. Angenommen ich hätte ein Python-Skript im Ordner <code class="docutils literal notranslate"><span class="pre">Publikationen</span></code> gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad ausgehend vom Notebook im Ordner <code class="docutils literal notranslate"><span class="pre">Python</span></code> zu dem Skript dann:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">../</span><span class="n">Publikationen</span><span class="o">/</span><span class="n">python_skript</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
@@ -558,7 +580,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="dateien-offnen-lesen-und-schreiben">
 <h2>Dateien öffnen, lesen und schreiben<a class="headerlink" href="#dateien-offnen-lesen-und-schreiben" title="Permalink to this headline">¶</a></h2>
 <p>In dieser Einführung arbeiten wir ausschließlich mit textbasierten Dateiformaten (also z.B. txt, csv, json, html, tsv, md, tex, py, …). Diese Dateien lassen sich einfach als String auslesen, der zugleich den Inhalt der Datei repräsentiert. Komplexe Formate, wie Bilder (jpgs, png, tiff, …), PDFs, Worddokumente, Exceldateien oder Video- und Audioformate bestehen zwar letztlich auch nur aus Zeichenketten, sind aber auf eine bestimmte Weise <em>codiert</em>. Auch solche Dateien können Sie mit Python bearbeiten; hierfür werden aber bestimmte Programmbibliotheken benötigt. Falls Sie in einem eigenen Projekt mit einem dieser Formate arbeiten wollen, finden Sie die entsprechenden Bibliotheken meist nach einer kurzen Suche im Internet.</p>
-<p>Das Bearbeiten einer Datei beginnt immer mit der Funktion <code class="docutils literal notranslate"><span class="pre">open()</span></code>. Im folgenden Codeblock erstellen wir eine Testdatei, in der wir den ersten Satz aus Kafkas <em>Prozess</em> speichern.</p>
+<p id="open">Das Bearbeiten einer Datei beginnt immer mit der Funktion <code class="docutils literal notranslate"><span class="pre">open()</span></code>. Im folgenden Codeblock erstellen wir eine Testdatei, in der wir den ersten Satz aus Kafkas <em>Prozess</em> speichern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_sentence_prozess</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
@@ -572,8 +594,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Die Funktion <code class="docutils literal notranslate"><span class="pre">open()</span></code> erzeugt ein Objekt, das quasi als Schnittstelle zwischen Ihrem Programm und dem Betriebssystem fungiert. <code class="docutils literal notranslate"><span class="pre">open()</span></code> benötigt als Parameter den Namen bzw. Dateipfad der Datei sowie die Angabe in welchem Modus die Datei geöffnet werden soll. Da wir eine noch nicht existierende Datei neu beschreiben wollen, wählen wir hier “w” (write). Das File-Objekt (hier als <code class="docutils literal notranslate"><span class="pre">prozess_file</span></code> gespeichert) verfügt über verschiedene Funktionen zum Lesen und Schreiben von Dateien. Mit <code class="docutils literal notranslate"><span class="pre">write()</span></code> geben wir an, dass wir den String <code class="docutils literal notranslate"><span class="pre">first_sentence_prozess</span></code> (den wir ja in Zeile 1 definiert haben) als Inhalt der Datei speichern wollen. Mit <code class="docutils literal notranslate"><span class="pre">close()</span></code> teilen wir dem File-Objekt mit, dass wir keine Änderungen an der Datei mehr vornehmen möchten. Dieser Schritt muss immer erfolgen, wenn Sie mit Dateien arbeiten (andernfalls könnten Sie versehentlich Ressourcen Ihres Computers für das Beschreiben einer Datei binden, obwohl sie an anderer Stelle benötigt werden). Damit <code class="docutils literal notranslate"><span class="pre">close()</span></code> auch im Falle eines Fehlers ausgeführt wird, verwenden Sie am besten so oft es geht folgendes Statement:</p>
-<div class="cell docutils container">
+<span class="target" id="write"></span><p id="close">Die Funktion <code class="docutils literal notranslate"><span class="pre">open()</span></code> erzeugt ein Objekt, das quasi als Schnittstelle zwischen Ihrem Programm und dem Betriebssystem fungiert. <code class="docutils literal notranslate"><span class="pre">open()</span></code> benötigt als Parameter den Namen bzw. Dateipfad der Datei sowie die Angabe in welchem Modus die Datei geöffnet werden soll. Da wir eine noch nicht existierende Datei neu beschreiben wollen, wählen wir hier <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> (write). Das File-Objekt (hier als <code class="docutils literal notranslate"><span class="pre">prozess_file</span></code> gespeichert) verfügt über verschiedene Funktionen zum Lesen und Schreiben von Dateien. Mit <code class="docutils literal notranslate"><span class="pre">write()</span></code> geben wir an, dass wir den String <code class="docutils literal notranslate"><span class="pre">first_sentence_prozess</span></code> (den wir ja in Zeile 1 definiert haben) als Inhalt der Datei speichern wollen. Mit <code class="docutils literal notranslate"><span class="pre">close()</span></code> teilen wir dem File-Objekt mit, dass wir keine Änderungen an der Datei mehr vornehmen möchten. Dieser Schritt muss immer erfolgen, wenn Sie mit Dateien arbeiten – andernfalls könnten Sie versehentlich Ressourcen Ihres Computers für das Beschreiben einer Datei binden, obwohl sie an anderer Stelle benötigt werden. Damit <code class="docutils literal notranslate"><span class="pre">close()</span></code> auch im Falle eines Fehlers ausgeführt wird, verwenden Sie am besten so oft es geht folgendes Statement:</p>
+<div class="cell docutils container" id="with-open">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_sentence_prozess</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
 <span class="s1">denn ohne dass er etwas Böses getan hätte, </span>
@@ -585,8 +607,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Wenn Sie “w” als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner “example_data” sollte sich nun die Datei “der_prozess” finden.</p>
-<p>Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter “a” (append).</p>
+<p>Wenn Sie <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner <code class="docutils literal notranslate"><span class="pre">example_data</span></code> sollte sich nun die Datei <code class="docutils literal notranslate"><span class="pre">der_prozess.txt</span></code> finden.</p>
+<p>Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> (append).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_sentence_prozess</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
@@ -601,7 +623,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Um den Inhalt einer Datei auszulesen verwenden Sie “r” (read) als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> sowie die Funktion <code class="docutils literal notranslate"><span class="pre">read()</span></code>. Diese gibt Ihnen den Inhalt der Datei als String zurück.</p>
+<p id="read">Um den Inhalt einer Datei auszulesen verwenden Sie <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> (read) als zweiten Parameter für <code class="docutils literal notranslate"><span class="pre">open()</span></code> sowie die Funktion <code class="docutils literal notranslate"><span class="pre">read()</span></code>. Diese gibt Ihnen den Inhalt der Datei als String zurück.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example_data/der_prozess.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">prozess_file</span><span class="p">:</span>
@@ -612,7 +634,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>In einigen Fällen müssen Sie eine Datei Zeile für Zeile auslesen und weiterverarbeiten. In diesem Fall verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>. Um den Unterschied zu <code class="docutils literal notranslate"><span class="pre">read()</span></code> besser erkennen zu können, geben wir noch die Länge des jeweiligen Strings aus:</p>
+<p id="readlines">In einigen Fällen müssen Sie eine Datei Zeile für Zeile auslesen und weiterverarbeiten. In diesem Fall verwenden Sie die Funktion <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>. Um den Unterschied zu <code class="docutils literal notranslate"><span class="pre">read()</span></code> besser erkennen zu können, geben wir noch die Länge des jeweiligen Strings aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>
@@ -643,11 +665,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="zeichenkodierung">
-<h2>Zeichenkodierung<a class="headerlink" href="#zeichenkodierung" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Zeichenkodierung<a class="headerlink" href="#zeichenkodierung" title="Permalink to this headline">¶</a></h2>
 <p>Möglicherweise haben Sie bei der Durchsicht der Ausgabeergebnisse festgestellt, dass manche Wörter etwas seltsam aufgelöst werden. Statt “gräflich” finden wir im Output bspw. die Zeichenfolge “grÃ¤flich”. Hierbei handelt es sich um einen Konflikt bezüglich der Kodierung des Textbestandes. Die Daten sind anders kodiert als es unser Interpreter standardmäßig vermutet.</p>
 <p>Was heißt das konkret?
-Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets angezeigt wird beruht im Kern auf einer Kombination von Nullen und Einsen, also auf dem Binärcode. Das heißt, dass alle Zeichen, die wir visuell auf dem Bildschirm wahrnehmen, aus einem solchen <a class="reference external" href="https://de.wikipedia.org/wiki/Bin%C3%A4rcode">Binärcode</a> zusammengesetzt sind. Zur Repräsentation der verschiedenen Sprachfamilien haben sich im Laufe der Zeit verschiedene Kodierungssysteme herausgebildet, die das Konzept eines Zeichens mit einer graphischen Repräsentation verknüpfen. Ein früher Standard war <a class="reference external" href="https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange">ASCII</a>, der aber beispielsweise keine Umlaute kodieren konnte. Heute ist vor allem <a class="reference external" href="https://de.wikipedia.org/wiki/UTF-8">UTF-8</a> als Speicherformat für Unicode etabliert, mit dem theoretisch über eine Millionen Zeichen kodiert werden können. <a class="reference external" href="https://de.wikipedia.org/wiki/Unicode">Unicode</a> basiert auf dem Konzept, jedes sinntragende Schriftzeichen oder Textelement aller Schriftkulturen und Zeichensysteme durch einen digitalen Code zu repräsentieren. Bei der konkreten Arbeit werden Sie aber feststellen, dass nicht alle Textdaten einer einheitlichen Kodierung entsprechen, was eben unter anderem an der Historizität von Kodierungssystemen und zum Teil sich verändernden Standards liegt.</p>
-<p>Wenn Sie Dateien einlesen oder schreiben, dann empfiehlt es sich, die Kodierung direkt zu spezifizieren. Das tun Sie, indem Sie bei Funktionen wie <code class="docutils literal notranslate"><span class="pre">open()</span></code>, <code class="docutils literal notranslate"><span class="pre">read()</span></code> oder <code class="docutils literal notranslate"><span class="pre">write()</span></code> etc. einen weiteren Parameter definieren: <code class="docutils literal notranslate"><span class="pre">encoding=&quot;&quot;</span></code>. Schauen Sie sich im folgenden Codeblock an, wie der Parameter verwendet wird:</p>
+Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets angezeigt wird, beruht im Kern auf einer Kombination von Nullen und Einsen, also auf dem <a class="reference external" href="https://de.wikipedia.org/wiki/Bin%C3%A4rcode">Binärcode</a>. Das heißt, dass alle Zeichen, die wir visuell auf dem Bildschirm wahrnehmen, aus einem solchen Binärcode zusammengesetzt sind. Zur Repräsentation der verschiedenen Sprachfamilien haben sich im Laufe der Zeit verschiedene Kodierungssysteme herausgebildet, die das Konzept eines Zeichens mit einer graphischen Repräsentation verknüpfen. Ein früher Standard war <a class="reference external" href="https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange">ASCII</a>, der aber beispielsweise keine Umlaute kodieren konnte. Heute ist vor allem <a class="reference external" href="https://de.wikipedia.org/wiki/UTF-8">UTF-8</a> als Speicherformat für Unicode etabliert, mit dem theoretisch über eine Millionen Zeichen kodiert werden können. <a class="reference external" href="https://de.wikipedia.org/wiki/Unicode">Unicode</a> basiert auf dem Konzept, jedes sinntragende Schriftzeichen oder Textelement aller Schriftkulturen und Zeichensysteme durch einen digitalen Code zu repräsentieren. Bei der konkreten Arbeit werden Sie aber feststellen, dass nicht alle Textdaten einer einheitlichen Kodierung entsprechen, was eben unter anderem an der Historizität von Kodierungssystemen und zum Teil sich verändernden Standards liegt.</p>
+<div class="margin sidebar" id="encoding">
+<p class="sidebar-title"></p>
+<div class="tip admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Geben Sie beim Schreiben und Lesen von Dateien stets die Zeichenkodierung utf-8 an.</p>
+</div>
+</div>
+<p>Wenn Sie Dateien einlesen oder schreiben, dann empfiehlt es sich, die Kodierung direkt zu spezifizieren. Das tun Sie, indem Sie bei Funktionen wie <code class="docutils literal notranslate"><span class="pre">open()</span></code>, <code class="docutils literal notranslate"><span class="pre">read()</span></code> oder <code class="docutils literal notranslate"><span class="pre">write()</span></code> einen weiteren Parameter definieren: <code class="docutils literal notranslate"><span class="pre">encoding=&quot;&quot;</span></code>. Schauen Sie sich im folgenden Codeblock an, wie der Parameter verwendet wird:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;example_data/adliger_vergleich.txt&quot;</span>

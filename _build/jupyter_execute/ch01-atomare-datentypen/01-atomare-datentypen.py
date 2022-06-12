@@ -20,9 +20,5 @@
 # -  Wie können wir Strings manipulieren?
 # -  Wie kann der Computer als Taschenrechner verwendet werden?
 # -  Wie lese ich Fehlermeldungen?
-
-# ## Let´s code
-
-# :::{note}
-# Führen Sie die Beispiel-Codeblöcke bitte stets aus. Wenn Sie Binder nutzen, können Sie jederzeit weitere Text- oder Codeblöcke einfügen, um Informationen zu ergänzen oder frei zu coden.
-# :::
+# 
+# **Let's code!**

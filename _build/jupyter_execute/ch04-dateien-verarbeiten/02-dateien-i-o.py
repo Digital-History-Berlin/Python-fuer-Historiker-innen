@@ -3,15 +3,19 @@
 
 # # Dateien öffnen, lesen und bearbeiten
 # 
+# :::{index} Datei Input-Output
+# :name: datei_input_output
+# :::
+# 
 # Bislang haben wir Daten in Variablen gespeichert und Ergebnisse mit `print()` ausgegeben. In der Praxis wollen wir Daten natürlich dauerhaft (persistent) speichern, später wieder bearbeiten können, oder die Daten von Dritten weiterverarbeiten lassen.
-
+# 
+# :::{index} Dateipfad
+# :name: dateipfad
+# :::
+# 
 # ## Grundlagen Dateipfade
 # 
-# Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen.
-# 
-# Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer Verzeichnisstruktur verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist).
-# 
-# Name, Dateityp und Speicherdatei lassen sich als *Pfad* angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:
+# Zu Beginn ein paar basale Grundlagen, die Ihnen vermutlich weitestgehend vertraut vorkommen. Eine Datei ist identifizierbar durch ihren Namen und ihren Dateityp. Außerdem lässt sich jede Datei irgendwo in einer {term}`Verzeichnisstruktur` verorten (= sie ist in einem Ordner gespeichert, der zugleich ein Unterordner eines anderen ist). Name, Dateityp und Speicherdatei lassen sich als *Pfad* angeben. Auf Ihrem Rechner können Sie sich im Explorer/Dateimanager/Finder den Dateipfad auch einblenden lassen. Ein Beispiel: Der Dateipfad für ein Notebook kann so aussehen:
 # 
 # für Linux und Mac:
 # ```
@@ -23,13 +27,20 @@
 # C:\Users\username\Documents\Lehre\Python\dateien_verarbeiten.ipynb
 # ```
 # 
-# Dies ist der *absolute* Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von `dateien_verarbeiten.ipynb` an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (/) getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (\\) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).
+# Dies ist der *absolute* Dateipfad; unabhängig davon wo ich mich auf meinem Rechner befinde, zeigt er die genaue Position von `dateien_verarbeiten.ipynb` an. Die einzelnen Verzeichnisse sind dabei immer durch Slashes (`/)` getrennt. Beachten Sie bitte, dass das Betriebssystem Windows hier eine Ausnahme macht; dort werden Verzeichnisse durch Backslashes (`\`) voneinander getrennt (hier beginnt der Pfad außerdem mit einem Laufwerksbuchstaben).
 # 
-# Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit *relativen* Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt (wie im obigen Beispiel) im Ordner "Python" auf einem Rechner. Der (relative) Dateipfad zum Notebook ausgehend vom Ordner "Lehre" wäre dann:
+# ::::{margin}
+# :::{admonition} Hinweis
+# :class: tip
+# Nutzen Sie den relativen Dateipfad, um die Position einer Datei in einer Verzeichnisstruktur auszudrücken. 
+# :::
+# ::::
+# 
+# Wenn Sie dieses Notebook auf Ihrem Rechner speichern, wird dessen Dateipfad natürlich völlig anders als in dem Beispiel aussehen. Daher ist es wichtig, so oft wie möglich mit *relativen* Pfaden zu arbeiten. Relative Pfade bezeichnen den Dateipfad ausgehend von der Position (bzw. der Position Ihres Notebooks) in der Verzeichnisstruktur. Angenommen, ein Notebook liegt (wie im obigen Beispiel) im Ordner `Python` auf einem Rechner. Der (relative) Dateipfad zum Notebook ausgehend vom Ordner `Lehre` wäre dann:
 # ```
 # Python/dateien_verarbeiten.ipynb
 # ```
-# Durch Angabe von ".." ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner "Documents" z.B. neben "Lehre" auch einen Ordner "Publikationen". Angenommen ich hätte ein Python-Skript im Ordner "Publikationen" gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad ausgehend vom Notebook im Ordner "Python" zu dem Skript dann:
+# Durch Angabe von `..\` ist es möglich in einem Dateipfad einen Wechsel zu einem übergeordneten Verzeichnis anzugeben. Auf einem Rechner gibt es im Ordner `Documents` z.B. neben `Lehre` auch einen Ordner `Publikationen`. Angenommen ich hätte ein Python-Skript im Ordner `Publikationen` gespeichert, das ebenfalls auf das Notebook zugreifen soll. Hier wäre der relative Dateipfad ausgehend vom Notebook im Ordner `Python` zu dem Skript dann:
 # ```
 # ../Publikationen/python_skript.py
 # ```
@@ -37,7 +48,12 @@
 # Beachten Sie, dass Sie Dateien, mit denen Sie in einem Notebook arbeiten wollen, an einer geeigneten Stelle in Ihrem Dateisystem ablegen, zum Beispiel dort, wo Sie Ihre Notebooks bearbeiten, dann können Sie ganz einfach darauf zugreifen. 
 
 # ## Dateien öffnen, lesen und schreiben
+# 
 # In dieser Einführung arbeiten wir ausschließlich mit textbasierten Dateiformaten (also z.B. txt, csv, json, html, tsv, md, tex, py, ...). Diese Dateien lassen sich einfach als String auslesen, der zugleich den Inhalt der Datei repräsentiert. Komplexe Formate, wie Bilder (jpgs, png, tiff, ...), PDFs, Worddokumente, Exceldateien oder Video- und Audioformate bestehen zwar letztlich auch nur aus Zeichenketten, sind aber auf eine bestimmte Weise *codiert*. Auch solche Dateien können Sie mit Python bearbeiten; hierfür werden aber bestimmte Programmbibliotheken benötigt. Falls Sie in einem eigenen Projekt mit einem dieser Formate arbeiten wollen, finden Sie die entsprechenden Bibliotheken meist nach einer kurzen Suche im Internet.
+# 
+# :::{index} single: Datei Input-Output ; open()
+# :name: open_
+# :::
 # 
 # Das Bearbeiten einer Datei beginnt immer mit der Funktion `open()`. Im folgenden Codeblock erstellen wir eine Testdatei, in der wir den ersten Satz aus Kafkas *Prozess* speichern.
 
@@ -53,7 +69,19 @@ prozess_file.write(first_sentence_prozess)
 prozess_file.close()
 
 
-# Die Funktion `open()` erzeugt ein Objekt, das quasi als Schnittstelle zwischen Ihrem Programm und dem Betriebssystem fungiert. `open()` benötigt als Parameter den Namen bzw. Dateipfad der Datei sowie die Angabe in welchem Modus die Datei geöffnet werden soll. Da wir eine noch nicht existierende Datei neu beschreiben wollen, wählen wir hier "w" (write). Das File-Objekt (hier als `prozess_file` gespeichert) verfügt über verschiedene Funktionen zum Lesen und Schreiben von Dateien. Mit `write()` geben wir an, dass wir den String `first_sentence_prozess` (den wir ja in Zeile 1 definiert haben) als Inhalt der Datei speichern wollen. Mit `close()` teilen wir dem File-Objekt mit, dass wir keine Änderungen an der Datei mehr vornehmen möchten. Dieser Schritt muss immer erfolgen, wenn Sie mit Dateien arbeiten (andernfalls könnten Sie versehentlich Ressourcen Ihres Computers für das Beschreiben einer Datei binden, obwohl sie an anderer Stelle benötigt werden). Damit `close()` auch im Falle eines Fehlers ausgeführt wird, verwenden Sie am besten so oft es geht folgendes Statement:
+# :::{index} single: Datei Input-Output ; write()
+# :name: write_
+# :::
+# 
+# :::{index} single: Datei Input-Output ; close()
+# :name: close_
+# :::
+# 
+# Die Funktion `open()` erzeugt ein Objekt, das quasi als Schnittstelle zwischen Ihrem Programm und dem Betriebssystem fungiert. `open()` benötigt als Parameter den Namen bzw. Dateipfad der Datei sowie die Angabe in welchem Modus die Datei geöffnet werden soll. Da wir eine noch nicht existierende Datei neu beschreiben wollen, wählen wir hier `"w"` (write). Das File-Objekt (hier als `prozess_file` gespeichert) verfügt über verschiedene Funktionen zum Lesen und Schreiben von Dateien. Mit `write()` geben wir an, dass wir den String `first_sentence_prozess` (den wir ja in Zeile 1 definiert haben) als Inhalt der Datei speichern wollen. Mit `close()` teilen wir dem File-Objekt mit, dass wir keine Änderungen an der Datei mehr vornehmen möchten. Dieser Schritt muss immer erfolgen, wenn Sie mit Dateien arbeiten -- andernfalls könnten Sie versehentlich Ressourcen Ihres Computers für das Beschreiben einer Datei binden, obwohl sie an anderer Stelle benötigt werden. Damit `close()` auch im Falle eines Fehlers ausgeführt wird, verwenden Sie am besten so oft es geht folgendes Statement:
+# 
+# :::{index} single: Datei Input-Output ; with open
+# :name: with_open_
+# :::
 
 # In[ ]:
 
@@ -66,9 +94,9 @@ with open("example_data/der_prozess.txt", "w") as prozess_file:
     prozess_file.write(first_sentence_prozess)
 
 
-# Wenn Sie "w" als zweiten Parameter für `open()` verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner "example_data" sollte sich nun die Datei "der_prozess" finden. 
+# Wenn Sie `"w"` als zweiten Parameter für `open()` verwenden, wird der Inhalt der Datei immer komplett überschrieben. Je nachdem was Sie tun möchten, müssen Sie hier den richtigen Parameter wählen. Im Ordner `example_data` sollte sich nun die Datei `der_prozess.txt` finden. 
 # 
-# Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter "a" (append).
+# Um etwas an einen bestehenden Dateiinhalt anzuhängen, verwenden Sie den Parameter `"a"` (append).
 
 # In[ ]:
 
@@ -83,7 +111,11 @@ with open("example_data/der_prozess.txt", "a") as prozess_file:
     prozess_file.write(second_sentence_prozess)
 
 
-# Um den Inhalt einer Datei auszulesen verwenden Sie "r" (read) als zweiten Parameter für `open()` sowie die Funktion `read()`. Diese gibt Ihnen den Inhalt der Datei als String zurück.
+# :::{index} single: Datei Input-Output ; read()
+# :name: read_
+# :::
+# 
+# Um den Inhalt einer Datei auszulesen verwenden Sie `"r"` (read) als zweiten Parameter für `open()` sowie die Funktion `read()`. Diese gibt Ihnen den Inhalt der Datei als String zurück.
 
 # In[ ]:
 
@@ -94,6 +126,10 @@ with open("example_data/der_prozess.txt", "r") as prozess_file:
 print(prozess_content)
 
 
+# :::{index} single: Datei Input-Output ; readlines()
+# :name: readlines_
+# :::
+# 
 # In einigen Fällen müssen Sie eine Datei Zeile für Zeile auslesen und weiterverarbeiten. In diesem Fall verwenden Sie die Funktion `readlines()`. Um den Unterschied zu `read()` besser erkennen zu können, geben wir noch die Länge des jeweiligen Strings aus:
 
 # In[ ]:
@@ -122,14 +158,29 @@ print("Dateiinhalt:\n" + arbitration_content + "\n")
 print(f"Der Dateiinhalt umfasst {len(arbitration_content)} Zeichen.")
 
 
+# :::{index} Zeichenkodierung
+# :name: zeichenkodierung
+# :::
+# 
 # ## Zeichenkodierung
 # 
 # Möglicherweise haben Sie bei der Durchsicht der Ausgabeergebnisse festgestellt, dass manche Wörter etwas seltsam aufgelöst werden. Statt "gräflich" finden wir im Output bspw. die Zeichenfolge "grÃ¤flich". Hierbei handelt es sich um einen Konflikt bezüglich der Kodierung des Textbestandes. Die Daten sind anders kodiert als es unser Interpreter standardmäßig vermutet. 
 # 
 # Was heißt das konkret?
-# Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets angezeigt wird beruht im Kern auf einer Kombination von Nullen und Einsen, also auf dem Binärcode. Das heißt, dass alle Zeichen, die wir visuell auf dem Bildschirm wahrnehmen, aus einem solchen [Binärcode](https://de.wikipedia.org/wiki/Bin%C3%A4rcode) zusammengesetzt sind. Zur Repräsentation der verschiedenen Sprachfamilien haben sich im Laufe der Zeit verschiedene Kodierungssysteme herausgebildet, die das Konzept eines Zeichens mit einer graphischen Repräsentation verknüpfen. Ein früher Standard war [ASCII](https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange), der aber beispielsweise keine Umlaute kodieren konnte. Heute ist vor allem [UTF-8](https://de.wikipedia.org/wiki/UTF-8) als Speicherformat für Unicode etabliert, mit dem theoretisch über eine Millionen Zeichen kodiert werden können. [Unicode](https://de.wikipedia.org/wiki/Unicode) basiert auf dem Konzept, jedes sinntragende Schriftzeichen oder Textelement aller Schriftkulturen und Zeichensysteme durch einen digitalen Code zu repräsentieren. Bei der konkreten Arbeit werden Sie aber feststellen, dass nicht alle Textdaten einer einheitlichen Kodierung entsprechen, was eben unter anderem an der Historizität von Kodierungssystemen und zum Teil sich verändernden Standards liegt.
+# Alles, was Ihnen auf dem Bildschirm Ihres Laptops, PCs, Handys oder Tablets angezeigt wird, beruht im Kern auf einer Kombination von Nullen und Einsen, also auf dem [Binärcode](https://de.wikipedia.org/wiki/Bin%C3%A4rcode). Das heißt, dass alle Zeichen, die wir visuell auf dem Bildschirm wahrnehmen, aus einem solchen Binärcode zusammengesetzt sind. Zur Repräsentation der verschiedenen Sprachfamilien haben sich im Laufe der Zeit verschiedene Kodierungssysteme herausgebildet, die das Konzept eines Zeichens mit einer graphischen Repräsentation verknüpfen. Ein früher Standard war [ASCII](https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange), der aber beispielsweise keine Umlaute kodieren konnte. Heute ist vor allem [UTF-8](https://de.wikipedia.org/wiki/UTF-8) als Speicherformat für Unicode etabliert, mit dem theoretisch über eine Millionen Zeichen kodiert werden können. [Unicode](https://de.wikipedia.org/wiki/Unicode) basiert auf dem Konzept, jedes sinntragende Schriftzeichen oder Textelement aller Schriftkulturen und Zeichensysteme durch einen digitalen Code zu repräsentieren. Bei der konkreten Arbeit werden Sie aber feststellen, dass nicht alle Textdaten einer einheitlichen Kodierung entsprechen, was eben unter anderem an der Historizität von Kodierungssystemen und zum Teil sich verändernden Standards liegt.
 # 
-# Wenn Sie Dateien einlesen oder schreiben, dann empfiehlt es sich, die Kodierung direkt zu spezifizieren. Das tun Sie, indem Sie bei Funktionen wie `open()`, `read()` oder `write()` etc. einen weiteren Parameter definieren: `encoding=""`. Schauen Sie sich im folgenden Codeblock an, wie der Parameter verwendet wird:
+# :::{index} single: Datei Input-Output ; encoding
+# :name: encoding_
+# :::
+# 
+# ::::{margin}
+# :::{admonition} Hinweis
+# :class: tip
+# Geben Sie beim Schreiben und Lesen von Dateien stets die Zeichenkodierung utf-8 an.
+# :::
+# ::::
+# 
+# Wenn Sie Dateien einlesen oder schreiben, dann empfiehlt es sich, die Kodierung direkt zu spezifizieren. Das tun Sie, indem Sie bei Funktionen wie `open()`, `read()` oder `write()` einen weiteren Parameter definieren: `encoding=""`. Schauen Sie sich im folgenden Codeblock an, wie der Parameter verwendet wird:
 
 # In[ ]:
 

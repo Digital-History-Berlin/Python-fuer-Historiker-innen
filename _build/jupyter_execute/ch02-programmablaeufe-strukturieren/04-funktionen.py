@@ -3,9 +3,13 @@
 
 # # [Funktionen](https://www.python-kurs.eu/python3_funktionen.php)
 # 
+# :::{index} Funktionen
+# :name: funktionen
+# :::
+# 
 # ## Definition von Funktionen
-# Funktionen dienen dazu,
-#  Codeblöcke wiederverwendbar zu machen. Oft ist es erforderlich, bestimmte Aufgaben innerhalb eines Programms auch unabhängig von bestimmten Vorbedingungen (wie bei Schleifen) mehrfach auszuführen[^fn1]. Nehmen wir an, Sie möchten herausfinden, welche von zwei Zahlen größer ist als die andere:
+# 
+# Funktionen dienen dazu, Codeblöcke wiederverwendbar zu machen. Oft ist es erforderlich, bestimmte Aufgaben innerhalb eines Programms auch unabhängig von bestimmten Vorbedingungen (wie bei Schleifen) mehrfach auszuführen[^fn1]. Nehmen wir an, Sie möchten herausfinden, welche von zwei Zahlen größer ist als die andere:
 
 # In[ ]:
 
@@ -41,11 +45,22 @@ compare_numbers()
 compare_numbers()
 
 
-# Wie Sie sehen können, werden Funktionen mit dem Schlüsselwort `def` definiert. Hinter dem durch Sie vergebenen Namen der Funktion müssen außerdem immer zwei Runde Klammern folgen. Das Einrücken von Codeblöcken kennen Sie bereits von `if` und `while`.
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Die Anweisungen in einer Funktion werden eingerückt.
+# :::
+# ::::
+# 
+# Wie Sie sehen können, werden Funktionen mit dem {term}`Schlüsselwort` `def` definiert. Hinter dem durch Sie vergebenen Namen der Funktion müssen außerdem immer zwei Runde Klammern folgen. Das Einrücken von Codeblöcken kennen Sie bereits von `if` und `while`.
 # 
 # In den Zeilen 12 und 13 sehen Sie, wie die Funktion jeweils einmal ausgeführt wird. Auch hier müssen auf den Namen der Funktion die runden Klammern folgen.
 
 # ## Parameter
+# 
+# :::{index} single: Funktionen ; Parameter
+# :name: funktionen_parameter
+# :::
 # 
 # So wie wir unsere Funktion konzipiert haben vergleicht sie immer nur die Zahlen 42 und 23 miteinander -- das ist natürlich sehr unflexibel und wenig hilfreich. Wie gehen wir also vor, wenn Sie zwei *beliebige* Zahlen miteinander vergleichen wollen? Schauen Sie sich den nächsten Codeblock an. Fällt Ihnen etwas auf?
 
@@ -85,8 +100,12 @@ compare_numbers(12)
 compare_numbers(12, 15, 23)
 
 
-# Grundsätzlich kennen Sie die Syntax von Funktionen bereits aus einer der letzten Lektion. `print()`, `format()` oder `type()` ruft jeweils anderswo definierten Programmcode auf und nimmt bei diesem Aufruf eine bestimmte Anzahl von Paramtern an (wie bei `print("Hallo")`; hier ist der String `"Hallo"` der übergebene Parameter).
+# Grundsätzlich kennen Sie die Syntax von Funktionen bereits aus einer der letzten Lektion. `print()`, `replace()` oder `type()` ruft jeweils anderswo definierten Programmcode auf und nimmt bei diesem Aufruf eine bestimmte Anzahl von Parametern an (wie bei `print("Hallo")`; hier ist der String `"Hallo"` der übergebene Parameter).
 
+# :::{index} Namensraum
+# :name: namensraum
+# :::
+# 
 # ## Namensräume
 # 
 # Bei der Arbeit mit Funktionen ist ein Konzept sehr wichtig: der sog. *Namensraum*. Namensräume bezeichnen Bereiche innerhalb Ihres Programms, in denen Variablen gültig sind. Das kennen Sie gewissermaßen auch aus alltäglichen Konzepten, wie Ihrem Familien- und Freundeskreis. Wenn Sie mit einer Ihnen nahestehenden Person über eine andere Person sprechen, reicht es oft, wenn Sie einfach einen Vornamen verwenden. Sie können Informationen reduzieren, weil Vieles bereits als bekannt vorausgesetzt werden kann. Flüchtigen Bekanntschaften gegenüber sind diese Informationen aber unter Umständen nicht bekannt und sie können mit einem einfachen Vornamen nichts anfangen. Ein anderes Beispiel sind Telefon- bzw. Handynummern, die innerhalb eines bestimmten Vorwahlbereichs Gültigkeit besitzen oder Matrikelnummern, die in Abhängigkeit von der jeweiligen Universität zu konkreten Personen verweisen, davon unabhängig aber keine Bedeutung haben.

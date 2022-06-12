@@ -3,9 +3,13 @@
 
 # # CSV
 # 
+# :::{index} CSV
+# :name: csv
+# :::
+# 
 # ## Allgemeines
 # 
-# Ein weiteres Format zur strukturierten Speicherung von Daten, mit dem Sie als Historiker:innen oft zu tun haben, ist CSV (Comma Separated Values). Es dient der textbasierten Speicherung von Tabellen. Sicher sind Sie mit Exceldateien vertraut. "xls" ist jedoch ein proprietäres Format -- CSV-Daten sind wesentlich interoperabler. Wie folgendes Beispiel zeigt, sind CSVs so strukturiert, dass eine Tabellen*zeile* durch eine Zeile dargestellt wird. Tabellen*spalten* sind dagegen durch ein Trennzeichen getrennt.
+# Ein weiteres Format zur strukturierten Speicherung von Daten, mit dem Sie als Historiker:innen oft zu tun haben, ist CSV (Comma Separated Values). Es dient der textbasierten Speicherung von Tabellen. Sicher sind Sie mit Exceldateien vertraut. `.xls` ist jedoch ein {term}`proprietäres Format` -- CSV-Daten sind wesentlich interoperabler. Wie folgendes Beispiel zeigt, sind CSVs so strukturiert, dass eine Tabellen*zeile* durch eine Zeile dargestellt wird. Tabellen*spalten* sind dagegen durch ein Trennzeichen getrennt.
 # 
 # **Darstellung als Tabelle**
 # 
@@ -22,14 +26,24 @@
 # 2;Half of a Yellow Sun;Chimanda Ngozi Adichie;2006
 # 3;Network Effect;Martha Wells;2020
 # ```
-# (aus der Datei: example_data/books.csv)
+# (aus der Datei: `example_data/books.csv`)
 # 
+# ::::{margin}
+# :::{admonition} Hinweis
+# :class: note
+# Beachten Sie bei `csv`-Dateien das Trennzeichen. 
+# :::
+# ::::
 # 
-# Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit ";" die wenigsten Probleme.
+# Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit `;` die wenigsten Probleme.
 # 
 # Sie können CSV-Dateien in allen gängigen Tabellenkalkulationsprogrammen (z.B. Microsoft Excel) öffnen und bearbeiten oder auch aus solchen Programmen CSVs exportieren.
 
 # ## CSVs öffnen und speichern
+# 
+# :::{index} single: CSV ; import
+# :name: csv_import_
+# :::
 # 
 # Ähnlich wie für JSON gibt es auch für CSVs Python-Programmbibliotheken, mit denen Sie Daten auslesen und neue CSV-Dateien erstellen können. In dieser Einheit besprechen wir nur die [Standardbibliothek](https://docs.python.org/3/library/csv.html) von Python. Wie schon im vorherigen Abschnitt muss diese zuerst importiert werden.
 
@@ -51,7 +65,11 @@ with open("example_data/books.csv", "r") as csv_file:
         print(row)
 
 
-# Die Funktion `reader()` funktioniert ähnlich wie `readlines()`: Die Datei wird Zeile für Zeile ausgelesen; die einzelnen Zeilen können dann weiterverarbeitet werden. Wichtig ist hier der Paramter `delimiter`. Hier geben Sie an, welches Trennzeichen die CSV-Datei, die Sie öffnen wollen, verwendet. Wenn Sie mit fremden Daten arbeiten, öffnen Sie die CSV-Datei einfach kurz in einem Texteditor um herauszufinden, was Sie hier angeben müssen.
+# :::{index} single: CSV ; reader()
+# :name: csv_reader_
+# :::
+# 
+# Die Funktion `reader()` funktioniert ähnlich wie `readlines()`: Die Datei wird Zeile für Zeile ausgelesen; die einzelnen Zeilen können dann weiterverarbeitet werden. Wichtig ist hier der Paramter `delimiter`. Hier geben Sie an, welches Trennzeichen die CSV-Datei, die Sie öffnen wollen, verwendet. Wenn Sie mit fremden Daten arbeiten, öffnen Sie die CSV-Datei einfach kurz in einem Texteditor, um herauszufinden, was Sie hier angeben müssen.
 # 
 # Wie Sie sehen, werden in diesem Fall die Zeilen als Listen ausgegeben, sodass Sie auf die einzelnen Zellen der Tabelle zugreifen können:
 
@@ -69,7 +87,11 @@ with open("example_data/books.csv", "r") as csv_file:
         print("---")
 
 
-# Wenn Sie den Header nicht berücksichtigen wollen, können Sie ihn z.B. mit `next()` überspringen:
+# :::{index} single: CSV ; next()
+# :name: csv_next_
+# :::
+# 
+# Wenn Sie den Header, der die Namen der Tabellenspalten enthält, nicht berücksichtigen wollen, können Sie ihn z.B. mit `next()` überspringen:
 
 # In[ ]:
 
@@ -87,7 +109,18 @@ with open("example_data/books.csv", "r") as csv_file:
         print("---")
 
 
-# Das Schreiben neuer CSV-Dateien funktioniert ebenfalls Zeile für Zeile. Hierbei müssen Sie für jede Zeile eine Liste erstellen, die Sie mit der Funktion `writerow()` zu einem neuen Dateiobjekt hinzufügen können. Bei Windows-Rechnern müssen Sie beim Öffnen der Datei den Parameter newline auf einen leeren String ("") setzen, sonst wir nach jeder Zeile eine Leerzeile geschrieben.
+# :::{index} single: CSV ; writerow()
+# :name: csv_writerow_
+# :::
+# 
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Bei Nutzung eines Windows-Betriebssystem muss der Parameter `newline=""` lauten.
+# :::
+# ::::
+# 
+# Das Schreiben neuer CSV-Dateien funktioniert ebenfalls Zeile für Zeile. Hierbei müssen Sie für jede Zeile eine Liste erstellen, die Sie mit der Funktion `writerow()` zu einem neuen Dateiobjekt hinzufügen können. Bei Windows-Rechnern müssen Sie beim Öffnen der Datei den Parameter `newline` auf einen leeren String (`""`) setzen, sonst wird nach jeder Zeile eine Leerzeile geschrieben.
 
 # In[ ]:
 
@@ -112,8 +145,12 @@ with open("example_data/more_books.csv", "w", newline="") as csv_file:
     books_writer.writerow(new_book)
 
 
-# Schauen Sie wieder im Ordner "example_data" nach: Finden Sie die Datei "more_books.csv" und enthält sie die gewünschten Informationen?
+# Schauen Sie wieder im Ordner `example_data` nach: Finden Sie die Datei `more_books.csv` und enthält sie die gewünschten Informationen?
 
+# :::{index} single: CSV ; DictReader()
+# :name: csv_dictreader_
+# :::
+# 
 # ## DictReader zum Arbeiten mit CSVs
 # 
 # Neben dieser Methode zum Bearbeiten von CSV-Dateien stellt die Python-Bibliothek noch die Möglichkeit bereit, CSVs als Dictionaries zu öffnen. Dies kann hilfreich sein, wenn Ihnen die genaue Position der Zellen nicht bekannt ist und Sie stattdessen mit den *Namen* der Spalten arbeiten möchten. Das Auslesen funktioniert dabei ähnlich wie oben:
@@ -129,6 +166,10 @@ with open("example_data/books.csv", "r") as csv_file:
         print(row['Erscheinungsjahr'])
 
 
+# :::{index} single: CSV ; DictWriter()
+# :name: csv_dictwriter_
+# :::
+# 
 # Ebenso können Sie neue CSVs erstellen. Hier gehen Sie so vor, dass Sie für jede Tabellenzeile ein eigenes Dictionary vorbereiten. Wichtig ist dabei, dass Sie die Kopfzeile der Tabelle (die ja die Spaltennamen enthält) vorher in einer Liste definieren und dem DictWriter-Objekt als Parameter übergeben.
 
 # In[ ]:
@@ -140,7 +181,7 @@ with open("example_data/more_books.csv", "w", newline="") as csv_file:
             "Autor",
             "Erscheinungsjahr",
             "verfügbar"]
-    books_writer = csv.DictWriter(csv_file, fieldnames = header)
+    books_writer = csv.DictWriter(csv_file, fieldnames=header)
     books_writer.writeheader()
 
     more_input = True
@@ -166,7 +207,7 @@ with open("example_data/more_books.csv", "w", newline="") as csv_file:
             more_input = False
 
 
-# Neben der von Python bereitgestellten csv-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. [Pandas](https://pandas.pydata.org/). Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek `csv` zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen.
+# Neben der von Python bereitgestellten `csv`-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. [Pandas](https://pandas.pydata.org/). Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek `csv` zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen.
 
 # ## Aufgabe: Daten strukturiert speichern
 # 

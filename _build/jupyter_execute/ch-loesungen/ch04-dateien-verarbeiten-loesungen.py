@@ -227,9 +227,3 @@ tokenized_exampletxt = tokenize_text(source_exampletxt)
 # segment input data
 segment_text(tokenized_exampletxt, 10, "example_data/beispieltext.csv")
 
-
-# In[ ]:
-
-
-
-

@@ -3,6 +3,10 @@
 
 # # [Tupel](https://docs.python.org/3.7/tutorial/datastructures.html#tuples-and-sequences)
 # 
+# :::{index} Tupel
+# :name: tupel
+# ::: 
+# 
 # Tupel sind enge Verwandte von Listen. Aber während Sie Listen im Zuge eines Programmdurchlaufs beliebig manipulieren können, ist dies bei Tupeln nicht der Fall. Bei beiden Datenstrukturen haben Sie lesenden Zugriff, aber nur bei Listen auch einen schreibenden. Abgesehen davon können Sie mit Tupeln die meisten Operationen ausführen, die auch mit Strings und Listen funktionieren. Die Nutzung von Tupeln ist dann vorteilhaft, wenn Sie mit Daten arbeiten, die nicht veränderbar sein sollen. Sie können unveränderbare Daten sowohl in Listen einbauen als auch umgekehrt bearbeitbare Listen in Tupel.
 # 
 # ## Tupel erstellen
@@ -23,7 +27,7 @@ print(some_tuple[1][1])
 print(another_tuple[2][1][0])
 
 
-# Dass es sich um ein Tupel handelt, wird vom Interpreter anhand der runden Klammern erkannt.
+# Dass es sich um ein Tupel handelt, wird vom Interpreter anhand der runden Klammern `()` erkannt.
 # 
 # Folgendes gilt es zu beachten:
 # Leere Tupel erstellen Sie durch aufeinanderfolgende runde Klammern. 

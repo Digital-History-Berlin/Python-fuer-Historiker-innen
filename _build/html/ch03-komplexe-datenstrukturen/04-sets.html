@@ -353,6 +353,23 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ch-appendix/01-glossar.html">
+   Glossar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -534,7 +551,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="sets">
 <h1><a class="reference external" href="https://docs.python.org/3.7/tutorial/datastructures.html#sets">Sets</a><a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h1>
-<p>Auch für Mengen gibt es in Python einen Datentyp: das <code class="docutils literal notranslate"><span class="pre">set</span></code>. Mengen sind ungeordnete Sammlungen von Objekten ohne doppelte Einträge. Sie sind dann relevant, wenn nicht die Position oder Anzahl eines Elements von Relevanz ist, sondern sein bloßes Vorkommen. Ein Anwendungsbeispiel: Wenn Sie zum Beispiel wissen möchten, wie viele einzigartige Wörter in einem Text enthalten sind, dann können Sie ihn in ein Set umwandeln. Im nachfolgenden Codeblock demonstrieren wir das einmal anhand unseres Beispieltextes.</p>
+<p id="set">Auch für Mengen gibt es in Python einen Datentyp: das Set. Mengen sind ungeordnete Sammlungen von Objekten ohne doppelte Einträge. Sie sind dann relevant, wenn nicht die Position oder Anzahl eines Elements von Relevanz ist, sondern sein bloßes Vorkommen. Ein Anwendungsbeispiel: Wenn Sie zum Beispiel wissen möchten, wie viele einzigartige Wörter in einem Text enthalten sind, dann können Sie ihn in ein Set umwandeln. Im nachfolgenden Codeblock demonstrieren wir das einmal anhand unseres Beispieltextes.</p>
 <div class="section" id="sets-erstellen">
 <h2>Sets erstellen<a class="headerlink" href="#sets-erstellen" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -615,8 +632,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Wie Sie jedoch sehen, werden Sets durch geschweifte Klammern eingeleitet und abgeschlossen. Sie können mit der Funktion <code class="docutils literal notranslate"><span class="pre">set()</span></code> erstellt werden. Übergeben Sie der Methode keine Werte, wird eine leere Menge erstellt.</p>
-<p><strong>Wichtig:</strong> Leere Sets können nicht einfach mit <code class="docutils literal notranslate"><span class="pre">{}</span></code> erstellt werden. Diese Art und Weise ist für Dictionaries vorgesehen, eine Datenstruktur, die wir im nächsten Abschnitt kennenlernen werden.</p>
+<div class="margin sidebar" id="id1">
+<p class="sidebar-title"></p>
+<div class="note admonition">
+<p class="admonition-title">Wichtig!</p>
+<p>Leere Sets können nicht einfach mit <code class="docutils literal notranslate"><span class="pre">{}</span></code> erstellt werden. Diese Art und Weise ist für Dictionaries vorgesehen.</p>
+</div>
+</div>
+<p>Wie Sie jedoch sehen, werden Sets durch geschweifte Klammern <code class="docutils literal notranslate"><span class="pre">{}</span></code> eingeleitet und abgeschlossen. Sie können mit der Funktion <code class="docutils literal notranslate"><span class="pre">set()</span></code> erstellt werden. Übergeben Sie der Methode keine Werte, wird eine leere Menge erstellt.</p>
 <p>Sets eignen sich auch zur effizienten Prüfung, ob Elemente in einer Menge vorhanden sind. Dazu können wir wieder auf Operatoren wie <code class="docutils literal notranslate"><span class="pre">in</span></code> oder <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> zurückgreifen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -628,12 +651,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="aufgaben-sets">
-<span id="id1"></span><h2>Aufgaben Sets<a class="headerlink" href="#aufgaben-sets" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Aufgaben Sets<a class="headerlink" href="#aufgaben-sets" title="Permalink to this headline">¶</a></h2>
 <p>Abschliessend wollen wir noch einen genaueren Blick auf unsere Textdaten werfen. Wir können mit den in diesem und dem letzten Abschnitt gelernten Inhalten für jedes Wort ermitteln, wie oft es im Text vorkommt und die sogenannte <em>Vocabulary Density</em> berechnen.</p>
 <div class="section" id="a-anzahl-der-worter-in-einem-text-ermitteln">
 <h3>a) Anzahl der Wörter in einem Text ermitteln<a class="headerlink" href="#a-anzahl-der-worter-in-einem-text-ermitteln" title="Permalink to this headline">¶</a></h3>
-<p>Für diese Aufgabe benötigen wir Ihren in der <a class="reference internal" href="02-listen.html#aufgabe-text-preprocessing"><span class="std std-ref">vorherigen Zwischenaufgabe tokenisierten Text</span></a>. Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte <code class="docutils literal notranslate"><span class="pre">print</span></code>-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.</p>
-<p>Für die Bearbeitung dieser Aufgabe benötigen Sie <code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen, <code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingungen und die Lerninhalte zu Listen und Tupeln.</p>
+<p>Für diese Aufgabe benötigen wir Ihren in der <a class="reference internal" href="02-listen.html#aufgabe-text-preprocessing"><span class="std std-ref">vorherigen Zwischenaufgabe tokenisierten Text</span></a>. Schreiben Sie ein kleines Programm, das auf Basis dieses tokenisierten Textes zunächst ein Set generiert. Dann soll für jedes Wort in diesem Set ermittelt werden, wie oft es im von Ihnen tokenisierten Text vorkommt. Legen Sie das Wort zusammen mit seiner Vorkommenshäufigkeit als Tupel in einer Liste ab und geben Sie anschließend über eine formatierte <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Ausgabe diejenigen Wörter unter Angabe ihrer Vorkommenshäufigkeit aus, die häufiger als 5-mal im Text vorkommen.</p>
+<p>Für die Bearbeitung dieser Aufgabe benötigen Sie <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/03-schleifen.html#for-schleife"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">for</span></code>-Schleifen</span></a>, <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/02-bedingte-anweisungen.html#bedingte-abfragen"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">if</span></code>-Bedingungen</span></a> und die Lerninhalte zu <a class="reference internal" href="02-listen.html#liste"><span class="std std-ref">Listen</span></a> und <a class="reference internal" href="03-tupel.html#id1"><span class="std std-ref">Tupeln</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -643,8 +666,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten">
-<h3>b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten<a class="headerlink" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten" title="Permalink to this headline">¶</a></h3>
-<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id2">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
+<span id="vocabulary-density"></span><h3>b) Berechnung der Vocabulary Density auf Basis der Rohtextdaten<a class="headerlink" href="#b-berechnung-der-vocabulary-density-auf-basis-der-rohtextdaten" title="Permalink to this headline">¶</a></h3>
+<p>Die <em>Vocabulary Density</em> zeigt an, wie komplex ein Text ist. Die Dichte des Wortschatzes wird beispielsweise in der Computerlinguistik genutzt, um Texte zu analysieren. Sie beschreibt das Verhältnis der <strong>Gesamtanzahl</strong> der in einem Text enthaltenen Wörter zu den <strong>einzigartigen Wörtern</strong>.<a class="footnote-reference brackets" href="#fn1" id="id3">1</a> Mit dieser Metrik können Sie bestimmen, wie vielfältig ein Text auf sprachlicher Ebene ist und so den Wortschatz verschiedener Texte miteinander vergleichen, wobei die Länge der Texte zu berücksichtigen ist.</p>
 <p>Das Ergebnis der Berechnung zeigt Ihnen an, wie viele Wörter durchschnittlich gelesen werden müssen, bis ein neues Wort auftritt. Das heißt, je kleiner der Wert ist, desto komplexer ist der Text auf sprachlicher Ebene. Je größer der Wert ist, desto einfacher ist der Text zu lesen.</p>
 <p>Schreiben Sie ein kleines Programm, das eine Funktion enthält, mit der diese auf <strong>Division</strong> beruhende Berechnung für Ihren im vorherigen Abschnitt eingelesenen und tokenisierten Text durchgeführt werden kann.</p>
 <div class="cell docutils container">
@@ -656,7 +679,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>Die Berechnung dieses Verhältnisses wird aussagekräftiger, wenn man die eingespeisten Inputdaten einer <a class="reference external" href="https://de.wikipedia.org/wiki/Lemma_(Lexikographie)"><em>Lemmatisierung</em></a> unterzieht, das heißt, dass alle in dem Text enthaltenen Wörter auf ihre Grundform reduziert werden. Dazu zwei Beispiele zur Veranschaulichung: 1) aus “war”, “werden” und “ist” wird “sein”, 2) aus “historischer”, “historisches”, “historischem” oder “historische” wird “historisch”. Für solche sprachverarbeitenden Aufgaben gibt es zusätzliche Python-Bibliotheken (bspw. <code class="docutils literal notranslate"><span class="pre">spaCy</span></code> oder <code class="docutils literal notranslate"><span class="pre">nltk</span></code>), die eine Reihe von Funktionen enthalten, die Sie einfach in Ihren Code einbauen können. Wie externe Bibliotheken in den Code integriert werden, werden wir in den kommenden Kapiteln lernen.</p>
 </dd>
 </dl>

@@ -3,6 +3,14 @@
 
 # # Bedingte Anweisungen
 # 
+# :::{index} Bedingte Anweisungen
+# :name: bedingte_anweisungen
+# :::
+# 
+# :::{index} Booleans
+# :name: booleans
+# :::
+# 
 # ## [Boolesche Werte](https://www.w3schools.com/python/python_booleans.asp)
 # Nachdem Sie in der letzten Einheit schon einige Datentypen kennengelernt haben (*int*, *float*, *string* usw.), fügen wir nun dieser Liste noch einen Weiteren hinzu: den Datentyp *Boolean*. Er kann lediglich zwei Werte annehmen: `True` oder `False`. Sie können damit also sog. Wahrheitswerte abbilden. Benannt wurde dieser Datentyp übrigens nach [George Boole](https://de.wikipedia.org/wiki/George_Boole), der mit der [Booleschen Algebra](https://de.wikipedia.org/wiki/Boolesche_Algebra) einen für die Computertechnik grundlegenden Zweig der Mathematik begründete.
 # 
@@ -18,7 +26,7 @@ is_spam = False
 print(is_spam)
 
 
-# In den meisten Fällen werden wir uns diesen Datentyp aber zu Nutze machen, um zu prüfen, ob logische Aussagen richtig oder falsch sind ... und das werden wir sehr häufig prüfen wollen. Oft möchten wir z.B. wissen, ob eine bestimmte Zeichenkette in einem Text auftaucht, dazu können wir das Schlüsselwort `in` nutzen:
+# In den meisten Fällen werden wir uns diesen Datentyp aber zu Nutze machen, um zu prüfen, ob {term}`logische Aussagen` richtig oder falsch sind ... und das werden wir sehr häufig prüfen wollen. Oft möchten wir z.B. wissen, ob eine bestimmte Zeichenkette in einem Text auftaucht, dazu können wir das Schlüsselwort `in` nutzen:
 
 # In[ ]:
 
@@ -40,9 +48,13 @@ print("Editionswissenschaft" not in example_text)
 print("Text Mining" not in example_text)
 
 
+# :::{index} Vergleichsoperatoren
+# :name: vergleichsoperatoren
+# :::
+# 
 # ## Vergleichsoperatoren
 # 
-# Neben den Schlüsselwörtern `in` oder `not in` können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen Wahrheitswert die jeweiligen logischen Aussagen ergeben werden, also ob Sie `True` oder `False` sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:
+# Neben den Schlüsselwörtern `in` oder `not in` können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen {term}`Wahrheitswert` die jeweiligen logischen Aussagen ergeben werden, also ob Sie `True` oder `False` sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:
 
 # In[ ]:
 
@@ -85,17 +97,31 @@ print("42" == 42)
 print(5 != 5)
 
 
+# :::{index} Bedingte Abfragen
+# :name: bedingte_abfragen
+# :::
+# 
+# :::{index} single: Bedingte Abfragen ; if
+# :name: if_
+# :::
+# 
+# :::{index} single: Bedingte Abfragen ; else
+# :name: else_
+# :::
+# 
 # ## [Bedingte Abfragen mit if, elif und else](https://www.python-kurs.eu/python3_bedingte_anweisungen.php)
 # 
 # Was können wir nun alles mit den Operatoren und den Datentypen, die wir bisher kennengelernt und in dieser Lektion noch kennenlernen werden, anstellen? 
 # 
-# Bisher haben wir unsere Programme vor allem als eine Abfolge von Instruktionen geschrieben: 
+# Bisher haben wir unsere Programme vor allem als eine Abfolge von Instruktionen geschrieben:
 # 
+# :::{epigraph}
 # *Weise einen Wert einer Variablen zu.* 
 # 
 # *Addiere mehrere Werte und weise die Summe einer Variablen zu.*
 # 
 # *Gib den Wert der Variablen aus ... usw.*
+# :::
 # 
 # Wirklich interessant wird es, wenn wir unsere Programme so gestalten, dass bestimmte Schritte nur dann ausgeführt werden, wenn etwaige Vorbedingungen erfüllt sind. Solche logischen Verzweigungen können wir mithilfe der eben kennengelernten Operatoren und Wahrheitswerte und den sogenannten `if`-Abfragen definieren:
 
@@ -128,13 +154,22 @@ if sub_string in example_text:
 print("Das Programm ist beendet.")
 
 
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Nach dem Doppelpunkt einer `if`-Abfrage wird in der nächsten Zeile die Anweisung eingerückt.
+# :::
+# ::::
+# 
 # Mit `if`-Abfragen können wir also eine klassische Wenn-Dann-(Andernfalls-)Bedingung formalisieren:
 # 
+# :::{epigraph}
 # *Wenn die Bedingung "sub_string ist in example_text" wahr ist, dann gib die Meldung aus, dass die Zeichenkette im Beispieltext enthalten ist. Optional: Wenn die Bedingung nicht erfüllt ist, dann gib eine Meldung aus, dass die Zeichenkette nicht im Beispieltext enthalten ist.* 
+# :::
 # 
 # Beachten Sie dabei aber bitte die Einrückungen, beispielsweise in Zeile 4. Die Einrückungen dienen nicht nur einer besseren Lesbarkeit, sondern bedeuten für den Python-Interpreter, dass die `if`-Abfrage und der nachfolgende eingerückte Code zusammengehören. Der nicht mehr eingerückte Code in Zeile 6 gehört nicht mehr zur `if`-Abfrage und wird immer ausgeführt; unabhängig davon, ob diese wahr oder falsch ist.
 # 
-# Wenn Sie die Einrückung entfernen würden, ruft das den Indentation-Fehler hervor und Ihr Programm wird nicht ausgeführt: 
+# Wenn Sie die Einrückung entfernen würden, ruft das den [Indentation-Fehler](indentationerror) hervor und Ihr Programm wird nicht ausgeführt: 
 
 # In[ ]:
 
@@ -188,7 +223,12 @@ print("Das Programm ist beendet.")
 # 
 # Der Code in Zeile 21 gehört nicht mehr zur `if`-`else`-Abfrage und wird immer ausgeführt (solange kein Fehler im Code auftritt) -- unabhängig davon, ob die Auswertung der Bedingungen wahr oder falsch ist. 
 # 
+# :::{index} single: Bedingte Abfragen ; elif
+# :name: elif_
+# :::
+# 
 # ## Else-if: elif
+# 
 # Außerdem haben Sie die Möglichkeit, mehrere `if`-Abfragen in einem Block zusammenzufassen. So können wir zum Beispiel eine dritte Option zu unserer Abfrage hinzufügen, die den Fall behandelt, in dem beide Zeichenketten identisch sind. Verwenden Sie hierfür das Schlüsselwort `elif` (kurz für "else if"). Die Syntax von `elif` ist identisch zu der von `if`.
 
 # In[ ]:
@@ -219,10 +259,15 @@ else:
     print(f"Die Zeichenkette '{sub_string}' ist nicht Teil von example_text.")
 
 
-# Sie können beliebig viele `elif`-Abfragen hinzufügen, dabei ist aber grundsätzlich die Reihenfolge "if ..., elif ..., elif ..., elif ..., [...], else" zu berücksichtigen. 
+# Sie können beliebig viele `elif`-Abfragen hinzufügen, dabei ist aber grundsätzlich die Reihenfolge "`if` ..., `elif` ..., `elif` ..., `elif` ..., [...], `else`" zu berücksichtigen. 
 
+# :::{index} single: Bedingte Abfragen ; Bedingungen verknüpfen
+# :name: bedingungen_verknüpfen
+# :::
+# 
 # ## Bedingungen verknüpfen
-# Sie können in Ihren `if`-Blöcken auch mehrere Bedingungen gleichzeitig abfragen. Diese müssen Sie mit den Schlüsselwörtern `and` oder `or` miteinander verknüpfen. Diese entsprechen dem logischen UND bzw. ODER. Wie sich die Kombination von *wahren* (w) und *falschen* (f) Aussagen mit UND bzw. ODER auf den Wahrheitswert der Gesamtaussage auswirkt, zeigt folgende Tabelle:
+# 
+# Sie können in Ihren `if`-Blöcken auch mehrere Bedingungen gleichzeitig abfragen. Diese müssen Sie mit den Schlüsselwörtern `and` oder `or` miteinander verknüpfen. Diese entsprechen dem logischen UND bzw. ODER. Wie sich die Kombination von *wahren* (w) und *falschen* (f) Aussagen mit UND bzw. ODER auf den {term}`Wahrheitswert` der Gesamtaussage auswirkt, zeigt folgende Tabelle:
 # 
 # | Aussage_1 | Aussage_2 | and | or |
 # |:----------|-----------|-----|---:|
@@ -260,7 +305,7 @@ else:
     print("Die Aussage ist falsch.")
 
 
-# Durch Klammern können Sie verknüpfte Abfragen auch schachteln. Dann werden zuerst die Rückgabewerte der Abfragen in den Klammern zurückgegeben und erst anschließend mit anderen Abfragen verknüpft. Beachten Sie den Unterschied zwischen folgenden beiden Programmen:
+# Durch Klammern können Sie verknüpfte Abfragen auch schachteln. Dann werden zuerst die {term}`Rückgabewerte` der Abfragen in den Klammern zurückgegeben und erst anschließend mit anderen Abfragen verknüpft. Beachten Sie den Unterschied zwischen folgenden beiden Programmen:
 
 # In[ ]:
 
@@ -300,7 +345,7 @@ print("Das Programm ist beendet.")
 
 # ## Aufgabe: Bedingte Anweisungen
 # 
-# Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die Magna Carta stammt. Abhängig von der Eingabe sollen verschiedene `print`-Kommandos ausgeführt werden: "Die Magna Carta stammt aus einem späteren Jahr.", "Die Vereinbarungen stammen aus einem früheren Jahr.", "Die Eingabe ist korrekt!". 
+# Schreiben Sie ein kleines Programm, das eine:n Nutzer:in fragt, aus welchem Jahr die [Magna Carta](https://de.wikipedia.org/wiki/Magna_Carta) stammt. Abhängig von der Eingabe sollen verschiedene `print`-Kommandos ausgeführt werden: "Die Magna Carta stammt aus einem späteren Jahr.", "Die Vereinbarungen stammen aus einem früheren Jahr.", "Die Eingabe ist korrekt!". 
 # Denken Sie dabei daran, dass Sie den Wert der `input`-Funktion in ein `integer` umwandeln müssen. Wie das geht, können Sie im [ersten Kapitel](datentyp-aendern) noch mal nachlesen.
 
 # In[ ]:

@@ -3,7 +3,15 @@
 
 # # [Dictionaries](https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries)
 # 
-# Eine weitere zentrale Datenstruktur in Python, mit der Daten auf mächtige Art und Weise organisiert werden können, ist das sogenannte Dictionary. Sie können sich die Funktionsweise vorstellen wie bei Glossaren, Wörterbüchern oder Lexika: Auf Basis eines Schlüsselbegriffs können Sie unterschiedlich detailreiche Informationen zu diesem Begriff abrufen. 
+# :::{index} Dictionary
+# :name: dictionary
+# ::: 
+# 
+# Eine weitere zentrale Datenstruktur in Python, mit der Daten auf mächtige Art und Weise organisiert werden können, ist das sogenannte Dictionary. Sie können sich die Funktionsweise vorstellen wie bei Glossaren, Wörterbüchern oder Lexika: Auf Basis eines Schlüsselbegriffs können Sie unterschiedlich detailreiche Informationen zu diesem Begriff abrufen.
+# 
+# :::{index} single: Dictionary ; Schlüssel-Wert-Paare
+# :name: schluessel_wert_paare
+# :::
 # 
 # Wie bei einer Liste handelt es sich um eine veränderbare Sammlung von potentiell unterschiedlichen Werten. Anders als bei Listen allerdings erfolgt der Zugriff nicht automatisch über Integers als Positionsangabe, sondern über die sogenannten *keys*, denn Dictionaries bestehen aus Schlüssel-Wert-Paaren (*key-value pairs*). Die *keys* können aus unterschiedlichen Datentypen bestehen. Für das jeweilige Dictionary müssen Sie allerdings einzigartig sein, damit unmissverständlich die gespeicherten Informationen abgerufen werden können.
 # 
@@ -11,7 +19,7 @@
 
 # ## Dictionaries erstellen
 # 
-# Wie bei Sets werden Dicitionaries durch geschweifte Klammern interpretierbar. Sie unterscheiden sich aber hinsichtlich der Organisation der jeweils gespeicherten Daten. Ein Dictionary kann wie folgt aussehen:
+# Wie bei Sets werden Dicitionaries durch geschweifte Klammern `{}` interpretierbar. Sie unterscheiden sich aber hinsichtlich der Organisation der jeweils gespeicherten Daten. Ein Dictionary kann wie folgt aussehen:
 
 # In[ ]:
 
@@ -23,11 +31,26 @@ books = {"Franz Kafka":"Der Prozess",
                           "Harry Potter und der Gefangene von Askaban"]}
 
 
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Dictionaries unterscheiden sich in ihrer Struktur von Sets.
+# :::
+# ::::
+# 
+# :::{index} single: Dictionary ; Keys
+# :name: keys
+# :::
+# 
+# :::{index} single: Dictionary ; Values
+# :name: values
+# :::
+# 
 # Mit dieser Codezeile wird ein Dictionary der Variable `books` zugewiesen. Die Schlüssel (*keys*) sind in diesem Beispiel die Namen der Autor:innen und die ihnen jeweils zugewiesenen Werte (*values*) sind korrespondierende Buchtitel. Die Zuordnung der Werte zu einem Schlüssel wird durch Doppelpunkte signalisiert, einzelne Instanzen sind durch Kommata voneinander abgegrenzt. Diese Struktur müssen Sie zur Unterscheidung von Sets beibehalten.
 # 
-# Anhand des Eintrags zu "J. K. Rowling" wird ersichtlich, dass sich auch Dictionaries verschachteln lassen. Eine Liste als korrespondierender Wert zu einem Schlüssel bietet sich bspw. dann an, wenn Sie mit geordneten Daten arbeiten wollen. Ein *key* kann aber auch weitere Dictionaries enthalten. Das ermöglicht Ihnen, komplexe Datenstrukturen flexibel zu modellieren.
+# Anhand des Eintrags zu `J. K. Rowling` wird ersichtlich, dass sich auch Dictionaries verschachteln lassen. Eine Liste als korrespondierender Wert zu einem Schlüssel bietet sich bspw. dann an, wenn Sie mit geordneten Daten arbeiten wollen. Ein *key* kann aber auch weitere Dictionaries enthalten. Das ermöglicht Ihnen, komplexe Datenstrukturen flexibel zu modellieren.
 # 
-# Zugreifen können Sie nun auf diese Werte durch die Angabe des Schlüssels. Wie bei der Indizierung bei den bisher kennengelernten sequenziellen Datentypen werden auch hierzu eckige Klammern verwendet:[^fn1]
+# Zugreifen können Sie nun auf diese Werte durch die Angabe des Schlüssels. Wie bei der Indizierung bei den bisher kennengelernten sequenziellen Datentypen werden auch hierzu eckige Klammern `[]` verwendet:[^fn1]
 
 # In[ ]:
 
@@ -41,7 +64,23 @@ books = {"Franz Kafka":"Der Prozess",
 "Der erste Teil in der Harry-Potter-Reihe heißt \"" + books["J. K. Rowling"][0] + "\"."
 
 
-# Wenn Sie auf einen Schlüssel zugreifen wollen, der nicht im Dictionary hinterlegt ist, dann erhalten Sie eine `KeyError`-Fehlermeldung -- ganz ähnlich den *out of range* `IndexError`-Fehlermeldungen bei Listen:
+# :::{index} KeyError
+# :name: keyerror
+# :::
+# 
+# Wenn Sie auf einen Schlüssel zugreifen wollen, der nicht im Dictionary hinterlegt ist, dann erhalten Sie eine `KeyError`-Fehlermeldung -- ganz ähnlich den *out of range* [`IndexError`-Fehlermeldungen](indexerror) bei Listen:
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
@@ -49,7 +88,7 @@ books = {"Franz Kafka":"Der Prozess",
 "Albert Camus \"" + books["Albert Camus"] + "\" wird in der Coronakrise wieder viel gelesen."
 
 
-# Falls wir das nicht vorhandene Schlüssel-Wert-Paar nun hinzufügen wollen, dann können wir dieselbe Notation verwenden, die wir auch für den Zugriff gebrauchen, und in Kombination mit dem Zuweisungssymbol entsprechende Inhalte integrieren:
+# Falls wir das nicht vorhandene Schlüssel-Wert-Paar nun hinzufügen wollen, dann können wir dieselbe Schreibweise verwenden, die wir auch für den Zugriff gebrauchen, und in Kombination mit dem Zuweisungssymbol entsprechende Inhalte integrieren:
 
 # In[ ]:
 
@@ -58,13 +97,25 @@ books["Albert Camus"] = "Die Pest"
 print(books["Albert Camus"])
 
 
-# Das Dictionary `books` enthält nun ein Schlüssel-Wert-Paar bestehend aus "Albert Camus" und "Die Pest". Auf diese Weise können beliebige Einträge hinzugefügt oder auch bearbeitet werden.
+# Das Dictionary `books` enthält nun ein Schlüssel-Wert-Paar bestehend aus `Albert Camus` und `Die Pest`. Auf diese Weise können beliebige Einträge hinzugefügt oder auch bearbeitet werden.
 # 
 # 
 
+# :::{index} single: Dictionary ; keys()
+# :name: keys_
+# :::
+# 
+# :::{index} single: Dictionary ; values()
+# :name: values_
+# :::
+# 
+# :::{index} single: Dictionary ; items()
+# :name: items_
+# :::
+# 
 # ## `keys()`, `values()` und `items()`
 # 
-# Mit den drei Methoden `keys()`, `values()` und `items()` werden listenähnliche Objekte erzeugt, die allerdings nicht modifizierbar sind. Sie bieten einen einfachen Zugriff auf die im Dictionary gespeicherten Daten. Notieren Sie im Kommentarbereich, was die Methoden im jeweiligen For-Loop machen:
+# Mit den drei Methoden `keys()`, `values()` und `items()` werden listenähnliche Objekte erzeugt, die allerdings nicht modifizierbar sind. Sie bieten einen einfachen Zugriff auf die im Dictionary gespeicherten Daten. Notieren Sie im Kommentarbereich, was die Methoden in der jeweiligen `for`-Schleife machen:
 
 # In[ ]:
 
@@ -111,6 +162,10 @@ print(type(authors))
 print(authors)
 
 
+# :::{index} single: Dictionary ; get()
+# :name: get_
+# :::
+# 
 # ## `get()`
 # 
 # Die `get()`-Methode gibt den Wert für einen angegebenen Schlüssel zurück, wenn dieser im Dictionary existiert. Optional kann ein zweites Argument angegeben werden, das zurückgegeben werden soll, wenn der entsprechend angegebene Schlüssel fehlt. Per *default* wird `None` zurückgegeben, wenn kein Rückgabewert für diesen Fall spezifiziert wurde. 
@@ -123,6 +178,14 @@ print(books.get("Edgar Allan Poe"))
 print(books.get("Edgar Allan Poe", "kein Eintrag"))
 
 
+# :::{index} single: Dictionary ; del
+# :name: dict_del_
+# :::
+# 
+# :::{index} single: Dictionary ; clear()
+# :name: dict_clear_
+# :::
+# 
 # ## Einträge entfernen
 # 
 # Auch für Dictionaries stehen mit dem `del`-Statement und `clear()` Möglichkeiten zur Verfügung, um einzelne Elemente eines Dictionaries zu entfernen oder den gesamten Inhalt zu löschen:
@@ -158,7 +221,7 @@ print(books)
 # 
 # **Hinweise:**
 # - Nutzen Sie Schleifen und Bedingungen 
-# - Für die Berechnung bei der ersten Funktion können Sie sich an Ihrer Herangehensweise im Abschnitt über Sets orientieren; bei der zweiten Funktion helfen Division und Multiplikation
+# - Für die Berechnung bei der ersten Funktion können Sie sich an Ihrer Herangehensweise im [Abschnitt über Sets](aufgaben-sets) orientieren; bei der zweiten Funktion helfen Division und Multiplikation
 
 # In[ ]:
 
@@ -174,7 +237,7 @@ print(books)
 
 # **Bemerkung:** 
 # 
-# In diesem Kapitel konnten wir Ihnen lediglich einen ersten Eindruck von der Arbeit mit Listen, Tupeln, Sets und Dictionaries vermitteln. Wenn Sie sich durch die Dokumentation zu den einzelnen Datenstrukturen durcharbeiten, werden Sie feststellen, dass die Möglichkeiten noch sehr viel umfangreicher sind. Es bietet sich an, sich bedarfsweise und anwendungsorientiert immer tiefer einzuarbeiten.
+# In diesem Kapitel konnten wir Ihnen lediglich einen ersten Eindruck von der Arbeit mit Listen, Tupeln, Sets und Dictionaries vermitteln. Wenn Sie sich durch die {term}`Dokumentation` zu den einzelnen Datenstrukturen durcharbeiten, werden Sie feststellen, dass die Möglichkeiten noch sehr viel umfangreicher sind. Es bietet sich an, sich bedarfsweise und anwendungsorientiert immer tiefer einzuarbeiten.
 # 
 # ![alt text](https://res.cloudinary.com/practicaldev/image/fetch/s--AHhADEXH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://pics.me.me/trying-to-learn-any-programming-language-100-just-a-little-7917454.png)
 

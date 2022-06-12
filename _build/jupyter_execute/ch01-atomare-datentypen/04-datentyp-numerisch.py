@@ -3,6 +3,10 @@
 
 # # Numerische Datentypen
 # 
+# :::{index} single: Funktion ; type()
+# :name: type_
+# :::
+# 
 # Sie haben sich bereits eingehend mit dem Datentyp *string* auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von [numerischen Datentypen](https://docs.python.org/3/library/stdtypes.html#typesnumeric), die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion `type()` können wir die Information einfach in Python erfragen.
 
 # In[ ]:
@@ -13,9 +17,15 @@ text = "some text"
 type(text)
 
 
+# :::{index} integers
+# :name: integers
+# :::
+# 
 # ## Ganzzahlen
 # 
 # Bei *integers* handelt es sich um ganze Zahlen.
+# 
+# 
 
 # In[ ]:
 
@@ -25,6 +35,17 @@ x = 2
 type(x)
 
 
+# :::{index} floats
+# :name: floats
+# :::
+# 
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Beachten Sie, dass in Python Dezimalzahlen mit einem Punkt und **_nicht_** mit einem Komma geschrieben werden.
+# :::
+# ::::
+# 
 # ## Gleitkommazahlen
 # 
 # Bei *float* handelt es sich um Gleitkomma- beziehungsweise Dezimalzahlen. 
@@ -37,7 +58,9 @@ y = 5.0
 type(y)
 
 
-# Beachten Sie, dass in Python Dezimalzahlen mit einem Punkt und nicht mit einem Komma geschrieben werden.
+# :::{index} single: Funktion ; round()
+# :name: round_
+# :::
 # 
 # Dezimalzahlen weisen nicht selten zahlreiche Nachkommastellen auf. Es kann dann gewünscht sein, diese durch Rundung zu verringern. Das können Sie mit der Funktion [`round()`](https://docs.python.org/3/library/functions.html#round) erledigen. Sie nimmt als erstes Argument den jeweiligen Wert, der gerundet werden soll, und optional als zweites Argument die Anzahl der gewünschten Nachkommastellen.
 # 
@@ -65,6 +88,10 @@ round(5.7823432)
 # your answer
 
 
+# :::{index} Komplexe Zahlen
+# :name: komplexe_zahlen
+# :::
+# 
 # ## Komplexe Zahlen
 # 
 # Ein besonderer numerischer Datentyp sind die [komplexen Zahlen](https://en.wikipedia.org/wiki/Complex_number). Da dieser Datentyp in Szenarien, mit denen Historiker:innen programmatisch arbeiten, selten vorkommt, soll er an dieser Stelle nicht weiter erläutert werden -- dennoch sollter dieser zumindest kurz erwähnt werden.
@@ -77,10 +104,13 @@ z = 1 + 2j
 type(z)
 
 
-# (datentyp-aendern)=
+# :::{index} Datentyp ändern
+# :name: datentyp-aendern
+# :::
+# 
 # ## Datentyp ändern
 # 
-# Wir hatten darauf hingewiesen, dass Variablen in Python dynamisch typisiert werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der `input()`-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.
+# Wir hatten darauf hingewiesen, dass Variablen in Python {term}`dynamisch typisiert` werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der `input()`-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.
 # 
 # **Zum Beispiel:**
 
@@ -100,8 +130,28 @@ age_int = int(input("How old are you? "))
 print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 
+# :::{index} single: Funktion ; complex()
+# :name: complex_
+# :::
+# 
+# :::{index} single: Funktion ; str()
+# :name: str_
+# :::
+# 
+# :::{index} single: Funktion ; int()
+# :name: int_
+# :::
+# 
+# :::{index} single: Funktion ; float()
+# :name: float_
+# :::
+# 
 # Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen ([`complex()`](https://docs.python.org/3/library/functions.html#complex)), Strings ([`str()`](https://docs.python.org/3/library/functions.html#func-str)), Integers ([`int()`](https://docs.python.org/3/library/functions.html#int)) und Gleitkommazahlen ([`float()`](https://docs.python.org/3/library/functions.html#float)).
 
+# :::{index} Arithmetische Operatoren
+# :name: arithmetische_operatoren
+# :::
+# 
 # ## Arithmetische Operatoren
 # 
 # Python kann ganz einfach genutzt werden, um einfache und auch komplexere mathematische Berechnungen zu lösen. Sie können die Programmierumgebung gewissermaßen wie einen Taschenrechner benutzen oder kleine Programme schreiben, die Ihnen wiederkehrende Aufgaben, wie beispielsweise Prozentrechnung, abnehmen. 
@@ -262,6 +312,7 @@ str(30) * 2
 # your answer
 
 
+# (aufgabe-computer-als-taschenrechner)=
 # ## Aufgabe: Der Computer als Taschenrechner
 # 
 # Zum Abschluss dieser Lektion sollen Sie ein kleines Skript schreiben, das eine einfache mathematische Rechnung enthält. In welcher Form Sie diese integrieren bleibt Ihnen überlassen. Ihr Programmcode sollte zudem mindestens eine Eingabe-Funktion sowie eine formatierte Ausgabe enthalten. Beziehen Sie außerdem nach eigenem Ermessen aus allen Lektionsinhalten Komponenten in Ihr Skript ein.
@@ -286,7 +337,7 @@ netto = base - value
 print(f"Sie sparen {value} Euro und müssen noch {netto} Euro bezahlen.")
 
 
-# **Ihr Skript-Beispiel für die Lektion "Atomare Datentypen":**
+# **Ihr Skript:**
 
 # In[ ]:
 
