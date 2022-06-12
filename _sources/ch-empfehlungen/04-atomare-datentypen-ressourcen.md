@@ -1,4 +1,6 @@
-# Speziell für diese Übungseinheit empfehlen wir Ihnen die folgenden Ressourcen:
+# Weitere Ressourcen: Atomare Datentypen 
+
+Speziell für diese Übungseinheit empfehlen wir Ihnen die folgenden Ressourcen:
 
 - Wie funktionieren Jupyter Notebooks? 
   - [Jupyter-Notebook-Dokumentation](https://jupyter-notebook.readthedocs.io/en/stable/)
