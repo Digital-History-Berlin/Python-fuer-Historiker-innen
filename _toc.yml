@@ -20,12 +20,14 @@ parts:
       title: Hallo, Welt!
     - file: ch01-atomare-datentypen/03-datentyp-strings.ipynb
       title: Strings
-    - file: ch01-atomare-datentypen/04-datentyp-numerisch.ipynb
+    - file: ch01-atomare-datentypen/04-fehlermeldungen.ipynb
+      title: Fehlermeldungen lesen
+    - file: ch01-atomare-datentypen/05-aufgabe-skript-schreiben.ipynb
+      title: Erste Übungsaufgabe
+    - file: ch01-atomare-datentypen/06-datentyp-numerisch.ipynb
       title: Numerische Datentypen
-    - file: ch01-atomare-datentypen/06-aufgabe-skript-schreiben.ipynb
-      title: Erste Aufgabe
-  - file: ch01-atomare-datentypen/05-fehlermeldungen.ipynb
-    title: Fehlermeldungen
+    - file: ch01-atomare-datentypen/07-aufgabe-taschenrechner.ipynb
+      title: Abschlussaufgabe
   - file: ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.ipynb
     title: Programmabläufe strukturieren
     sections: 
