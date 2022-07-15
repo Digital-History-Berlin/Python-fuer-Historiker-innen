@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hallo, Welt! &#8212; Python für Historiker:innen</title>
+    <title>Numerische Datentypen &#8212; Python für Historiker:innen</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Arbeiten mit Strings" href="03-datentyp-strings.html" />
-    <link rel="prev" title="Arbeiten mit atomaren Datentypen" href="01-atomare-datentypen.html" />
+    <link rel="next" title="Aufgabe: Der Computer als Taschenrechner" href="07-aufgabe-taschenrechner.html" />
+    <link rel="prev" title="Aufgabe: Skript schreiben" href="05-aufgabe-skript-schreiben.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,8 +139,8 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-hallo-welt.html">
      Hallo, Welt!
     </a>
    </li>
@@ -159,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
      Erste Übungsaufgabe
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06-datentyp-numerisch.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Numerische Datentypen
     </a>
    </li>
@@ -415,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ch01-atomare-datentypen/02-hallo-welt.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/ch01-atomare-datentypen/06-datentyp-numerisch.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -435,7 +435,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Digital-History-Berlin/Python-fuer-Historiker-innen/issues/new?title=Issue%20on%20page%20%2Fch01-atomare-datentypen/02-hallo-welt.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Digital-History-Berlin/Python-fuer-Historiker-innen/issues/new?title=Issue%20on%20page%20%2Fch01-atomare-datentypen/06-datentyp-numerisch.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -456,7 +456,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Digital-History-Berlin/Python-fuer-Historiker-innen/main?urlpath=lab/tree/docs/ch01-atomare-datentypen/02-hallo-welt.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Digital-History-Berlin/Python-fuer-Historiker-innen/main?urlpath=lab/tree/docs/ch01-atomare-datentypen/06-datentyp-numerisch.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -482,13 +482,28 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variablen-definieren-und-ausgeben">
-   Variablen definieren und ausgeben
+  <a class="reference internal nav-link" href="#ganzzahlen">
+   Ganzzahlen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eingabe">
-   Eingabe
+  <a class="reference internal nav-link" href="#gleitkommazahlen">
+   Gleitkommazahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#komplexe-zahlen">
+   Komplexe Zahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datentyp-andern">
+   Datentyp ändern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arithmetische-operatoren">
+   Arithmetische Operatoren
   </a>
  </li>
 </ul>
@@ -501,7 +516,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Hallo, Welt!</h1>
+                <h1>Numerische Datentypen</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -512,13 +527,28 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variablen-definieren-und-ausgeben">
-   Variablen definieren und ausgeben
+  <a class="reference internal nav-link" href="#ganzzahlen">
+   Ganzzahlen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eingabe">
-   Eingabe
+  <a class="reference internal nav-link" href="#gleitkommazahlen">
+   Gleitkommazahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#komplexe-zahlen">
+   Komplexe Zahlen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datentyp-andern">
+   Datentyp ändern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arithmetische-operatoren">
+   Arithmetische Operatoren
   </a>
  </li>
 </ul>
@@ -530,114 +560,291 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="hallo-welt">
-<h1>Hallo, Welt!<a class="headerlink" href="#hallo-welt" title="Permalink to this headline">¶</a></h1>
-<div class="note admonition">
-<p class="admonition-title">Wichtiger Hinweis!</p>
-<p><strong>Führen Sie bitte alle Beispiel-Codeblöcke aus, da diese aufeinander aufbauen.</strong></p>
-<p>Wenn Sie die Codezellen des Jupyter Book mit <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Live-Code"><span class="xref std std-term">Live Code</span></a> aktiviert haben, dann klicken Sie auf die Schaltfläche ‘run’.</p>
-<p>Wenn Sie die Notebooks mit <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Binder"><span class="xref std std-term">Binder</span></a> bearbeiten, können Sie die ausgewählte Codezelle ausführen, indem Sie ‘SHIFT’ und ‘ENTER’ drücken oder auf die Playtaste klicken.</p>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="numerische-datentypen">
+<h1>Numerische Datentypen<a class="headerlink" href="#numerische-datentypen" title="Permalink to this headline">¶</a></h1>
+<p id="type">Sie haben sich bereits eingehend mit dem Datentyp <em>string</em> auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesnumeric">numerischen Datentypen</a>, die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion <code class="docutils literal notranslate"><span class="pre">type()</span></code> können wir die Information einfach in Python erfragen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hello world program</span>
-
-<span class="sd">&quot;&quot;&quot;These few lines of code are </span>
-<span class="sd">used to display the text &quot;Hello, World!&quot;.&quot;&quot;&quot;</span>
-
-<span class="n">my_variable</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span> <span class="c1"># assign value to variable</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># identify the datatype</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;some text&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Anhand des obigen, obligatorischen <a class="reference external" href="https://en.wikipedia.org/wiki/%22Hello,_World%21%22_program">Hallo-Welt-Programms</a>, das in keiner Programmier-Einführung fehlen darf, können wir einige grundlegende Funktionsweisen von Python ablesen und zugleich testen, ob die Programmierumgebung ordnungsgemäß funktioniert. Das Programm macht im Prinzip nichts anderes, als Ihnen die Zeichenkette <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> auf dem Bildschirm auszugeben.</p>
-<p><strong>Funktionsweise</strong></p>
-<p>Der Code wird vom Rechner Zeile für Zeile ausgeführt. Jede Zeile kann potentiell eine <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Anweisung"><span class="xref std std-term">Anweisung</span></a> (<em>statement</em>) enthalten, die dem Rechner sagt, was zu tun ist. Die Reihenfolge der einzelnen Anweisungen ist zentral. Es gibt einfache und komplexe Anweisungen, die Sie nach und nach in den nachfolgenden Abschnitten und Lektionen kennenlernen werden.</p>
-<p id="kommentar">Neben den Anweisungen können Programmcodes <strong>Kommentare</strong> enthalten, wie in den Zeilen 1, 3 und 4 unseres Beispielcodes zu sehen. Kommentare können und sollten dazu genutzt werden, Code-Schnipsel hinsichtlich ihrer Funktionalität zu erläutern. Mit der Raute (<code class="docutils literal notranslate"><span class="pre">#</span></code>) kann ein einfacher einzeiliger Kommentar geschrieben werden. Sobald der Interpreter auf die Raute stößt, wird der Text nicht mehr als auszuführender Code interpretiert und von der Maschine ignoriert. Möchte man über mehrere Zeilen kommentieren, dann kann man entweder in jede Zeile eine Raute setzen oder man nutzt dreimal einfache (<code class="docutils literal notranslate"><span class="pre">'</span></code>) beziehungsweise dreimal doppelte (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) Anführungszeichen. Die letzte Variante wird üblicherweise für die <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Dokumentation"><span class="xref std std-term">Dokumentation</span></a> genutzt. Als <a class="reference internal" href="../ch-appendix/01-glossar.html#term-docstrings"><span class="xref std std-term">docstrings</span></a> werden sie Ihnen in späteren Übungseinheiten wiederbegegnen, wenn <strong>Funktionen</strong> oder <strong>Klassen</strong> definiert und erklärt werden müssen. Die Kommentare dienen zur Kommunikation mit den Codeleser:innen.</p>
-<span class="target" id="variable"></span><div class="section" id="variablen-definieren-und-ausgeben">
-<span id="variablen-definieren"></span><span id="variable-wert"></span><h2>Variablen definieren und ausgeben<a class="headerlink" href="#variablen-definieren-und-ausgeben" title="Permalink to this headline">¶</a></h2>
-<p>Mit der Anweisung in Zeile 6 beginnt der eigentliche Programmcode. Zuerst wird einer <strong>Variable</strong> mit dem Namen <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> ein <strong>Wert</strong> zugewiesen.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Die <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Zuweisung"><span class="xref std std-term">Zuweisung</span></a> des Werts zur Variablen wird durch das Gleichheitszeichen (=) indiziert. Es ist nicht mit dem mathematischen Gleichheitszeichen gleichzusetzen. Sie können sich eine Variable als eine Art Behälter (<em>container</em>) vorstellen, der für die Zeit des Programmdurchlaufs bestimmte Werte aufbewahrt und ansteuerbar macht. Anders als bei <a class="reference internal" href="../ch-appendix/01-glossar.html#term-statisch-typisierten"><span class="xref std std-term">statisch typisierten</span></a> Programmiersprachen wie <a class="reference external" href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> oder <a class="reference external" href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> werden Variablen in Python <a class="reference internal" href="../ch-appendix/01-glossar.html#term-dynamisch-typisiert"><span class="xref std std-term">dynamisch typisiert</span></a>. Das heißt, Variablen müssen nicht ausdrücklich dahingehend deklariert werden, ob es sich etwa um einen <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#textseq"><em>string</em></a> (Zeichenkette) oder <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex"><em>Integer</em></a> (Ganzzahl) handelt. Durch die doppelten (<code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code>) oder einfachen (<code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World'</span></code>) Anführungszeichen wird in Python automatisch der Datentyp <em>string</em> ermittelt. Beide Varianten sind möglich, bleiben Sie innerhalb eines Programmierprojekts aber bitte immer einheitlich!<a class="footnote-reference brackets" href="#fn2" id="id2">2</a> Konkret heißt das für unser Beispiel, dass wir in Zeile 6 den Wert <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> vom Typ <em>string</em> der Variable <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> zugewiesen haben. Solange wir die Variable während eines Programmdurchlaufs nicht mit einem anderen Wert überschreiben, rufen wir immer diese Zeichenkette auf, wenn wir die Variable benutzen.</p>
-<p>Es gibt noch weitere Formen von Zuweisungen, die in unterschiedlichen Kontexten gebräuchlich sein können. Sie können beispielsweise mehrere Zuweisungen auf einen Schlag durchführen, wie im nachfolgenden <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Codeblock"><span class="xref std std-term">Codeblock</span></a>.</p>
+<div class="section" id="ganzzahlen">
+<span id="integers"></span><h2>Ganzzahlen<a class="headerlink" href="#ganzzahlen" title="Permalink to this headline">¶</a></h2>
+<p>Bei <em>integers</em> handelt es sich um ganze Zahlen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assign multiple variables at once</span>
-<span class="n">fruit</span><span class="p">,</span> <span class="n">vegetable</span> <span class="o">=</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;cucumber&quot;</span>
-<span class="n">breakfast</span> <span class="o">=</span> <span class="n">lunch</span> <span class="o">=</span> <span class="s2">&quot;egg&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vegetable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">breakfast</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lunch</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># identify the datatype</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In Zeile 2 haben wir platzsparend einerseits den Wert <code class="docutils literal notranslate"><span class="pre">apple</span></code> der Variable <code class="docutils literal notranslate"><span class="pre">fruit</span></code> zugewiesen, andererseits <code class="docutils literal notranslate"><span class="pre">cucumber</span></code> der Variable <code class="docutils literal notranslate"><span class="pre">vegetable</span></code>. Beachten Sie die Reihenfolge der einzelnen Elemente. Dagegen wurde in Zeile 3 der Wert <code class="docutils literal notranslate"><span class="pre">egg</span></code> sowohl der Variable <code class="docutils literal notranslate"><span class="pre">lunch</span></code> als auch der Variable <code class="docutils literal notranslate"><span class="pre">breakfast</span></code> zugewiesen.</p>
-<p id="print">Geprüft werden kann die richtige <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Zuweisung"><span class="xref std std-term">Zuweisung</span></a> indem die in den Variablen gespeicherten Werte der Reihe nach ausgeben werden. Die runden Klammern hinter einem Wort, wie bei <code class="docutils literal notranslate"><span class="pre">print()</span></code>, zeigen an, dass es sich um einen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Funktionsaufruf"><span class="xref std std-term">Funktionsaufruf</span></a> handelt. Die <a class="reference external" href="https://docs.python.org/3/library/functions.html#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion</a> ist eine vordefinierte <strong>Ausgabe-Funktion</strong>. Vordefiniert heißt, dass sie bereits Teil der Python-Umgebung ist und der <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Interpreter"><span class="xref std std-term">Interpreter</span></a> weiß, wo er die Definition findet, die vorgibt, was getan werden muss, wenn <code class="docutils literal notranslate"><span class="pre">print()</span></code> aufgerufen wird. Die Elemente zwischen den runden Klammern werden <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Argument"><span class="xref std std-term">Argument</span></a> oder <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> genannt. Welche Argumente einer Funktion übergeben werden können, erfahren Sie in der <a class="reference external" href="https://docs.python.org/3/">Python-Dokumentation</a>. Hier wird als Argument eine Variable übergeben, die als Wert eine Zeichenkette (<em>string</em>) enthält. Mittels <code class="docutils literal notranslate"><span class="pre">print()</span></code> wird diese Zeichenkette nun als Ergebnis ausgegeben und auf Ihrem Bildschirm dargestellt. Sie können als Argumente für die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion aber auch direkt Werte verwenden.
-Die kürzeste Variante unseres Hallo-Welt-Programms sieht in Python dann beispielsweise wie folgt aus:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Noch ein Hinweis:</strong> Die Dokumentation sollte für die Recherche von Module, Funktionen und Funktionalitäten stets Ihre erste Anlaufstelle sein. Python bietet allerdings auch eine eingebaute Hilfe, mit der Sie die bereits erwähnten <em>docstrings</em> aufrufen können. Das bietet oft schon einen ersten Eindruck von den jeweiligen Funktionsweisen und zugleich den Vorteil, dass Sie diese Informationen direkt in Ihrer Programmierumgebung aufrufen können:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
-
-print(...)
-    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
-    
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="eingabe">
-<span id="id3"></span><h2>Eingabe<a class="headerlink" href="#eingabe" title="Permalink to this headline">¶</a></h2>
-<p>Lassen Sie uns das Hallo-Welt-Programm nun etwas interaktiver gestalten, indem es uns nach unserem Namen fragt und persönlich begrüßt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hello user program</span>
-<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name? (press ENTER when finished)&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Was haben wir gemacht?</strong></p>
-<div class="margin sidebar">
+<div class="margin sidebar" id="floats">
 <p class="sidebar-title"></p>
 <div class="note admonition">
 <p class="admonition-title">Wichtig!</p>
-<p>Die <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion liefert immer einen String zurück!</p>
+<p>Beachten Sie, dass in Python Dezimalzahlen mit einem Punkt und <strong><em>nicht</em></strong> mit einem Komma geschrieben werden.</p>
 </div>
 </div>
-<p id="input">Neben verschiedenen Ausgabemöglichkeiten bietet Python auch einige <strong>Eingabeoptionen</strong>. Eine davon ist die <a class="reference external" href="https://docs.python.org/3/library/functions.html#input"><code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion</a> (siehe Zeile 2). Wird diese <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/04-funktionen.html"><span class="doc std std-doc">Funktion</span></a> im Programmdurchlauf aufgerufen, dann bleibt der Prozess solange angehalten bis die Nutzer:innen eine Eingabe über die Tastatur getätigt und mit der Return-Taste bestätigt haben. Die <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion nimmt den optionalen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> <em>prompt</em> an, wodurch spezifiziert werden kann, welche Informationseingabe erwartet wird - im obigen Beispiel ein Name. Die Eingabe wird dann in der Variablen <code class="docutils literal notranslate"><span class="pre">name</span></code> gespeichert.</p>
-<p>Als Ausgabe zeigt uns die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion anschließend die “Summe” aus der “Addition” der in den Variablen <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> und <code class="docutils literal notranslate"><span class="pre">name</span></code> gespeicherten Zeichenketten. Die Zusammenfügung von Strings durch das <strong>+</strong>-Zeichen wird auch <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Konkatenierung"><span class="xref std std-term">Konkatenierung</span></a> oder <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Verkettung"><span class="xref std std-term">Verkettung</span></a> genannt. Zeichenketten in Python sind prinzipiell unveränderbar (<a class="reference internal" href="../ch-appendix/01-glossar.html#term-immutable"><span class="xref std std-term">immutable</span></a>). Operationen, die eine Zeichenkette verändern sollen, geben daher stets eine <em>neue</em> Zeichenkette zurück. Wollten wir also, statt die zusammengefügte Zeichenkette per <code class="docutils literal notranslate"><span class="pre">print()</span></code> direkt auszugeben, stattdessen mit ihr weiterarbeiten, dann müssten wir sie einer neuen Variablen zuweisen oder die alte überschreiben.</p>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Enthält eine Variable mehrere Wörter, ist es in Python Konvention, diese mit Unterstrichen zu trennen. Ihr Programm wird auch funktionieren, wenn Sie sich nicht daran halten; die Lesbarkeit des Code verbessert sich aber dadurch. Leerzeichen dürfen Sie zur Trennung jedoch nicht verwenden.</p>
-</dd>
-<dt class="label" id="fn2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Wenn Sie sich genauer dafür interessieren, was Datentypen und Variablen in Python sind, dann empfehlen wir Ihnen <a class="reference external" href="https://www.python-kurs.eu/python3_variablen.php">diese Lektion</a> im Python-Kurs von Bernd Klein.</p>
-</dd>
-</dl>
+</div>
+<div class="section" id="gleitkommazahlen">
+<h2>Gleitkommazahlen<a class="headerlink" href="#gleitkommazahlen" title="Permalink to this headline">¶</a></h2>
+<p>Bei <em>float</em> handelt es sich um Gleitkomma- beziehungsweise Dezimalzahlen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># identify the datatype</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p id="round">Dezimalzahlen weisen nicht selten zahlreiche Nachkommastellen auf. Es kann dann gewünscht sein, diese durch Rundung zu verringern. Das können Sie mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#round"><code class="docutils literal notranslate"><span class="pre">round()</span></code></a> erledigen. Sie nimmt als erstes Argument den jeweiligen Wert, der gerundet werden soll, und optional als zweites Argument die Anzahl der gewünschten Nachkommastellen.</p>
+<p><strong>Zwei Beispiele:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example 1: round decimal</span>
+<span class="nb">round</span><span class="p">(</span><span class="mf">5.7823432</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example 2: round decimal</span>
+<span class="nb">round</span><span class="p">(</span><span class="mf">5.7823432</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Was ist beim zweiten Beispiel passiert? Prüfen Sie ggf. den Datentyp.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="komplexe-zahlen">
+<span id="id1"></span><h2>Komplexe Zahlen<a class="headerlink" href="#komplexe-zahlen" title="Permalink to this headline">¶</a></h2>
+<p>Ein besonderer numerischer Datentyp sind die <a class="reference external" href="https://en.wikipedia.org/wiki/Complex_number">komplexen Zahlen</a>. Da dieser Datentyp in Szenarien, mit denen Historiker:innen programmatisch arbeiten, selten vorkommt, soll er an dieser Stelle nicht weiter erläutert werden – dennoch sollter dieser zumindest kurz erwähnt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># identify the datatype</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="datentyp-andern">
+<span id="datentyp-aendern"></span><h2>Datentyp ändern<a class="headerlink" href="#datentyp-andern" title="Permalink to this headline">¶</a></h2>
+<p>Wir hatten darauf hingewiesen, dass Variablen in Python <a class="reference internal" href="../ch-appendix/01-glossar.html#term-dynamisch-typisiert"><span class="xref std std-term">dynamisch typisiert</span></a> werden, also dass automatisch ermittelt wird, ob es sich bei einem Wert um eine komplexe Zahl, ein Integer oder einen String handelt. Es kann aber vorkommen, dass wir bewusst den Datentyp ändern wollen. Einen solchen Fall haben wir mit der <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion kennengelernt. Sie erinnern sich: Die Eingabe wird immer als String gespeichert. Vielleicht möchten wir aber gerne mit Zahlen als Nutzer:inneneingaben arbeiten, dann können wir den String explizit umwandeln.</p>
+<p><strong>Zum Beispiel:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># normal input</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How old are you? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Eingabe ist vom Typ </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert input</span>
+<span class="n">age_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How old are you? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Eingabe ist vom Typ </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">age_int</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<span class="target" id="complex"></span><span class="target" id="str"></span><span class="target" id="int"></span><p id="float">Mit der konvertierten Eingabe können nun auch bedarfsweise mathematische Berechnung angestellt werden. Konvertierungsfunktionen gibt es unter anderem für die komplexen Zahlen (<a class="reference external" href="https://docs.python.org/3/library/functions.html#complex"><code class="docutils literal notranslate"><span class="pre">complex()</span></code></a>), Strings (<a class="reference external" href="https://docs.python.org/3/library/functions.html#func-str"><code class="docutils literal notranslate"><span class="pre">str()</span></code></a>), Integers (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int"><code class="docutils literal notranslate"><span class="pre">int()</span></code></a>) und Gleitkommazahlen (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float"><code class="docutils literal notranslate"><span class="pre">float()</span></code></a>).</p>
+</div>
+<div class="section" id="arithmetische-operatoren">
+<span id="id2"></span><h2>Arithmetische Operatoren<a class="headerlink" href="#arithmetische-operatoren" title="Permalink to this headline">¶</a></h2>
+<p>Python kann ganz einfach genutzt werden, um einfache und auch komplexere mathematische Berechnungen zu lösen. Sie können die Programmierumgebung gewissermaßen wie einen Taschenrechner benutzen oder kleine Programme schreiben, die Ihnen wiederkehrende Aufgaben, wie beispielsweise Prozentrechnung, abnehmen.</p>
+<p>Probieren Sie zunächst die nachfolgenden Berechnungen aus und erklären Sie, wofür die mathematischen Symbole (Operatoren) stehen. Sie werden feststellen, dass wir einige der Operatoren auch bei der Arbeit mit Zeichenketten genutzt haben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Wofür stehen die Operatoren + und - in diesen Beispielen?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">200</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">24</span> <span class="o">**</span> <span class="mi">45</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Wofür stehen die Operatoren * und ** in diesen Beispielen?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">//</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Wodurch unterscheiden sich die Berechnungen mit / und //?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Erklären Sie die Funktionsweise des sog. Modulo-Operators:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;5&quot;</span> <span class="o">+</span> <span class="s2">&quot;13&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;5&quot;</span> <span class="o">*</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;13&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Erklären Sie, was in den einzelnen Codezeilen passiert ist:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -666,17 +873,17 @@ print(...)
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="01-atomare-datentypen.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="05-aufgabe-skript-schreiben.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Arbeiten mit atomaren Datentypen</p>
+            <p class="prev-next-title">Aufgabe: Skript schreiben</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="03-datentyp-strings.html" title="next page">
+    <a class='right-next' id="next-link" href="07-aufgabe-taschenrechner.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Arbeiten mit Strings</p>
+        <p class="prev-next-title">Aufgabe: Der Computer als Taschenrechner</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

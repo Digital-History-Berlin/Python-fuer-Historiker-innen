@@ -17,4 +17,4 @@ Homepage: [Professur für Digital History an der Humboldt-Universität zu Berlin
 Blog: [Digital History Berlin. Digitale Geschichtswissenschaften an der Humboldt-Universität zu Berlin](https://dhistory.hypotheses.org/)
 
 
-Version 0.12 vom 12.06.2022
+Version 0.12.1 vom 15.7.2022

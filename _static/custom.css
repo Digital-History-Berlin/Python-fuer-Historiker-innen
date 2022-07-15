@@ -21,15 +21,55 @@ li {
     font-size: 16px;
    }
 
+/* hochgestellte Fussnoten zeilen werden auf die richtige Höhe gesetzt*/   
 a.footnote-reference {
   vertical-align: baseline;
 }
 
+/* Startbild linksbündig */
 div.figure.align-left {
   margin-left: 0px;
   padding-left: 0px;
 }
 
+/* Schriftgröße Glossar */
 dl.glossary {
   font-size: 20px;
+}
+
+/* Schrift von Code-Elementen im Text auf #E66D0D (Orange-Ton) setzen */
+code.docutils.literal.notranslate {
+  color: #E66D0D
+}
+
+/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => rechte Navigationsbar*/
+a.reference.internal.nav-link:hover, a.reference.internal.nav-link.active {
+  color: #B0C86F
+}
+
+/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => Haupttextbereich*/
+main.bd-content #main-content a,
+main.bd-content #main-content a:visited,
+main.bd-content #print-main-content a,
+main.bd-content #print-main-content a:visited {
+ color:#B0C86F
+}
+
+/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => Links im Footer*/
+a, a:hover {
+  color: #B0C86F
+}
+
+/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => linke Navigationsbar*/
+#site-navigation nav ul.nav a:hover,
+#site-navigation nav ul.nav li.active>a,
+#site-navigation nav ul.nav li.active>a:hover {
+ color:#B0C86F
+}
+
+/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => vor-zurück-Navigation im unteren Bereich*/
+.prev-next-area a p.prev-next-title {
+  color: #B0C86F;
+  font-weight: 600;
+  font-size: 1.1em;
 }
