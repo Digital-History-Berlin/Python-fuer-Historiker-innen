@@ -24,7 +24,7 @@ my_variable = "Hello, World!" # assign value to variable
 print(my_variable)
 
 
-# Anhand des obigen, obligatorischen [Hallo-Welt-Programms](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program), das in keiner Programmier-Einführung fehlen darf, können wir schon einige grundlegende Funktionsweisen von Python ablesen und zugleich testen, ob die Programmierumgebung ordnungsgemäß funktioniert. Das Programm macht im Prinzip nichts anderes, als Ihnen die Zeichenkette `Hello, World!` auf dem Bildschirm auszugeben. 
+# Anhand des obigen, obligatorischen [Hallo-Welt-Programms](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program), das in keiner Programmier-Einführung fehlen darf, können wir einige grundlegende Funktionsweisen von Python ablesen und zugleich testen, ob die Programmierumgebung ordnungsgemäß funktioniert. Das Programm macht im Prinzip nichts anderes, als Ihnen die Zeichenkette `Hello, World!` auf dem Bildschirm auszugeben. 
 
 # **Funktionsweise**
 # 
@@ -47,7 +47,7 @@ print(my_variable)
 # (variablen-definieren)=
 # ## Variablen definieren und ausgeben
 #  
-# Mit der Anweisung in Zeile 6 beginnt der eigentliche Programmcode. Zuerst wird einer **Variable** mit dem Namen `my_variable` ein **Wert** zugewiesen.[^fn1] Die {term}`Zuweisung` des Werts zur Variablen wird durch das Gleichheitszeichen (=) indiziert. Es ist nicht mit dem mathematischen Gleichheitszeichen gleichzusetzen. Sie können sich eine Variable als eine Art Behälter (*container*) vorstellen, der für die Zeit des Programmdurchlaufs bestimmte Werte aufbewahrt und ansteuerbar macht. Anders als bei {term}`statisch typisierten` Programmiersprachen wie [C](https://en.wikipedia.org/wiki/C_(programming_language)) oder [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) werden Variablen in Python {term}`dynamisch typisiert`. Das heißt, Variablen müssen nicht ausdrücklich dahingehend deklariert werden, ob es sich etwa um ein [*string*](https://docs.python.org/3/library/stdtypes.html#textseq) (Zeichenkette) oder *integer* (Ganzzahl) handelt. Durch die doppelten (`"Hello, World"`) oder einfachen (`'Hello, World'`) Anführungszeichen wird in Python automatisch der Datentyp *string* ermittelt. Beide Varianten sind möglich, bleiben Sie innerhalb eines Programmierprojekts aber bitte immer einheitlich![^fn2] Konkret heißt das für unser Beispiel, dass wir in Zeile 6 den Wert `Hello, World!` vom Typ *string* der Variable `my_variable` zugewiesen haben. Solange wir die Variable während eines Programmdurchlaufs nicht mit einem anderen Wert überschreiben, rufen wir immer diese Zeichenkette auf, wenn wir die Variable benutzen.
+# Mit der Anweisung in Zeile 6 beginnt der eigentliche Programmcode. Zuerst wird einer **Variable** mit dem Namen `my_variable` ein **Wert** zugewiesen.[^fn1] Die {term}`Zuweisung` des Werts zur Variablen wird durch das Gleichheitszeichen (=) indiziert. Es ist nicht mit dem mathematischen Gleichheitszeichen gleichzusetzen. Sie können sich eine Variable als eine Art Behälter (*container*) vorstellen, der für die Zeit des Programmdurchlaufs bestimmte Werte aufbewahrt und ansteuerbar macht. Anders als bei {term}`statisch typisierten` Programmiersprachen wie [C](https://en.wikipedia.org/wiki/C_(programming_language)) oder [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) werden Variablen in Python {term}`dynamisch typisiert`. Das heißt, Variablen müssen nicht ausdrücklich dahingehend deklariert werden, ob es sich etwa um einen [*string*](https://docs.python.org/3/library/stdtypes.html#textseq) (Zeichenkette) oder [*Integer*](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex) (Ganzzahl) handelt. Durch die doppelten (`"Hello, World"`) oder einfachen (`'Hello, World'`) Anführungszeichen wird in Python automatisch der Datentyp *string* ermittelt. Beide Varianten sind möglich, bleiben Sie innerhalb eines Programmierprojekts aber bitte immer einheitlich![^fn2] Konkret heißt das für unser Beispiel, dass wir in Zeile 6 den Wert `Hello, World!` vom Typ *string* der Variable `my_variable` zugewiesen haben. Solange wir die Variable während eines Programmdurchlaufs nicht mit einem anderen Wert überschreiben, rufen wir immer diese Zeichenkette auf, wenn wir die Variable benutzen.
 # 
 # Es gibt noch weitere Formen von Zuweisungen, die in unterschiedlichen Kontexten gebräuchlich sein können. Sie können beispielsweise mehrere Zuweisungen auf einen Schlag durchführen, wie im nachfolgenden {term}`Codeblock`.
 
@@ -70,7 +70,7 @@ print(lunch)
 # :name: print_
 # :::
 # 
-# Geprüft werden kann die richtige {term}`Zuweisung` indem die in den Variablen gespeicherten Werte der Reihe nach ausgeben werden. Die runden Klammern hinter einem Wort, wie bei `print()`, zeigen an, dass es sich um einen {term}`Funktionsaufruf` handelt. Die [`print()`-Funktion](https://docs.python.org/3/library/functions.html#print) ist eine vordefinierte **Ausgabe-Funktion**. Vordefiniert heißt, dass sie bereits Teil der Python-Umgebung ist und der {term}`Interpreter` weiß, wo er die Definition findet, die vorgibt, was getan werden muss, wenn `print()` aufgerufen wird. Die Elemente zwischen den runden Klammern werden {term}`Argument` oder {term}`Parameter` genannt. Welche Argumente einer Funktion übergeben werden können, erfahren Sie in der [Python-Dokumentation](https://docs.python.org/3/).[^fn3] Hier wird als Argument eine Variable übergeben, die als Wert eine Zeichenkette (*string*) enthält. Mittels `print()` wird diese Zeichenkette nun als Ergebnis ausgegeben und auf Ihrem Bildschirm dargestellt. Sie können als Argumente für die `print()`-Funktion aber auch direkt Werte verwenden.
+# Geprüft werden kann die richtige {term}`Zuweisung` indem die in den Variablen gespeicherten Werte der Reihe nach ausgeben werden. Die runden Klammern hinter einem Wort, wie bei `print()`, zeigen an, dass es sich um einen {term}`Funktionsaufruf` handelt. Die [`print()`-Funktion](https://docs.python.org/3/library/functions.html#print) ist eine vordefinierte **Ausgabe-Funktion**. Vordefiniert heißt, dass sie bereits Teil der Python-Umgebung ist und der {term}`Interpreter` weiß, wo er die Definition findet, die vorgibt, was getan werden muss, wenn `print()` aufgerufen wird. Die Elemente zwischen den runden Klammern werden {term}`Argument` oder {term}`Parameter` genannt. Welche Argumente einer Funktion übergeben werden können, erfahren Sie in der [Python-Dokumentation](https://docs.python.org/3/). Hier wird als Argument eine Variable übergeben, die als Wert eine Zeichenkette (*string*) enthält. Mittels `print()` wird diese Zeichenkette nun als Ergebnis ausgegeben und auf Ihrem Bildschirm dargestellt. Sie können als Argumente für die `print()`-Funktion aber auch direkt Werte verwenden.
 # Die kürzeste Variante unseres Hallo-Welt-Programms sieht in Python dann beispielsweise wie folgt aus:
 
 # In[ ]:
@@ -79,7 +79,9 @@ print(lunch)
 print("Hello, World!")
 
 
-# In[ ]:
+# **Noch ein Hinweis:** Die Dokumentation sollte für die Recherche von Module, Funktionen und Funktionalitäten stets Ihre erste Anlaufstelle sein. Python bietet allerdings auch eine eingebaute Hilfe, mit der Sie die bereits erwähnten *docstrings* aufrufen können. Das bietet oft schon einen ersten Eindruck von den jeweiligen Funktionsweisen und zugleich den Vorteil, dass Sie diese Informationen direkt in Ihrer Programmierumgebung aufrufen können:
+
+# In[1]:
 
 
 help(print)
@@ -121,5 +123,3 @@ print(my_variable[:7] + name)
 # [^fn1]: Enthält eine Variable mehrere Wörter, ist es in Python Konvention, diese mit Unterstrichen zu trennen. Ihr Programm wird auch funktionieren, wenn Sie sich nicht daran halten; die Lesbarkeit des Code verbessert sich aber dadurch. Leerzeichen dürfen Sie zur Trennung jedoch nicht verwenden.
 # 
 # [^fn2]: Wenn Sie sich genauer dafür interessieren, was Datentypen und Variablen in Python sind, dann empfehlen wir Ihnen [diese Lektion](https://www.python-kurs.eu/python3_variablen.php) im Python-Kurs von Bernd Klein.
-# 
-# [^fn3]: Die Dokumentation sollte für die Recherche von Funktionen stets Ihre erste Anlaufstelle sein. Python bietet allerdings auch eine eingebaute Hilfe, mit der Sie die bereits erwähnten *docstrings* aufrufen können. Das bietet oft schon einen ersten Eindruck von den Funktionalitäten.

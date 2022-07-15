@@ -2,6 +2,8 @@
 # coding: utf-8
 
 # # Arbeiten mit atomaren Datentypen
+# 
+# In diesem Kapitel werden Sie Schritt für Schritt an die Grundlagen von Python herangeführt, mit denen Sie erste kleinere Programmieraufgaben lösen können. Sie werden die Arbeit mit Werten und Variablen kennenlernen, welche Datentypen es gibt und wie Sie Ihren Code durch Kommentare nachvollziehbar machen können. 
 
 # ## Lernziele
 # 
@@ -19,6 +21,7 @@
 # -  Wie können Informationen ein- und ausgegeben werden?
 # -  Wie können wir Strings manipulieren?
 # -  Wie kann der Computer als Taschenrechner verwendet werden?
-# -  Wie lese ich Fehlermeldungen?
+# 
+# Prüfen Sie gerne am Ende jedes Kapitels, ob Sie diese Fragen für sich beantworten können.
 # 
 # **Let's code!**

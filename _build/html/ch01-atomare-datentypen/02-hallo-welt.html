@@ -150,21 +150,26 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04-datentyp-numerisch.html">
+    <a class="reference internal" href="04-fehlermeldungen.html">
+     Fehlermeldungen lesen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-aufgabe-skript-schreiben.html">
+     Erste Übungsaufgabe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-datentyp-numerisch.html">
      Numerische Datentypen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="06-aufgabe-skript-schreiben.html">
-     Erste Aufgabe
+    <a class="reference internal" href="07-aufgabe-taschenrechner.html">
+     Abschlussaufgabe
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-fehlermeldungen.html">
-   Fehlermeldungen
-  </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.html">
@@ -546,13 +551,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Anhand des obigen, obligatorischen <a class="reference external" href="https://en.wikipedia.org/wiki/%22Hello,_World%21%22_program">Hallo-Welt-Programms</a>, das in keiner Programmier-Einführung fehlen darf, können wir schon einige grundlegende Funktionsweisen von Python ablesen und zugleich testen, ob die Programmierumgebung ordnungsgemäß funktioniert. Das Programm macht im Prinzip nichts anderes, als Ihnen die Zeichenkette <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> auf dem Bildschirm auszugeben.</p>
+<p>Anhand des obigen, obligatorischen <a class="reference external" href="https://en.wikipedia.org/wiki/%22Hello,_World%21%22_program">Hallo-Welt-Programms</a>, das in keiner Programmier-Einführung fehlen darf, können wir einige grundlegende Funktionsweisen von Python ablesen und zugleich testen, ob die Programmierumgebung ordnungsgemäß funktioniert. Das Programm macht im Prinzip nichts anderes, als Ihnen die Zeichenkette <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> auf dem Bildschirm auszugeben.</p>
 <p><strong>Funktionsweise</strong></p>
 <p>Der Code wird vom Rechner Zeile für Zeile ausgeführt. Jede Zeile kann potentiell eine <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Anweisung"><span class="xref std std-term">Anweisung</span></a> (<em>statement</em>) enthalten, die dem Rechner sagt, was zu tun ist. Die Reihenfolge der einzelnen Anweisungen ist zentral. Es gibt einfache und komplexe Anweisungen, die Sie nach und nach in den nachfolgenden Abschnitten und Lektionen kennenlernen werden.</p>
 <p id="kommentar">Neben den Anweisungen können Programmcodes <strong>Kommentare</strong> enthalten, wie in den Zeilen 1, 3 und 4 unseres Beispielcodes zu sehen. Kommentare können und sollten dazu genutzt werden, Code-Schnipsel hinsichtlich ihrer Funktionalität zu erläutern. Mit der Raute (<code class="docutils literal notranslate"><span class="pre">#</span></code>) kann ein einfacher einzeiliger Kommentar geschrieben werden. Sobald der Interpreter auf die Raute stößt, wird der Text nicht mehr als auszuführender Code interpretiert und von der Maschine ignoriert. Möchte man über mehrere Zeilen kommentieren, dann kann man entweder in jede Zeile eine Raute setzen oder man nutzt dreimal einfache (<code class="docutils literal notranslate"><span class="pre">'</span></code>) beziehungsweise dreimal doppelte (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) Anführungszeichen. Die letzte Variante wird üblicherweise für die <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Dokumentation"><span class="xref std std-term">Dokumentation</span></a> genutzt. Als <a class="reference internal" href="../ch-appendix/01-glossar.html#term-docstrings"><span class="xref std std-term">docstrings</span></a> werden sie Ihnen in späteren Übungseinheiten wiederbegegnen, wenn <strong>Funktionen</strong> oder <strong>Klassen</strong> definiert und erklärt werden müssen. Die Kommentare dienen zur Kommunikation mit den Codeleser:innen.</p>
 <span class="target" id="variable"></span><div class="section" id="variablen-definieren-und-ausgeben">
 <span id="variablen-definieren"></span><span id="variable-wert"></span><h2>Variablen definieren und ausgeben<a class="headerlink" href="#variablen-definieren-und-ausgeben" title="Permalink to this headline">¶</a></h2>
-<p>Mit der Anweisung in Zeile 6 beginnt der eigentliche Programmcode. Zuerst wird einer <strong>Variable</strong> mit dem Namen <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> ein <strong>Wert</strong> zugewiesen.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Die <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Zuweisung"><span class="xref std std-term">Zuweisung</span></a> des Werts zur Variablen wird durch das Gleichheitszeichen (=) indiziert. Es ist nicht mit dem mathematischen Gleichheitszeichen gleichzusetzen. Sie können sich eine Variable als eine Art Behälter (<em>container</em>) vorstellen, der für die Zeit des Programmdurchlaufs bestimmte Werte aufbewahrt und ansteuerbar macht. Anders als bei <a class="reference internal" href="../ch-appendix/01-glossar.html#term-statisch-typisierten"><span class="xref std std-term">statisch typisierten</span></a> Programmiersprachen wie <a class="reference external" href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> oder <a class="reference external" href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> werden Variablen in Python <a class="reference internal" href="../ch-appendix/01-glossar.html#term-dynamisch-typisiert"><span class="xref std std-term">dynamisch typisiert</span></a>. Das heißt, Variablen müssen nicht ausdrücklich dahingehend deklariert werden, ob es sich etwa um ein <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#textseq"><em>string</em></a> (Zeichenkette) oder <em>integer</em> (Ganzzahl) handelt. Durch die doppelten (<code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code>) oder einfachen (<code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World'</span></code>) Anführungszeichen wird in Python automatisch der Datentyp <em>string</em> ermittelt. Beide Varianten sind möglich, bleiben Sie innerhalb eines Programmierprojekts aber bitte immer einheitlich!<a class="footnote-reference brackets" href="#fn2" id="id2">2</a> Konkret heißt das für unser Beispiel, dass wir in Zeile 6 den Wert <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> vom Typ <em>string</em> der Variable <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> zugewiesen haben. Solange wir die Variable während eines Programmdurchlaufs nicht mit einem anderen Wert überschreiben, rufen wir immer diese Zeichenkette auf, wenn wir die Variable benutzen.</p>
+<p>Mit der Anweisung in Zeile 6 beginnt der eigentliche Programmcode. Zuerst wird einer <strong>Variable</strong> mit dem Namen <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> ein <strong>Wert</strong> zugewiesen.<a class="footnote-reference brackets" href="#fn1" id="id1">1</a> Die <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Zuweisung"><span class="xref std std-term">Zuweisung</span></a> des Werts zur Variablen wird durch das Gleichheitszeichen (=) indiziert. Es ist nicht mit dem mathematischen Gleichheitszeichen gleichzusetzen. Sie können sich eine Variable als eine Art Behälter (<em>container</em>) vorstellen, der für die Zeit des Programmdurchlaufs bestimmte Werte aufbewahrt und ansteuerbar macht. Anders als bei <a class="reference internal" href="../ch-appendix/01-glossar.html#term-statisch-typisierten"><span class="xref std std-term">statisch typisierten</span></a> Programmiersprachen wie <a class="reference external" href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> oder <a class="reference external" href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a> werden Variablen in Python <a class="reference internal" href="../ch-appendix/01-glossar.html#term-dynamisch-typisiert"><span class="xref std std-term">dynamisch typisiert</span></a>. Das heißt, Variablen müssen nicht ausdrücklich dahingehend deklariert werden, ob es sich etwa um einen <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#textseq"><em>string</em></a> (Zeichenkette) oder <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex"><em>Integer</em></a> (Ganzzahl) handelt. Durch die doppelten (<code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code>) oder einfachen (<code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World'</span></code>) Anführungszeichen wird in Python automatisch der Datentyp <em>string</em> ermittelt. Beide Varianten sind möglich, bleiben Sie innerhalb eines Programmierprojekts aber bitte immer einheitlich!<a class="footnote-reference brackets" href="#fn2" id="id2">2</a> Konkret heißt das für unser Beispiel, dass wir in Zeile 6 den Wert <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> vom Typ <em>string</em> der Variable <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> zugewiesen haben. Solange wir die Variable während eines Programmdurchlaufs nicht mit einem anderen Wert überschreiben, rufen wir immer diese Zeichenkette auf, wenn wir die Variable benutzen.</p>
 <p>Es gibt noch weitere Formen von Zuweisungen, die in unterschiedlichen Kontexten gebräuchlich sein können. Sie können beispielsweise mehrere Zuweisungen auf einen Schlag durchführen, wie im nachfolgenden <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Codeblock"><span class="xref std std-term">Codeblock</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -569,7 +574,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>In Zeile 2 haben wir platzsparend einerseits den Wert <code class="docutils literal notranslate"><span class="pre">apple</span></code> der Variable <code class="docutils literal notranslate"><span class="pre">fruit</span></code> zugewiesen, andererseits <code class="docutils literal notranslate"><span class="pre">cucumber</span></code> der Variable <code class="docutils literal notranslate"><span class="pre">vegetable</span></code>. Beachten Sie die Reihenfolge der einzelnen Elemente. Dagegen wurde in Zeile 3 der Wert <code class="docutils literal notranslate"><span class="pre">egg</span></code> sowohl der Variable <code class="docutils literal notranslate"><span class="pre">lunch</span></code> als auch der Variable <code class="docutils literal notranslate"><span class="pre">breakfast</span></code> zugewiesen.</p>
-<p id="print">Geprüft werden kann die richtige <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Zuweisung"><span class="xref std std-term">Zuweisung</span></a> indem die in den Variablen gespeicherten Werte der Reihe nach ausgeben werden. Die runden Klammern hinter einem Wort, wie bei <code class="docutils literal notranslate"><span class="pre">print()</span></code>, zeigen an, dass es sich um einen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Funktionsaufruf"><span class="xref std std-term">Funktionsaufruf</span></a> handelt. Die <a class="reference external" href="https://docs.python.org/3/library/functions.html#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion</a> ist eine vordefinierte <strong>Ausgabe-Funktion</strong>. Vordefiniert heißt, dass sie bereits Teil der Python-Umgebung ist und der <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Interpreter"><span class="xref std std-term">Interpreter</span></a> weiß, wo er die Definition findet, die vorgibt, was getan werden muss, wenn <code class="docutils literal notranslate"><span class="pre">print()</span></code> aufgerufen wird. Die Elemente zwischen den runden Klammern werden <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Argument"><span class="xref std std-term">Argument</span></a> oder <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> genannt. Welche Argumente einer Funktion übergeben werden können, erfahren Sie in der <a class="reference external" href="https://docs.python.org/3/">Python-Dokumentation</a>.<a class="footnote-reference brackets" href="#fn3" id="id3">3</a> Hier wird als Argument eine Variable übergeben, die als Wert eine Zeichenkette (<em>string</em>) enthält. Mittels <code class="docutils literal notranslate"><span class="pre">print()</span></code> wird diese Zeichenkette nun als Ergebnis ausgegeben und auf Ihrem Bildschirm dargestellt. Sie können als Argumente für die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion aber auch direkt Werte verwenden.
+<p id="print">Geprüft werden kann die richtige <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Zuweisung"><span class="xref std std-term">Zuweisung</span></a> indem die in den Variablen gespeicherten Werte der Reihe nach ausgeben werden. Die runden Klammern hinter einem Wort, wie bei <code class="docutils literal notranslate"><span class="pre">print()</span></code>, zeigen an, dass es sich um einen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Funktionsaufruf"><span class="xref std std-term">Funktionsaufruf</span></a> handelt. Die <a class="reference external" href="https://docs.python.org/3/library/functions.html#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion</a> ist eine vordefinierte <strong>Ausgabe-Funktion</strong>. Vordefiniert heißt, dass sie bereits Teil der Python-Umgebung ist und der <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Interpreter"><span class="xref std std-term">Interpreter</span></a> weiß, wo er die Definition findet, die vorgibt, was getan werden muss, wenn <code class="docutils literal notranslate"><span class="pre">print()</span></code> aufgerufen wird. Die Elemente zwischen den runden Klammern werden <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Argument"><span class="xref std std-term">Argument</span></a> oder <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> genannt. Welche Argumente einer Funktion übergeben werden können, erfahren Sie in der <a class="reference external" href="https://docs.python.org/3/">Python-Dokumentation</a>. Hier wird als Argument eine Variable übergeben, die als Wert eine Zeichenkette (<em>string</em>) enthält. Mittels <code class="docutils literal notranslate"><span class="pre">print()</span></code> wird diese Zeichenkette nun als Ergebnis ausgegeben und auf Ihrem Bildschirm dargestellt. Sie können als Argumente für die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion aber auch direkt Werte verwenden.
 Die kürzeste Variante unseres Hallo-Welt-Programms sieht in Python dann beispielsweise wie folgt aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,16 +583,32 @@ Die kürzeste Variante unseres Hallo-Welt-Programms sieht in Python dann beispie
 </div>
 </div>
 </div>
+<p><strong>Noch ein Hinweis:</strong> Die Dokumentation sollte für die Recherche von Module, Funktionen und Funktionalitäten stets Ihre erste Anlaufstelle sein. Python bietet allerdings auch eine eingebaute Hilfe, mit der Sie die bereits erwähnten <em>docstrings</em> aufrufen können. Das bietet oft schon einen ersten Eindruck von den jeweiligen Funktionsweisen und zugleich den Vorteil, dass Sie diese Informationen direkt in Ihrer Programmierumgebung aufrufen können:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="eingabe">
-<span id="id4"></span><h2>Eingabe<a class="headerlink" href="#eingabe" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Eingabe<a class="headerlink" href="#eingabe" title="Permalink to this headline">¶</a></h2>
 <p>Lassen Sie uns das Hallo-Welt-Programm nun etwas interaktiver gestalten, indem es uns nach unserem Namen fragt und persönlich begrüßt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -615,9 +636,6 @@ Die kürzeste Variante unseres Hallo-Welt-Programms sieht in Python dann beispie
 </dd>
 <dt class="label" id="fn2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Wenn Sie sich genauer dafür interessieren, was Datentypen und Variablen in Python sind, dann empfehlen wir Ihnen <a class="reference external" href="https://www.python-kurs.eu/python3_variablen.php">diese Lektion</a> im Python-Kurs von Bernd Klein.</p>
-</dd>
-<dt class="label" id="fn3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Die Dokumentation sollte für die Recherche von Funktionen stets Ihre erste Anlaufstelle sein. Python bietet allerdings auch eine eingebaute Hilfe, mit der Sie die bereits erwähnten <em>docstrings</em> aufrufen können. Das bietet oft schon einen ersten Eindruck von den Funktionalitäten.</p>
 </dd>
 </dl>
 </div>
