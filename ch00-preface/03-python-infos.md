@@ -3,7 +3,7 @@
 # Wissenswertes zur Programmiersprache Python
 
 ```{figure} ../img/dh-robot.png
-:width: 400px
+:width: 300px
 :align: left
 ```
 
