@@ -38,8 +38,7 @@ Durch Klicken auf “Binder” wird nach einem kurzen Ladevorgang das vollständ
 :align: left
 ```
 
-
-Wenn Sie lieber in der gewohnten Umgebung des Jupyter Books bleiben möchten, bietet sich die Nutzung von "Live Code" an. Im Hintergrund lädt Binder das aktuell vorliegende Kapitel und sorgt dafür, dass die Codeinhalte direkt ausführbar und bearbeitbar sind. Der Vorteil ist, dass Sie nicht auf eine externe Seite weitergeleitet werden. Sie können allerdings keine neuen Code- oder Textblöcke in das Notebook einfügen, sondern nur bestehende Abschnitte bearbeiten. Probieren Sie gerne beide Varianten aus und entscheiden Sie für sich, womit Sie am komfortabelsten arbeiten können. Für welche der Varianten Sie sich auch entscheiden: Sie benötigen zur Bearbeitung des Jupyter Books lediglich einen Browser sowie eine stehende Internetverbindung. 
+Wenn Sie lieber in der gewohnten Umgebung des Jupyter Books bleiben möchten, bietet sich die Nutzung von "Live Code" an. Im Hintergrund lädt das an Binder anschließende Projekt Thebe das aktuell vorliegende Kapitel und sorgt dafür, dass die Codeinhalte direkt ausführbar und bearbeitbar sind. Dazu werden zu den entsprechenden Zellen verschiedene Button ergänzt. Den Code in den Zellen können Sie nach Belieben verändern und den Output inspizieren. Der Vorteil ist, dass Sie nicht auf eine externe Seite weitergeleitet werden. Sie können allerdings keine neuen Code- oder Textblöcke in das Notebook einfügen, sondern eben nur bestehende Codeabschnitte bearbeiten. Probieren Sie gerne beide Varianten aus und entscheiden Sie für sich, womit Sie am komfortabelsten arbeiten können. Für welche der Varianten Sie sich auch entscheiden: Sie benötigen zur Bearbeitung des Jupyter Books lediglich einen Browser sowie eine stehende Internetverbindung. 
 
 ```{figure} ../img/einfuehrung/icons_download.png
 :figclass: margin
