@@ -51,7 +51,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numerische Datentypen" href="04-datentyp-numerisch.html" />
+    <link rel="next" title="Fehlermeldungen" href="04-fehlermeldungen.html" />
     <link rel="prev" title="Hallo, Welt!" href="02-hallo-welt.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -150,21 +150,26 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04-datentyp-numerisch.html">
+    <a class="reference internal" href="04-fehlermeldungen.html">
+     Fehlermeldungen lesen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-aufgabe-skript-schreiben.html">
+     Erste Übungsaufgabe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-datentyp-numerisch.html">
      Numerische Datentypen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="06-aufgabe-skript-schreiben.html">
-     Erste Aufgabe
+    <a class="reference internal" href="07-aufgabe-taschenrechner.html">
+     Abschlussaufgabe
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05-fehlermeldungen.html">
-   Fehlermeldungen
-  </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/01-programmablaeufe-strukturieren.html">
@@ -477,6 +482,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabe">
+   Eingabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indizierung-und-slicing">
    Indizierung und Slicing
   </a>
@@ -554,6 +564,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabe">
+   Eingabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indizierung-und-slicing">
    Indizierung und Slicing
   </a>
@@ -625,9 +640,38 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title">Information</p>
 <p>Aus Gründen der Lesbarkeit haben wir lange Strings, die im folgenden den Variablen zugewiesen werden, in drei einfache Anführungszeichen gesetzt. Auf diese Weise kann der String über mehrere Zeilen verlaufen und bleibt daher direkt lesbar, ohne dass die Leiste zum Scrollen bemüht werden muss.</p>
 </div>
-<span class="target" id="indizierung"></span><div class="section" id="indizierung-und-slicing">
-<span id="slicing"></span><h2>Indizierung und Slicing<a class="headerlink" href="#indizierung-und-slicing" title="Permalink to this headline">¶</a></h2>
-<p>Um eine Begrüßung aus dem Hello-World-Programm zu erstellen - wie im letzten Abschnitt geschehen - benötigen wir jedoch nur einen Teil der <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h. sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (<em>characters</em>). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über <strong>Indices</strong> direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das “e” beispielsweise durch den Ausdruck <code class="docutils literal notranslate"><span class="pre">my_variable[1]</span></code>.</p>
+<span class="target" id="indizierung"></span><div class="section" id="eingabe">
+<span id="slicing"></span><h2>Eingabe<a class="headerlink" href="#eingabe" title="Permalink to this headline">¶</a></h2>
+<p>Im vorherigen Kapitel haben Sie den grundlegenden Aufbau von Code kennengelernt, und anhand des Datentyps <em>string</em> gelernt, wie Werte Variablen zugewiesen und ausgegeben werden können. Lassen Sie uns das Hallo-Welt-Programm aus dem vorherigen Kapitel nun etwas interaktiver gestalten, indem es uns nach unserem Namen fragt und persönlich begrüßt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hello user program</span>
+
+<span class="sd">&quot;&quot;&quot;These few lines of code are </span>
+<span class="sd">used to greet you.&quot;&quot;&quot;</span>
+
+<span class="n">my_variable</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span> <span class="c1"># assign value to variable</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name? (press ENTER when finished)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Was haben wir gemacht?</strong></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="note admonition">
+<p class="admonition-title">Wichtig!</p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion liefert immer einen String zurück!</p>
+</div>
+</div>
+<p id="input">Neben verschiedenen Ausgabemöglichkeiten bietet Python auch einige <strong>Eingabeoptionen</strong>. Eine davon ist die <a class="reference external" href="https://docs.python.org/3/library/functions.html#input"><code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion</a> (siehe Zeile 8). Wird diese <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/04-funktionen.html"><span class="doc std std-doc">Funktion</span></a> im Programmdurchlauf aufgerufen, dann bleibt der Prozess solange angehalten bis die Nutzer:innen eine Eingabe über die Tastatur getätigt und mit der Return-Taste bestätigt haben. Die <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion nimmt den optionalen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> <em>prompt</em> an, wodurch spezifiziert werden kann, welche Informationseingabe erwartet wird - im obigen Beispiel ein Name. Die Eingabe wird dann in der Variablen <code class="docutils literal notranslate"><span class="pre">name</span></code> gespeichert.</p>
+<p>Als Ausgabe zeigt uns die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion anschließend die “Summe” aus der “Addition” der in den Variablen <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> und <code class="docutils literal notranslate"><span class="pre">name</span></code> gespeicherten Zeichenketten. Die Zusammenfügung von Strings durch das <strong>+</strong>-Zeichen wird auch <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Konkatenierung"><span class="xref std std-term">Konkatenierung</span></a> oder <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Verkettung"><span class="xref std std-term">Verkettung</span></a> genannt. Zeichenketten in Python sind prinzipiell unveränderbar (<a class="reference internal" href="../ch-appendix/01-glossar.html#term-immutable"><span class="xref std std-term">immutable</span></a>). Operationen, die eine Zeichenkette verändern sollen, geben daher stets eine <em>neue</em> Zeichenkette zurück. Wollten wir also, statt die zusammengefügte Zeichenkette per <code class="docutils literal notranslate"><span class="pre">print()</span></code> direkt auszugeben, stattdessen mit ihr weiterarbeiten, dann müssten wir sie einer neuen Variablen zuweisen oder die alte überschreiben.</p>
+</div>
+<div class="section" id="indizierung-und-slicing">
+<h2>Indizierung und Slicing<a class="headerlink" href="#indizierung-und-slicing" title="Permalink to this headline">¶</a></h2>
+<p>Um eine Begrüßung aus dem Hello-World-Programm zu erstellen - wie im letzten Abschnitt geschehen - benötigen wir jedoch nur einen Teil der <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h., sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (<em>characters</em>). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über <strong>Indices</strong> direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das “e” beispielsweise durch den Ausdruck <code class="docutils literal notranslate"><span class="pre">my_variable[1]</span></code>.</p>
 <p>Wundern Sie sich darüber, warum der zweite Buchstabe in der Zeichenkette an der Indexposition ‘1’ steht? Schauen wir uns den String genauer an:</p>
 <p><img alt="alt text" src="https://i.imgur.com/gGDkY0P.png" /></p>
 <div class="margin sidebar">
@@ -708,7 +752,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="lange-von-strings-bestimmen">
 <span id="len"></span><h2>Länge von Strings bestimmen<a class="headerlink" href="#lange-von-strings-bestimmen" title="Permalink to this headline">¶</a></h2>
-<p>Mit der Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#len"><code class="docutils literal notranslate"><span class="pre">len()</span></code></a> kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.</p>
+<p>Nachdem Sie nun wissen, wie Strings aufgebaut sind und einzelne Elemente in ihnen angesteuert werden können, wollen wir uns nun einige Funktionen anschauen, mit denen die Zeichenketten beschrieben und bearbeitet werden können. Den Anfang macht die Funktion <a class="reference external" href="https://docs.python.org/3/library/functions.html#len"><code class="docutils literal notranslate"><span class="pre">len()</span></code></a>. Sie wird genutzt, um die Anzahl der Elemente in einem sequenziellen Datentypen zu ermitteln.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Jemand musste Josef K. verleumdet haben, </span>
@@ -920,7 +964,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aufgabe-skript-uberarbeiten">
 <h2>Aufgabe: Skript überarbeiten<a class="headerlink" href="#aufgabe-skript-uberarbeiten" title="Permalink to this headline">¶</a></h2>
-<p>Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts <a class="reference internal" href="06-aufgabe-skript-schreiben.html#aufgabe-skript-schreiben"><span class="std std-ref">konzipierte Skript</span></a> und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
+<p>Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts <a class="reference internal" href="05-aufgabe-skript-schreiben.html#aufgabe-skript-schreiben"><span class="std std-ref">konzipierte Skript</span></a> und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
@@ -963,10 +1007,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">Hallo, Welt!</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04-datentyp-numerisch.html" title="next page">
+    <a class='right-next' id="next-link" href="04-fehlermeldungen.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numerische Datentypen</p>
+        <p class="prev-next-title">Fehlermeldungen</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

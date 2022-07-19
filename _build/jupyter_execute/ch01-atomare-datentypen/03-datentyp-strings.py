@@ -19,10 +19,45 @@
 # :::{index} Slicing
 # :name: slicing
 # :::
+
+# ## Eingabe
 # 
+# Im vorherigen Kapitel haben Sie den grundlegenden Aufbau von Code kennengelernt, und anhand des Datentyps *string* gelernt, wie Werte Variablen zugewiesen und ausgegeben werden können. Lassen Sie uns das Hallo-Welt-Programm aus dem vorherigen Kapitel nun etwas interaktiver gestalten, indem es uns nach unserem Namen fragt und persönlich begrüßt.
+
+# In[ ]:
+
+
+# hello user program
+
+"""These few lines of code are 
+used to greet you."""
+
+my_variable = "Hello, World!" # assign value to variable
+
+name = input("What's your name? (press ENTER when finished)")
+print(my_variable[:7] + name)
+
+
+# **Was haben wir gemacht?**
+# 
+# ::::{margin}
+# :::{admonition} Wichtig!
+# :class: note
+# Die `input()`-Funktion liefert immer einen String zurück!
+# :::
+# ::::
+# 
+# :::{index} single: Funktion ; input()
+# :name: input_
+# :::
+# 
+# Neben verschiedenen Ausgabemöglichkeiten bietet Python auch einige **Eingabeoptionen**. Eine davon ist die [`input()`-Funktion](https://docs.python.org/3/library/functions.html#input) (siehe Zeile 8). Wird diese [Funktion](../ch02-programmablaeufe-strukturieren/04-funktionen.ipynb) im Programmdurchlauf aufgerufen, dann bleibt der Prozess solange angehalten bis die Nutzer:innen eine Eingabe über die Tastatur getätigt und mit der Return-Taste bestätigt haben. Die `input()`-Funktion nimmt den optionalen {term}`Parameter` *prompt* an, wodurch spezifiziert werden kann, welche Informationseingabe erwartet wird - im obigen Beispiel ein Name. Die Eingabe wird dann in der Variablen `name` gespeichert.
+# 
+# Als Ausgabe zeigt uns die `print()`-Funktion anschließend die "Summe" aus der "Addition" der in den Variablen `my_variable` und `name` gespeicherten Zeichenketten. Die Zusammenfügung von Strings durch das **+**-Zeichen wird auch {term}`Konkatenierung` oder {term}`Verkettung` genannt. Zeichenketten in Python sind prinzipiell unveränderbar ({term}`immutable`). Operationen, die eine Zeichenkette verändern sollen, geben daher stets eine *neue* Zeichenkette zurück. Wollten wir also, statt die zusammengefügte Zeichenkette per `print()` direkt auszugeben, stattdessen mit ihr weiterarbeiten, dann müssten wir sie einer neuen Variablen zuweisen oder die alte überschreiben.
+
 # ## Indizierung und Slicing
 # 
-# Um eine Begrüßung aus dem Hello-World-Programm zu erstellen - wie im letzten Abschnitt geschehen - benötigen wir jedoch nur einen Teil der `Hello, World!`-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h. sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (*characters*). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über **Indices** direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das "e" beispielsweise durch den Ausdruck `my_variable[1]`. 
+# Um eine Begrüßung aus dem Hello-World-Programm zu erstellen - wie im letzten Abschnitt geschehen - benötigen wir jedoch nur einen Teil der `Hello, World!`-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h., sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (*characters*). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über **Indices** direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das "e" beispielsweise durch den Ausdruck `my_variable[1]`. 
 # 
 # Wundern Sie sich darüber, warum der zweite Buchstabe in der Zeichenkette an der Indexposition '1' steht? Schauen wir uns den String genauer an:
 # 
@@ -112,7 +147,7 @@ example_text = '''Jemand musste Josef K. verleumdet haben,
 # 
 # ## Länge von Strings bestimmen
 # 
-# Mit der Funktion [`len()`](https://docs.python.org/3/library/functions.html#len) kann die Anzahl der Elemente in einer Zeichenkette ermittelt werden.
+# Nachdem Sie nun wissen, wie Strings aufgebaut sind und einzelne Elemente in ihnen angesteuert werden können, wollen wir uns nun einige Funktionen anschauen, mit denen die Zeichenketten beschrieben und bearbeitet werden können. Den Anfang macht die Funktion [`len()`](https://docs.python.org/3/library/functions.html#len). Sie wird genutzt, um die Anzahl der Elemente in einem sequenziellen Datentypen zu ermitteln.
 
 # In[ ]:
 

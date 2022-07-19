@@ -1,0 +1,15 @@
+# percentage calculator
+print("Mit diesem Rechner erfahren Sie, wie viel Sie sparen können und wie hoch der Kaufbetrag ist.")
+
+# input
+base = float(input("Geben Sie den Grundwert ein (Euro): "))
+percentage = int(input("Geben Sie den Rabatt ein (%): "))
+
+# calculate the percentage value and the remaining purchase amount
+value = (base/100) * percentage
+netto = base - value
+
+# output
+print(f"Sie sparen {value} Euro und müssen noch {netto} Euro bezahlen.")
+
+# your code
