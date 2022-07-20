@@ -184,6 +184,8 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 # your answer
 
 
+# 
+
 # In[ ]:
 
 
@@ -215,6 +217,8 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 # your answer
 
+
+# 
 
 # In[ ]:
 
@@ -248,6 +252,8 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 # your answer
 
 
+# 
+
 # In[ ]:
 
 
@@ -273,6 +279,8 @@ print(f"Die Eingabe ist vom Typ {type(age_int)}.")
 
 # your answer
 
+
+# 
 
 # In[ ]:
 

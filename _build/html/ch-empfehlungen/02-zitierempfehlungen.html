@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zitierempfehlungen &#8212; Python für Historiker:innen</title>
+    <title>Zitation von Code &#8212; Python für Historiker:innen</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -463,7 +463,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Zitierempfehlungen</h1>
+                <h1>Zitation von Code</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -474,8 +474,36 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="zitierempfehlungen">
-<h1>Zitierempfehlungen<a class="headerlink" href="#zitierempfehlungen" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="zitation-von-code">
+<span id="citation"></span><h1>Zitation von Code<a class="headerlink" href="#zitation-von-code" title="Permalink to this headline">¶</a></h1>
+<p>Die Nachnutzung von Code ist auch in den digitalen Geschichts- und Geisteswissenschaften zu begrüßen. Um nicht zu plagiieren sollten aber auch hierbei grundlegende Zitierregeln beachtet werden, um die Standards der guten wissenschaftlichen Praxis einzuhalten. Dabei ist es gerade am Anfang nicht immer ganz einfach zu entscheiden, was <em>Common Knowledge</em> ist und was nicht und daher zitiert werden muss. Wenn eine bestimmte Aufgabe eigentlich nur auf eine Art und Weise gelöst werden kann und der entsprechende Code daher weit verbreitet ist, dann erübrigt sich wahrscheinlich die Zitationspflicht (das ist beispielsweise bei den Hello-World-Programmen in den unterschiedlichen Programmiersprachen der Fall). Wann immer aber direkt Code übernommen wird - quasi im Sinne eines Zitates - oder darauf aufgebaut wird, sollte eine Angabe gemacht werden.</p>
+<p>Wir haben hier drei Szenarien identifiziert und unsere Empfehlungen zur Referenzierung aufgeführt:</p>
+<ol class="simple">
+<li><p>Bibliotheken: Um die Nutzung von Programmierbibliotheken wie beispielsweise <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>, <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a> oder <a class="reference external" href="https://spacy.io/">SpaCy</a> werden Sie nicht herum kommen und das wäre auch gar nicht wünschenswert, schließlich fließt viel Mühe und Arbeit in die Bereitstellung dieser Ressourcen, die den Programmieralltag bedeutend bereichern. In der Regel sollte die Nachweispflicht einerseits durch den Import in Ihren Skripten, andererseits durch die Bereitstellung der sog. <em>Requirements</em>, also der Angabe der verwendeten Bibliotheken inklusive Versionsnummer, erfüllt sein. Beachten Sie aber immer, ob die jeweiligen Produzenten der Bibliothek, Module oder anderweitigen Softwarepakete zusätzliche Angaben wünschen. Insbesondere sollten Sie nach Lizenzen Ausschau halten, denn die geben vor, unter welchen Bedingungen der Code für die eigenen Projekte nachgenutzt werden kann.</p></li>
+<li><p>Tutorials: Wenn Sie sich mit einer neuen Methode auseinandersetzen, dann ist es nicht unwahrscheinlich, dass Sie sich eine Reihe von Tutorials anschauen und Ihren Code am Ende vielleicht sogar auf einem der Tutorials aufbauen. Hier ist es dann wichtig zu unterscheiden, ob die Autor:innen im Prinzip die Dokumentation einer bestimmten Bibliothek etwas ausführlicher wiedergeben oder weit darüber hinausgehen und im Rahmen eines Workflows eigenständige Arbeitsschritte ausimplementieren. Sie gehen auf Nummer sicher, wenn Sie die verwendeten Tutorials angeben, auf denen Ihr Code beruht. Ein paar Beispiele:</p>
+<ul class="simple">
+<li><p>Programming Historian: Charlie Harper: Visualizing Data with Bokeh and Pandas, in: Programming Historian (2018), letzte Aktualisierung: 1.10.2021. DOI: <a class="reference external" href="https://doi.org/10.46430/phen0081">https://doi.org/10.46430/phen0081</a>.</p></li>
+<li><p>Towards Data Science: Michel Kana: Topic Modeling Tutorial with Latent Dirichlet Allocation (LDA). A practical guide with proven hands-on Python code. Find what people are tweeting about, in: Towards Data Science (2020). URL: <a class="reference external" href="https://towardsdatascience.com/topic-modeling-with-latent-dirichlet-allocation-by-example-3b22cd10c835">https://towardsdatascience.com/topic-modeling-with-latent-dirichlet-allocation-by-example-3b22cd10c835</a> [letzter Aufruf: 19.07.2022].</p></li>
+</ul>
+</li>
+<li><p>Foren wie Stackoverflow: Die Zitation aus Foren ist für Geistes- und Geschichtswissenschaftler:innen sicherlich mit einigen Bauchschmerzen verbunden, handelt es sich doch in der Regel um Informationsangebote, die keinen wissenschaftlichen Standards entsprechen müssen und keine Klarnamenpflicht aufweisen. Das sind nur zwei Gründe, die es erschweren die Seriosität des Angebots einzuschätzen. Gleichwohl bieten solche Foren sehr viel Hilfestellung: Wann immer Sie auf ein Problem stoßen und nicht weiter wissen: Irgendjemand wird dieses Problem auch schon gehabt und dort wahrscheinlich eine Antwort erhalten haben. Und sollten Sie dann Code aus entsprechenden Antworten übernehmen, auf den Sie nicht selbst gekommen sind, dann sollten Sie das transparent machen. Auch wenn es nicht die wissenschaftlichste Ressource ist, gehört sie doch oftmals zum Programmieralltag dazu.</p>
+<ul class="simple">
+<li><p>Angenommen, Sie hätten sich für die Lösung der Primzahlen-Aufgabe etwas Inspiration geholt, dann könnte ein Verweis auf einen Eintrag in einem Stackoverflow-Post wie folgt aussehen: Nach User: aatifh: Simple prime number generator in Python, in: Stackoverflow (2009), letzte Aktualisierung: 18.03.2009, URL: <a class="reference external" href="https://stackoverflow.com/a/568684">https://stackoverflow.com/a/568684</a> [letzter Aufruf: 19.07.2022].</p></li>
+</ul>
+</li>
+</ol>
+<p>Wie Sie es vom wissenschaftlichen Bibliographieren kennen, sollten Sie also nach Möglichkeit die folgenden Angaben machen:</p>
+<ul class="simple">
+<li><p>Name der Autor:innen</p></li>
+<li><p>Datum</p></li>
+<li><p>Titel des Beitrags oder Codes</p></li>
+<li><p>ggf. Versionsnummer des Codes</p></li>
+<li><p>Publikationsorgan, URL, DOI</p></li>
+</ul>
+<p>Manche Publikationsorgane schlagen Ihnen bereits Zitationsempfehlungen vor. Um die Webressourcen zu sichern, machen Sie gerne auch von der “Save Page Now”-Funktion der <a class="reference external" href="https://archive.org/web/">Wayback Machine</a> des Internet Archive Gebrauch oder fertigen Sie eigene Screenshots als Nachweis für sich an.</p>
+<p><strong>Aber wo sollten Sie die Belege eigentlich angeben?</strong></p>
+<p>Das kommt ganz auf den Kontext an. In jedem Fall sollten Sie die Referenzen direkt über die Kommentarfunktion in Ihren Code einfügen. So können Sie zu jederzeit nachvollziehen, an welchen Stellen Sie Code übernommen haben. Erscheint darüber hinaus eine Publikation, kann es erforderlich sein, im Rahmen des bibliographischen Apparats eine zusätzliche Rubrik für Source Code zu ergänzen.</p>
+<p>Abschließend bleibt noch einmal zu betonen, dass es noch keine einheitlichen Empfehlungen gibt. Halten Sie bei wissenschaftlichen Arbeiten also immer noch mal Rücksprache mit Ihren Betreuer:innen, Herausgeber:innen oder Verlagen und fragen Sie, wie Sie mit der Nachnutzung von Code, der nicht im Rahmen von Programmbibliotheken publiziert wurde, umgehen sollen.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -528,10 +556,7 @@ const thebe_selector_output = ".output, .cell_output"
     
         &copy; Copyright 2022.<br/>
       <div class="extra_footer">
-        <div>
-<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
-</div>
-
+        <div> Zitierempfehlung </div> <div> Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider, Python für Historiker:innen. Ein anwendungsorientierter und interaktiver Einstieg, 20.07.2022, Jupyter Book, (v1.0), <a href="https://digital-history-berlin.github.io/Python-fuer-Historiker-innen/home.html">https://digital-history-berlin.github.io/Python-fuer-Historiker-innen/home.html</a>,  <a href="https://doi.org/XXXXXX">https://doi.org/XXXXXX</a> </div> <div> <a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>. </div>
       </div>
   </p>
 </footer>

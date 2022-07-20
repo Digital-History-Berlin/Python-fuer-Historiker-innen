@@ -9,7 +9,7 @@ Wenn unsere Quellen in immer größerer Zahl als Daten bereitstehen, sei es als 
 Dabei genügt schon vergleichsweise wenig, um viel zu erreichen. Sobald man ein Grundverständnis dafür entwickelt hat, wie codebasiertes Arbeiten funktioniert, lassen sich ganz neue Wege gestalten, geschichtswissenschaftliche Daten zu entdecken, zu erkunden und zu verstehen. Dann lassen sich uns bislang verschlossene Methoden anwenden, um sinnvolle Orientierung in der Fülle von Informationen zu schaffen und neue Perspektiven auf unseren historischen Gegenstand zu gewinnen, die uns bislang verwehrt blieben.
 
 ````{div} full-width
-```{figure} img/vorwort_img.png
+```{figure} ../img/vorwort_img.png
 :alt: Illustration der Wahl zwischen einem Universal- oder vielen Spezialwerkzeugen
 :width: 800px
 :align: left
@@ -23,4 +23,5 @@ Genau diese Grundlagen will dieses interaktive JupyterBook vermitteln. Es basier
 Ich hoffe, dass die hier zusammengetragenen und aufbereiteten Jupyter Notebooks dazu beitragen, dass wir als Historiker:innen eine neue Souveränität über die von uns zu analysierenden Daten und die dafür notwendigen Methoden erlangen und durch die Vermittlung und Bereitstellung der dafür genutzten Codes unser historisches Arbeiten noch transparenter und effizienter gestalten können. Vor allem wünsche ich allen viel Spaß bei der Nutzung der Notebooks und beim Erlernen von Python!
 
 Torsten Hiltmann
+
 Berlin, 27.06.2022

@@ -213,12 +213,6 @@ print(example_text.index("ß"))
 # 
 # *Ihre Antwort*
 
-# In[ ]:
-
-
-# your answer
-
-
 # :::{index} single: Funktion ; replace()
 # :name: replace_
 # :::
@@ -327,9 +321,11 @@ print(concat)
 # 
 # ## Strings formatieren
 # 
+# Wenn wir mit (Text-)Daten arbeiten, dann kommt es nicht selten vor, dass wir die Art der Groß- und Kleinschreibung ändern oder andere Informationen in die Daten einfügen wollen. Hierfür bietet Python einige Formatierungsmöglichkeiten, die uns in unterschiedlichsten Kontexten behilflich sein können.
+# 
 # ### Groß- und Kleinschreibung ändern
 # 
-# Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im {term}`Codeblock` die Funktionsweise der jeweiligen Funktionen.
+# Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im {term}`Codeblock` die Funktionsweise der jeweiligen Methoden.
 
 # In[ ]:
 
@@ -362,9 +358,11 @@ print(example_text_capitalized)
 # 
 # ## Ausgabe formatieren
 # 
-# Bislang sah die Ausgabe unserer Ergebnisse mit der `print()`-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diesen Abschnitt soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (`{}`) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.
+# Bislang sah die Ausgabe unserer Ergebnisse mit der `print()`-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten, von denen hier zwei vorgestellt werden sollen. Sie ermöglichen es, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. 
 # 
-# **Ein Beispiel:**
+# **`format()`**
+# 
+# Zum einen können wir die `format`-Funktion nutzen, die an eine Zeichenkette angehängt wird. Durch das Einfügen von geschweiften Klammern (`{}`) in diesen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas hinzugefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.
 
 # In[ ]:
 
@@ -385,7 +383,7 @@ print("Der Beispieltext '{0}'\nist {1} Zeichen lang.".format(example_text, len(e
 # 
 # **f-strings**
 # 
-# Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein `f` vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden. 
+# Zum anderen können die sog. `f-strings` verwendet werden. Dem ersten Anführungszeichen wird ein `f` vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden. Im Gegensatz zur `format`-Funktion ist die Arbeit mit `f-strings` also wesentlich effizienter.
 
 # In[ ]:
 
@@ -393,14 +391,4 @@ print("Der Beispieltext '{0}'\nist {1} Zeichen lang.".format(example_text, len(e
 print(f"Der Beispieltext '{example_text}'\nist {len(example_text)} Zeichen lang.")
 
 
-# Ausführliche Informationen zu den Möglichkeiten der Formatierung von Strings finden Sie in der [Python-Dokumentation](https://docs.python.org/3/library/string.html#format-string-syntax).
-
-# ## Aufgabe: Skript überarbeiten
-# 
-# Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts [konzipierte Skript](aufgabe-skript-schreiben) und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.
-
-# In[ ]:
-
-
-# your code
-
+# **Merke:** Die Formatierungsmöglichkeiten sind nicht auf die Verwendung innerhalb der Ausgabe per Print-Funktion beschränkt. Auch in anderen Prozessschritten können Sie die Funktionalitäten nutzen - wann immer Sie Werte in Zeichenketten einfügen wollen. Ausführliche Informationen zu den Möglichkeiten der Formatierung von Strings finden Sie in der [Python-Dokumentation](https://docs.python.org/3/library/string.html#format-string-syntax).

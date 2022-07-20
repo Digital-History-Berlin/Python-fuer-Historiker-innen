@@ -8,7 +8,7 @@
 ```
 ````
 
-Das Jupyter Book richtet sich an Historiker:innen, die einen ersten anwendungsorientierten und interaktiven Einstieg in die Programmiersprache Python suchen. Neben den Grundlagen der Skriptsprache werden auch konkrete Einsatzgebiete für Historiker:innen vorgestellt.
+Das Jupyter Book richtet sich an alle Historiker:innen, die einen ersten anwendungsorientierten und interaktiven Einstieg in die Programmiersprache Python suchen. Neben den Grundlagen der Skriptsprache werden auch konkrete Einsatzgebiete für Historiker:innen vorgestellt.
 
 Autor:innen: [Melanie Althage](https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history/personen/althage), [Martin Dröge](https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history/personen/dr-martin-droege), [Torsten Hiltmann](https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history/personen/torsten-hiltmann), [Philipp Schneider](https://www.geschichte.hu-berlin.de/de/bereiche-und-lehrstuehle/digital-history/personen/philipp-schneider-m-a)
 
@@ -17,4 +17,4 @@ Homepage: [Professur für Digital History an der Humboldt-Universität zu Berlin
 Blog: [Digital History Berlin. Digitale Geschichtswissenschaften an der Humboldt-Universität zu Berlin](https://dhistory.hypotheses.org/)
 
 
-Version 0.12.1 vom 15.7.2022
+Version 1.0 vom 20.7.2022

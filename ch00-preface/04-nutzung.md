@@ -19,9 +19,7 @@ Bitte beachten Sie stets, dass die jeweiligen Kapitel mit ihren Codeblöcken **s
 ## Wie funktioniert das Jupyter Book?
 
 ```{figure} ../img/einfuehrung/icons_binder-live-code.png
----
 :figclass: margin
----
 ```
 
 Um den vorgegebenen aber auch selbst konzpierten Code auszuführen, haben wir zwei Optionen eingebunden, die es Ihnen ermöglichen, die Notebooks **vollständig online** zu bearbeiten. Sie müssen sich also nicht um die Installation von Python und entsprechender Zusatzsoftware kümmern (falls Sie das trotzdem gerne möchten und noch nicht so genau wissen, worauf zu achten ist, schauen Sie einmal **[hier](installationsempfehlungen)**). Konkret stehen Ihnen zur Nutzung [Binder](https://mybinder.org/) und *Live Code* zur Verfügung, die Sie über das Raketensymbol im Navigationsmenü des jeweiligen Kapitels auswählen können.

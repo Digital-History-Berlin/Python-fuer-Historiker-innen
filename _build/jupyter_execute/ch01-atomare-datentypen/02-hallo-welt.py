@@ -81,44 +81,11 @@ print("Hello, World!")
 
 # **Noch ein Hinweis:** Die Dokumentation sollte für die Recherche von Module, Funktionen und Funktionalitäten stets Ihre erste Anlaufstelle sein. Python bietet allerdings auch eine eingebaute Hilfe, mit der Sie die bereits erwähnten *docstrings* aufrufen können. Das bietet oft schon einen ersten Eindruck von den jeweiligen Funktionsweisen und zugleich den Vorteil, dass Sie diese Informationen direkt in Ihrer Programmierumgebung aufrufen können:
 
-# In[1]:
+# In[ ]:
 
 
 help(print)
 
-
-# :::{index} Eingabe
-# :name: eingabe
-# :::
-# 
-# ## Eingabe
-# 
-# Lassen Sie uns das Hallo-Welt-Programm nun etwas interaktiver gestalten, indem es uns nach unserem Namen fragt und persönlich begrüßt.
-
-# In[ ]:
-
-
-# hello user program
-name = input("What's your name? (press ENTER when finished)")
-print(my_variable[:7] + name)
-
-
-# **Was haben wir gemacht?**
-# 
-# ::::{margin}
-# :::{admonition} Wichtig!
-# :class: note
-# Die `input()`-Funktion liefert immer einen String zurück!
-# :::
-# ::::
-# 
-# :::{index} single: Funktion ; input()
-# :name: input_
-# :::
-# 
-# Neben verschiedenen Ausgabemöglichkeiten bietet Python auch einige **Eingabeoptionen**. Eine davon ist die [`input()`-Funktion](https://docs.python.org/3/library/functions.html#input) (siehe Zeile 2). Wird diese [Funktion](../ch02-programmablaeufe-strukturieren/04-funktionen.ipynb) im Programmdurchlauf aufgerufen, dann bleibt der Prozess solange angehalten bis die Nutzer:innen eine Eingabe über die Tastatur getätigt und mit der Return-Taste bestätigt haben. Die `input()`-Funktion nimmt den optionalen {term}`Parameter` *prompt* an, wodurch spezifiziert werden kann, welche Informationseingabe erwartet wird - im obigen Beispiel ein Name. Die Eingabe wird dann in der Variablen `name` gespeichert.
-# 
-# Als Ausgabe zeigt uns die `print()`-Funktion anschließend die "Summe" aus der "Addition" der in den Variablen `my_variable` und `name` gespeicherten Zeichenketten. Die Zusammenfügung von Strings durch das **+**-Zeichen wird auch {term}`Konkatenierung` oder {term}`Verkettung` genannt. Zeichenketten in Python sind prinzipiell unveränderbar ({term}`immutable`). Operationen, die eine Zeichenkette verändern sollen, geben daher stets eine *neue* Zeichenkette zurück. Wollten wir also, statt die zusammengefügte Zeichenkette per `print()` direkt auszugeben, stattdessen mit ihr weiterarbeiten, dann müssten wir sie einer neuen Variablen zuweisen oder die alte überschreiben.
 
 # [^fn1]: Enthält eine Variable mehrere Wörter, ist es in Python Konvention, diese mit Unterstrichen zu trennen. Ihr Programm wird auch funktionieren, wenn Sie sich nicht daran halten; die Lesbarkeit des Code verbessert sich aber dadurch. Leerzeichen dürfen Sie zur Trennung jedoch nicht verwenden.
 # 
