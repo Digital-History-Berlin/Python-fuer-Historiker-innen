@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6868043.svg)](https://doi.org/10.5281/zenodo.6868043)
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
 # Python für Historiker:innen
