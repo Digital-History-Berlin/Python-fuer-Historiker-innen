@@ -23,4 +23,5 @@ Genau diese Grundlagen will dieses interaktive JupyterBook vermitteln. Es basier
 Ich hoffe, dass die hier zusammengetragenen und aufbereiteten Jupyter Notebooks dazu beitragen, dass wir als Historiker:innen eine neue Souveränität über die von uns zu analysierenden Daten und die dafür notwendigen Methoden erlangen und durch die Vermittlung und Bereitstellung der dafür genutzten Codes unser historisches Arbeiten noch transparenter und effizienter gestalten können. Vor allem wünsche ich allen viel Spaß bei der Nutzung der Notebooks und beim Erlernen von Python!
 
 Torsten Hiltmann
+
 Berlin, 27.06.2022

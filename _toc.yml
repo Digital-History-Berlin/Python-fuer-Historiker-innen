@@ -77,9 +77,9 @@ parts:
 - caption: Empfehlungen
   chapters:
   - file: ch-empfehlungen/01-installationsempfehlungen.md
-    title: Installationsempfehlungen
+    title: Python installieren
   - file: ch-empfehlungen/02-zitierempfehlungen.md
-    title: Zitationsvorschläge
+    title: Code zitieren
   - file: ch-empfehlungen/03-ressourcen.md
     title: Ressourcen
     sections:

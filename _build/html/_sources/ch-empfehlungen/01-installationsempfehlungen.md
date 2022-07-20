@@ -1,5 +1,5 @@
 (installationsempfehlungen)=
-# Installationsempfehlungen für die lokale Arbeit mit Python
+# Python installieren
 
 Um lokal mit Python zu programmieren stehen Ihnen eine Vielzahl von Möglichkeiten offen. Wir möchten Ihnen gerne zwei empfehlen.
 
