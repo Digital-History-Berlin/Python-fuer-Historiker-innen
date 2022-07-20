@@ -59,10 +59,6 @@ parts:
       title: JSON
     - file: ch04-dateien-verarbeiten/04-csv.ipynb
       title: CSV
-- caption: Daten
-  chapters:
-  - file: ch-daten/part01-python-basics-daten.ipynb
-    title: Daten Python Basics
 - caption: Lösungen zu den Aufgaben
   chapters:
   - file: ch-loesungen/part01-python-basics-loesungen.ipynb
@@ -93,6 +89,8 @@ parts:
       title: Dateien verarbeiten
 - caption: Appendix
   chapters:
+  - file: ch-daten/part01-python-basics-daten.ipynb
+    title: Nachweis der Daten
   - file: ch-appendix/01-glossar.md
     title: Glossar
   - file: genindex
