@@ -42,34 +42,36 @@ code.docutils.literal.notranslate {
   color: #E66D0D
 }
 
-/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => rechte Navigationsbar*/
+/* Vorheriger Farbcode für den Mint-Ton: #B0C86F (zusätzlich vermerkte Alternative: #94C172)*/
+
+/* Schrift mit Farbe blau auf Farbe #9CB262 (Mint-Ton)  setzen  => rechte Navigationsbar*/
 a.reference.internal.nav-link:hover, a.reference.internal.nav-link.active {
-  color: #B0C86F
+  color: #9CB262
 }
 
-/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => Haupttextbereich*/
+/* Schrift mit Farbe blau auf Farbe #9CB262 (Mint-Ton)  setzen  => Haupttextbereich*/
 main.bd-content #main-content a,
 main.bd-content #main-content a:visited,
 main.bd-content #print-main-content a,
 main.bd-content #print-main-content a:visited {
- color:#B0C86F
+ color:#9CB262
 }
 
-/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => Links im Footer*/
+/* Schrift mit Farbe blau auf Farbe #9CB262 (Mint-Ton)  setzen  => Links im Footer*/
 a, a:hover {
-  color: #B0C86F
+  color: #9CB262
 }
 
-/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => linke Navigationsbar*/
+/* Schrift mit Farbe blau auf Farbe #9CB262 (Mint-Ton)  setzen  => linke Navigationsbar*/
 #site-navigation nav ul.nav a:hover,
 #site-navigation nav ul.nav li.active>a,
 #site-navigation nav ul.nav li.active>a:hover {
- color:#B0C86F
+ color:#9CB262
 }
 
-/* Schrift mit Farbe blau auf Farbe #B0C86F (Mint-Ton)  setzen  => vor-zurück-Navigation im unteren Bereich*/
+/* Schrift mit Farbe blau auf Farbe #9CB262 (Mint-Ton)  setzen  => vor-zurück-Navigation im unteren Bereich*/
 .prev-next-area a p.prev-next-title {
-  color: #B0C86F;
+  color: #9CB262;
   font-weight: 600;
   font-size: 1.1em;
 }

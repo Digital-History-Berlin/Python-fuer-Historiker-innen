@@ -486,11 +486,6 @@ const thebe_selector_output = ".output, .cell_output"
    Variablen definieren und ausgeben
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eingabe">
-   Eingabe
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -514,11 +509,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variablen-definieren-und-ausgeben">
    Variablen definieren und ausgeben
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eingabe">
-   Eingabe
   </a>
  </li>
 </ul>
@@ -590,45 +580,7 @@ Die kürzeste Variante unseres Hallo-Welt-Programms sieht in Python dann beispie
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
-
-print(...)
-    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
-    
-    Prints the values to a stream, or to sys.stdout by default.
-    Optional keyword arguments:
-    file:  a file-like object (stream); defaults to the current sys.stdout.
-    sep:   string inserted between values, default a space.
-    end:   string appended after the last value, default a newline.
-    flush: whether to forcibly flush the stream.
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="eingabe">
-<span id="id3"></span><h2>Eingabe<a class="headerlink" href="#eingabe" title="Permalink to this headline">¶</a></h2>
-<p>Lassen Sie uns das Hallo-Welt-Programm nun etwas interaktiver gestalten, indem es uns nach unserem Namen fragt und persönlich begrüßt.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hello user program</span>
-<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name? (press ENTER when finished)&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_variable</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Was haben wir gemacht?</strong></p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="note admonition">
-<p class="admonition-title">Wichtig!</p>
-<p>Die <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion liefert immer einen String zurück!</p>
-</div>
-</div>
-<p id="input">Neben verschiedenen Ausgabemöglichkeiten bietet Python auch einige <strong>Eingabeoptionen</strong>. Eine davon ist die <a class="reference external" href="https://docs.python.org/3/library/functions.html#input"><code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion</a> (siehe Zeile 2). Wird diese <a class="reference internal" href="../ch02-programmablaeufe-strukturieren/04-funktionen.html"><span class="doc std std-doc">Funktion</span></a> im Programmdurchlauf aufgerufen, dann bleibt der Prozess solange angehalten bis die Nutzer:innen eine Eingabe über die Tastatur getätigt und mit der Return-Taste bestätigt haben. Die <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion nimmt den optionalen <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> <em>prompt</em> an, wodurch spezifiziert werden kann, welche Informationseingabe erwartet wird - im obigen Beispiel ein Name. Die Eingabe wird dann in der Variablen <code class="docutils literal notranslate"><span class="pre">name</span></code> gespeichert.</p>
-<p>Als Ausgabe zeigt uns die <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion anschließend die “Summe” aus der “Addition” der in den Variablen <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> und <code class="docutils literal notranslate"><span class="pre">name</span></code> gespeicherten Zeichenketten. Die Zusammenfügung von Strings durch das <strong>+</strong>-Zeichen wird auch <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Konkatenierung"><span class="xref std std-term">Konkatenierung</span></a> oder <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Verkettung"><span class="xref std std-term">Verkettung</span></a> genannt. Zeichenketten in Python sind prinzipiell unveränderbar (<a class="reference internal" href="../ch-appendix/01-glossar.html#term-immutable"><span class="xref std std-term">immutable</span></a>). Operationen, die eine Zeichenkette verändern sollen, geben daher stets eine <em>neue</em> Zeichenkette zurück. Wollten wir also, statt die zusammengefügte Zeichenkette per <code class="docutils literal notranslate"><span class="pre">print()</span></code> direkt auszugeben, stattdessen mit ihr weiterarbeiten, dann müssten wir sie einer neuen Variablen zuweisen oder die alte überschreiben.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="fn1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -691,10 +643,7 @@ print(...)
     
         &copy; Copyright 2022.<br/>
       <div class="extra_footer">
-        <div>
-<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
-</div>
-
+        <div> Zitierempfehlung </div> <div> Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider, Python für Historiker:innen. Ein anwendungsorientierter und interaktiver Einstieg, 20.07.2022, Jupyter Book, (v1.0), <a href="https://digital-history-berlin.github.io/Python-fuer-Historiker-innen/home.html">https://digital-history-berlin.github.io/Python-fuer-Historiker-innen/home.html</a>,  <a href="https://doi.org/XXXXXX">https://doi.org/XXXXXX</a> </div> <div> <a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>. </div>
       </div>
   </p>
 </footer>

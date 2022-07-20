@@ -8,7 +8,7 @@ API
     Ein Application Programming Interface ist eine Programmierschnittstelle über die Daten ausgetauscht werden können oder die eine Anbindung an eine andere Software ermöglicht.
 
 Argument
-    Ein Argument ist eine Instanz, die einer Funktion übergeben wird.
+    Ein Argument ist eine Instanz, die einer Funktion übergeben wird (siehe auch -> *Parameter*).
 
 [Binder](https://mybinder.org/)
     Mit Binder können Notebooks, die in einem Git-Repository hinterlegt sind, als ausführbare Notebooks genutzt werden. Binder stellt die notwendigen Serverkapazität kostenfrei zur Verfügung. 
@@ -29,7 +29,7 @@ dynamisch typisiert
     Bei einer dynamischen Typisierung werden die Prüfungen von Datentypen vornehmlich zur Laufzeit eines Programms durchgeführt.
 
 Elemente
-    Ein Element ist ein Wert, der in iterierbaren Datentypen bspw. in einer Python-Liste enthalten ist. 
+    Ein Element ist ein Wert, der in iterierbaren Datentypen enthalten ist, bspw. in einer Python-Liste. 
 
 Funktionsaufruf
     Eine zuvor definierte Funktion wird aufgerufen, indem der Funktionsname mit den sich anschließenden zwei Klammern eingegeben wird, ggf. werden der Funktion Argumente übergeben.
@@ -38,7 +38,7 @@ immutable
     Einige Datentypen sind unveränderbar (immutable). Der Wert einer Instanz lässt sich zur Laufzeit des Programms nicht ändern.
 
 items
-    Ein item ist ein Wert, der in iterierbaren Datentypen bspw. in einer Python-Liste enthalten ist.
+    Ein item ist ein Wert, der in iterierbaren Datentypen bspw. in einer Python-Liste enthalten ist, siehe auch -> *Element*.
 
 Interpreter
     Ein Interpreter führt den Programmcode einer interpretierten Programmiersprache Zeile für Zeile aus.
@@ -53,7 +53,7 @@ Konkatenierung
     Bei einer Kokatenierung werden Objekte vom Datentyp String miteinander verkettet.
 
 Live Code
-    Die Codeblöcke im Jupyterbook können direkt im Live Code ausgeführt werden. Dies ermöglicht das Tool [Thebe](https://thebe.readthedocs.io/en/latest/), welches im Hintergrund auf Binder zugreift. Der Live Code Modus kann über das Raketensymbol aufgerufen werden.
+    Die Codeblöcke im Jupyterbook können direkt im Live Code ausgeführt werden. Dies ermöglicht das Tool [Thebe](https://thebe.readthedocs.io/en/latest/), welches im Hintergrund auf -> *Binder* zugreift. Der Live Code Modus kann über das Raketensymbol aufgerufen werden.
 
 logische Aussagen
     Bei logischen Aussagen bzw. Ausdrücken werden die Vergleichsoperatoren größer, kleiner, gleich, ungleich genutzt, die Wahrheitswerte `True` oder `False` zu erzeugen.
@@ -80,7 +80,7 @@ statisch typisierten
     Bei einer statischen Typisierung werden die Datentypen von Variablen während der Kompilierung des Programmes festgelegt.
 
 Verkettung
-    Bei einer Verkettung werden Objekte vom Datentyp String mit Hilfe des +-Operators miteinander verbunden.
+    Bei einer Verkettung werden Objekte vom Datentyp String mit Hilfe des +-Operators miteinander verbunden (siehe auch -> *Konkatenierung*).
 
 Verzeichnisstruktur
     Eine Verzeichnis- oder Ordnerstruktur ist der hierarchische Aufbau des Dateisystems eines Computers.

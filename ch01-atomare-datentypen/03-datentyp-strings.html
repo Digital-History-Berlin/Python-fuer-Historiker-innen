@@ -538,11 +538,6 @@ const thebe_selector_output = ".output, .cell_output"
    Ausgabe formatieren
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-skript-uberarbeiten">
-   Aufgabe: Skript überarbeiten
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -618,11 +613,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ausgabe-formatieren">
    Ausgabe formatieren
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabe-skript-uberarbeiten">
-   Aufgabe: Skript überarbeiten
   </a>
  </li>
 </ul>
@@ -811,13 +801,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><strong>Was fällt Ihnen einschränkend bei diesen Funktionen auf?</strong></p>
 <p><em>Ihre Antwort</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your answer</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="strings-ersetzen">
 <span id="replace"></span><h2>Strings ersetzen<a class="headerlink" href="#strings-ersetzen" title="Permalink to this headline">¶</a></h2>
@@ -902,9 +885,10 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="target" id="upper"></span><span class="target" id="lower"></span><span class="target" id="swapcase"></span><span class="target" id="title"></span></div>
 <div class="section" id="strings-formatieren">
 <span id="capitalize"></span><h2>Strings formatieren<a class="headerlink" href="#strings-formatieren" title="Permalink to this headline">¶</a></h2>
+<p>Wenn wir mit (Text-)Daten arbeiten, dann kommt es nicht selten vor, dass wir die Art der Groß- und Kleinschreibung ändern oder andere Informationen in die Daten einfügen wollen. Hierfür bietet Python einige Formatierungsmöglichkeiten, die uns in unterschiedlichsten Kontexten behilflich sein können.</p>
 <div class="section" id="grosz-und-kleinschreibung-andern">
 <h3>Groß- und Kleinschreibung ändern<a class="headerlink" href="#grosz-und-kleinschreibung-andern" title="Permalink to this headline">¶</a></h3>
-<p>Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Codeblock"><span class="xref std std-term">Codeblock</span></a> die Funktionsweise der jeweiligen Funktionen.</p>
+<p>Führen Sie den nachfolgenden Codeblock aus und ergänzen Sie anhand der Inspektion der Ausgabe als Kommentar im <a class="reference internal" href="../ch-appendix/01-glossar.html#term-Codeblock"><span class="xref std std-term">Codeblock</span></a> die Funktionsweise der jeweiligen Methoden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># describe</span>
@@ -935,8 +919,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="ausgabe-formatieren">
 <span id="id1"></span><h2>Ausgabe formatieren<a class="headerlink" href="#ausgabe-formatieren" title="Permalink to this headline">¶</a></h2>
-<p>Bislang sah die Ausgabe unserer Ergebnisse mit der <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten. Für diesen Abschnitt soll uns eine ganz einfache Herangehensweise genügen, die es ermöglicht, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren. Durch das Einfügen von geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) in einen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas eingefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
-<p><strong>Ein Beispiel:</strong></p>
+<p>Bislang sah die Ausgabe unserer Ergebnisse mit der <code class="docutils literal notranslate"><span class="pre">print()</span></code>-Funktion recht schmucklos aus. Python bietet für String-Objekte umfangreiche und komplexe Formatierungsmöglichkeiten, von denen hier zwei vorgestellt werden sollen. Sie ermöglichen es, unsere Datenausgabe einzuordnen beziehungsweise zu strukturieren.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">format()</span></code></strong></p>
+<p>Zum einen können wir die <code class="docutils literal notranslate"><span class="pre">format</span></code>-Funktion nutzen, die an eine Zeichenkette angehängt wird. Durch das Einfügen von geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) in diesen String wird dem Python-Interpreter kenntlich gemacht, dass an diesen Stellen etwas hinzugefügt werden soll. In die geschweiften Klammern können wir Positionsargumente setzen, die sich auf die der Format-Funktion übergebenen Parameter beziehen. Wenn keine Positionsargumente angegeben werden, die geschweiften Klammern also leer bleiben, dann wird die Reihenfolge der Parameter als maßgeblich angenommen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der Beispieltext &#39;</span><span class="si">{0}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">ist </span><span class="si">{1}</span><span class="s2"> Zeichen lang.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">example_text</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">)))</span>
@@ -952,7 +937,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p id="f-strings"><strong>f-strings</strong></p>
-<p>Eine alternative Schreibweise, um Ausgaben zu formatieren, sind die sog. f-strings. Dem ersten Anführungszeichen wird ein <code class="docutils literal notranslate"><span class="pre">f</span></code> vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden.</p>
+<p>Zum anderen können die sog. <code class="docutils literal notranslate"><span class="pre">f-strings</span></code> verwendet werden. Dem ersten Anführungszeichen wird ein <code class="docutils literal notranslate"><span class="pre">f</span></code> vorangestellt und in den geschweiften Klammern können die Variablen direkt eingefügt werden. Im Gegensatz zur <code class="docutils literal notranslate"><span class="pre">format</span></code>-Funktion ist die Arbeit mit <code class="docutils literal notranslate"><span class="pre">f-strings</span></code> also wesentlich effizienter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Beispieltext &#39;</span><span class="si">{</span><span class="n">example_text</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">ist </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">example_text</span><span class="p">)</span><span class="si">}</span><span class="s2"> Zeichen lang.&quot;</span><span class="p">)</span>
@@ -960,18 +945,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Ausführliche Informationen zu den Möglichkeiten der Formatierung von Strings finden Sie in der <a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">Python-Dokumentation</a>.</p>
-</div>
-<div class="section" id="aufgabe-skript-uberarbeiten">
-<h2>Aufgabe: Skript überarbeiten<a class="headerlink" href="#aufgabe-skript-uberarbeiten" title="Permalink to this headline">¶</a></h2>
-<p>Überarbeiten Sie das von Ihnen am Ende des letzten Abschnitts <a class="reference internal" href="05-aufgabe-skript-schreiben.html#aufgabe-skript-schreiben"><span class="std std-ref">konzipierte Skript</span></a> und beziehen Sie einige der neu dazu gekommenen Funktionen ein. Nutzen Sie insbesondere die Möglichkeit, die Ausgabe zu formatieren.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p><strong>Merke:</strong> Die Formatierungsmöglichkeiten sind nicht auf die Verwendung innerhalb der Ausgabe per Print-Funktion beschränkt. Auch in anderen Prozessschritten können Sie die Funktionalitäten nutzen - wann immer Sie Werte in Zeichenketten einfügen wollen. Ausführliche Informationen zu den Möglichkeiten der Formatierung von Strings finden Sie in der <a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">Python-Dokumentation</a>.</p>
 </div>
 </div>
 
@@ -1025,10 +999,7 @@ const thebe_selector_output = ".output, .cell_output"
     
         &copy; Copyright 2022.<br/>
       <div class="extra_footer">
-        <div>
-<a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>.
-</div>
-
+        <div> Zitierempfehlung </div> <div> Melanie Althage, Martin Dröge, Torsten Hiltmann, Philipp Schneider, Python für Historiker:innen. Ein anwendungsorientierter und interaktiver Einstieg, 20.07.2022, Jupyter Book, (v1.0), <a href="https://digital-history-berlin.github.io/Python-fuer-Historiker-innen/home.html">https://digital-history-berlin.github.io/Python-fuer-Historiker-innen/home.html</a>,  <a href="https://doi.org/XXXXXX">https://doi.org/XXXXXX</a> </div> <div> <a href="http://creativecommons.org/licenses/by/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 License</a>. </div>
       </div>
   </p>
 </footer>
