@@ -8,8 +8,11 @@ Gerne möchten wir Ihnen noch ein paar einführende Worte zur Nutzung dieses Jup
 Dieses Jupyter Book setzt sich aus einer Reihe von Textseiten (Markdown-Dateien) und Jupyter Notebooks zusammen, die Sie über das Kapitelmenü auf der linken Seite jeweils ansteuern können. Bei Jupyter Notebooks handelt es sich um ein Dateiformat (zu erkennen an der Endung `.ipynb`), das Text, Bilder, Programmcode und dessen Ausführung inklusive der Anzeige von Ergebnissen in einem einzelnen Dokument integriert. Das macht es zu einem hervorragenden Instrument zur Vermittlung von Programmierkenntnissen. 
 
 ```{figure} ../img/einfuehrung/contents.png
-:width: 400px
+---
+:scale: 50%
 :align: left
+---
+Die Kapitelübersicht
 ```
 
 Die einzelnen Kapitel folgen in der Regel einem einheitlichen Aufbau: Zu Beginn werden die Lernziele festgelegt, so dass Sie am Ende für sich noch einmal prüfen können, ob Sie die aufgeworfenen Fragen für sich beantworten können. Den umfangreichsten Teil der Notebooks nimmt die Vermittlung der einzelnen Lehrinhalte anhand der Notebooks ein. Neben erläuternden Passagen finden Sie in den Unterkapiteln immer auch Codebeispiele zur Illustration. Unter "Contents" in der Menüleiste erhalten Sie einen schnellen Überblick über die jeweiligen Abschnitte. Jedes Kapitel enthält zudem größere und kleinere Programmierprobleme, die Sie selbstständig lösen können und sollen. 
@@ -25,15 +28,21 @@ Bitte beachten Sie stets, dass die jeweiligen Kapitel mit ihren Codeblöcken **s
 Um den vorgegebenen aber auch selbst konzpierten Code auszuführen, haben wir zwei Optionen eingebunden, die es Ihnen ermöglichen, die Notebooks **vollständig online** zu bearbeiten. Sie müssen sich also nicht um die Installation von Python und entsprechender Zusatzsoftware kümmern (falls Sie das trotzdem gerne möchten und noch nicht so genau wissen, worauf zu achten ist, schauen Sie einmal **[hier](installationsempfehlungen)**). Konkret stehen Ihnen zur Nutzung [Binder](https://mybinder.org/) und *Live Code* zur Verfügung, die Sie über das Raketensymbol im Navigationsmenü des jeweiligen Kapitels auswählen können.
 
 ```{figure} ../img/einfuehrung/binder-info.png
-:width: 400px
+---
+:scale: 50%
 :align: left
+---
+Der Start-Prozess von Binder
 ```
 
 Durch Klicken auf “Binder” wird nach einem kurzen Ladevorgang das vollständige GitHub-Repositorium des Jupyter Books in einer externen Umgebung geöffnet. Über den "File Browser" können die Notebooks der unterschiedlichen Kapitel aufgerufen, interaktiv bearbeitet und ausgeführt werden. Sie erkennen die einzelnen Kapitel an der Ordner- und Dateibenennung. Die Nutzung von Binder ermöglicht es, weitere Text- oder Codeblöcke in die Notebooks einzufügen (etwa um eigene Notizen und Beobachtungen zu dokumentieren oder weiteren Code zu produzieren). Nutzen Sie dazu einfach die entsprechenden Funktionen in der Menüleiste des Notebooks. Das Play-Icon sorgt beispielsweise dafür, dass ein Codeblock ausgeführt wird und das Plus-Symbol fügt eine Codezelle zum Notebook hinzu. 
 
 ```{figure} ../img/einfuehrung/live-code.png
-:width: 400px
+---
+:scale: 50%
 :align: left
+---
+Durch Live-Code das Jupyter Book interaktiv bearbeiten
 ```
 
 Wenn Sie lieber in der gewohnten Umgebung des Jupyter Books bleiben möchten, bietet sich die Nutzung von "Live Code" an. Im Hintergrund lädt das an Binder anschließende Projekt Thebe das aktuell vorliegende Kapitel und sorgt dafür, dass die Codeinhalte direkt ausführbar und bearbeitbar sind. Dazu werden zu den entsprechenden Zellen verschiedene Button ergänzt. Den Code in den Zellen können Sie nach Belieben verändern und den Output inspizieren. Der Vorteil ist, dass Sie nicht auf eine externe Seite weitergeleitet werden. Sie können allerdings keine neuen Code- oder Textblöcke in das Notebook einfügen, sondern eben nur bestehende Codeabschnitte bearbeiten. Probieren Sie gerne beide Varianten aus und entscheiden Sie für sich, womit Sie am komfortabelsten arbeiten können. Für welche der Varianten Sie sich auch entscheiden: Sie benötigen zur Bearbeitung des Jupyter Books lediglich einen Browser sowie eine stehende Internetverbindung. 
