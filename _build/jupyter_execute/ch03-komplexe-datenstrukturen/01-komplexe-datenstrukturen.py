@@ -18,4 +18,4 @@
 # 
 # und schließlich sollten Sie am Ende des Kapitels dazu in der Lage sein, mit diesen Datenstrukturen flexibel zu arbeiten. 
 # 
-# In den folgenden Abschnitten erwarten Sie statt einer größeren Aufgabe mehrere kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden einen Text aufbauend auf den vorherigen Abschnitten und den neuen Inhalten vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren. 
+# In den folgenden Abschnitten erwarten Sie statt einer größeren Aufgabe mehrere kleinere Teilaufgaben. Die Teilaufgaben zu Listen, Sets und Dictionaries ergeben zusammengenommen ein Miniprojekt. Sie werden, aufbauend auf den vorherigen Abschnitten und den nun folgenden neuen Inhalten, einen Text vorverarbeiten und basale textanalytische Auswertungsmethoden programmieren. 

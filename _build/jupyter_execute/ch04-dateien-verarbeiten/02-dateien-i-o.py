@@ -194,6 +194,13 @@ print("Dateiinhalt:\n" + arbitration_content + "\n")
 print(f"Der Dateiinhalt umfasst {len(arbitration_content)} Zeichen.")
 
 
+# ::::{margin}
+# :::{admonition} Hinweis
+# :class: tip
+# Das Einlesen und Abspeichern mit Live Code läuft im Hintergrund. Wer die Arbeit innerhalb eines Dateisystems bevorzugt, sollte Binder nutzen, dann sind die generierten Daten in der Verzeichnisstruktur zu sehen. 
+# :::
+# ::::
+# 
 # ## Aufgabe: Textdaten speichern
 # 
 # Für diese Aufgabe müssen Sie auf Ihren Code aus einem früheren Notebook zurückgreifen: Passen Sie den Programmcode aus der [Aufgabe zur Berechnung](aufgabe-primzahlen-ausgeben) der Primzahlen so an, dass die Ergebnisse nicht mehr mit `print()` ausgegeben, sondern in einer Textdatei gespeichert werden. Nach jeder Primzahl soll dabei ein Zeilenumbruch erfolgen. Falls Sie die Primzahlaufgabe nicht lösen konnten, orientieren Sie sich an der zur Verfügung gestellten [Musterlösung](loesung-aufgabe-primzahlen-ausgeben).

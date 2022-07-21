@@ -25,7 +25,7 @@ else:
     print("number_b ist größer als number_a")
 
 
-# Wenn Sie nun an einer anderen Stelle in Ihrem Programm wieder zwei Zahlen miteinander vergleichen möchten, könnten Sie natürlich den obigen Code kopieren und an anderer Stelle wieder einfügen. Das macht ihr Programm jedoch nicht nur umfangreicher und damit schlechter lesbar, sondern auch anfälliger für Fehler und schwieriger zu warten, wenn Sie zu einem späteren Zeitpunkt Änderungen vornehmen wollen. Sie können obigen Code daher in einer *Funktion* kapseln:
+# Wenn Sie nun an einer anderen Stelle in Ihrem Programm wieder zwei Zahlen miteinander vergleichen möchten, könnten Sie natürlich den obigen Code kopieren und an anderer Stelle wieder einfügen. Das macht Ihr Programm jedoch nicht nur umfangreicher und damit schlechter lesbar, sondern auch anfälliger für Fehler und schwieriger zu warten, wenn Sie zu einem späteren Zeitpunkt Änderungen vornehmen wollen. Sie können obigen Code daher in einer *Funktion* kapseln:
 
 # In[ ]:
 

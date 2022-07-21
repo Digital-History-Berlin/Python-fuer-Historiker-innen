@@ -9,9 +9,9 @@
 # 
 # Was Sie am Ende dieser Lektion beantworten können sollen:
 # 
-# -  Was sind Variabeln?
+# -  Was sind Variablen?
 # -  Was sind Werte?
-# -  Wie weist man einen Wert einer Variabeln zu?
+# -  Wie weist man einen Wert einer Variablen zu?
 # -  Was sind Datentypen?
 # -  Was sind Kommentare?
 # -  Welche arithmetischen Operatoren gibt es?

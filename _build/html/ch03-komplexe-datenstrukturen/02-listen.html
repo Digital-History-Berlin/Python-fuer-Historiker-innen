@@ -696,7 +696,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="listen-bearbeiten">
 <span id="liste-bearbeiten"></span><h2>Listen bearbeiten<a class="headerlink" href="#listen-bearbeiten" title="Permalink to this headline">¶</a></h2>
-<p>Die Variable <code class="docutils literal notranslate"><span class="pre">some_list</span></code> enthält nun einen list value, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:</p>
+<p>Die Variable <code class="docutils literal notranslate"><span class="pre">some_list</span></code> enthält nun einen <em>list value</em>, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:</p>
 <ul class="simple">
 <li><p>Konkatenierung mittels “+”-Operator</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">append()</span></code></p></li>
@@ -722,7 +722,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="target" id="append"></span></div>
 <div class="section" id="append-und-extend">
 <span id="extend"></span><h3><code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code><a class="headerlink" href="#append-und-extend" title="Permalink to this headline">¶</a></h3>
-<p>Die Methoden <code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code> funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.</p>
+<p>Die Methoden <code class="docutils literal notranslate"><span class="pre">append()</span></code> und <code class="docutils literal notranslate"><span class="pre">extend()</span></code> funktionieren ähnlich. Mit ersterer wird <strong>ein</strong> hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt <strong>alle</strong> Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># append list by user input</span>
@@ -747,7 +747,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="insert">
 <span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">insert()</span></code><a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
-<p>Dagegen fügt die <code class="docutils literal notranslate"><span class="pre">insert()</span></code>-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste:</p>
+<p>Dagegen fügt die <code class="docutils literal notranslate"><span class="pre">insert()</span></code>-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste ein:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># insert value at third position</span>
@@ -1017,7 +1017,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Mit der <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>. NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.</p>
+<p>Mit der <code class="docutils literal notranslate"><span class="pre">split()</span></code>-Funktion können textuelle Daten auf eine sehr simple Weise <em>tokenisiert</em> werden. Das sogenannte <a class="reference external" href="https://de.wikipedia.org/wiki/Tokenisierung"><em>tokenizing</em></a> von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen im Feld <a class="reference external" href="https://en.wikipedia.org/wiki/Natural_language_processing"><em>Natural Language Processing</em></a>. NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.</p>
 <p>Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten <em>Tokens</em> zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.</p>
 <p><strong>Aufgabenstellung:</strong></p>
 <ol class="simple">

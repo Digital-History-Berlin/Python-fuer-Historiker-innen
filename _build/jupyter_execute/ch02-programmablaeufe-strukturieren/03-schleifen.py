@@ -63,7 +63,13 @@ print(f"my_number = {my_number}")
 # 
 # **Aufgabe 1:** 
 # 
-# Schreiben Sie ein kurzes Programm, das prüft, ob ein durch ein:e Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines [Tagungsberichts](https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&recno=2313&page=116&q=&sort=&fq=&total=8538) vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden. 
+# Schreiben Sie ein kurzes Programm, das prüft, ob ein durch eine:n Nutzer:in eingegebenes Wort in dem vorgegebenen ersten Absatz eines [Tagungsberichts](https://www.hsozkult.de/conferencereport/id/tagungsberichte-6455?title=digitale-metamorphose-digital-humanities-und-editionswissenschaft&recno=2313&page=116&q=&sort=&fq=&total=8538) vorkommt. Wenn das Wort vorkommt, dann soll eine entsprechende Bestätigung ausgegeben werden. Kommt das Wort nicht im Text vor, soll der:die Nutzer:in die Möglichkeit erhalten, erneut eine Eingabe zu tätigen. Möchte der:die Nutzer:in keine weitere Eingabe tätigen, dann soll das Programm eine Abschlussmeldung ausgeben und beendet werden. 
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
@@ -98,7 +104,7 @@ report = '''Die Editionswissenschaft erlebt nicht zuletzt wegen einer
 
 # **Aufgabe 2:** 
 # 
-# Schreiben Sie ein kurzes Programm, das eine Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll der Nutzer:in mitgeteilt werden, ob die Angabe zu groß oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
+# Schreiben Sie ein kurzes Programm, das eine:n Benutzer:in angeben lässt, in welchem Jahr die Französische Revolution begann. Das Programm soll dabei erst beendet werden, wenn das richtige Jahr angegeben wurde. Wurde ein falsches Jahr angegeben, soll dem:der Nutzer:in mitgeteilt werden, ob die Angabe zu groß oder zu klein war. Testen Sie Ihr Programm mit unterschiedlichen Eingaben um herauszufinden, ob es funktioniert.
 
 # In[ ]:
 

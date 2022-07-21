@@ -73,18 +73,6 @@ books = {"Franz Kafka":"Der Prozess",
 # In[ ]:
 
 
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
 "Albert Camus \"" + books["Albert Camus"] + "\" wird in der Coronakrise wieder viel gelesen."
 
 

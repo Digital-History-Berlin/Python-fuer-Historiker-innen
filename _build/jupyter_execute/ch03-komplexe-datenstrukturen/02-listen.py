@@ -71,7 +71,7 @@ print(some_list)
 # 
 # ## Listen bearbeiten
 # 
-# Die Variable `some_list` enthält nun einen list value, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:
+# Die Variable `some_list` enthält nun einen *list value*, der individuell mit Inhalt befüllt werden könnte. Das ist nützlich, wenn Sie Daten aus unterschiedlichen Quellen zusammenführen möchten. Dazu und für die Bearbeitung schon angereicherter Listen können folgende Methoden genutzt werden:
 # - Konkatenierung mittels "+"-Operator
 # - `append()`
 # - `extend()`
@@ -108,7 +108,7 @@ print(book_titles)
 # 
 # ### `append()` und `extend()`
 # 
-# Die Methoden `append()` und `extend()` funktionieren ähnlich. Mit ersterer wird ein hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt alle Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.
+# Die Methoden `append()` und `extend()` funktionieren ähnlich. Mit ersterer wird **ein** hinzuzufügendes Element an das Ende der Liste angehängt. Letztere hängt **alle** Elemente eines iterierbaren Objekts an das Ende eines bestehenden Listenobjekts an.
 
 # In[ ]:
 
@@ -136,7 +136,7 @@ print(some_list)
 # 
 # ### `insert()`
 # 
-# Dagegen fügt die `insert()`-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste: 
+# Dagegen fügt die `insert()`-Funktion ein hinzuzufügendes Element durch die Spezifizierung der Indexposition an eine beliebige Position in der Liste ein: 
 
 # In[ ]:
 
@@ -457,7 +457,7 @@ tokenized_report = report.split()
 print(tokenized_report)
 
 
-# Mit der `split()`-Funktion können textuelle Daten auf eine sehr simple Weise *tokenisiert* werden. Das sogenannte [*tokenizing*](https://de.wikipedia.org/wiki/Tokenisierung) von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen auf dem Feld [*Natural Language Processing*](https://en.wikipedia.org/wiki/Natural_language_processing). NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
+# Mit der `split()`-Funktion können textuelle Daten auf eine sehr simple Weise *tokenisiert* werden. Das sogenannte [*tokenizing*](https://de.wikipedia.org/wiki/Tokenisierung) von Textdaten ist ein grundlegender Arbeitsschritt im Bereich der Textanalyse beziehungsweise allgemeiner gesprochen im Feld [*Natural Language Processing*](https://en.wikipedia.org/wiki/Natural_language_processing). NLP (wie die häufig anzutreffende Abkürzung lautet) ist ein Forschungsfeld, in dem sich intensiv mit der computationellen Verarbeitung von natürlichsprachlichen Daten auseinandergesetzt wird.
 #  
 # Eine Zeichenkette wird dabei in kleinere Einheiten, die sogenannten *Tokens* zerlegt, die dann verschiedentlich weiterarbeitet werden können. Oft werden einfache Wörter als Token operationalisiert, aber auch Mehrwort-Einheiten oder gebräuchliche Phrasen können zu Untersuchungselementen werden. Die Tokenisierung ist ein sehr komplexer Vorgang. Für den konkreten Fall genügt aber zunächst die Zerlegung des Textes in Tokens anhand von Leerzeichen.
 

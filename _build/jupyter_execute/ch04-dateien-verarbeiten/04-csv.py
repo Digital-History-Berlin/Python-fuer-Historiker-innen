@@ -35,7 +35,7 @@
 # :::
 # ::::
 # 
-# Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit `;` die wenigsten Probleme.
+# Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons oder Tabs. Der Grund für die Abweichung vom Komma liegt zum Beispiel in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit `;` oder Tabs die wenigsten Probleme.
 # 
 # Sie können CSV-Dateien in allen gängigen Tabellenkalkulationsprogrammen (z.B. Microsoft Excel) öffnen und bearbeiten oder auch aus solchen Programmen CSVs exportieren.
 
@@ -145,7 +145,7 @@ with open("example_data/more_books.csv", "w", newline="") as csv_file:
     books_writer.writerow(new_book)
 
 
-# Schauen Sie wieder im Ordner `example_data` nach: Finden Sie die Datei `more_books.csv` und enthält sie die gewünschten Informationen?
+# Schauen Sie wieder im Ordner `example_data` nach (dazu sollten Sie dieses Kapitel in Binder bearbeiten): Finden Sie die Datei `more_books.csv` und enthält sie die gewünschten Informationen?
 
 # :::{index} single: CSV ; DictReader()
 # :name: csv_dictreader_
@@ -207,8 +207,15 @@ with open("example_data/more_books.csv", "w", newline="") as csv_file:
             more_input = False
 
 
-# Neben der von Python bereitgestellten `csv`-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. [Pandas](https://pandas.pydata.org/). Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek `csv` zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen.
+# Neben der von Python bereitgestellten `csv`-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. [Pandas](https://pandas.pydata.org/). Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek `csv` zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen. In weiteren Versionen dieses Jupyter Books wird auch eine Einführung in Pandas erscheinen.
 
+# ::::{margin}
+# :::{admonition} Hinweis
+# :class: tip
+# Das Einlesen und Abspeichern mit Live Code läuft im Hintergrund. Wer die Arbeit innerhalb eines Dateisystems bevorzugt, sollte Binder nutzen, dann sind die generierten Daten in der Verzeichnisstruktur zu sehen. 
+# :::
+# ::::
+# 
 # ## Aufgabe: Daten strukturiert speichern
 # 
 # Nun haben Sie gelernt, Daten zu strukturieren und dauerhaft verfügbar zu halten. In dieser Aufgabe sollen Sie den Programmcode aus dem [vorherigen Kapitel](aufgabe-einfache-frequenzanalyse) nachnutzen. Falls Sie diese Aufgaben nicht lösen konnten, können Sie den Code aus der [Musterlösung](loesung-aufgabe-einfache-frequenzanalyse) verwenden. Passen Sie das Programm wie folgt an:

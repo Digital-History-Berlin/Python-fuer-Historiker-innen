@@ -444,6 +444,26 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Digital-History-Berlin/Python-fuer-Historiker-innen/main?urlpath=lab/tree/docs/ch01-atomare-datentypen/05-aufgabe-skript-schreiben.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -470,8 +490,8 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="aufgabe-skript-schreiben">
 <span id="id1"></span><h1>Aufgabe: Skript schreiben<a class="headerlink" href="#aufgabe-skript-schreiben" title="Permalink to this headline">¶</a></h1>
 <p>Nun haben Sie schon einige erste Grundlagen zur Programmierung in Python kennengelernt, mit denen Sie ein kleines Skript schreiben können, das textbasierte Informationen auf Basis einer Eingabe verarbeitet und wieder ausgibt.
-Wenden Sie das Gelernte an und schreiben Sie ein kurzes, kommentiertes Programm, das die bisher kennengelernten Funktionen zur Eingabe und Ausgabe, aber auch zur Manipulation und Beschreibung von Strings beinhaltet und beliebig kombiniert.</p>
-<p>Hier können Sie Ihrer Kreativität freien Lauf lassen. Es gibt kein <em>richtig</em> oder <em>falsch</em>, d.h. es gibt keine Musterlösung.</p>
+Wenden Sie das Gelernte an und schreiben Sie ein kurzes, kommentiertes Programm, das die bisher kennengelernten Funktionen zur Eingabe und Ausgabe, aber auch zur Manipulation und Beschreibung von Strings beinhaltet und beliebig kombiniert. Da wir als Historiker:innen viel mit Textquellen arbeiten, ist es wichtig, mit diesem Datentyp und seinen Funktionalitäten vertraut zu sein.</p>
+<p>Hier können Sie Ihrer Kreativität aber erst einmal freien Lauf lassen. Es gibt kein <em>richtig</em> oder <em>falsch</em>, d.h. es gibt keine Musterlösung.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># insert your code</span>

@@ -7,7 +7,7 @@
 # :name: type_
 # :::
 # 
-# Sie haben sich bereits eingehend mit dem Datentyp *string* auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von [numerischen Datentypen](https://docs.python.org/3/library/stdtypes.html#typesnumeric), die wir auch als überwiegend mit textuellen Daten arbeitende Geisteswissenschaftler:innen kennenlernen sollten. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion `type()` können wir die Information einfach in Python erfragen.
+# Sie haben sich bereits eingehend mit dem Datentyp *string* auseinandergesetzt, aber Python bietet natürlich auch eine Reihe von [numerischen Datentypen](https://docs.python.org/3/library/stdtypes.html#typesnumeric), die wir auch als überwiegend mit textuellen Daten arbeitende Geistes- und Geschichtswissenschaftler:innen kennenlernen sollten, insbesondere dann, wenn wir die ein oder andere quantitative Methode anwenden wollen. Dabei können wir zugleich eine nützliche Funktion erlernen, die wir benötigen, wenn wir Daten sammeln, mit unbekannten Datenbanken arbeiten oder uns einfach so nicht mehr sicher sind, um welchen Datentyp es sich bei einer Variable handelt. Durch den Aufruf der Funktion `type()` können wir die Information einfach in Python erfragen.
 
 # In[ ]:
 

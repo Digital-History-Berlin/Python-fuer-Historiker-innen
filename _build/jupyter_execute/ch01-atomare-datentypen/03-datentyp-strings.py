@@ -57,7 +57,7 @@ print(my_variable[:7] + name)
 
 # ## Indizierung und Slicing
 # 
-# Um eine Begrüßung aus dem Hello-World-Programm zu erstellen - wie im letzten Abschnitt geschehen - benötigen wir jedoch nur einen Teil der `Hello, World!`-Zeichenkette. Als Zeichenkette gehören Strings zu den sequentiellen Datentypen, d.h., sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (*characters*). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über **Indices** direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das "e" beispielsweise durch den Ausdruck `my_variable[1]`. 
+# Um eine Begrüßung aus dem Hello-World-Programm zu erstellen - wie im letzten Abschnitt geschehen - benötigen wir jedoch nur einen Teil der `Hello, World!`-Zeichenkette. Als Zeichenkette gehören Strings zu den sequenziellen Datentypen, d.h., sie stellen eine geordnete Folge von Elementen dar, den einzelnen Zeichen (*characters*). Durch diese Ordnung und Rangfolge ist es möglich, jedes einzelne Element des Strings über **Indices** direkt anzusteuern, indem die gewünschte Indexposition durch eckige Klammern angegeben wird: das "e" beispielsweise durch den Ausdruck `my_variable[1]`. 
 # 
 # Wundern Sie sich darüber, warum der zweite Buchstabe in der Zeichenkette an der Indexposition '1' steht? Schauen wir uns den String genauer an:
 # 

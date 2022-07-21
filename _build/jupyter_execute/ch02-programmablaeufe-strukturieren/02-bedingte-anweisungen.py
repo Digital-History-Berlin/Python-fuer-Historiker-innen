@@ -54,7 +54,7 @@ print("Text Mining" not in example_text)
 # 
 # ## Vergleichsoperatoren
 # 
-# Neben den Schlüsselwörtern `in` oder `not in` können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen {term}`Wahrheitswert` die jeweiligen logischen Aussagen ergeben werden, also ob Sie `True` oder `False` sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:
+# Neben den Schlüsselwörtern `in` oder `not in` können Sie in Python auch klassische Vergleichsoperatoren zur Prüfung logischer Aussagen verwenden. Diese sind weitestgehend selbsterklärend und ergänzen die arithmetischen Operatoren, die Sie im letzten Kapitel kennengelernt haben. Gehen Sie die einzelnen Anweisungen durch und vollziehen Sie nach, was mit den Operatoren in den jeweilige Fällen geprüft wird. Tragen Sie - bevor Sie den Codeblock ausführen - in den Kommentarzeilen ein, welchen {term}`Wahrheitswert` die jeweiligen logischen Aussagen ergeben werden, also ob sie `True` oder `False` sind. Durch die Ausführung des Codeblocks können Sie dann prüfen, ob Sie richtig getippt haben:
 
 # In[ ]:
 
@@ -219,9 +219,9 @@ else:
 print("Das Programm ist beendet.")
 
 
-# Der Code auf einer Ebene wird solange als zusammengehörig erkannt bis wieder auf die nächsthöhere Ebene oder Ebene 0 gesprungen wird. Die Zeilen 8 bis 15 sind ein zusammenhängender Codeblock, der nur ausgeführt wird, wenn die `if`-Bedingung in Zeile 6 erfüllt ist. Zeile 18 befindet sich zwar auf derselben Ebene, ist aber gebunden an Zeile 16 und stellt daher einen separaten Codeteil dar.
+# Der Code auf einer Ebene wird solange als zusammengehörig erkannt bis wieder auf die nächsthöhere Ebene oder Ebene 0 gesprungen wird. Die Zeilen 10 bis 20 sind ein zusammenhängender Codeblock (mit Untereinheiten), der nur ausgeführt wird, wenn die `if`-Bedingung in Zeile 8 erfüllt ist. Zeile 24 befindet sich zwar auf derselben Ebene, ist aber gebunden an Zeile 22 und stellt daher einen separaten Codeteil dar.
 # 
-# Der Code in Zeile 21 gehört nicht mehr zur `if`-`else`-Abfrage und wird immer ausgeführt (solange kein Fehler im Code auftritt) -- unabhängig davon, ob die Auswertung der Bedingungen wahr oder falsch ist. 
+# Der Code in Zeile 27 gehört nicht mehr zur `if`-`else`-Abfrage und wird immer ausgeführt (solange kein Fehler im Code auftritt) -- unabhängig davon, ob die Auswertung der Bedingungen wahr oder falsch ist. 
 # 
 # :::{index} single: Bedingte Abfragen ; elif
 # :name: elif_

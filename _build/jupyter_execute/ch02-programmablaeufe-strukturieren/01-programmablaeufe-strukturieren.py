@@ -34,7 +34,7 @@ netto = base - value
 print(f"Sie sparen {value} Euro und müssen noch {netto} Euro bezahlen.")
 
 
-# Den obigen Codeblock kennen Sie ja bereits aus einer der Aufgabe aus der [ersten Lektion](aufgabe-computer-als-taschenrechner).
+# Den obigen Codeblock kennen Sie ja bereits aus einer der Aufgaben aus der [ersten Lektion](aufgabe-computer-als-taschenrechner).
 # 
 # In dieser Einheit lernen Sie nun einige grundlegende Befehle kennen, mit denen Sie den Ablauf Ihrer Programme strukturieren können: Bedingte Anweisungen, Schleifen und Funktionen. 
 # 
