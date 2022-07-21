@@ -590,7 +590,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Beachten Sie bei <code class="docutils literal notranslate"><span class="pre">csv</span></code>-Dateien das Trennzeichen.</p>
 </div>
 </div>
-<p>Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons. Der Grund dafür liegt in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit <code class="docutils literal notranslate"><span class="pre">;</span></code> die wenigsten Probleme.</p>
+<p>Als Trennzeichen werden meist Kommata verwendet, sehr oft aber auch Semikolons oder Tabs. Der Grund für die Abweichung vom Komma liegt zum Beispiel in der unterschiedlichen Notation von Kommazahlen im deutsch- und englischsprachigen Raum (Deutsch: 4,2 / Englisch: 4.2). Das Komma in einer Zahl würde dann als Trennzeichen erkannt werden; 4,2 würde nicht mehr als einzelne Zahl sondern als zwei Spalten mit den Zahlen 4 und 2 interpretiert werden. Letztlich kann bei CSV jedes beliebige Zeichen als Trennzeichen verwendet werden; meist haben Sie mit <code class="docutils literal notranslate"><span class="pre">;</span></code> oder Tabs die wenigsten Probleme.</p>
 <p>Sie können CSV-Dateien in allen gängigen Tabellenkalkulationsprogrammen (z.B. Microsoft Excel) öffnen und bearbeiten oder auch aus solchen Programmen CSVs exportieren.</p>
 </div>
 <div class="section" id="csvs-offnen-und-speichern">
@@ -682,7 +682,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Schauen Sie wieder im Ordner <code class="docutils literal notranslate"><span class="pre">example_data</span></code> nach: Finden Sie die Datei <code class="docutils literal notranslate"><span class="pre">more_books.csv</span></code> und enthält sie die gewünschten Informationen?</p>
+<p>Schauen Sie wieder im Ordner <code class="docutils literal notranslate"><span class="pre">example_data</span></code> nach (dazu sollten Sie dieses Kapitel in Binder bearbeiten): Finden Sie die Datei <code class="docutils literal notranslate"><span class="pre">more_books.csv</span></code> und enthält sie die gewünschten Informationen?</p>
 </div>
 <div class="section" id="dictreader-zum-arbeiten-mit-csvs">
 <span id="csv-dictreader"></span><h2>DictReader zum Arbeiten mit CSVs<a class="headerlink" href="#dictreader-zum-arbeiten-mit-csvs" title="Permalink to this headline">¶</a></h2>
@@ -736,7 +736,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Neben der von Python bereitgestellten <code class="docutils literal notranslate"><span class="pre">csv</span></code>-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>. Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek <code class="docutils literal notranslate"><span class="pre">csv</span></code> zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen.</p>
+<p>Neben der von Python bereitgestellten <code class="docutils literal notranslate"><span class="pre">csv</span></code>-Bibliothek, die wir hier behandelt haben, gibt es noch weitere Möglichkeiten der Verarbeitung. Eine ebenfalls viel genutzte Bibliothek ist z.B. <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>. Diese ist zwar sehr mächtig, jedoch auch wesentlich komplexer als die hier vorgestellten Ansätze. Sie wird vor allem zur Datenanalyse verwendet. In vielen Fällen wird es ausreichen, auf die Bibliothek <code class="docutils literal notranslate"><span class="pre">csv</span></code> zurückzugreifen. Sollten Sie jedoch häufiger mit CSV-Dateien arbeiten und die Inhalte analysieren wollen, ist es gegebenenfalls empfehlenswert, sich Pandas einmal näher anzusehen. In weiteren Versionen dieses Jupyter Books wird auch eine Einführung in Pandas erscheinen.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="tip admonition">
+<p class="admonition-title">Hinweis</p>
+<p>Das Einlesen und Abspeichern mit Live Code läuft im Hintergrund. Wer die Arbeit innerhalb eines Dateisystems bevorzugt, sollte Binder nutzen, dann sind die generierten Daten in der Verzeichnisstruktur zu sehen.</p>
+</div>
+</div>
 </div>
 <div class="section" id="aufgabe-daten-strukturiert-speichern">
 <h2>Aufgabe: Daten strukturiert speichern<a class="headerlink" href="#aufgabe-daten-strukturiert-speichern" title="Permalink to this headline">¶</a></h2>
